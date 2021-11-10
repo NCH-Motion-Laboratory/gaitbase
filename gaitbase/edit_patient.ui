@@ -56,6 +56,16 @@
      <item row="3" column="1">
       <widget class="QLineEdit" name="lnPatientCode"/>
      </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>Diagnosis</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lnDiagnosis"/>
+     </item>
     </layout>
    </item>
    <item>

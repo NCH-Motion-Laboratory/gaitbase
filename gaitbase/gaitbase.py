@@ -4,7 +4,8 @@ Gait database.
 
 TODO:
 
-    -testing
+    -testing/validation
+        -how are data types converted?
 
     -deployment
         -asap
@@ -13,18 +14,23 @@ TODO:
             -needs desktop icon etc.
         -update liikelaaj package to include SQL version
         -subsequently can run both old version and SQL version
-        -old one is for emergencies
+        -old one is for emergencies only
+
 
     -do we need q.finish() for queries?
+
+
+
+
 """
 
-from os import stat
 import random
 from PyQt5 import QtWidgets, QtSql, QtCore, uic
 import sys
 from pathlib import Path
 from dataclasses import dataclass, fields
 from copy import copy
+import datetime
 
 from liikelaaj.sql_entryapp import EntryApp
 from ulstools.num import check_hetu
@@ -46,13 +52,13 @@ def _random_hetu():
 def qt_message_dialog(msg):
     """Show message with an 'OK' button."""
     dlg = QtWidgets.QMessageBox()
-    # dlg.setWindowTitle(ll_msgs.message_title)
+    dlg.setWindowTitle('Message')
     dlg.setText(msg)
     dlg.addButton(QtWidgets.QPushButton('Ok'), QtWidgets.QMessageBox.YesRole)
     dlg.exec_()
 
 
-def valid_code(code):
+def validate_code(code):
     """Check if patient code is valid"""
     # TODO: might be nicer via regex
     if not code:
@@ -81,6 +87,7 @@ class PatientData:
     lastname: str = ''
     ssn: str = ''
     patient_code: str = ''
+    diagnosis: str = ''
 
     def is_valid(self):
         """Check whether the patient info is valid.
@@ -89,7 +96,7 @@ class PatientData:
         """
         if not check_hetu(self.ssn):
             return (False, 'Invalid SSN')
-        elif not valid_code(self.patient_code):
+        elif not validate_code(self.patient_code):
             return (False, 'Invalid patient code')
         elif not self.firstname.isalpha():
             return (False, 'Invalid first name')
@@ -116,7 +123,8 @@ class MultiColumnFilter(QtCore.QSortFilterProxyModel):
 
     def filterAcceptsRow(self, source_row, source_parent):
         model = self.sourceModel()
-        inds = (model.index(source_row, k, source_parent) for k in range(1, 5))
+        # range defines the columns to include in the matching
+        inds = (model.index(source_row, k, source_parent) for k in range(1, 6))
         return any(
             self.filterRegExp().indexIn(str(model.data(ind))) != -1 for ind in inds
         )
@@ -144,6 +152,7 @@ class PatientEditor(QtWidgets.QDialog):
         self.lnLastName.setText(self._patient.lastname)
         self.lnSSN.setText(self._patient.ssn)
         self.lnPatientCode.setText(self._patient.patient_code)
+        self.lnDiagnosis.setText(self._patient.diagnosis)
 
     @property
     def patient(self):
@@ -152,6 +161,7 @@ class PatientEditor(QtWidgets.QDialog):
         self._patient.lastname = self.lnLastName.text()
         self._patient.ssn = self.lnSSN.text()
         self._patient.patient_code = self.lnPatientCode.text()
+        self._patient.diagnosis = self.lnDiagnosis.text()
         return self._patient
 
     def accept(self):
@@ -196,7 +206,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         uic.loadUi(uifile, self)
 
         self.database = QtSql.QSqlDatabase('QSQLITE')
-        self.db_name = r'Y:\patients.db'
+        #self.db_name = r'Y:\patients.db'
+        self.db_name = r'C:\Temp\patients.db'
         self.database.setDatabaseName(self.db_name)
         self.database.open()
 
@@ -207,8 +218,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.patient_model.database().exec('PRAGMA foreign_keys = ON')
         self.patient_model.setTable('patients')
         self.patient_model.select()
-        # set more readable column headers
-        col_hdrs = ['ID', 'First name', 'Last name', 'SSN', 'Patient code']
+        # set more readable column headers; order must match SQL schema
+        col_hdrs = ['ID', 'First name', 'Last name', 'SSN', 'Patient code', 'Diagnosis']
         for k, hdr in enumerate(col_hdrs):
             self.patient_model.setHeaderData(k, QtCore.Qt.Horizontal, hdr)
         # filter
@@ -310,6 +321,7 @@ class PatientDialog(QtWidgets.QMainWindow):
             rec.value('lastname'),
             rec.value('ssn'),
             rec.value('patient_code'),
+            rec.value('diagnosis')
         )
 
     @property
@@ -352,7 +364,7 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _update_patient(self, p, patient_id):
         """Update an existing patient record"""
         q = QtSql.QSqlQuery(self.database)
-        q.prepare('UPDATE patients SET firstname = :firstname, lastname = :lastname, ssn = :ssn, patient_code = :patient_code WHERE patient_id = :patient_id')
+        q.prepare('UPDATE patients SET firstname = :firstname, lastname = :lastname, ssn = :ssn, patient_code = :patient_code, diagnosis = :diagnosis WHERE patient_id = :patient_id')
         for field in fields(p):
             q.bindValue(':' + field.name, getattr(p, field.name))
         q.bindValue(':patient_id', patient_id)
@@ -366,7 +378,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         """Insert a Patient instance into the database"""
         q = QtSql.QSqlQuery(self.database)
         q.prepare(
-            'INSERT INTO patients (firstname, lastname, ssn, patient_code) VALUES (:firstname, :lastname, :ssn, :patient_code)')
+            'INSERT INTO patients (firstname, lastname, ssn, patient_code, diagnosis) VALUES (:firstname, :lastname, :ssn, :patient_code, :diagnosis)')
         for field in fields(p):
             q.bindValue(':' + field.name, getattr(p, field.name))
         if not q.exec():
@@ -396,7 +408,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.patient_model.select()
         self.rom_model.select()
 
-    def _open_rom(self, rom_id=None):
+    def _open_rom(self, rom_id=None, newly_created=False):
         """Open the selected ROM measurement in an editor.
 
         If rom_id is None, will open the currently selected ROM.
@@ -406,7 +418,7 @@ class PatientDialog(QtWidgets.QMainWindow):
                 return
             rom_idx = self._current_rom_index
             rom_id = self.rom_model.record(rom_idx.row()).value('rom_id')
-        app = EntryApp(self.database, rom_id)
+        app = EntryApp(self.database, rom_id, newly_created)
         app.closing.connect(self._editor_closing)
         # keep tracks of editor windows (keyed by rom id number)
         self.editors[rom_id] = app
@@ -417,15 +429,18 @@ class PatientDialog(QtWidgets.QMainWindow):
         if (rec := self.patient_model.record(self._current_patient_row)) is None:
             return
         patient_id = rec.value('patient_id')
+        # autoinsert current date
+        datestr = datetime.datetime.now().strftime('%d.%m.%Y')
         q = QtSql.QSqlQuery(self.database)
         q.prepare(
-            'INSERT INTO roms (patient_id) VALUES (:patient_id)')
+            'INSERT INTO roms (patient_id, TiedotPvm) VALUES (:patient_id, :datestr)')
         q.bindValue(':patient_id', patient_id)
+        q.bindValue(':datestr', datestr)
         if not q.exec():
             err = q.lastError().databaseText()
             raise RuntimeError(
                 f'Could not insert ROM record. SQL error: {err}')
-        self._open_rom(q.lastInsertId())
+        self._open_rom(q.lastInsertId(), newly_created=True)
 
     def _editor_closing(self, id):
         """Callback for a closing a ROM editor"""
