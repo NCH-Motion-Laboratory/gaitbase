@@ -39,7 +39,8 @@ import os
 from liikelaaj.sql_entryapp import EntryApp
 from liikelaaj.widgets import message_dialog
 from ulstools.num import check_hetu
-from .utils import _named_tempfile, validate_code
+# XXX: make this into relative import, when package is properly installed
+from utils import _named_tempfile, validate_code
 
 
 def qt_message_dialog(msg):
