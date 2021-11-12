@@ -21,6 +21,10 @@ TODO:
 
     -check multiple simultaneous readers/writers
 
+    -could disable patient/ROM buttons if nothing selected
+
+    -select inserted patient
+
     -proper error handling (e.g. database locks)
 """
 
@@ -32,10 +36,27 @@ from dataclasses import dataclass, fields
 from copy import copy
 import datetime
 import os
+import tempfile
 
 from liikelaaj.sql_entryapp import EntryApp
 from liikelaaj.widgets import message_dialog
 from ulstools.num import check_hetu
+
+
+def _named_tempfile(suffix=None):
+    """Return a name for a temporary file.
+    Does not open the file. Cross-platform. Replaces tempfile.NamedTemporaryFile
+    which behaves strangely on Windows.
+    """
+    LEN = 12  # length of basename
+    if suffix is None:
+        suffix = ''
+    elif suffix[0] != '.':
+        raise ValueError('Invalid suffix, must start with dot')
+    basename = os.urandom(LEN)  # get random bytes
+    # convert to hex string
+    basename = basename.hex()
+    return tempfile.gettempdir() / Path(basename).with_suffix(suffix)
 
 
 def _random_hetu():
@@ -224,7 +245,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.patient_model.setTable('patients')
         self.patient_model.select()
         # set more readable column headers; order must match SQL schema
-        col_hdrs = ['ID', 'First name', 'Last name', 'SSN', 'Patient code', 'Diagnosis']
+        col_hdrs = ['ID', 'First name', 'Last name',
+                    'SSN', 'Patient code', 'Diagnosis']
         for k, hdr in enumerate(col_hdrs):
             self.patient_model.setHeaderData(k, QtCore.Qt.Horizontal, hdr)
         # filter
@@ -256,7 +278,8 @@ class PatientDialog(QtWidgets.QMainWindow):
                 self.rom_model.setHeaderData(
                     k, QtCore.Qt.Horizontal, self.rom_headers[col]
                 )
-        self._show_limited_rom()
+        self._rom_show_all(False)
+
         # connect signals
         self.lineEdit.textChanged.connect(
             self.patient_filter.setFilterFixedString)
@@ -271,7 +294,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.lineEdit.setClearButtonEnabled(True)
         self.tvROM.doubleClicked.connect(lambda x: self._edit_rom())
         self.tvPatient.doubleClicked.connect(self._edit_patient)
-        self.cbShowAllROM.stateChanged.connect(self._rom_show_toggle)
+        self.cbShowAllROM.stateChanged.connect(self._rom_show_all)
         # the patient view
         self.tvPatient.setModel(self.patient_filter)
         # don't show the internal record id
@@ -284,26 +307,15 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.tvPatient.selectRow(0)
         self.editors = dict()
 
-
-
-    def _rom_show_toggle(self, state):
-        if state:
-            self._show_all_rom()
-        else:
-            self._show_limited_rom()
-
-    def _show_all_rom(self):
-        """Show all ROM vars"""
+    def _rom_show_all(self, show_all):
+        """If show_all is True, show all ROM vars in table"""
         for k in range(self.rom_model.columnCount()):
-            if self.rom_model.headerData(k, QtCore.Qt.Horizontal) not in self.rom_show_never:
-                self.tvROM.setColumnHidden(k, False)
-        self.tvROM.resizeColumnsToContents()
-
-    def _show_limited_rom(self):
-        """Show limited ROM vars"""
-        for k in range(self.rom_model.columnCount()):
-            if self.rom_model.headerData(k, QtCore.Qt.Horizontal) not in self.rom_show_always:
-                self.tvROM.setColumnHidden(k, True)
+            if show_all:
+                if self.rom_model.headerData(k, QtCore.Qt.Horizontal) not in self.rom_show_never:
+                    self.tvROM.setColumnHidden(k, False)
+            else:  # show limited
+                if self.rom_model.headerData(k, QtCore.Qt.Horizontal) not in self.rom_show_always:
+                    self.tvROM.setColumnHidden(k, True)
         self.tvROM.resizeColumnsToContents()
 
     @property
@@ -351,7 +363,7 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _edit_patient(self):
         """Edit an existing patient"""
         if (rec := self.patient_model.record(self._current_patient_row)) is None:
-            message_dialog('Select a patient first')            
+            message_dialog('Select a patient first')
             return
         patient = self._record_to_patient(rec)
         dlg = PatientEditor(PatientData.is_valid, patient)
@@ -409,7 +421,8 @@ class PatientDialog(QtWidgets.QMainWindow):
             message_dialog('Select a patient first')
             return
         patient_id = rec.value('patient_id')
-        firstname, lastname, ssn = rec.value('firstname'), rec.value('lastname'), rec.value('ssn')
+        firstname, lastname, ssn = rec.value(
+            'firstname'), rec.value('lastname'), rec.value('ssn')
         msg = f"WARNING: are you sure you want to delete the patient\n\n"
         msg += f"{firstname} {lastname}, {ssn}\n\n"
         msg += f"and ALL associated measurements? There is no undo."
@@ -454,7 +467,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         # we use an EntryApp instance to create the report
         # the instance is not shown as a window
         app = EntryApp(self.database, rom_id, False)
-        fn = r'C:\Temp\rom_excel.xls'
+        fn = _named_tempfile(suffix='.xls')
         app.make_excel_report().save(fn)
         os.startfile(fn)
         app.force_close()
@@ -462,13 +475,13 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _rom_text_report(self):
         """Create a text report of the current ROM"""
         if (rom_id := self.current_rom_id) is None:
-            message_dialog('Please select a ROM first')            
+            message_dialog('Please select a ROM first')
             return
         # we use an EntryApp instance to create the report
         # the instance is not shown as a window
         app = EntryApp(self.database, rom_id, False)
-        fn = r'C:\Temp\rom.txt'
-        report_txt = app.make_txt_report(app.text_template)        
+        fn = _named_tempfile(suffix='.txt')
+        report_txt = app.make_txt_report(app.text_template)
         with open(fn, 'w', encoding='utf-8') as f:
             f.write(report_txt)
         os.startfile(fn)
@@ -500,7 +513,7 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _delete_rom(self):
         """Delete the selected ROM measurement from database"""
         if (rom_idx := self.current_rom_index) is None:
-            message_dialog('Please select a ROM first')            
+            message_dialog('Please select a ROM first')
             return
         msg = f"WARNING: are you sure you want to delete this ROM measurement? There is no undo."
         if qt_confirm_dialog(msg):
