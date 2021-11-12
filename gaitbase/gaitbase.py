@@ -2,10 +2,8 @@
 """
 Gait database.
 
-TODO:
 
-    -testing/validation
-        -how are data types converted?
+TODO:
 
     -deployment
         -asap
@@ -13,15 +11,17 @@ TODO:
             -supplementary stuff into separate private repo
             -needs desktop icon etc.
         -update liikelaaj package to include SQL version
-        -subsequently can run both old version and SQL version
-        -old one is for emergencies only
+            -subsequently can run both old version and SQL version
+            -old one is for emergencies only
+    
+    -presentation
 
+    -check Excel and text reports
+        -compare Excel reports from SQL vs. from JSON
+
+    -check multiple simultaneous readers/writers
 
     -do we need q.finish() for queries?
-
-
-
-
 """
 
 import random
@@ -31,8 +31,10 @@ from pathlib import Path
 from dataclasses import dataclass, fields
 from copy import copy
 import datetime
+import os
 
 from liikelaaj.sql_entryapp import EntryApp
+from liikelaaj.widgets import message_dialog
 from ulstools.num import check_hetu
 
 
@@ -205,6 +207,9 @@ class PatientDialog(QtWidgets.QMainWindow):
         super().__init__(parent)
         uic.loadUi(uifile, self)
 
+        # some configurable stuff
+        self.CONFIRM_EXIT = False
+
         self.database = QtSql.QSqlDatabase('QSQLITE')
         #self.db_name = r'Y:\patients.db'
         self.db_name = r'C:\Temp\patients.db'
@@ -255,14 +260,16 @@ class PatientDialog(QtWidgets.QMainWindow):
         # connect signals
         self.lineEdit.textChanged.connect(
             self.patient_filter.setFilterFixedString)
-        self.btnOpenROM.clicked.connect(lambda x: self._open_rom())
+        self.btnOpenROM.clicked.connect(lambda x: self._edit_rom())
+        self.btnOpenROMExcel.clicked.connect(self._rom_excel_report)
+        self.btnOpenROMText.clicked.connect(self._rom_text_report)
         self.btnNewROM.clicked.connect(self._new_rom)
         self.btnDeleteROM.clicked.connect(self._delete_rom)
         self.btnEditPatient.clicked.connect(self._edit_patient)
         self.btnDeletePatient.clicked.connect(self._delete_current_patient)
         self.btnNewPatient.clicked.connect(self._new_patient)
         self.lineEdit.setClearButtonEnabled(True)
-        self.tvROM.doubleClicked.connect(lambda x: self._open_rom())
+        self.tvROM.doubleClicked.connect(lambda x: self._edit_rom())
         self.tvPatient.doubleClicked.connect(self._edit_patient)
         self.cbShowAllROM.stateChanged.connect(self._rom_show_toggle)
         # the patient view
@@ -276,6 +283,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.tvROM.resizeColumnsToContents()
         self.tvPatient.selectRow(0)
         self.editors = dict()
+
+
 
     def _rom_show_toggle(self, state):
         if state:
@@ -325,12 +334,19 @@ class PatientDialog(QtWidgets.QMainWindow):
         )
 
     @property
-    def _current_rom_index(self):
+    def current_rom_index(self):
         """Return QModelIndex for currently selected ROM"""
         try:
             return self.tvROM.selectedIndexes()[0]
         except IndexError:
             return None
+
+    @property
+    def current_rom_id(self):
+        """Return the ROM ID value for currently selected ROM"""
+        if (rom_idx := self.current_rom_index) is None:
+            return None
+        return self.rom_model.record(rom_idx.row()).value('rom_id')
 
     def _edit_patient(self):
         """Edit an existing patient"""
@@ -408,21 +424,47 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.patient_model.select()
         self.rom_model.select()
 
-    def _open_rom(self, rom_id=None, newly_created=False):
-        """Open the selected ROM measurement in an editor.
+    def _edit_rom(self, rom_id=None, newly_created=False):
+        """Open a ROM measurement in an editor.
 
         If rom_id is None, will open the currently selected ROM.
         """
-        if rom_id is None:
-            if self._current_rom_index is None:
-                return
-            rom_idx = self._current_rom_index
-            rom_id = self.rom_model.record(rom_idx.row()).value('rom_id')
+        if rom_id is None and (rom_id := self.current_rom_id) is None:
+            return
+        if rom_id in self.editors:
+            message_dialog('This ROM is already open')
+            return
         app = EntryApp(self.database, rom_id, newly_created)
         app.closing.connect(self._editor_closing)
         # keep tracks of editor windows (keyed by rom id number)
         self.editors[rom_id] = app
         app.show()
+
+    def _rom_excel_report(self):
+        """Create an Excel report of the current ROM"""
+        if (rom_id := self.current_rom_id) is None:
+            return
+        # we use an EntryApp instance to create the report
+        # the instance is not shown as a window
+        app = EntryApp(self.database, rom_id, False)
+        fn = r'C:\Temp\rom_excel.xls'
+        app.make_excel_report().save(fn)
+        os.startfile(fn)
+        app.force_close()
+
+    def _rom_text_report(self):
+        """Create a text report of the current ROM"""
+        if (rom_id := self.current_rom_id) is None:
+            return
+        # we use an EntryApp instance to create the report
+        # the instance is not shown as a window
+        app = EntryApp(self.database, rom_id, False)
+        fn = r'C:\Temp\rom.txt'
+        report_txt = app.make_txt_report(app.text_template)        
+        with open(fn, 'w', encoding='utf-8') as f:
+            f.write(report_txt)
+        os.startfile(fn)
+        app.force_close()
 
     def _new_rom(self):
         """Create a new ROM measurement"""
@@ -440,7 +482,7 @@ class PatientDialog(QtWidgets.QMainWindow):
             err = q.lastError().databaseText()
             raise RuntimeError(
                 f'Could not insert ROM record. SQL error: {err}')
-        self._open_rom(q.lastInsertId(), newly_created=True)
+        self._edit_rom(q.lastInsertId(), newly_created=True)
 
     def _editor_closing(self, id):
         """Callback for a closing a ROM editor"""
@@ -449,11 +491,11 @@ class PatientDialog(QtWidgets.QMainWindow):
 
     def _delete_rom(self):
         """Delete the selected ROM measurement from database"""
-        if (rom_idx := self._current_rom_index) is None:
+        if (rom_idx := self.current_rom_index) is None:
             return
         msg = f"WARNING: are you sure you want to delete this ROM measurement? There is no undo."
         if qt_confirm_dialog(msg):
-            rom_id = self.rom_model.record(rom_idx.row()).value('rom_id')
+            rom_id = self.current_rom_id
             if rom_id in self.editors:
                 self.editors[rom_id].force_close()
             self.rom_model.removeRow(rom_idx.row())
@@ -470,7 +512,7 @@ class PatientDialog(QtWidgets.QMainWindow):
 
     def closeEvent(self, event):
         """Confirm and close application."""
-        if qt_confirm_dialog('Do you want to exit?'):
+        if not self.CONFIRM_EXIT or qt_confirm_dialog('Do you want to exit?'):
             # close all ROM editor windows
             for ed in list(self.editors.values()):
                 ed.force_close()
