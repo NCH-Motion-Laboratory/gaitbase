@@ -21,7 +21,7 @@ TODO:
 
     -check multiple simultaneous readers/writers
 
-    -do we need q.finish() for queries?
+    -proper error handling (e.g. database locks)
 """
 
 import random
@@ -351,6 +351,7 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _edit_patient(self):
         """Edit an existing patient"""
         if (rec := self.patient_model.record(self._current_patient_row)) is None:
+            message_dialog('Select a patient first')            
             return
         patient = self._record_to_patient(rec)
         dlg = PatientEditor(PatientData.is_valid, patient)
@@ -405,9 +406,13 @@ class PatientDialog(QtWidgets.QMainWindow):
 
     def _delete_current_patient(self):
         if (rec := self.patient_model.record(self._current_patient_row)) is None:
+            message_dialog('Select a patient first')
             return
         patient_id = rec.value('patient_id')
-        msg = f"WARNING: are you sure you want to delete the patient and ALL associated measurements? There is no undo."
+        firstname, lastname, ssn = rec.value('firstname'), rec.value('lastname'), rec.value('ssn')
+        msg = f"WARNING: are you sure you want to delete the patient\n\n"
+        msg += f"{firstname} {lastname}, {ssn}\n\n"
+        msg += f"and ALL associated measurements? There is no undo."
         if not qt_confirm_dialog(msg):
             return
         # close any ROM dialogs related to this patient
@@ -430,6 +435,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         If rom_id is None, will open the currently selected ROM.
         """
         if rom_id is None and (rom_id := self.current_rom_id) is None:
+            message_dialog('Please select a ROM first')
             return
         if rom_id in self.editors:
             message_dialog('This ROM is already open')
@@ -443,6 +449,7 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _rom_excel_report(self):
         """Create an Excel report of the current ROM"""
         if (rom_id := self.current_rom_id) is None:
+            message_dialog('Please select a ROM first')
             return
         # we use an EntryApp instance to create the report
         # the instance is not shown as a window
@@ -455,6 +462,7 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _rom_text_report(self):
         """Create a text report of the current ROM"""
         if (rom_id := self.current_rom_id) is None:
+            message_dialog('Please select a ROM first')            
             return
         # we use an EntryApp instance to create the report
         # the instance is not shown as a window
@@ -492,11 +500,11 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _delete_rom(self):
         """Delete the selected ROM measurement from database"""
         if (rom_idx := self.current_rom_index) is None:
+            message_dialog('Please select a ROM first')            
             return
         msg = f"WARNING: are you sure you want to delete this ROM measurement? There is no undo."
         if qt_confirm_dialog(msg):
-            rom_id = self.current_rom_id
-            if rom_id in self.editors:
+            if (rom_id := self.current_rom_id) in self.editors:
                 self.editors[rom_id].force_close()
             self.rom_model.removeRow(rom_idx.row())
             self.rom_model.select()
