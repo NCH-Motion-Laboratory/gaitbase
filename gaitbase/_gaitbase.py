@@ -47,6 +47,7 @@ import sys
 from liikelaaj.sql_entryapp import EntryApp
 from liikelaaj.widgets import message_dialog
 from ulstools.num import check_hetu
+from ulstools.env import make_shortcut
 
 from .utils import _named_tempfile, validate_code
 from .config import cfg
@@ -59,6 +60,11 @@ def qt_message_dialog(msg):
     dlg.setText(msg)
     dlg.addButton(QtWidgets.QPushButton('Ok'), QtWidgets.QMessageBox.YesRole)
     dlg.exec_()
+
+
+def make_my_shortcut():
+    """Make a desktop shortcut"""
+    make_shortcut('gaitbase', 'run_gaitbase.py', title='Gait database')
 
 
 @dataclass
@@ -76,7 +82,7 @@ class PatientData:
 
         Returns a tuple of (is_valid, reason).
         """
-        return (True, '')  # DEBUG
+        #return (True, '')  # DEBUG insertion
         if not check_hetu(self.ssn):
             return (False, 'Invalid SSN')
         elif not validate_code(self.patient_code):
@@ -185,6 +191,8 @@ def db_failure(query, fatal=False):
         raise RuntimeError(msg)
     else:
         message_dialog(msg)
+
+
 
 
 

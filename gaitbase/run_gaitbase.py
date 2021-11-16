@@ -3,7 +3,7 @@
 Gait database utils.
 
 """
-from gaitbase import gaitbase
+from gaitbase import _gaitbase
 
 if __name__ == '__main__':
-    gaitbase.main()
+    _gaitbase.main()
