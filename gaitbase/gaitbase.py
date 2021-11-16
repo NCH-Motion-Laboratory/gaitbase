@@ -41,12 +41,14 @@ import datetime
 import os
 import traceback
 from pkg_resources import resource_filename
+import configdot
 
 from liikelaaj.sql_entryapp import EntryApp
 from liikelaaj.widgets import message_dialog
 from ulstools.num import check_hetu
 
 from .utils import _named_tempfile, validate_code
+from .config import cfg
 
 
 def qt_message_dialog(msg):
@@ -202,9 +204,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.CONFIRM_EXIT = False
 
         self.database = QtSql.QSqlDatabase('QSQLITE')
-        #self.db_name = r'Y:\patients.db'
-        self.db_name = r'C:\Temp\patients.db'
-        self.database.setDatabaseName(self.db_name)
+        self.database.setDatabaseName(cfg.database.database)
         self.database.open()
 
         # patient table
