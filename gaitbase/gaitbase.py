@@ -42,6 +42,7 @@ import os
 import traceback
 from pkg_resources import resource_filename
 import configdot
+import sys
 
 from liikelaaj.sql_entryapp import EntryApp
 from liikelaaj.widgets import message_dialog
@@ -199,11 +200,17 @@ class PatientDialog(QtWidgets.QMainWindow):
         super().__init__(parent)
         uifile = resource_filename('gaitbase', 'patients.ui')
         uic.loadUi(uifile, self)
+        self.editors = dict()
 
         # some configurable stuff
         self.CONFIRM_EXIT = False
 
         self.database = QtSql.QSqlDatabase('QSQLITE')
+        if not Path(cfg.database.database).is_file():
+            msg = f'The database {cfg.database.database} does not exist. '
+            msg += 'Please set the correct location in the config.'
+            message_dialog(msg)
+            sys.exit()
         self.database.setDatabaseName(cfg.database.database)
         self.database.open()
 
@@ -275,7 +282,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         )
         self.tvROM.resizeColumnsToContents()
         self.tvPatient.selectRow(0)
-        self.editors = dict()
+
 
     def _rom_show_all(self, show_all):
         """If show_all is True, show all ROM vars in table"""
