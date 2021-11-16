@@ -1,31 +1,17 @@
 name: gaitbase
 channels:
-  - conda-forge
+  - defaults
 dependencies:
-  - configobj
-  - flake8
-  - flask
-  - freetype
-  - numpy
-  - scipy
-  - matplotlib
   - python
-  - pyside2
   - jupyter
-  - openpyxl
-  - pip
-  - plotly
-  - urllib3
-  - werkzeug
+  - pyqt
   - xlrd
   - xlsxwriter
   - xlutils
+  - pip
   - pip:
-    - dash
-    - kaleido
-    - dash-daq
+    - flake8
+    - pypdf2
     - pytest
-    - https://github.com/jjnurminen/gaitutils/archive/master.zip
+    - https://github.com/jjnurminen/liikelaaj/archive/master.zip
     - https://github.com/jjnurminen/ulstools/archive/master.zip
-    - https://github.com/jjnurminen/configdot/archive/master.zip
-
