@@ -39,6 +39,7 @@ from dataclasses import dataclass, fields
 from copy import copy
 import datetime
 import os
+import traceback
 
 from liikelaaj.sql_entryapp import EntryApp
 from liikelaaj.widgets import message_dialog
@@ -168,6 +169,19 @@ def qt_confirm_dialog(msg):
     dlg.addButton(QtWidgets.QPushButton('No'), QtWidgets.QMessageBox.NoRole)
     dlg.exec_()
     return dlg.buttonRole(dlg.clickedButton()) == QtWidgets.QMessageBox.YesRole
+
+
+def db_failure(query, fatal=False):
+    """Handle database failures"""
+    err = query.lastError().databaseText()
+    msg = f'Got a database error: "{err}"'
+    msg += '\nIn case of locking errors, close all other applications '
+    msg += 'that may be using the database, and try again.'
+    if fatal:
+        raise RuntimeError(msg)
+    else:
+        message_dialog(msg)
+
 
 
 def _debug_print(msg):
@@ -333,6 +347,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         if not dlg.exec():
             return
         id = self._insert_patient(dlg._patient)
+        if id is None:
+            return
         self.patient_model.select()
         # clear the filter so that the newly inserted patient is visible
         self.lineEdit.clear()
@@ -370,9 +386,7 @@ class PatientDialog(QtWidgets.QMainWindow):
             q.bindValue(':' + field.name, getattr(p, field.name))
         q.bindValue(':patient_id', patient_id)
         if not q.exec():
-            err = q.lastError().databaseText()
-            raise RuntimeError(
-                f'Could not update patient record. SQL error: {err}')
+            db_failure(q, fatal=False)
         self.patient_model.select()
 
     def _insert_patient(self, p):
@@ -383,9 +397,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         for field in fields(p):
             q.bindValue(':' + field.name, getattr(p, field.name))
         if not q.exec():
-            err = q.lastError().databaseText()
-            raise RuntimeError(
-                f'Could not insert patient record. SQL error: {err}')
+            db_failure(q, fatal=False)
+            return None
         return q.lastInsertId()
 
     def _delete_current_patient(self):
@@ -473,10 +486,9 @@ class PatientDialog(QtWidgets.QMainWindow):
         q.bindValue(':patient_id', patient_id)
         q.bindValue(':datestr', datestr)
         if not q.exec():
-            err = q.lastError().databaseText()
-            raise RuntimeError(
-                f'Could not insert ROM record. SQL error: {err}')
-        self._edit_rom(q.lastInsertId(), newly_created=True)
+            db_failure(q, fatal=False)
+        else:
+            self._edit_rom(q.lastInsertId(), newly_created=True)
 
     def _editor_closing(self, id):
         """Callback for a closing a ROM editor"""
@@ -521,8 +533,22 @@ class PatientDialog(QtWidgets.QMainWindow):
 def main():
     app = QtWidgets.QApplication(sys.argv)
     pdi = PatientDialog()
+
+    def my_excepthook(type, value, tback):
+        """ Custom exception handler for fatal (unhandled) exceptions:
+        report to user via GUI and terminate program. """
+        tb_full = ''.join(traceback.format_exception(type, value, tback))
+        msg = f'Oops! An unhandled exception occurred: {tb_full}'
+        msg += '\nThe application will be closed now.'
+        message_dialog(msg)
+        sys.__excepthook__(type, value, tback)
+        app.quit()
+
+    sys.excepthook = my_excepthook
+
     pdi.show()
     app.exec()
+
 
 
 if __name__ == '__main__':
