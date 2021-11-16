@@ -40,12 +40,13 @@ from copy import copy
 import datetime
 import os
 import traceback
+from pkg_resources import resource_filename
 
 from liikelaaj.sql_entryapp import EntryApp
 from liikelaaj.widgets import message_dialog
 from ulstools.num import check_hetu
-# XXX: make this into relative import, when package is properly installed
-from utils import _named_tempfile, validate_code
+
+from .utils import _named_tempfile, validate_code
 
 
 def qt_message_dialog(msg):
@@ -118,7 +119,7 @@ class PatientEditor(QtWidgets.QDialog):
         If patient is provided, its values will be displayed for editing.
         Otherwise a new patiewt will be created.
         """
-        uifile = 'edit_patient.ui'
+        uifile = resource_filename('gaitbase', 'edit_patient.ui')
         super().__init__(parent)
         uic.loadUi(uifile, self)
         self.btnSave.clicked.connect(self.accept)
@@ -175,7 +176,7 @@ def db_failure(query, fatal=False):
     """Handle database failures"""
     err = query.lastError().databaseText()
     msg = f'Got a database error: "{err}"'
-    msg += '\nIn case of locking errors, close all other applications '
+    msg += '\nIn case of a locking error, close all other applications '
     msg += 'that may be using the database, and try again.'
     if fatal:
         raise RuntimeError(msg)
@@ -193,8 +194,8 @@ class PatientDialog(QtWidgets.QMainWindow):
     """Visualize patients and measurements in table views"""
 
     def __init__(self, parent=None):
-        uifile = 'patients.ui'
         super().__init__(parent)
+        uifile = resource_filename('gaitbase', 'patients.ui')
         uic.loadUi(uifile, self)
 
         # some configurable stuff
@@ -513,7 +514,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         if not sel.indexes():
             return
         index = sel.indexes()[0]
-        if (patient_id := index.siblingAtColumn(0).data()) is None:
+        row = index.row()
+        if (patient_id := index.sibling(row, 0).data()) is None:
             return
         self.rom_model.setFilter(f'{patient_id=}')
         self.rom_model.select()

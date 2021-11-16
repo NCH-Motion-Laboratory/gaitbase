@@ -1,10 +1,11 @@
 name: gaitbase
 channels:
-  - defaults
+  - conda-forge
 dependencies:
   - python
   - jupyter
   - pyqt
+  - psutil
   - xlrd
   - xlsxwriter
   - xlutils

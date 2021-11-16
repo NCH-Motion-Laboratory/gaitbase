@@ -73,13 +73,6 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="3">
-       <widget class="QPushButton" name="btnDeletePatient">
-        <property name="text">
-         <string>Delete patient</string>
-        </property>
-       </widget>
-      </item>
       <item row="3" column="0">
        <spacer name="verticalSpacer">
         <property name="orientation">
@@ -126,13 +119,6 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="2">
-       <widget class="QPushButton" name="btnNewPatient">
-        <property name="text">
-         <string>New patient</string>
-        </property>
-       </widget>
-      </item>
       <item row="6" column="1">
        <widget class="QPushButton" name="btnNewROM">
         <property name="text">
@@ -158,6 +144,20 @@
        <widget class="QPushButton" name="btnOpenROMText">
         <property name="text">
          <string>Open text report</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="btnNewPatient">
+        <property name="text">
+         <string>New patient</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="btnDeletePatient">
+        <property name="text">
+         <string>Delete patient</string>
         </property>
        </widget>
       </item>
