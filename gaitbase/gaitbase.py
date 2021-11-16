@@ -23,9 +23,13 @@ TODO:
 
     -could disable patient/ROM buttons if nothing selected
 
-    -select inserted patient
+    -proper exception handling (e.g. database locks)
+        -also handler for unexpected exceptions
 
-    -proper error handling (e.g. database locks)
+    -check no values entered condition for ROM
+
+    -ROM comparison funcs? (taste of the future)
+
 """
 
 from PyQt5 import QtWidgets, QtSql, QtCore, uic
@@ -67,6 +71,7 @@ class PatientData:
 
         Returns a tuple of (is_valid, reason).
         """
+        return (True, '')  # DEBUG
         if not check_hetu(self.ssn):
             return (False, 'Invalid SSN')
         elif not validate_code(self.patient_code):
@@ -250,7 +255,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         # don't show the internal record id
         self.tvPatient.setColumnHidden(0, True)
         self.tvPatient.resizeColumnsToContents()
-        self.tvPatient.selectionModel().currentRowChanged.connect(
+        self.tvPatient.selectionModel().selectionChanged.connect(
             self._patient_row_selected
         )
         self.tvROM.resizeColumnsToContents()
@@ -312,9 +317,10 @@ class PatientDialog(QtWidgets.QMainWindow):
 
     def _edit_patient(self):
         """Edit an existing patient"""
-        if (rec := self.patient_model.record(self._current_patient_row)) is None:
+        if self._current_patient_row is None:
             message_dialog('Select a patient first')
             return
+        rec = self.patient_model.record(self._current_patient_row)
         patient = self._record_to_patient(rec)
         dlg = PatientEditor(PatientData.is_valid, patient)
         if dlg.exec():
@@ -324,8 +330,24 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _new_patient(self):
         """Create a new patient"""
         dlg = PatientEditor(self._check_new_patient)
-        if dlg.exec():
-            self._insert_patient(dlg._patient)
+        if not dlg.exec():
+            return
+        id = self._insert_patient(dlg._patient)
+        self.patient_model.select()
+        # clear the filter so that the newly inserted patient is visible
+        self.lineEdit.clear()
+        # select the newly created patient
+        # this is surprisingly hard to do
+        for k in range(self.patient_model.rowCount()):
+            if self.patient_model.record(k).value('patient_id') == id:
+                idx = self.patient_model.index(k, 1, QtCore.QModelIndex())
+                idx_filter = self.patient_filter.mapFromSource(idx)
+                self.tvPatient.selectionModel().select(
+                    idx_filter, QtCore.QItemSelectionModel.ClearAndSelect | QtCore.QItemSelectionModel.Rows)
+                self.tvPatient.selectionModel().setCurrentIndex(
+                    idx_filter, QtCore.QItemSelectionModel.ClearAndSelect | QtCore.QItemSelectionModel.Rows)
+                self.tvPatient.scrollTo(idx_filter)
+                break
 
     def _check_new_patient(self, p):
         """Check whether p is valid and can be inserted into database.
@@ -354,7 +376,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.patient_model.select()
 
     def _insert_patient(self, p):
-        """Insert a Patient instance into the database"""
+        """Insert a Patient instance into the database."""
         q = QtSql.QSqlQuery(self.database)
         q.prepare(
             'INSERT INTO patients (firstname, lastname, ssn, patient_code, diagnosis) VALUES (:firstname, :lastname, :ssn, :patient_code, :diagnosis)')
@@ -364,12 +386,13 @@ class PatientDialog(QtWidgets.QMainWindow):
             err = q.lastError().databaseText()
             raise RuntimeError(
                 f'Could not insert patient record. SQL error: {err}')
-        self.patient_model.select()
+        return q.lastInsertId()
 
     def _delete_current_patient(self):
-        if (rec := self.patient_model.record(self._current_patient_row)) is None:
+        if self._current_patient_row is None:
             message_dialog('Select a patient first')
             return
+        rec = self.patient_model.record(self._current_patient_row)
         patient_id = rec.value('patient_id')
         firstname, lastname, ssn = rec.value(
             'firstname'), rec.value('lastname'), rec.value('ssn')
@@ -472,9 +495,12 @@ class PatientDialog(QtWidgets.QMainWindow):
             self.rom_model.removeRow(rom_idx.row())
             self.rom_model.select()
 
-    def _patient_row_selected(self, index):
+    def _patient_row_selected(self, sel):
         """Callback for row selected on the patient table"""
         # data may sometimes be None, probably due to invalid selection
+        if not sel.indexes():
+            return
+        index = sel.indexes()[0]
         if (patient_id := index.siblingAtColumn(0).data()) is None:
             return
         self.rom_model.setFilter(f'{patient_id=}')
