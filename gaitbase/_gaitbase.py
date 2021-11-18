@@ -6,27 +6,19 @@ Gait database.
 TODO:
 
     -deployment
-        -asap
-        -package gaitbase
-            -supplementary stuff into separate private repo
-            -needs desktop icon etc.
-        -update liikelaaj package to include SQL version
-            -subsequently can run both old version and SQL version
-            -old one is for emergencies only
-    
-    -presentation
+        -presentation / instructions for use
+            -DO NOT use old ROM app anymore, except in emergency
 
-    -check Excel and text reports
+        -install on vicon and lab pc
+        -final refresh of database
+            -make sure no new ROMs are created after refresh
+
+    -tests
         -compare Excel reports from SQL vs. from JSON
-
-    -check multiple simultaneous readers/writers
 
     -could disable patient/ROM buttons if nothing selected
 
-    -proper exception handling (e.g. database locks)
-        -also handler for unexpected exceptions
-
-    -check no values entered condition for ROM
+    -check "no values entered" condition for ROM
 
     -ROM comparison funcs? (taste of the future)
 
@@ -41,7 +33,6 @@ import datetime
 import os
 import traceback
 from pkg_resources import resource_filename
-import configdot
 import sys
 
 from liikelaaj.sql_entryapp import EntryApp
@@ -191,14 +182,6 @@ def db_failure(query, fatal=False):
         raise RuntimeError(msg)
     else:
         message_dialog(msg)
-
-
-
-
-
-def _debug_print(msg):
-    print(msg)
-    sys.stdout.flush()
 
 
 class PatientDialog(QtWidgets.QMainWindow):
@@ -556,7 +539,7 @@ def main():
         """ Custom exception handler for fatal (unhandled) exceptions:
         report to user via GUI and terminate program. """
         tb_full = ''.join(traceback.format_exception(type, value, tback))
-        msg = f'Oops! An unhandled exception occurred: {tb_full}'
+        msg = f'Oops! An unhandled exception occurred:\n{tb_full}'
         msg += '\nThe application will be closed now.'
         message_dialog(msg)
         sys.__excepthook__(type, value, tback)
@@ -566,7 +549,6 @@ def main():
 
     pdi.show()
     app.exec()
-
 
 
 if __name__ == '__main__':
