@@ -6,6 +6,7 @@ dependencies:
   - jupyter
   - pyqt
   - psutil
+  - textdistance
   - xlrd
   - xlsxwriter
   - xlutils

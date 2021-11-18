@@ -7,9 +7,13 @@ TODO:
 
     -deployment
         -presentation / instructions for use
+            -how to start
+            -logic for database updates
+            -logic for creating reports
             -DO NOT use old ROM app anymore, except in emergency
 
         -install on vicon and lab pc
+
         -final refresh of database
             -make sure no new ROMs are created after refresh
 
@@ -17,6 +21,8 @@ TODO:
         -compare Excel reports from SQL vs. from JSON
 
     -could disable patient/ROM buttons if nothing selected
+        -a bit tricky to implement, see:
+        https://bugreports.qt.io/browse/QTBUG-93305?gerritReviewStatus=All
 
     -check "no values entered" condition for ROM
 
