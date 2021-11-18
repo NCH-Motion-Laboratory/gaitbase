@@ -276,6 +276,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.btnEditPatient.clicked.connect(self._edit_patient)
         self.btnDeletePatient.clicked.connect(self._delete_current_patient)
         self.btnNewPatient.clicked.connect(self._new_patient)
+        self.actionQuit.triggered.connect(self.close)
         self.lineEdit.setClearButtonEnabled(True)
         self.tvROM.doubleClicked.connect(lambda x: self._edit_rom())
         self.tvPatient.doubleClicked.connect(self._edit_patient)
