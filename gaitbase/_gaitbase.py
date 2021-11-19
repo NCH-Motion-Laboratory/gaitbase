@@ -5,20 +5,6 @@ Gait database.
 
 TODO:
 
-    -deployment
-        -presentation / instructions for use
-            -how to start
-            -logic for database updates
-            -logic for creating reports
-            -DO NOT use old ROM app anymore, except in emergency
-
-        -install on vicon and lab pc
-
-        -final refresh of database
-            -make sure no new ROMs are created after refresh
-
-    -tests
-        -compare Excel reports from SQL vs. from JSON
 
     -could disable patient/ROM buttons if nothing selected
         -a bit tricky to implement, see:
@@ -84,10 +70,6 @@ class PatientData:
             return (False, 'Invalid SSN')
         elif not validate_code(self.patient_code):
             return (False, 'Invalid patient code')
-        elif not self.firstname.isalpha():
-            return (False, 'Invalid first name')
-        elif not self.lastname.isalpha():
-            return (False, 'Invalid last name')
         return (True, '')
 
 
