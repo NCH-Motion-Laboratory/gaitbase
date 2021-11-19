@@ -128,6 +128,7 @@ class PatientEditor(QtWidgets.QDialog):
         uifile = resource_filename('gaitbase', 'edit_patient.ui')
         super().__init__(parent)
         uic.loadUi(uifile, self)
+        self.setStyleSheet('QWidget { font-size: %dpt;}' % cfg.visual.fontsize)        
         self.btnSave.clicked.connect(self.accept)
         self.btnCancel.clicked.connect(self.reject)
         self.patient_check_callback = check_patient
