@@ -79,7 +79,7 @@ class PatientData:
 
         Returns a tuple of (is_valid, reason).
         """
-        #return (True, '')  # DEBUG insertion
+        # return (True, '')  # DEBUG insertion
         if not check_hetu(self.ssn):
             return (False, 'Invalid SSN')
         elif not validate_code(self.patient_code):
@@ -212,15 +212,14 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.database.open()
 
         # patient table
-        #self.patient_model = QtSql.QSqlTableModel(db=self.database)
+        # self.patient_model = QtSql.QSqlTableModel(db=self.database)
         self.patient_model = NonLazyQSqlTableModel(db=self.database)
         # turn on foreign key support (necessary for cascade)
         self.patient_model.database().exec('PRAGMA foreign_keys = ON')
         self.patient_model.setTable('patients')
         self.patient_model.select()
         # set more readable column headers; order must match SQL schema
-        col_hdrs = ['ID', 'First name', 'Last name',
-                    'SSN', 'Patient code', 'Diagnosis']
+        col_hdrs = ['ID', 'First name', 'Last name', 'SSN', 'Patient code', 'Diagnosis']
         for k, hdr in enumerate(col_hdrs):
             self.patient_model.setHeaderData(k, QtCore.Qt.Horizontal, hdr)
         # filter
@@ -228,7 +227,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.patient_filter.setFilterCaseSensitivity(False)
         self.patient_filter.setSourceModel(self.patient_model)
         # rom table
-        #self.rom_model = QtSql.QSqlTableModel(db=self.database)
+        # self.rom_model = QtSql.QSqlTableModel(db=self.database)
         self.rom_model = NonLazyQSqlTableModel(db=self.database)
         # turn on foreign key support (necessary for cascade)
         self.rom_model.database().exec('PRAGMA foreign_keys = ON')
@@ -255,8 +254,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         self._rom_show_all(False)
 
         # connect signals
-        self.lineEdit.textChanged.connect(
-            self.patient_filter.setFilterFixedString)
+        self.lineEdit.textChanged.connect(self.patient_filter.setFilterFixedString)
         self.btnOpenROM.clicked.connect(lambda x: self._edit_rom())
         self.btnOpenROMExcel.clicked.connect(self._rom_excel_report)
         self.btnOpenROMText.clicked.connect(self._rom_text_report)
@@ -274,6 +272,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.tvPatient.setModel(self.patient_filter)
         # don't show the internal record id
         self.tvPatient.setColumnHidden(0, True)
+        # increase font size (best to do before table resizing)
+        self.setStyleSheet('QWidget { font-size: %dpt;}' % cfg.visual.fontsize)
         self.tvPatient.resizeColumnsToContents()
         self.tvPatient.selectionModel().selectionChanged.connect(
             self._patient_row_selected
@@ -281,15 +281,20 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.tvROM.resizeColumnsToContents()
         self.tvPatient.selectRow(0)
 
-
     def _rom_show_all(self, show_all):
         """If show_all is True, show all ROM vars in table"""
         for k in range(self.rom_model.columnCount()):
             if show_all:
-                if self.rom_model.headerData(k, QtCore.Qt.Horizontal) not in self.rom_show_never:
+                if (
+                    self.rom_model.headerData(k, QtCore.Qt.Horizontal)
+                    not in self.rom_show_never
+                ):
                     self.tvROM.setColumnHidden(k, False)
             else:  # show limited
-                if self.rom_model.headerData(k, QtCore.Qt.Horizontal) not in self.rom_show_always:
+                if (
+                    self.rom_model.headerData(k, QtCore.Qt.Horizontal)
+                    not in self.rom_show_always
+                ):
                     self.tvROM.setColumnHidden(k, True)
         self.tvROM.resizeColumnsToContents()
 
@@ -317,7 +322,7 @@ class PatientDialog(QtWidgets.QMainWindow):
             rec.value('lastname'),
             rec.value('ssn'),
             rec.value('patient_code'),
-            rec.value('diagnosis')
+            rec.value('diagnosis'),
         )
 
     @property
@@ -365,9 +370,15 @@ class PatientDialog(QtWidgets.QMainWindow):
                 idx = self.patient_model.index(k, 1, QtCore.QModelIndex())
                 idx_filter = self.patient_filter.mapFromSource(idx)
                 self.tvPatient.selectionModel().select(
-                    idx_filter, QtCore.QItemSelectionModel.ClearAndSelect | QtCore.QItemSelectionModel.Rows)
+                    idx_filter,
+                    QtCore.QItemSelectionModel.ClearAndSelect
+                    | QtCore.QItemSelectionModel.Rows,
+                )
                 self.tvPatient.selectionModel().setCurrentIndex(
-                    idx_filter, QtCore.QItemSelectionModel.ClearAndSelect | QtCore.QItemSelectionModel.Rows)
+                    idx_filter,
+                    QtCore.QItemSelectionModel.ClearAndSelect
+                    | QtCore.QItemSelectionModel.Rows,
+                )
                 self.tvPatient.scrollTo(idx_filter)
                 break
 
@@ -379,15 +390,20 @@ class PatientDialog(QtWidgets.QMainWindow):
         q = self.database.exec('SELECT ssn, patient_code FROM patients')
         while q.next():
             if q.value(0) == p.ssn:
-                return(False, 'Patient with this SSN already exists in database')
+                return (False, 'Patient with this SSN already exists in database')
             elif q.value(1) == p.patient_code:
-                return (False, 'Patient with this patient code already exists in database')
+                return (
+                    False,
+                    'Patient with this patient code already exists in database',
+                )
         return p.is_valid()
 
     def _update_patient(self, p, patient_id):
         """Update an existing patient record"""
         q = QtSql.QSqlQuery(self.database)
-        q.prepare('UPDATE patients SET firstname = :firstname, lastname = :lastname, ssn = :ssn, patient_code = :patient_code, diagnosis = :diagnosis WHERE patient_id = :patient_id')
+        q.prepare(
+            'UPDATE patients SET firstname = :firstname, lastname = :lastname, ssn = :ssn, patient_code = :patient_code, diagnosis = :diagnosis WHERE patient_id = :patient_id'
+        )
         for field in fields(p):
             q.bindValue(':' + field.name, getattr(p, field.name))
         q.bindValue(':patient_id', patient_id)
@@ -399,7 +415,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         """Insert a Patient instance into the database."""
         q = QtSql.QSqlQuery(self.database)
         q.prepare(
-            'INSERT INTO patients (firstname, lastname, ssn, patient_code, diagnosis) VALUES (:firstname, :lastname, :ssn, :patient_code, :diagnosis)')
+            'INSERT INTO patients (firstname, lastname, ssn, patient_code, diagnosis) VALUES (:firstname, :lastname, :ssn, :patient_code, :diagnosis)'
+        )
         for field in fields(p):
             q.bindValue(':' + field.name, getattr(p, field.name))
         if not q.exec():
@@ -413,8 +430,11 @@ class PatientDialog(QtWidgets.QMainWindow):
             return
         rec = self.patient_model.record(self._current_patient_row)
         patient_id = rec.value('patient_id')
-        firstname, lastname, ssn = rec.value(
-            'firstname'), rec.value('lastname'), rec.value('ssn')
+        firstname, lastname, ssn = (
+            rec.value('firstname'),
+            rec.value('lastname'),
+            rec.value('ssn'),
+        )
         msg = f"WARNING: are you sure you want to delete the patient\n\n"
         msg += f"{firstname} {lastname}, {ssn}\n\n"
         msg += f"and ALL associated measurements? There is no undo."
@@ -488,7 +508,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         datestr = datetime.datetime.now().strftime('%d.%m.%Y')
         q = QtSql.QSqlQuery(self.database)
         q.prepare(
-            'INSERT INTO roms (patient_id, TiedotPvm) VALUES (:patient_id, :datestr)')
+            'INSERT INTO roms (patient_id, TiedotPvm) VALUES (:patient_id, :datestr)'
+        )
         q.bindValue(':patient_id', patient_id)
         q.bindValue(':datestr', datestr)
         if not q.exec():
@@ -542,8 +563,8 @@ def main():
     pdi = PatientDialog()
 
     def my_excepthook(type, value, tback):
-        """ Custom exception handler for fatal (unhandled) exceptions:
-        report to user via GUI and terminate program. """
+        """Custom exception handler for fatal (unhandled) exceptions:
+        report to user via GUI and terminate program."""
         tb_full = ''.join(traceback.format_exception(type, value, tback))
         msg = f'Oops! An unhandled exception occurred:\n{tb_full}'
         msg += '\nThe application will be closed now.'
