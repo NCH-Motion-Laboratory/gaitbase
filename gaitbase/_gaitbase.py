@@ -464,6 +464,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         app = EntryApp(self.database, rom_id, False)
         fn = _named_tempfile(suffix='.xls')
         app.make_excel_report().save(fn)
+        # open the file in the Windows app registered for .xls files
         os.startfile(fn)
         app.force_close()
 
@@ -479,6 +480,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         report_txt = app.make_txt_report(app.text_template)
         with open(fn, 'w', encoding='utf-8') as f:
             f.write(report_txt)
+        # open the file in the Windows app registered for .txt files
         os.startfile(fn)
         app.force_close()
 
