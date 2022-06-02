@@ -76,15 +76,13 @@ class DegLineEdit(QtWidgets.QLineEdit):
 
 
 class CheckDegSpinBox(QtWidgets.QWidget):
-    """Custom widget: Spinbox (degrees) with checkbox signaling
-    "default value". If checkbox is checked, disable spinbox,
-    in which case value() will return
-    the default value shown next to checkbox (defaultText property).
-    Otherwise value() will return the spinbox value.
-    setValue() takes either the default value, the 'special value'
-    (not measured) or integer.
+    """Custom widget: Spinbox (degrees) with checkbox, which indicates
+    a 'default' value. If the checkbox is checked, disable spinbox, in which
+    case value() will return the default value shown next to checkbox
+    (defaultText property). Otherwise value() will return the spinbox value.
+    setValue() takes either the default value, the 'special value' (not
+    measured) or an integer.
     """
-
     # signal has to be defined here for unclear reasons
     # note that currently the value is not returned by the signal
     # (unlike in the Qt spinbox)
@@ -117,12 +115,11 @@ class CheckDegSpinBox(QtWidgets.QWidget):
         self.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.setFocusProxy(self.degSpinBox)
 
-        """ Widget defaults are tailored for this program. For some instances
-        of the widget, these values will be modified already by Qt Designer
-        (in the .ui file), so we set them only here and do not touch them
-        later in the code. If exporting the widget, these can be deleted or
-        set to some other constants.
-        """
+        # Widget defaults are tailored for this program. For some instances
+        # of the widget, these values will be modified already by Qt Designer
+        # (in the .ui file), so we set them only here and do not touch them
+        # later in the code. If exporting the widget, these can be deleted or
+        # set to some other constants.
         self.setDefaultText('NR')
         self.setSuffix('°')
         # the minimum is also the "special" value, which causes the widget to
