@@ -25,12 +25,10 @@ if cfg_user_fn.is_file():
     logger.debug(f'reading user config from {cfg_user_fn}')
     cfg_user = parse_config(cfg_user_fn)
     # update config from user file, but do not overwrite comments
-    # new config items are only allowed in layouts section
     update_config(
         cfg,
         cfg_user,
         create_new_sections=False,
-        create_new_items=['layouts'],
         update_comments=False,
     )
 else:
