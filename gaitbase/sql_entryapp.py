@@ -1,69 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-XXX: these should go into separate tech notes
-
-
-Program for input and reporting of ROM (range of motion), strength and other
-measurements.
-
-Instead of saving to JSON, this version works directly with a SQL database.
-
-Notes:
-
--We don't do any type conversion before SQL writes. For a given variable, the
-type of the value might change from one write to another (i.e. from string "Ei
-mitattu" to float 5.0). This works with SQLite, since it uses dynamic typing.
-For any other database engine, it will be necessary to convert the values on
-read/write, so that static types are maintained.
-
--The SQL database uses NULL as a marker for values that are completely missing
-(e.g. due to schema changes). These can only be read correctly by disabling
-PyQt type autoconversion, reading data as QVariants and using isNull() to detect
-NULLs. Hence, we do all SQL reads with the autoconversion disabled.
-
--The sqlite3 database writes require an EXCLUSIVE lock while they are carried
-out. This means that all SHARED locks must be released before writes can take
-place. For example, QtSql may hold SHARED locks indefinitely in some
-circumstances (e.g. lazy reads), preventing writes (at least writes from different
-processes). These problems must be worked around, i.e. locks released as soon as
-possible after reads are completed.
-
--To write numerical variables (such as angles) we use the NUMERIC affinity. A
-side effect of the above is that all float values without a decimal part (e.g. 5.0)
-will be written into the database as integers (5). In this respect, the saved
-data differs from the original JSON format, which preservers float values.
-
--For now, new ROMs also will be dumped into JSON files (just in case).
-
--There's a custom widget (CheckDegSpinBox). To properly see it in Qt Designer,
-the plugin file checkspinbox_plugin.py should be made available. Before running
-Qt Designer, do 'export PYQTDESIGNERPATH=path' where path is the path to the
-plugin.
-
--Input widget naming convention: first 2-3 chars indicate widget type
- (mandatory), next word indicate variable category or page where widget
- resides the rest indicates the variable. E.g. 'lnTiedotNimi'
- 
- -specially named widgets are automatically recognized as data inputs:
- widgets whose names start with one of 'ln', 'sp', 'csb', 'xb', or 'cmt'
- 
--data inputs are updated into an internal dict whenever any value changes
-
--dict keys are taken automatically from widget names by removing first 2-3
- chars (widget type)
-
--for certain inputs, there is a special value indicating "not measured". For
-text inputs, this is just the empty string. For comboboxes, there is a
-distinct "not measured" value. For spinboxes, Qt supports a special value text
-that will be shown whenever the widget is at its minimum value. When values are
-read from spinboxes, the minimum value is automatically converted (by us) to
-a minimum value string.
-
--magic mechanism for weight normalized data: widgets can have names ending
-with 'NormUn' which creates a weight unnormalized value. The
-corresponding widget name with UnNorm replaced by Norm (which must exist)
-is then automatically updated whenever either weight or the unnormalized value
-changes
 
 @author: Jussi (jnu@iki.fi)
 """
@@ -77,11 +13,6 @@ from PyQt5 import uic, QtCore, QtWidgets
 import webbrowser
 import logging
 from pkg_resources import resource_filename
-
-# DEBUG
-#import debugpy
-#debugpy.debug_this_thread()
-
 
 from .constants import Constants, Finnish
 from .config import cfg
