@@ -374,7 +374,7 @@
              <x>0</x>
              <y>0</y>
              <width>1363</width>
-             <height>917</height>
+             <height>823</height>
             </rect>
            </property>
            <property name="palette">
@@ -15411,7 +15411,7 @@ lonkka fleksiossa</string>
   <customwidget>
    <class>CheckDegSpinBox</class>
    <extends>QWidget</extends>
-   <header>liikelaaj.widgets</header>
+   <header>gaitbase.widgets</header>
   </customwidget>
  </customwidgets>
  <tabstops>

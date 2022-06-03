@@ -12,7 +12,7 @@ methods not being provided, but it works. Before running Qt Designer, do
 @author: Jussi (jnu@iki.fi)
 """
 
-from .widgets import CheckDegSpinBox
+from gaitbase.widgets import CheckDegSpinBox
 from PyQt5 import QtDesigner
 
 

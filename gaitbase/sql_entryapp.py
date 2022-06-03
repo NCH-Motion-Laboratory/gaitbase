@@ -78,6 +78,10 @@ import webbrowser
 import logging
 from pkg_resources import resource_filename
 
+# DEBUG
+#import debugpy
+#debugpy.debug_this_thread()
+
 
 from .constants import Constants, Finnish
 from .widgets import (
@@ -336,6 +340,7 @@ class EntryApp(QtWidgets.QMainWindow):
 
         # CheckDegSpinBoxes get a special LineEdit that catches space
         # and mouse press events
+
         for w in self.findChildren(CheckDegSpinBox):
             w.degSpinBox.setLineEdit(DegLineEdit())
 
