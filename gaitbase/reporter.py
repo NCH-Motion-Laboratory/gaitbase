@@ -101,19 +101,19 @@ class Report():
                 yield items[1]  # = the field
 
     def make_text_report(self, py_template):
-        """Create report using the template py_template
-        We want to use the code in py_template to modify a local variable,
-        however function locals cannot be directly modified. Thus we pass
-        in another dict to hold the modified values."""
+        """Create report using the Python template py_template.
+        Input is the path to the template. Output is the report text (str)."""
         report = self  # the Report instance to modify
         # any other variables needed by the template
         checkbox_yes = Constants.checkbox_yestext
-        ldict = locals()
-        # the recommended Python 3 alternative to execfile()
-        # exec() arguments for globals and locals are a bit tricky. this form
-        # allows us to read in the function local namespace and modify it
+        ldict = locals()  # gather the function local variables
+        # exec() arguments for globals and locals are a bit tricky. This form
+        # allows us to read in the function local namespace and modify it.
+        # function locals cannot be directly modified, but the modified values
+        # will appear in ldict
         exec(compile(open(py_template, "rb").read(), py_template, 'exec'),
              ldict, ldict)
+        # return the text
         return ldict['report'].text
 
     def make_excel_report(self, xls_template):

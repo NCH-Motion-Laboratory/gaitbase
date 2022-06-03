@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-Template for text report.
+Python template for the text report. This is a Python file called by exec() and
+works by modifying an existing variable called 'report' (instance of Report
+class).
 
-This is called by exec() and works by modifying an existing variable
-called 'report' (instance of Report class)
+The idea is to add 'text blocks' to the Report instance one by one. The fields
+are automatically filled in by the Report class. If all variables for the block
+have default values (i.e. were not measured) the Report instance will discard
+that block.
 
-The idea is to avoid putting the template code inside a function
-call, which would lead to messy indentation.
+The philosophy is to have the template as text-like as possible for maximum
+readability, and minimize the use of Python code inside the template.
 
 @author: Jussi (jnu@iki.fi)
 """
