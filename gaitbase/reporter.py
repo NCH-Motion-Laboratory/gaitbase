@@ -107,8 +107,6 @@ class Report():
         """Create report using the Python template py_template.
         Input is the path to the template. Output is the report text (str)."""
         report = self  # the Report instance to modify
-        # any other variables needed by the template
-        checkbox_yes = Constants.checkbox_yestext
         ldict = locals()  # gather the function local variables
         # exec() arguments for globals and locals are a bit tricky. This form
         # allows us to read in the function local namespace and modify it.

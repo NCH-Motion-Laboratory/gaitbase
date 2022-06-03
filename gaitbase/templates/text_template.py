@@ -14,6 +14,7 @@ readability, and minimize the use of Python code inside the template.
 
 @author: Jussi (jnu@iki.fi)
 """
+from ..constants import Constants
 
 report += """
 
@@ -278,7 +279,7 @@ emg_chs = {'EMGSol': 'soleus',
            'EMGGlut': 'gluteus'}
 
 emgs_in_use = [desc for ch, desc in emg_chs.items()
-               if report.data[ch] == checkbox_yes]
+               if report.data[ch] == Constants.checkbox_yes]
 emgs_str = ', '.join(emgs_in_use)
 
 if emgs_str:
