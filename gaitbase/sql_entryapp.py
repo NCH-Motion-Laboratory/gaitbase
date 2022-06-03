@@ -152,8 +152,9 @@ class EntryApp(QtWidgets.QMainWindow):
         self.database = database
         self.rom_id = rom_id
         self.newly_created = newly_created
-        # the read only fields are uneditable, they reside in the patients table
-        self.init_readonly_fields()
+        if database is not None:
+            # the read only fields are uneditable, they reside in the patients table
+            self.init_readonly_fields()
         if newly_created:
             # automatically set the date field
             datestr = datetime.datetime.now().strftime('%d.%m.%Y')
@@ -162,7 +163,8 @@ class EntryApp(QtWidgets.QMainWindow):
             self.values_changed(self.lnTiedotPvm)
         else:
             # for existing entry, read values from database
-            self._read_data()
+            if database is not None:
+                self._read_data()
         self.BACKUP_NEW_ROMS = True  # also dump new ROMs into JSON files
 
     def force_close(self):

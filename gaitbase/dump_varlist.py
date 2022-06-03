@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 
-Dump current variable list
+Write all variables and their (sqlite) affinity values into a text file.
 
 @author: jussi (jnu@iki.fi)
 """
@@ -35,7 +35,7 @@ def _type_affinity(wname):
 
 
 app = QtWidgets.QApplication(sys.argv)  # needed for Qt stuff to function
-eapp = EntryApp()
+eapp = EntryApp(None, None, False)
 with io.open(fn_out, 'w', encoding='utf-8') as f:
     widget_aff = {val: _type_affinity(key) for key, val in eapp.widget_to_var.items()}
     f.write(json.dumps(widget_aff, ensure_ascii=False, indent=True, sort_keys=True))
