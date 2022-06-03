@@ -11,7 +11,7 @@ def confirm_dialog(msg):
     """Show yes/no dialog."""
     dlg = QtWidgets.QMessageBox()
     dlg.setText(msg)
-    dlg.setWindowTitle(Finnish.message_title)
+    dlg.setWindowTitle(Constants.dialog_title)
     dlg.addButton(
         QtWidgets.QPushButton(Finnish.yes_button), QtWidgets.QMessageBox.YesRole
     )
@@ -25,7 +25,7 @@ def confirm_dialog(msg):
 def message_dialog(msg):
     """Show message with an 'OK' button."""
     dlg = QtWidgets.QMessageBox()
-    dlg.setWindowTitle(Finnish.message_title)
+    dlg.setWindowTitle(Constants.dialog_title)
     dlg.setText(msg)
     dlg.addButton(
         QtWidgets.QPushButton(Finnish.ok_button), QtWidgets.QMessageBox.YesRole

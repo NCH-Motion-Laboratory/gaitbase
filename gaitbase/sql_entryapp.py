@@ -529,11 +529,6 @@ class EntryApp(QtWidgets.QMainWindow):
         else:
             return True, ''
 
-    @staticmethod
-    def open_help():
-        """Show help."""
-        webbrowser.open(Constants.help_url)
-
     def values_changed(self, w):
         """Called whenever value of a widget (w) changes.
 

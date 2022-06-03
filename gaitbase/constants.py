@@ -9,15 +9,15 @@ from pathlib import Path
 
 @dataclass
 class Constants:
-    # misc constants    
+    """Some constants"""
+    dialog_title: str = 'Gaitbase'
     xls_template: str = 'templates/rom_excel_template.xls'
     text_template: str = 'templates/text_template.py'
-    help_url: str = 'https://github.com/jjnurminen/gaitbase/wiki'
-    # The 'not measured' value for spinboxes. For regular spinboxes, this
-    # is the value that gets written to data files, but it does not affect
-    # the value shown next to the spinbox (which is set in Qt Designer).
-    # For the CheckDegSpinBox class, this is also the value shown next to the
-    # widget in the user interface.
+    # The 'not measured' value for spinboxes. For regular spinboxes, this is the
+    # value that gets written to data files, but it does not affect the value
+    # shown next to the spinbox (which is set in Qt Designer). For the
+    # CheckDegSpinBox class, this is also the value shown next to the widget in
+    # the user interface.
     spinbox_novalue_text: str = 'Ei mitattu'
     # 'yes' and 'no' values for checkboxes. Written to data files.
     checkbox_yestext: str = 'Kyllä'
@@ -30,8 +30,7 @@ class Constants:
 
 @dataclass
 class Finnish:
-    # some English -> Finnish translations
-    message_title: str = 'Gaitbase'
+    """Some English->Finnish translations"""
     yes_button: str = 'Kyllä'
     no_button: str = 'Ei'
     ok_button: str = 'Ok'
