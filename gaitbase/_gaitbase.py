@@ -28,11 +28,11 @@ from pkg_resources import resource_filename
 import sys
 
 from ulstools.num import check_hetu
-from ulstools.env import make_shortcut
+from ulstools.env import make_shortcut, named_tempfile
 
 from .sql_entryapp import EntryApp
 from .widgets import message_dialog
-from .utils import _named_tempfile, validate_code
+from .utils import validate_code
 from .config import cfg
 
 
@@ -462,7 +462,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         # we use an EntryApp instance to create the report
         # the instance is not shown as a window
         app = EntryApp(self.database, rom_id, False)
-        fn = _named_tempfile(suffix='.xls')
+        fn = named_tempfile(suffix='.xls')
         app.make_excel_report().save(fn)
         os.startfile(fn)
         app.force_close()
@@ -475,7 +475,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         # we use an EntryApp instance to create the report
         # the instance is not shown as a window
         app = EntryApp(self.database, rom_id, False)
-        fn = _named_tempfile(suffix='.txt')
+        fn = named_tempfile(suffix='.txt')
         report_txt = app.make_txt_report(app.text_template)
         with open(fn, 'w', encoding='utf-8') as f:
             f.write(report_txt)

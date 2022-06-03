@@ -10,22 +10,6 @@ import os
 import tempfile
 
 
-def _named_tempfile(suffix=None):
-    """Return a name for a temporary file.
-    Does not open the file. Cross-platform. Replaces tempfile.NamedTemporaryFile
-    which behaves strangely on Windows.
-    """
-    LEN = 12  # length of basename
-    if suffix is None:
-        suffix = ''
-    elif suffix[0] != '.':
-        raise ValueError('Invalid suffix, must start with dot')
-    basename = os.urandom(LEN)  # get random bytes
-    # convert to hex string
-    basename = basename.hex()
-    return tempfile.gettempdir() / Path(basename).with_suffix(suffix)
-
-
 def _random_hetu():
     """Generate random Finnish SSN"""
     d = random.randint(1, 28)
