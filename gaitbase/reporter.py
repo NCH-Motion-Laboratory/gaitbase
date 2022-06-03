@@ -10,8 +10,6 @@ import string
 from xlrd import open_workbook
 from xlutils.copy import copy
 
-from .constants import Constants
-
 
 # Next 2 xlrd hacks copied from:
 # http://stackoverflow.com/questions/3723793/
@@ -104,18 +102,10 @@ class Report():
                 yield items[1]  # = the field
 
     def make_text_report(self, py_template):
-        """Create report using the Python template py_template.
-        Input is the path to the template. Output is the report text (str)."""
-        report = self  # the Report instance to modify
-        ldict = locals()  # gather the function local variables
-        # exec() arguments for globals and locals are a bit tricky. This form
-        # allows us to read in the function local namespace and modify it.
-        # function locals cannot be directly modified, but the modified values
-        # will appear in ldict
+        """Create report using the Python template py_template"""
         code = compile(open(py_template, "rb").read(), py_template, 'exec')
-        exec(code, ldict, ldict)
-        # return the text
-        return ldict['report'].report_text
+        exec(code, locals()) # execute the report code; it directly modifies self
+        return self.report_text
 
     def make_excel_report(self, xls_template):
         """Create an Excel report (xlrd workbook) from a template.
