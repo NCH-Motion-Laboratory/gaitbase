@@ -612,14 +612,14 @@ class EntryApp(QtWidgets.QMainWindow):
         # ID data is not updated from widgets in the SQL version, so get it separately
         rdata = data | self.get_patient_id_data()
         rep = reporter.Report(rdata, self.vars_default)
-        return rep.make_report(template)
+        return rep.make_text_report(template)
 
     def make_excel_report(self):
         """Create Excel report from current data"""
         # ID data is not updated from widgets in the SQL version, so get it separately
         rdata = self.data | self.get_patient_id_data()
         rep = reporter.Report(rdata, self.vars_default)
-        return rep.make_excel(self.xls_template)
+        return rep.make_excel_report(self.xls_template)
 
     def n_modified(self):
         """Count modified values."""
