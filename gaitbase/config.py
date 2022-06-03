@@ -12,7 +12,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 # location of the default config file
-cfg_template_fn = resource_filename(__name__, 'data/default.cfg')
+cfg_package_fn = resource_filename(__name__, 'data/default.cfg')
 # Location of the user specific config file. On Windows, this typically puts the
 # config at C:\Users\Username, since the USERPROFILE environment variable points
 # there. Putting the config in a networked home dir requires some tinkering with
@@ -20,11 +20,11 @@ cfg_template_fn = resource_filename(__name__, 'data/default.cfg')
 cfg_user_fn = Path.home() / '.gaitbase.cfg'
 
 # provide the global cfg instance
-cfg = parse_config(cfg_template_fn)
+cfg = parse_config(cfg_package_fn)
+# update cfg from user file, but do not overwrite comments
 if cfg_user_fn.is_file():
     logger.debug(f'reading user config from {cfg_user_fn}')
     cfg_user = parse_config(cfg_user_fn)
-    # update config from user file, but do not overwrite comments
     update_config(
         cfg,
         cfg_user,
@@ -36,3 +36,14 @@ else:
     cfg_txt = dump_config(cfg)
     with open(cfg_user_fn, 'w', encoding='utf8') as f:
         f.writelines(cfg_txt)
+
+# revert user-defined paths if they are invalid
+cfg_package = parse_config(cfg_package_fn)
+
+if not Path(cfg.templates.text).is_file():
+    logger.warning(f'configured text template {cfg.templates.text} not found - using default')
+    cfg.templates.text = cfg_package.templates.text
+
+if not Path(cfg.templates.xls).is_file():
+    logger.warning(f'configured XLS template {cfg.templates.xls} not found - using default')
+    cfg.templates.xls = cfg_package.templates.xls
