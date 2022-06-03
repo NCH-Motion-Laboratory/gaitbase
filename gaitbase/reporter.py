@@ -95,7 +95,8 @@ class Report():
     @staticmethod
     def _get_fields(s):
         """Yield fields from a format string, e.g.
-        '{foo} is {bar}'  ->  ['foo', 'bar']  """
+        input: '{foo} is {bar}', output: ('foo', 'bar')
+        """
         fi = string.Formatter()
         pit = fi.parse(s)  # returns parser generator
         for items in pit:
@@ -116,7 +117,7 @@ class Report():
         exec(compile(open(py_template, "rb").read(), py_template, 'exec'),
              ldict, ldict)
         # return the text
-        return ldict['report'].text
+        return ldict['report'].report_text
 
     def make_excel_report(self, xls_template):
         """Create an Excel report (xlrd workbook) from a template.

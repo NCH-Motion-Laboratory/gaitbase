@@ -4,10 +4,10 @@ Python template for the text report. This is a Python file called by exec() and
 works by modifying an existing variable called 'report' (instance of Report
 class).
 
-The idea is to add 'text blocks' to the Report instance one by one. The fields
-are automatically filled in by the Report class. If all variables for the block
-have default values (i.e. were not measured) the Report instance will discard
-that block.
+The idea is to add 'text blocks' containing text and fields to a Report()
+instance (called report) one by one. The field values are automatically filled
+in by the Report class. If all variables for the block have default values (i.e.
+were not measured) the Report instance will discard that block.
 
 The philosophy is to have the template as text-like as possible for maximum
 readability, and minimize the use of Python code inside the template.

@@ -129,7 +129,7 @@
       <item row="7" column="0">
        <widget class="QPushButton" name="btnOpenROMExcel">
         <property name="text">
-         <string>Open Excel report</string>
+         <string>Generate Excel report</string>
         </property>
        </widget>
       </item>
@@ -143,7 +143,7 @@
       <item row="7" column="1">
        <widget class="QPushButton" name="btnOpenROMText">
         <property name="text">
-         <string>Open text report</string>
+         <string>Generate text report</string>
         </property>
        </widget>
       </item>
