@@ -147,9 +147,6 @@ class EntryApp(QtWidgets.QMainWindow):
         # whether to update internal dict of variables on input changes
         self.update_dict = True
         self.text_template = resource_filename('gaitbase', Constants.text_template)
-        self.isokin_text_template = resource_filename(
-            'gaitbase', Constants.isokin_text_template
-        )
         self.xls_template = resource_filename('gaitbase', Constants.xls_template)
         self.database = database
         self.rom_id = rom_id

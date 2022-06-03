@@ -13,7 +13,6 @@ class Constants:
     global_fontsize: int = 11
     xls_template: str = 'templates/rom_excel_template.xls'
     text_template: str = 'templates/text_template.py'
-    isokin_text_template: str = 'templates/isokin_text_template.py'
     help_url: str = 'https://github.com/jjnurminen/gaitbase/wiki'
     # The 'not measured' value for spinboxes. For regular spinboxes, this
     # is the value that gets written to data files, but it does not affect
