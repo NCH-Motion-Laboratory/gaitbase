@@ -6,13 +6,12 @@ Dump current variable list
 @author: jussi (jnu@iki.fi)
 """
 
-import imp
 import json
 import sys
 import io
 from PyQt5 import QtWidgets
 
-from .sql_entryapp import EntryApp
+from gaitbase.sql_entryapp import EntryApp
 
 fn_out = "variable_affinity.txt"
 
@@ -36,8 +35,7 @@ def _type_affinity(wname):
 
 
 app = QtWidgets.QApplication(sys.argv)  # needed for Qt stuff to function
-eapp = EntryApp(check_temp_file=False)
+eapp = EntryApp()
 with io.open(fn_out, 'w', encoding='utf-8') as f:
     widget_aff = {val: _type_affinity(key) for key, val in eapp.widget_to_var.items()}
-
     f.write(json.dumps(widget_aff, ensure_ascii=False, indent=True, sort_keys=True))
