@@ -10,7 +10,6 @@ from pathlib import Path
 @dataclass
 class Constants:
     # misc constants    
-    global_fontsize: int = 11
     xls_template: str = 'templates/rom_excel_template.xls'
     text_template: str = 'templates/text_template.py'
     help_url: str = 'https://github.com/jjnurminen/gaitbase/wiki'

@@ -84,6 +84,7 @@ from pkg_resources import resource_filename
 
 
 from .constants import Constants, Finnish
+from .config import cfg
 from .widgets import (
     MyLineEdit,
     DegLineEdit,
@@ -459,7 +460,7 @@ class EntryApp(QtWidgets.QMainWindow):
             self.widget_to_var[wname] = varname
 
         # try to increase font size
-        self.setStyleSheet('QWidget { font-size: %dpt;}' % Constants.global_fontsize)
+        self.setStyleSheet('QWidget { font-size: %dpt;}' % cfg.visual.fontsize)
 
         # FIXME: make sure we always start on 1st tab
 
