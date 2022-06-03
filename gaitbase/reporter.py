@@ -114,8 +114,8 @@ class Report():
         # allows us to read in the function local namespace and modify it.
         # function locals cannot be directly modified, but the modified values
         # will appear in ldict
-        exec(compile(open(py_template, "rb").read(), py_template, 'exec'),
-             ldict, ldict)
+        code = compile(open(py_template, "rb").read(), py_template, 'exec')
+        exec(code, ldict, ldict)
         # return the text
         return ldict['report'].report_text
 
