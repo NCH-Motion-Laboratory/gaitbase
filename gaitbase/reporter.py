@@ -40,45 +40,47 @@ def _setOutCell(outSheet, col, row, value):
 
 
 class Report():
-    """A simple template engine. For example, the template text may be
-    'Name: {name} Age: {Age}' and the data may be {'Name': 'John', 'Age': 30}.
-    The fields in the template are filled in using the data, resulting in
-    the string 'Name: John Age: 30'
-    This is similar to Python text formatting, but it has a simple conditional
-    formatting feature: if all the data for a given template are 'default', an
-    empty block will be returned. The purpose is to easily generate reports
-    where sections with missing data are not printed at all."""
+    """A class to create text and Excel (.xls) reports from data.
+    
+    The report is based on a simple template engine. For example, the template
+    text may be 'Name: {name} Age: {Age}' and the data may be {'Name': 'John',
+    'Age': 30}. The fields in the template are filled in using the data,
+    resulting in the string 'Name: John Age: 30'. This is similar to Python text
+    formatting, but it has a simple conditional formatting feature: if all the
+    data for a given template are 'default', an empty block will be returned.
+    The purpose is to easily generate reports where blocks with no input data
+    are not printed at all."""
 
-    def __init__(self, data, fields_default):
-        """Init report with data dict."""
+    def __init__(self, data, field_default_vals):
+        """Init report with data."""
         # text replacements for text report, to make it prettier
         self.text_replace_dict = {'Ei mitattu': '-', 'EI': 'Ei'}
         # string replacements to be done in Excel report cells
         # these will be applied after filling in the data
         self.cell_postprocess_dict = {'(EI)': '', '(Kyllä)': '(kl.)'}
-        self.text = ''  # the report text
+        self.report_text = ''
         self.data = data.copy()  # be sure not to mutate args
         self.data_text = data.copy()
         for key, it in self.data_text.items():
             if it in self.text_replace_dict:
                 self.data_text[key] = self.text_replace_dict[it]
-        self.fields_default = fields_default
+        self.fields_default = field_default_vals
         self._item_separator = '. '  # inserted by item_sep()
 
     def __add__(self, s):
-        """ Format and add a text block to report """
-        self.text += self._cond_format(s, self.data_text)
+        """Format and add a text block to report"""
+        self.report_text += self._cond_format(s, self.data_text)
         return self
 
     def item_sep(self):
         """Insert item separator if appropriate"""
         seplen = len(self._item_separator)
-        if (self.text[-seplen:] != self._item_separator and
-           self.text[-2:] != ': '):  # bit of a hack
-            self.text += self._item_separator
+        if (self.report_text[-seplen:] != self._item_separator and
+           self.report_text[-2:] != ': '):  # bit of a hack
+            self.report_text += self._item_separator
 
     def __repr__(self):
-        return self.text
+        return self.report_text
 
     def _cond_format(self, s, data):
         """ Conditionally format string s. Fields given as {variable} are
