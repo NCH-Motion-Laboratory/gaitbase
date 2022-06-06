@@ -1,37 +1,81 @@
-XXX: these should go into separate tech notes
 
 
-Program for input and reporting of ROM (range of motion), strength and other
-measurements.
+gaitbase
+========
 
-Instead of saving to JSON, this version works directly with a SQL database.
 
-Notes:
+Introduction
+------------
 
--We don't do any type conversion before SQL writes. For a given variable, the
-type of the value might change from one write to another (i.e. from string "Ei
-mitattu" to float 5.0). This works with SQLite, since it uses dynamic typing.
-For any other database engine, it will be necessary to convert the values on
-read/write, so that static types are maintained.
+This is a simple patient database. It is implemented as a SQLite database, where
+a table called PATIENTS holds information about patients (name, SSN, diagnosis etc.).
+Additionally, different measurements or imaging results associated with valid
+patients can be entered into the database. Currently, there is one additional
+table called ROMS, which holds range-of-motion and strength measurements. 
 
--The SQL database uses NULL as a marker for values that are completely missing
+gaitbase offers a PyQt5 graphical interface to browse and search patient
+records. It also displays different measurements associated with the patients. 
+
+
+Database notes
+--------------
+
+- Having a SQLite database file on a network drive is not really kosher. A proper
+database server would be the more correct solution. However, database servers have
+their disadvantages. A server needs to be set up and maintained, the database
+must be backed up etc. Additionally, it's tricky (if even possible) to set up access
+to a database server from outside the hospital. The network drives, on the other
+hand, are easy to access using VPN from home. 
+
+- While the above approach has worked thus far, multiple clients can cause a
+significant slowdown in database access. The reason is probably that Windows
+network filesystems disable caching when multiple clients perform read/write
+access on the file.
+
+- sqlite3 database writes require an EXCLUSIVE lock while they are carried out.
+This means that all SHARED locks must be released before writes can take place.
+For example, QtSql may hold SHARED locks indefinitely in some circumstances
+(e.g. lazy reads), preventing writes (at least writes from different processes).
+These problems must be worked around, i.e. locks released as soon as possible
+after reads are completed.
+
+- gaitbase doesn't do any type conversion before SQL writes. For a given variable,
+the type of the value might change from one write to another (i.e. from string
+"Ei mitattu" to float 5.0). This is possible with SQLite, since it uses dynamic
+typing. For any other database engine, it will be necessary to convert the
+values on read/write, so that static types are maintained.
+
+- To write numerical variables (such as angles) we use the NUMERIC affinity,
+which is a "smart" affinity provided by SQLite. A side effect is that all float
+values without a decimal part (e.g. 5.0) will be interpreted and written into
+the database as integers (5). 
+
+- The SQL database uses NULL as a marker for values that are completely missing
 (e.g. due to schema changes). These can only be read correctly by disabling
 PyQt type autoconversion, reading data as QVariants and using isNull() to detect
 NULLs. Hence, we do all SQL reads with the autoconversion disabled.
 
--The sqlite3 database writes require an EXCLUSIVE lock while they are carried
-out. This means that all SHARED locks must be released before writes can take
-place. For example, QtSql may hold SHARED locks indefinitely in some
-circumstances (e.g. lazy reads), preventing writes (at least writes from different
-processes). These problems must be worked around, i.e. locks released as soon as
-possible after reads are completed.
 
--To write numerical variables (such as angles) we use the NUMERIC affinity. A
-side effect of the above is that all float values without a decimal part (e.g. 5.0)
-will be written into the database as integers (5). In this respect, the saved
-data differs from the original JSON format, which preservers float values.
 
--For now, new ROMs also will be dumped into JSON files (just in case).
+ROM table and user interface
+----------------------------
+
+- There is a separate user interface (sql_entryapp.py) for viewing and editing ROM
+measurements. There are currently 300+ different measurements organized into
+several tabs.
+
+- The interface (tabbed_design_sql.ui) is created in Qt Designer.
+
+- To introduce a new measurement, two things need to be done: create a widget
+and add the corresponding name into the ROM table schema. The user interface
+relies on special widget names to identify measured values. 
+
+
+
+
+
+
+
 
 -There's a custom widget (CheckDegSpinBox). To properly see it in Qt Designer,
 the plugin file checkspinbox_plugin.py should be made available. Before running
