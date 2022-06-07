@@ -122,7 +122,7 @@ class EntryApp(QtWidgets.QMainWindow):
 
     closing = QtCore.pyqtSignal(object)
 
-    def __init__(self, database, rom_id, newly_created=None):
+    def __init__(self, database=None, rom_id=None, newly_created=None):
         super().__init__()
         # load user interface made with Qt Designer
         uifile = resource_filename('gaitbase', 'tabbed_design_sql.ui')
@@ -152,14 +152,15 @@ class EntryApp(QtWidgets.QMainWindow):
         self.rom_id = rom_id
         self.newly_created = newly_created
         # the read only fields are uneditable, they reside in the patients table
-        self.init_readonly_fields()
+        if database is not None:
+            self.init_readonly_fields()
         if newly_created:
             # automatically set the date field
             datestr = datetime.datetime.now().strftime('%d.%m.%Y')
             self.lnTiedotPvm.setText(datestr)
             # for a newly created entry, initialize the database row w/ default values
             self.values_changed(self.lnTiedotPvm)
-        else:
+        elif database is not None:
             # for existing entry, read values from database
             self._read_data()
         self.BACKUP_NEW_ROMS = True  # also dump new ROMs into JSON files
