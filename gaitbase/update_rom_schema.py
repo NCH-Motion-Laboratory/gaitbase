@@ -34,7 +34,8 @@ allvars = set(var_affs_sql).union(var_affs_ui)
 # compare
 for var in allvars:
     if var not in var_affs_sql:
-        print(f'variable {var} missing from SQL schema, adding it...')
+        print(f'*** variable {var} missing from SQL schema, adding it...')
+        aff = var_affs_ui[var]
         conn.execute(f'ALTER TABLE roms ADD COLUMN {var} {aff}')
     if var not in var_affs_ui:
         print(f"note: SQL var '{var}' does not appear in UI")
