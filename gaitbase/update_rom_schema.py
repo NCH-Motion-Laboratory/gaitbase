@@ -37,7 +37,7 @@ for var in allvars:
         print(f'variable {var} missing from SQL schema, adding it...')
         conn.execute(f'ALTER TABLE roms ADD COLUMN {var} {aff}')
     if var not in var_affs_ui:
-        print(f"note: var '{var}' does not appear in SQL schema")
+        print(f"note: SQL var '{var}' does not appear in UI")
     if var in var_affs_sql and var in var_affs_ui:
         if var_affs_ui[var] != var_affs_sql[var]:
             print(f"'{var}' affinity mismatch between SQL schema and UI, how come?")
