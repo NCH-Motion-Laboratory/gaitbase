@@ -1,20 +1,18 @@
 # -*- coding: utf-8 -*-
 """
 
-Dump current variable list
+Dump gaitbase variable names. Variables are defined by specially named widgets in the UI.
 
 @author: jussi (jnu@iki.fi)
 """
 
-import imp
 import json
 import sys
 import io
 from PyQt5 import QtWidgets
 
-from .sql_entryapp import EntryApp
+from gaitbase.sql_entryapp import EntryApp
 
-fn_out = "variable_affinity.txt"
 
 
 def _type_affinity(wname):
@@ -34,10 +32,17 @@ def _type_affinity(wname):
     else:
         raise RuntimeError('Invalid widget name')
 
+def _get_var_affs():
+    """Get a dict of variable names and their type affinities"""
+    app = QtWidgets.QApplication(sys.argv)  # needed for Qt stuff to function
+    eapp = EntryApp()
+    return {val: _type_affinity(key) for key, val in eapp.widget_to_var.items()}
 
-app = QtWidgets.QApplication(sys.argv)  # needed for Qt stuff to function
-eapp = EntryApp(check_temp_file=False)
-with io.open(fn_out, 'w', encoding='utf-8') as f:
-    widget_aff = {val: _type_affinity(key) for key, val in eapp.widget_to_var.items()}
 
-    f.write(json.dumps(widget_aff, ensure_ascii=False, indent=True, sort_keys=True))
+if __name__ == '__main__':
+
+    FN_OUT = "variable_affinity.txt"
+    var_affs = _get_var_affs()
+    print(f'{len(var_affs)} variables')
+    with io.open(FN_OUT, 'w', encoding='utf-8') as f:
+        f.write(json.dumps(var_affs, ensure_ascii=False, indent=True, sort_keys=True))
