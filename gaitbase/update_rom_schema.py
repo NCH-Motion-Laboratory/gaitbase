@@ -27,16 +27,22 @@ for varinfo in conn.execute("PRAGMA table_info('roms');"):
     var_affs_sql[varname] = affinity
 
 # get UI varnames and affinities
-var_affs = _get_var_affs()
+var_affs_ui = _get_var_affs()
+
+allvars = set(var_affs_sql).union(var_affs_ui)
 
 # compare
-for var, aff in var_affs.items():
+for var in allvars:
     if var not in var_affs_sql:
         print(f'variable {var} missing from SQL schema, adding it...')
         conn.execute(f'ALTER TABLE roms ADD COLUMN {var} {aff}')
+    if var not in var_affs_ui:
+        print(f"note: var '{var}' does not appear in SQL schema")
+    if var in var_affs_sql and var in var_affs_ui:
+        if var_affs_ui[var] != var_affs_sql[var]:
+            print(f"'{var}' affinity mismatch between SQL schema and UI, how come?")
 
 conn.commit()
-
 
 
 
