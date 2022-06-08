@@ -22,7 +22,6 @@ from pathlib import Path
 from dataclasses import dataclass, fields
 from copy import copy
 import datetime
-import os
 import traceback
 from pkg_resources import resource_filename
 import sys
@@ -32,7 +31,7 @@ from ulstools.env import make_shortcut, named_tempfile
 
 from .sql_entryapp import EntryApp
 from .widgets import message_dialog
-from .utils import validate_code
+from .utils import validate_code, _startfile
 from .config import cfg
 
 
@@ -465,7 +464,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         fn = named_tempfile(suffix='.xls')
         report = app.make_excel_report(cfg.templates.xls)
         report.save(fn)
-        os.startfile(fn)
+        _startfile(fn)
         app.force_close()
 
     def _rom_text_report(self):
@@ -480,7 +479,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         report_txt = app.make_txt_report(cfg.templates.text)
         with open(fn, 'w', encoding='utf-8') as f:
             f.write(report_txt)
-        os.startfile(fn)
+        _startfile(fn)
         app.force_close()
 
     def _new_rom(self):

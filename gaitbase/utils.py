@@ -4,6 +4,8 @@ Gait database utils.
 
 """
 
+import subprocess
+import sys
 import random
 
 
@@ -39,3 +41,11 @@ def validate_code(code):
     if not len(initials) in [2, 3] or not initials.isalpha():
         return False
     return True
+
+
+def _startfile(target):
+    """Linux compatible version of os.startfile"""
+    if sys.platform == 'win32':
+        os.startfile(target)
+    else:
+        subprocess.call(['xdg-open', target])

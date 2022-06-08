@@ -46,4 +46,4 @@ if not Path(cfg.templates.text).is_file():
 
 if not Path(cfg.templates.xls).is_file():
     logger.warning(f'configured XLS template {cfg.templates.xls} not found - using default')
-    cfg.templates.xls = cfg_package.templates.xls
+    cfg.templates.xls = resource_filename('gaitbase', 'templates/rom_excel_template.xls')
