@@ -463,7 +463,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         # the instance is not shown as a window
         app = EntryApp(self.database, rom_id, False)
         fn = named_tempfile(suffix='.xls')
-        app.make_excel_report().save(fn)
+        report = app.make_excel_report(cfg.templates.xls)
+        report.save(fn)
         os.startfile(fn)
         app.force_close()
 
@@ -476,7 +477,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         # the instance is not shown as a window
         app = EntryApp(self.database, rom_id, False)
         fn = named_tempfile(suffix='.txt')
-        report_txt = app.make_txt_report(app.text_template)
+        report_txt = app.make_txt_report(cfg.templates.text)
         with open(fn, 'w', encoding='utf-8') as f:
             f.write(report_txt)
         os.startfile(fn)

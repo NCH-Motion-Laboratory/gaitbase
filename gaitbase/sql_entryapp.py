@@ -78,8 +78,6 @@ class EntryApp(QtWidgets.QMainWindow):
         self.data_empty = self.data.copy()
         # whether to update internal dict of variables on input changes
         self.update_dict = True
-        self.text_template = resource_filename('gaitbase', Constants.text_template)
-        self.xls_template = resource_filename('gaitbase', Constants.xls_template)
         self.database = database
         self.rom_id = rom_id
         self.newly_created = newly_created
@@ -531,20 +529,18 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def make_txt_report(self, template, include_units=True):
         """Create text report from current data"""
-        # uncomment to respond to template changes while running
-        # importlib.reload(reporter)
         data = self.data_with_units if include_units else self.data
         # ID data is not updated from widgets in the SQL version, so get it separately
         rdata = data | self.get_patient_id_data()
         rep = reporter.Report(rdata, self.vars_default)
         return rep.make_text_report(template)
 
-    def make_excel_report(self):
+    def make_excel_report(self, xls_template):
         """Create Excel report from current data"""
         # ID data is not updated from widgets in the SQL version, so get it separately
         rdata = self.data | self.get_patient_id_data()
         rep = reporter.Report(rdata, self.vars_default)
-        return rep.make_excel_report(self.xls_template)
+        return rep.make_excel_report(xls_template)
 
     def n_modified(self):
         """Count modified values."""

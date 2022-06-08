@@ -42,7 +42,7 @@ cfg_package = parse_config(cfg_package_fn)
 
 if not Path(cfg.templates.text).is_file():
     logger.warning(f'configured text template {cfg.templates.text} not found - using default')
-    cfg.templates.text = cfg_package.templates.text
+    cfg.templates.text = resource_filename('gaitbase', 'templates/text_template.py')
 
 if not Path(cfg.templates.xls).is_file():
     logger.warning(f'configured XLS template {cfg.templates.xls} not found - using default')
