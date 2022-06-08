@@ -77,7 +77,7 @@ relies on special widget names to identify measured values.
 
 
 
--There's a custom widget (CheckDegSpinBox). To properly see it in Qt Designer,
+-There's a custom widget (CheckableSpinBox). To properly see it in Qt Designer,
 the plugin file checkspinbox_plugin.py should be made available. Before running
 Qt Designer, do 'export PYQTDESIGNERPATH=path' where path is the path to the
 plugin.

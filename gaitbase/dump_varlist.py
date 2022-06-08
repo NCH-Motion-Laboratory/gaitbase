@@ -27,7 +27,7 @@ def _type_affinity(wname):
         return 'TEXT'
     elif wname[:2] == 'xb':  # checkbox
         return 'TEXT'
-    elif wname[:3] == 'csb':  # checkdegspinbox
+    elif wname[:3] == 'csb':  # CheckableSpinBox
         return 'NUMERIC'
     else:
         raise RuntimeError('Invalid widget name')

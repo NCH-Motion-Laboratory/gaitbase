@@ -1922,7 +1922,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
         <item>
          <layout class="QGridLayout" name="gridLayout">
           <item row="6" column="2">
-           <widget class="CheckDegSpinBox" name="csbLonkkaEkstensioVapOik"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaEkstensioVapOik"/>
           </item>
           <item row="15" column="1">
            <widget class="QLabel" name="label_29">
@@ -1957,7 +1957,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="CheckDegSpinBox" name="csbLonkkaEkstensioPolvi90Oik"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaEkstensioPolvi90Oik"/>
           </item>
           <item row="17" column="1">
            <widget class="QLabel" name="label_17">
@@ -1967,7 +1967,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="7" column="4">
-           <widget class="CheckDegSpinBox" name="csbLonkkaEkstensioAvVas"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaEkstensioAvVas"/>
           </item>
           <item row="2" column="6" colspan="3">
            <widget class="QLabel" name="label_88">
@@ -1999,7 +1999,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="19" column="4">
-           <widget class="CheckDegSpinBox" name="csbLonkkaSisakiertoVas"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaSisakiertoVas"/>
           </item>
           <item row="20" column="1">
            <widget class="QLabel" name="label_55">
@@ -2009,7 +2009,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="7" column="2">
-           <widget class="CheckDegSpinBox" name="csbLonkkaEkstensioAvOik"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaEkstensioAvOik"/>
           </item>
           <item row="18" column="1">
            <widget class="QLabel" name="label_34">
@@ -2026,13 +2026,13 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="4" column="4">
-           <widget class="CheckDegSpinBox" name="csbLonkkaFleksioVas"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaFleksioVas"/>
           </item>
           <item row="11" column="2">
-           <widget class="CheckDegSpinBox" name="csbLonkkaAbduktioLonkka0Polvi90Oik"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaAbduktioLonkka0Polvi90Oik"/>
           </item>
           <item row="10" column="2">
-           <widget class="CheckDegSpinBox" name="csbLonkkaExtLagOik"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaExtLagOik"/>
           </item>
           <item row="16" column="1">
            <widget class="QLabel" name="label_16">
@@ -2144,7 +2144,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="4">
-           <widget class="CheckDegSpinBox" name="csbLonkkaAdduktioVas"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaAdduktioVas"/>
           </item>
           <item row="4" column="8">
            <widget class="QComboBox" name="cbLonkkaFleksioModAVas">
@@ -2312,13 +2312,13 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="2">
-           <widget class="CheckDegSpinBox" name="csbLonkkaAdduktioOik"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaAdduktioOik"/>
           </item>
           <item row="13" column="4">
-           <widget class="CheckDegSpinBox" name="csbLonkkaAbduktioLonkka0Vas"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaAbduktioLonkka0Vas"/>
           </item>
           <item row="13" column="2">
-           <widget class="CheckDegSpinBox" name="csbLonkkaAbduktioLonkka0Oik"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaAbduktioLonkka0Oik"/>
           </item>
           <item row="9" column="1">
            <widget class="QLabel" name="label_11">
@@ -2333,10 +2333,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="15" column="4">
-           <widget class="CheckDegSpinBox" name="csbLonkkaAbduktioLonkkaFleksVas"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaAbduktioLonkkaFleksVas"/>
           </item>
           <item row="15" column="2">
-           <widget class="CheckDegSpinBox" name="csbLonkkaAbduktioLonkkaFleksOik"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaAbduktioLonkkaFleksOik"/>
           </item>
           <item row="4" column="1">
            <widget class="QLabel" name="label_7">
@@ -2358,13 +2358,13 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="4">
-           <widget class="CheckDegSpinBox" name="csbLonkkaEkstensioVapVas"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaEkstensioVapVas"/>
           </item>
           <item row="4" column="2">
-           <widget class="CheckDegSpinBox" name="csbLonkkaFleksioOik"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaFleksioOik"/>
           </item>
           <item row="9" column="4">
-           <widget class="CheckDegSpinBox" name="csbLonkkaEkstensioPolvi90Vas"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaEkstensioPolvi90Vas"/>
           </item>
           <item row="3" column="8">
            <widget class="QLabel" name="label_90">
@@ -2406,7 +2406,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="19" column="2">
-           <widget class="CheckDegSpinBox" name="csbLonkkaSisakiertoOik"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaSisakiertoOik"/>
           </item>
           <item row="2" column="2" colspan="3">
            <widget class="QLabel" name="label_77">
@@ -2449,30 +2449,30 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="20" column="4">
-           <widget class="CheckDegSpinBox" name="csbLonkkaUlkokiertoVas"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaUlkokiertoVas"/>
           </item>
           <item row="11" column="4">
-           <widget class="CheckDegSpinBox" name="csbLonkkaAbduktioLonkka0Polvi90Vas"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaAbduktioLonkka0Polvi90Vas"/>
           </item>
           <item row="10" column="4">
-           <widget class="CheckDegSpinBox" name="csbLonkkaExtLagVas"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaExtLagVas"/>
           </item>
           <item row="12" column="4">
-           <widget class="CheckDegSpinBox" name="csbLonkkaAdduktoritCatchVas">
+           <widget class="CheckableSpinBox" name="csbLonkkaAdduktoritCatchVas">
             <property name="defaultText">
              <string>Ei</string>
             </property>
            </widget>
           </item>
           <item row="12" column="2">
-           <widget class="CheckDegSpinBox" name="csbLonkkaAdduktoritCatchOik">
+           <widget class="CheckableSpinBox" name="csbLonkkaAdduktoritCatchOik">
             <property name="defaultText">
              <string>Ei</string>
             </property>
            </widget>
           </item>
           <item row="20" column="2">
-           <widget class="CheckDegSpinBox" name="csbLonkkaUlkokiertoOik"/>
+           <widget class="CheckableSpinBox" name="csbLonkkaUlkokiertoOik"/>
           </item>
           <item row="6" column="8">
            <widget class="QComboBox" name="cbLonkkaEkstensioModAVas">
@@ -2986,28 +2986,28 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
         <item>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="11" column="2">
-           <widget class="CheckDegSpinBox" name="csbPolviRectusCatchOik">
+           <widget class="CheckableSpinBox" name="csbPolviRectusCatchOik">
             <property name="defaultText">
              <string>Ei</string>
             </property>
            </widget>
           </item>
           <item row="16" column="4">
-           <widget class="CheckDegSpinBox" name="csbPolviPopliteaVastakkLonkka90Vas">
+           <widget class="CheckableSpinBox" name="csbPolviPopliteaVastakkLonkka90Vas">
             <property name="maximum">
              <number>0</number>
             </property>
            </widget>
           </item>
           <item row="11" column="4">
-           <widget class="CheckDegSpinBox" name="csbPolviRectusCatchVas">
+           <widget class="CheckableSpinBox" name="csbPolviRectusCatchVas">
             <property name="defaultText">
              <string>Ei</string>
             </property>
            </widget>
           </item>
           <item row="10" column="4">
-           <widget class="CheckDegSpinBox" name="csbPolviFleksioVatsamakuuVas"/>
+           <widget class="CheckableSpinBox" name="csbPolviFleksioVatsamakuuVas"/>
           </item>
           <item row="15" column="1">
            <widget class="QLabel" name="label_23">
@@ -3071,7 +3071,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="2">
-           <widget class="CheckDegSpinBox" name="csbPolviEkstensioVapOik"/>
+           <widget class="CheckableSpinBox" name="csbPolviEkstensioVapOik"/>
           </item>
           <item row="2" column="2" colspan="3">
            <widget class="QLabel" name="label_86">
@@ -3090,7 +3090,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="10" column="2">
-           <widget class="CheckDegSpinBox" name="csbPolviFleksioVatsamakuuOik"/>
+           <widget class="CheckableSpinBox" name="csbPolviFleksioVatsamakuuOik"/>
           </item>
           <item row="6" column="1">
            <widget class="QLabel" name="label_27">
@@ -3153,13 +3153,13 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="4">
-           <widget class="CheckDegSpinBox" name="csbPolviEkstensioVapVas"/>
+           <widget class="CheckableSpinBox" name="csbPolviEkstensioVapVas"/>
           </item>
           <item row="6" column="4">
-           <widget class="CheckDegSpinBox" name="csbPolviEkstensioAvVas"/>
+           <widget class="CheckableSpinBox" name="csbPolviEkstensioAvVas"/>
           </item>
           <item row="12" column="4">
-           <widget class="CheckDegSpinBox" name="csbPolviHamstringCatchVas">
+           <widget class="CheckableSpinBox" name="csbPolviHamstringCatchVas">
             <property name="defaultText">
              <string>Ei</string>
             </property>
@@ -3227,10 +3227,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="2">
-           <widget class="CheckDegSpinBox" name="csbPolviEkstensioAvOik"/>
+           <widget class="CheckableSpinBox" name="csbPolviEkstensioAvOik"/>
           </item>
           <item row="9" column="4">
-           <widget class="CheckDegSpinBox" name="csbPolviFleksioSelinmakuuVas"/>
+           <widget class="CheckableSpinBox" name="csbPolviFleksioSelinmakuuVas"/>
           </item>
           <item row="3" column="9">
            <spacer name="horizontalSpacer_28">
@@ -3246,7 +3246,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="12" column="2">
-           <widget class="CheckDegSpinBox" name="csbPolviHamstringCatchOik">
+           <widget class="CheckableSpinBox" name="csbPolviHamstringCatchOik">
             <property name="defaultText">
              <string>Ei</string>
             </property>
@@ -3256,7 +3256,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="CheckDegSpinBox" name="csbPolviFleksioSelinmakuuOik"/>
+           <widget class="CheckableSpinBox" name="csbPolviFleksioSelinmakuuOik"/>
           </item>
           <item row="12" column="1">
            <widget class="QLabel" name="label_233">
@@ -3363,21 +3363,21 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="2">
-           <widget class="CheckDegSpinBox" name="csbPolviPopliteaVastakkLonkka90Oik">
+           <widget class="CheckableSpinBox" name="csbPolviPopliteaVastakkLonkka90Oik">
             <property name="maximum">
              <number>0</number>
             </property>
            </widget>
           </item>
           <item row="15" column="4">
-           <widget class="CheckDegSpinBox" name="csbPolviPopliteaVastakkLonkka0Vas">
+           <widget class="CheckableSpinBox" name="csbPolviPopliteaVastakkLonkka0Vas">
             <property name="maximum">
              <number>0</number>
             </property>
            </widget>
           </item>
           <item row="15" column="2">
-           <widget class="CheckDegSpinBox" name="csbPolviPopliteaVastakkLonkka0Oik">
+           <widget class="CheckableSpinBox" name="csbPolviPopliteaVastakkLonkka0Oik">
             <property name="maximum">
              <number>0</number>
             </property>
@@ -3736,7 +3736,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="2">
-           <widget class="CheckDegSpinBox" name="csbNilkkaSoleusCatchOik">
+           <widget class="CheckableSpinBox" name="csbNilkkaSoleusCatchOik">
             <property name="defaultText">
              <string>Ei</string>
             </property>
@@ -3927,7 +3927,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="5" column="5">
-           <widget class="CheckDegSpinBox" name="csbNilkkaSoleusCatchVas">
+           <widget class="CheckableSpinBox" name="csbNilkkaSoleusCatchVas">
             <property name="defaultText">
              <string>Ei</string>
             </property>
@@ -3959,10 +3959,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="14" column="5">
-           <widget class="CheckDegSpinBox" name="csbNilkkaPlantaarifleksioPROMVas"/>
+           <widget class="CheckableSpinBox" name="csbNilkkaPlantaarifleksioPROMVas"/>
           </item>
           <item row="14" column="2">
-           <widget class="CheckDegSpinBox" name="csbNilkkaPlantaarifleksioPROMOik"/>
+           <widget class="CheckableSpinBox" name="csbNilkkaPlantaarifleksioPROMOik"/>
           </item>
           <item row="3" column="10">
            <widget class="QLabel" name="label_253">
@@ -3985,7 +3985,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="10" column="2">
-           <widget class="CheckDegSpinBox" name="csbNilkkaGastroCatchOik">
+           <widget class="CheckableSpinBox" name="csbNilkkaGastroCatchOik">
             <property name="defaultText">
              <string>Ei</string>
             </property>
@@ -4120,7 +4120,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="10" column="5">
-           <widget class="CheckDegSpinBox" name="csbNilkkaGastroCatchVas">
+           <widget class="CheckableSpinBox" name="csbNilkkaGastroCatchVas">
             <property name="defaultText">
              <string>Ei</string>
             </property>
@@ -4157,22 +4157,22 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="CheckDegSpinBox" name="csbNilkkaDorsifPolvi90AROMOik"/>
+           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi90AROMOik"/>
           </item>
           <item row="11" column="2">
-           <widget class="CheckDegSpinBox" name="csbNilkkaDorsifPolvi0PROMOik"/>
+           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi0PROMOik"/>
           </item>
           <item row="11" column="5">
-           <widget class="CheckDegSpinBox" name="csbNilkkaDorsifPolvi0PROMVas"/>
+           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi0PROMVas"/>
           </item>
           <item row="8" column="2">
-           <widget class="CheckDegSpinBox" name="csbNilkkaDorsifPolvi90PROMOik"/>
+           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi90PROMOik"/>
           </item>
           <item row="8" column="5">
-           <widget class="CheckDegSpinBox" name="csbNilkkaDorsifPolvi90PROMVas"/>
+           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi90PROMVas"/>
           </item>
           <item row="12" column="2">
-           <widget class="CheckDegSpinBox" name="csbNilkkaDorsifPolvi0AROMOik"/>
+           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi0AROMOik"/>
           </item>
           <item row="5" column="9">
            <spacer name="horizontalSpacer_14">
@@ -4191,7 +4191,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="12" column="5">
-           <widget class="CheckDegSpinBox" name="csbNilkkaDorsifPolvi0AROMVas"/>
+           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi0AROMVas"/>
           </item>
           <item row="5" column="7">
            <spacer name="horizontalSpacer_15">
@@ -4210,7 +4210,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="9" column="5">
-           <widget class="CheckDegSpinBox" name="csbNilkkaDorsifPolvi90AROMVas"/>
+           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi90AROMVas"/>
           </item>
           <item row="5" column="4">
            <spacer name="horizontalSpacer_12">
@@ -4236,10 +4236,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="15" column="2">
-           <widget class="CheckDegSpinBox" name="csbNilkkaPlantaarifleksioAROMOik"/>
+           <widget class="CheckableSpinBox" name="csbNilkkaPlantaarifleksioAROMOik"/>
           </item>
           <item row="15" column="5">
-           <widget class="CheckDegSpinBox" name="csbNilkkaPlantaarifleksioAROMVas"/>
+           <widget class="CheckableSpinBox" name="csbNilkkaPlantaarifleksioAROMVas"/>
           </item>
           <item row="12" column="3">
            <widget class="QCheckBox" name="xbNilkkaDorsifPolvi0AROMEversioOik">
@@ -6340,10 +6340,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="18" column="2">
-           <widget class="CheckDegSpinBox" name="csbJalkat1MTPojennusOik"/>
+           <widget class="CheckableSpinBox" name="csbJalkat1MTPojennusOik"/>
           </item>
           <item row="18" column="4">
-           <widget class="CheckDegSpinBox" name="csbJalkat1MTPojennusVas"/>
+           <widget class="CheckableSpinBox" name="csbJalkat1MTPojennusVas"/>
           </item>
           <item row="17" column="6">
            <widget class="QLabel" name="label_307">
@@ -15409,7 +15409,7 @@ lonkka fleksiossa</string>
  </widget>
  <customwidgets>
   <customwidget>
-   <class>CheckDegSpinBox</class>
+   <class>CheckableSpinBox</class>
    <extends>QWidget</extends>
    <header>gaitbase.widgets</header>
   </customwidget>

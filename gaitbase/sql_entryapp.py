@@ -19,7 +19,7 @@ from .config import cfg
 from .widgets import (
     MyLineEdit,
     DegLineEdit,
-    CheckDegSpinBox,
+    CheckableSpinBox,
     message_dialog,
 )
 from . import reporter
@@ -266,10 +266,10 @@ class EntryApp(QtWidgets.QMainWindow):
                 w.setLineEdit(MyLineEdit())
                 w.keyPressEvent = lambda event, w=w: keyPressEvent_resetOnEsc(w, event)
 
-        # CheckDegSpinBoxes get a special LineEdit that catches space
+        # CheckableSpinBoxes get a special LineEdit that catches space
         # and mouse press events
 
-        for w in self.findChildren(CheckDegSpinBox):
+        for w in self.findChildren(CheckableSpinBox):
             w.degSpinBox.setLineEdit(DegLineEdit())
 
         allwidgets = self.findChildren(QtWidgets.QWidget)
@@ -341,7 +341,7 @@ class EntryApp(QtWidgets.QMainWindow):
                 w.no_text = Constants.checkbox_notext
                 w.setVal = lambda val, w=w: checkbox_setval(w, val)
                 w.getVal = lambda w=w: checkbox_getval(w)
-            elif wname[:3] == 'csb':  # checkdegspinbox
+            elif wname[:3] == 'csb':  # CheckableSpinBox
                 w.valueChanged.connect(lambda w=w: self.values_changed(w))
                 w.getVal = w.value
                 w.setVal = w.setValue

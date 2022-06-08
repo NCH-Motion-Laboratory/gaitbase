@@ -11,12 +11,10 @@ from pathlib import Path
 class Constants:
     """Some constants"""
     dialog_title: str = 'Gaitbase'
-    xls_template: str = 'templates/rom_excel_template.xls'
-    text_template: str = 'templates/text_template.py'
     # The 'not measured' value for spinboxes. For regular spinboxes, this is the
     # value that gets written to data files, but it does not affect the value
     # shown next to the spinbox (which is set in Qt Designer). For the
-    # CheckDegSpinBox class, this is also the value shown next to the widget in
+    # CheckableSpinBox class, this is also the value shown next to the widget in
     # the user interface.
     spinbox_novalue_text: str = 'Ei mitattu'
     # 'yes' and 'no' values for checkboxes. Written to data files.

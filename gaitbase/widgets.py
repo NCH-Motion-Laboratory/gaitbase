@@ -51,8 +51,8 @@ class MyLineEdit(QtWidgets.QLineEdit):
 
 
 class DegLineEdit(QtWidgets.QLineEdit):
-    """Custom line edit for CheckDegSpinBox class. Catches space key and
-    passes it to CheckDegSpinBox."""
+    """Custom line edit for CheckableSpinBox class. Catches space key and
+    passes it to CheckableSpinBox."""
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -68,14 +68,14 @@ class DegLineEdit(QtWidgets.QLineEdit):
         self.selectAll()
 
     def keyPressEvent(self, event):
-        # pass space key to grandparent (CheckDegSpinBox)
+        # pass space key to grandparent (CheckableSpinBox)
         if event.key() == QtCore.Qt.Key_Space:
             self.parent().parent().keyPressEvent(event)
         else:
             super().keyPressEvent(event)
 
 
-class CheckDegSpinBox(QtWidgets.QWidget):
+class CheckableSpinBox(QtWidgets.QWidget):
     """Custom widget: Spinbox (degrees) with checkbox, which indicates
     a 'default' value. If the checkbox is checked, disable spinbox, in which
     case value() will return the default value shown next to checkbox
@@ -91,7 +91,7 @@ class CheckDegSpinBox(QtWidgets.QWidget):
     __pyqtSignals__ = 'valueChanged'
 
     def __init__(self, parent=None):
-        super(CheckDegSpinBox, self).__init__(parent)
+        super(CheckableSpinBox, self).__init__(parent)
         self.degSpinBox = QtWidgets.QSpinBox()
         self.degSpinBox.valueChanged.connect(self.valueChanged.emit)
         self.degSpinBox.setMinimumSize(100, 0)
@@ -137,7 +137,7 @@ class CheckDegSpinBox(QtWidgets.QWidget):
         elif event.key() == QtCore.Qt.Key_Space:
             self.toggleCheckBox()
         else:
-            super(CheckDegSpinBox, self).keyPressEvent(event)
+            super(CheckableSpinBox, self).keyPressEvent(event)
 
     """ Set some values as Qt properties, mostly so that they can be easily
     changed from Qt Designer. """
