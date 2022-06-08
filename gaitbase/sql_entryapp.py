@@ -54,7 +54,7 @@ class EntryApp(QtWidgets.QMainWindow):
 
     closing = QtCore.pyqtSignal(object)
 
-    def __init__(self, database, rom_id, newly_created=None):
+    def __init__(self, database=None, rom_id=None, newly_created=None):
         super().__init__()
         # load user interface made with Qt Designer
         uifile = resource_filename('gaitbase', 'tabbed_design_sql.ui')
@@ -92,10 +92,9 @@ class EntryApp(QtWidgets.QMainWindow):
             self.lnTiedotPvm.setText(datestr)
             # for a newly created entry, initialize the database row w/ default values
             self.values_changed(self.lnTiedotPvm)
-        else:
+        elif database is not None:
             # for existing entry, read values from database
-            if database is not None:
-                self._read_data()
+            self._read_data()
         self.BACKUP_NEW_ROMS = True  # also dump new ROMs into JSON files
 
     def force_close(self):
