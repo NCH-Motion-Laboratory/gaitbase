@@ -5,13 +5,10 @@ Gait database utils.
 """
 
 import random
-from pathlib import Path
-import os
-import tempfile
 
 
-def _random_hetu():
-    """Generate random Finnish SSN"""
+def _random_ssn():
+    """Generate random Finnish SSN for debug purposes"""
     d = random.randint(1, 28)
     m = random.randint(1, 12)
     y = random.randint(0, 99)
