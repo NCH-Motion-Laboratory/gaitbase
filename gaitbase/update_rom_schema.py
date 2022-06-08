@@ -11,8 +11,8 @@ import sqlite3
 from gaitbase.dump_varlist import _get_var_affs
 
 
-DB_FILEPATH = Path(r'C:\Temp\patients.db')
-DB_FILEPATH = Path('/tmp/patients.db')
+# edit the correct path here
+DB_FILEPATH = Path('patients.db')
 
 if not DB_FILEPATH.is_file():
     raise RuntimeError('DB file needs to exist!')
