@@ -82,13 +82,14 @@ class EntryApp(QtWidgets.QMainWindow):
     def db_failure(self, query, fatal=True):
         """Handle database failures"""
         err = query.lastError().databaseText()
-        msg = f'Got a database error: "{err}"\n'
-        # if there is no error, it usually means that a column does not exist
-        # this is most commonly due to schema changes
-        if not err:
-            msg += '(this may be due to schema not matching the UI variables)\n'
-        msg += 'In case of a locking error, close all other applications '
-        msg += 'that may be using the database, and try again.'
+        if err:
+            msg = f'Got a database error: "{err}"\n'
+            msg += 'In case of a locking error, close all other applications '
+            msg += 'that may be using the database, and try again.'
+        else:
+            msg = 'Could not read all variables from database. '
+            msg += 'This may be due to a mismatch between the UI widgets ' 
+            msg += 'and the database schema.'
         if fatal:
             raise RuntimeError(msg)
         else:
@@ -133,7 +134,7 @@ class EntryApp(QtWidgets.QMainWindow):
         query.prepare(f'SELECT {varlist} FROM patients WHERE patient_id = :patient_id')
         query.bindValue(':patient_id', patient_id)
         if not query.exec() or not query.first():
-            self.db_failure(fatal=True)
+            self.db_failure(query, fatal=True)
         for k, var in enumerate(thevars):
             val = query.value(k)
             widget_name = 'rdonly_' + var
@@ -142,10 +143,11 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def get_patient_id_data(self):
         """Get patient id data from the read-only fields as a dict.
-        In the SQL version, the patient data is not part of ROM measurements anymore, instead
-        residing in the patients table.
-        The returned keys are identical to the old (standalone) version.
-        Mostly for purposes of reporting, which expects the ID data to be available.
+
+        In the SQL version, the patient data is not part of ROM measurements
+        anymore, instead residing in the patients table. The returned keys are
+        identical to the old (standalone) version. Mostly for purposes of
+        reporting, which expects the ID data to be available.
         """
         return {
             'TiedotID': self.rdonly_patient_code.text(),
