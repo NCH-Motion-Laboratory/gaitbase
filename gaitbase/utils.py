@@ -7,6 +7,7 @@ Gait database utils.
 import subprocess
 import sys
 import random
+import os
 
 
 def _random_ssn():
