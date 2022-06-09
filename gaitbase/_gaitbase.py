@@ -29,7 +29,7 @@ import sys
 from ulstools.num import check_hetu
 from ulstools.env import make_shortcut, named_tempfile
 
-from .sql_entryapp import EntryApp
+from .rom_entryapp import EntryApp
 from .widgets import message_dialog
 from .utils import validate_code, _startfile
 from .config import cfg

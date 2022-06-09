@@ -60,7 +60,7 @@ NULLs. Hence, we do all SQL reads with the autoconversion disabled.
 ROM table and user interface
 ----------------------------
 
-- There is a separate user interface (sql_entryapp.py) for viewing and editing ROM
+- There is a separate user interface (rom_entryapp.py) for viewing and editing ROM
 measurements. There are currently 300+ different measurements organized into
 several tabs.
 

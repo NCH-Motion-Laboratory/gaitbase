@@ -11,7 +11,7 @@ import sys
 import io
 from PyQt5 import QtWidgets
 
-from gaitbase.sql_entryapp import EntryApp
+from gaitbase.rom_entryapp import EntryApp
 
 
 
