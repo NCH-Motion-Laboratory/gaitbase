@@ -2,18 +2,6 @@
 """
 Gait database.
 
-
-TODO:
-
-
-    -could disable patient/ROM buttons if nothing selected
-        -a bit tricky to implement, see:
-        https://bugreports.qt.io/browse/QTBUG-93305?gerritReviewStatus=All
-
-    -check "no values entered" condition for ROM
-
-    -ROM comparison funcs? (taste of the future)
-
 """
 
 import datetime
