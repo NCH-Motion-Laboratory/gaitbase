@@ -134,7 +134,7 @@ class PatientEditor(QtWidgets.QDialog):
 
     def reject(self):
         """Guard for superclass reject"""
-        if self.patient == self._orig_patient or qt_confirm_dialog(
+        if self.patient == self._original_patient or qt_confirm_dialog(
             'Are you sure you want to cancel changes?'
         ):
             super().reject()
