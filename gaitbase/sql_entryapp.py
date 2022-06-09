@@ -535,14 +535,15 @@ class EntryApp(QtWidgets.QMainWindow):
         widgets is taking place."""
         self.save_to_tmp = False
         self.update_dict = False
-        for wname in self.input_widgets:
-            self.input_widgets[wname].setVal(self.data[self.widget_to_var[wname]])
+        for wname, widget in self.input_widgets.items():
+            varname = self.widget_to_var[wname]
+            widget.setVal(self.data[varname])
         self.save_to_tmp = True
         self.update_dict = True
 
     def read_forms(self):
         """Read self.data from widget inputs. Usually not needed, since
         it's updated automatically."""
-        for wname in self.input_widgets:
+        for wname, widget in self.input_widgets.items():
             var = self.widget_to_var[wname]
-            self.data[var] = self.input_widgets[wname].getVal()
+            self.data[var] = widget.getVal()
