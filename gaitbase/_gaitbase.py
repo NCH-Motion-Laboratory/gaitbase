@@ -363,21 +363,21 @@ class PatientDialog(QtWidgets.QMainWindow):
                 self.tvPatient.scrollTo(idx_filter)
                 break
 
-    def _check_new_patient(self, p):
-        """Check whether p is valid and can be inserted into database.
+    def _check_new_patient(self, patient):
+        """Check whether patient is valid and can be inserted into database.
         Returns tuple of (status, msg) where status is True or False.
         If status is False, msg gives a reason why the patient is not ok.
         """
-        q = self.database.exec('SELECT ssn, patient_code FROM patients')
-        while q.next():
-            if q.value(0) == p.ssn:
+        query = self.database.exec('SELECT ssn, patient_code FROM patients')
+        while query.next():
+            if query.value(0) == patient.ssn:
                 return (False, 'Patient with this SSN already exists in database')
-            elif q.value(1) == p.patient_code:
+            elif query.value(1) == patient.patient_code:
                 return (
                     False,
                     'Patient with this patient code already exists in database',
                 )
-        return p.is_valid()
+        return patient.is_valid()
 
     def _update_patient(self, p, patient_id):
         """Update an existing patient record"""
