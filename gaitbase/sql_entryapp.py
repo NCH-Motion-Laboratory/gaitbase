@@ -363,7 +363,7 @@ class EntryApp(QtWidgets.QMainWindow):
             self.widget_to_var[wname] = varname
 
         # try to increase font size
-        self.setStyleSheet('QWidget { font-size: %dpt;}' % cfg.visual.fontsize)
+        self.setStyleSheet(f'QWidget {{ font-size: {cfg.visual.fontsize}pt;}}')
 
         # FIXME: make sure we always start on 1st tab
 
