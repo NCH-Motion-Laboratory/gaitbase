@@ -103,8 +103,10 @@ class EntryApp(QtWidgets.QMainWindow):
     def db_failure(self, query, fatal=True):
         """Handle database failures"""
         err = query.lastError().databaseText()
-        msg = f'Got a database error: "{err}"'
-        msg += '\nIn case of locking errors, close all other applications '
+        msg = f'Got a database error: "{err}"\n'
+        if not err:
+            msg += '(this may be due to schema not matching the UI variables)\n'
+        msg += 'In case of a locking error, close all other applications '
         msg += 'that may be using the database, and try again.'
         if fatal:
             raise RuntimeError(msg)
