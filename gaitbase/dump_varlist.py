@@ -14,7 +14,6 @@ from PyQt5 import QtWidgets
 from gaitbase.rom_entryapp import EntryApp
 
 
-
 def _type_affinity(wname):
     """Return type affinity (sqlite) for each widget"""
     if wname[:2] == 'sp':  # spinbox or doublespinbox
@@ -31,6 +30,7 @@ def _type_affinity(wname):
         return 'NUMERIC'
     else:
         raise RuntimeError('Invalid widget name')
+
 
 def _get_var_affs():
     """Get a dict of variable names and their type affinities"""

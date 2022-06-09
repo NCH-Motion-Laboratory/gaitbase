@@ -89,7 +89,7 @@ class EntryApp(QtWidgets.QMainWindow):
             msg += 'that may be using the database, and try again.'
         else:
             msg = 'Could not read all variables from database. '
-            msg += 'This may be due to a mismatch between the UI widgets ' 
+            msg += 'This may be due to a mismatch between the UI widgets '
             msg += 'and the database schema.'
         if fatal:
             raise RuntimeError(msg)
@@ -173,7 +173,11 @@ class EntryApp(QtWidgets.QMainWindow):
 
         def spinbox_getval(widget):
             """Return spinbox value"""
-            return widget.no_value_text if widget.value() == widget.minimum() else widget.value()
+            return (
+                widget.no_value_text
+                if widget.value() == widget.minimum()
+                else widget.value()
+            )
 
         def spinbox_setval(widget, val):
             """Set spinbox value"""
@@ -236,7 +240,9 @@ class EntryApp(QtWidgets.QMainWindow):
             wname = widget.objectName()
             if wname[:2] == 'sp':
                 widget.setLineEdit(MyLineEdit())
-                widget.keyPressEvent = lambda event, w=widget: keyPressEvent_resetOnEsc(w, event)
+                widget.keyPressEvent = lambda event, w=widget: keyPressEvent_resetOnEsc(
+                    w, event
+                )
 
         # CheckableSpinBoxes get a special LineEdit that catches space
         # and mouse press events
@@ -297,7 +303,9 @@ class EntryApp(QtWidgets.QMainWindow):
                 # instead, update values when focus is lost (editing completed)
                 widget.installEventFilter(self)
             elif wname[:2] == 'cb':  # combobox
-                widget.currentIndexChanged.connect(lambda x, w=widget: self.values_changed(w))
+                widget.currentIndexChanged.connect(
+                    lambda x, w=widget: self.values_changed(w)
+                )
                 widget.setVal = lambda val, w=widget: combobox_setval(w, val)
                 widget.getVal = lambda w=widget: combobox_getval(w)
             elif wname[:3] == 'cmt':  # comment text field
@@ -317,7 +325,9 @@ class EntryApp(QtWidgets.QMainWindow):
                 widget.valueChanged.connect(lambda w=widget: self.values_changed(w))
                 widget.getVal = widget.value
                 widget.setVal = widget.setValue
-                widget.unit = lambda w=widget: w.getSuffix() if isint(w.getVal()) else ''
+                widget.unit = (
+                    lambda w=widget: w.getSuffix() if isint(w.getVal()) else ''
+                )
             else:
                 wsave = False
             if wsave:

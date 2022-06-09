@@ -10,6 +10,7 @@ from pathlib import Path
 @dataclass
 class Constants:
     """Some constants"""
+
     dialog_title: str = 'Gaitbase'
     # The 'not measured' value for spinboxes. For regular spinboxes, this is the
     # value that gets written to data files, but it does not affect the value
@@ -29,11 +30,15 @@ class Constants:
 @dataclass
 class Finnish:
     """Some English->Finnish translations"""
+
     yes_button: str = 'Kyllä'
     no_button: str = 'Ei'
     ok_button: str = 'Ok'
     ready: str = 'Valmis, {n} syötekenttää käytössä.'
     status_cleared: str = 'Kaikki lomakkeet tyhjennetty.'
-    keys_not_found: str = 'Seuraavia ohjelman käyttämiä muuttujia ei löytynyt tiedostosta:\n{keys}\n'
-    keys_extra: str = 'Seuraavat tiedostossa olevat muuttujat ovat tuntemattomia: {keys} \n'
-
+    keys_not_found: str = (
+        'Seuraavia ohjelman käyttämiä muuttujia ei löytynyt tiedostosta:\n{keys}\n'
+    )
+    keys_extra: str = (
+        'Seuraavat tiedostossa olevat muuttujat ovat tuntemattomia: {keys} \n'
+    )

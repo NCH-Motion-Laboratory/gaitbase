@@ -44,10 +44,3 @@ for var in allvars:
             print(f"'{var}' affinity mismatch between SQL schema and UI, how come?")
 
 conn.commit()
-
-
-
-
-
-
-

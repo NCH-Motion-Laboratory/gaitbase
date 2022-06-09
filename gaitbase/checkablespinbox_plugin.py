@@ -17,7 +17,6 @@ from PyQt5 import QtDesigner
 
 
 class CheckableSpinBoxPlugin(QtDesigner.QPyDesignerCustomWidgetPlugin):
-
     def __init__(self, parent=None):
         super().__init__(parent)
         self.initialized = False

@@ -15,16 +15,18 @@ from xlutils.copy import copy
 # http://stackoverflow.com/questions/3723793/
 # preserving-styles-using-pythons-xlrd-xlwt-and-xlutils-copy?lq=1
 
+
 def _getOutCell(outSheet, colIndex, rowIndex):
-    """ HACK: Extract the internal xlwt cell representation. """
+    """HACK: Extract the internal xlwt cell representation."""
     row = outSheet._Worksheet__rows.get(rowIndex)
     if not row:
         return None
     cell = row._Row__cells.get(colIndex)
     return cell
 
+
 def _setOutCell(outSheet, col, row, value):
-    """ Change cell value without changing formatting. """
+    """Change cell value without changing formatting."""
     # HACK to retain cell style.
     previousCell = _getOutCell(outSheet, col, row)
     # END HACK, PART I
@@ -37,9 +39,9 @@ def _setOutCell(outSheet, col, row, value):
     # END HACK
 
 
-class Report():
+class Report:
     """A class to create text and Excel (.xls) reports from data.
-    
+
     The report is based on a simple template engine. For example, the template
     text may be 'Name: {name} Age: {Age}' and the data may be {'Name': 'John',
     'Age': 30}. The fields in the template are filled in using the data,
@@ -73,17 +75,19 @@ class Report():
     def item_sep(self):
         """Insert item separator if appropriate"""
         seplen = len(self._item_separator)
-        if (self.report_text[-seplen:] != self._item_separator and
-           self.report_text[-2:] != ': '):  # bit of a hack
+        if (
+            self.report_text[-seplen:] != self._item_separator
+            and self.report_text[-2:] != ': '
+        ):  # bit of a hack
             self.report_text += self._item_separator
 
     def __repr__(self):
         return self.report_text
 
     def _cond_format(self, s, data):
-        """ Conditionally format string s. Fields given as {variable} are
+        """Conditionally format string s. Fields given as {variable} are
         formatted using the data. If all fields are default, an
-        empty string is returned. """
+        empty string is returned."""
         flds = list(Report._get_fields(s))
         if not flds or any(fld not in self.fields_default for fld in flds):
             return s.format(**data)
@@ -104,7 +108,7 @@ class Report():
     def make_text_report(self, py_template):
         """Create report using the Python template py_template"""
         code = compile(open(py_template, "rb").read(), py_template, 'exec')
-        exec(code, locals()) # execute the report code; it directly modifies self
+        exec(code, locals())  # execute the report code; it directly modifies self
         return self.report_text
 
     def make_excel_report(self, xls_template):
@@ -132,8 +136,7 @@ class Report():
                     # apply replacement dict only if formatting actually did
                     # something. this is to avoid changing text-only cells.
                     if newval != varname:
-                        for str, newstr in (iter(self.cell_postprocess_dict.
-                                            items())):
+                        for str, newstr in iter(self.cell_postprocess_dict.items()):
                             if str in newval:
                                 newval = newval.replace(str, newstr)
                     _setOutCell(w_sheet, col, row, newval)

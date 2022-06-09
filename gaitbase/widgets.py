@@ -83,6 +83,7 @@ class CheckableSpinBox(QtWidgets.QWidget):
     setValue() takes either the default value, the 'special value' (not
     measured) or an integer.
     """
+
     # signal has to be defined here for unclear reasons
     # note that currently the value is not returned by the signal
     # (unlike in the Qt spinbox)

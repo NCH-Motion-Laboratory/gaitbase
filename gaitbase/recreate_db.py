@@ -46,4 +46,3 @@ s += ');'
 conn.execute(s)
 
 conn.commit()
-
