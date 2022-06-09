@@ -533,12 +533,10 @@ class EntryApp(QtWidgets.QMainWindow):
         """Restore widget input values from self.data. Need to disable widget
         callbacks and automatic data saving while programmatic updating of
         widgets is taking place."""
-        self.save_to_tmp = False
         self.update_dict = False
         for wname, widget in self.input_widgets.items():
             varname = self.widget_to_var[wname]
             widget.setVal(self.data[varname])
-        self.save_to_tmp = True
         self.update_dict = True
 
     def read_forms(self):
