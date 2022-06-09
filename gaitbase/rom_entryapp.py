@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """
+Gaitbase app for entering ROM values.
 
 @author: Jussi (jnu@iki.fi)
 """
