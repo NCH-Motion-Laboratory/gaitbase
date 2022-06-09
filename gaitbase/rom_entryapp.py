@@ -49,7 +49,7 @@ class EntryApp(QtWidgets.QMainWindow):
     def __init__(self, database=None, rom_id=None, newly_created=None):
         super().__init__()
         # load user interface made with Qt Designer
-        uifile = resource_filename('gaitbase', 'tabbed_design_sql.ui')
+        uifile = resource_filename('gaitbase', 'rom_entryapp.ui')
         uic.loadUi(uifile, self)
         self.confirm_close = True  # used to implement force close
         self.init_widgets()
