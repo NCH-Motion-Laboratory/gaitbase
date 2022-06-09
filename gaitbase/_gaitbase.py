@@ -370,31 +370,35 @@ class PatientDialog(QtWidgets.QMainWindow):
                 )
         return patient.is_valid()
 
-    def _update_patient(self, p, patient_id):
-        """Update an existing patient record"""
-        q = QtSql.QSqlQuery(self.database)
-        q.prepare(
+    def _update_patient(self, patient : PatientData, patient_id):
+        """Update an existing patient record.
+
+        patient is a patient record containing the updated information.
+        patient_id is the SQL id of the patient to update.
+        """
+        query = QtSql.QSqlQuery(self.database)
+        query.prepare(
             'UPDATE patients SET firstname = :firstname, lastname = :lastname, ssn = :ssn, patient_code = :patient_code, diagnosis = :diagnosis WHERE patient_id = :patient_id'
         )
-        for field in fields(p):
-            q.bindValue(':' + field.name, getattr(p, field.name))
-        q.bindValue(':patient_id', patient_id)
-        if not q.exec():
-            db_failure(q, fatal=False)
+        for field in fields(patient):
+            query.bindValue(':' + field.name, getattr(patient, field.name))
+        query.bindValue(':patient_id', patient_id)
+        if not query.exec():
+            db_failure(query, fatal=False)
         self.patient_model.select()
 
-    def _insert_patient(self, p):
-        """Insert a Patient instance into the database."""
-        q = QtSql.QSqlQuery(self.database)
-        q.prepare(
+    def _insert_patient(self, patient : PatientData):
+        """Insert a new patient record into the database."""
+        query = QtSql.QSqlQuery(self.database)
+        query.prepare(
             'INSERT INTO patients (firstname, lastname, ssn, patient_code, diagnosis) VALUES (:firstname, :lastname, :ssn, :patient_code, :diagnosis)'
         )
-        for field in fields(p):
-            q.bindValue(':' + field.name, getattr(p, field.name))
-        if not q.exec():
-            db_failure(q, fatal=False)
+        for field in fields(patient):
+            query.bindValue(':' + field.name, getattr(patient, field.name))
+        if not query.exec():
+            db_failure(query, fatal=False)
             return None
-        return q.lastInsertId()
+        return query.lastInsertId()
 
     def _delete_current_patient(self):
         if self._current_patient_row is None:
@@ -479,16 +483,16 @@ class PatientDialog(QtWidgets.QMainWindow):
         patient_id = rec.value('patient_id')
         # autoinsert current date
         datestr = datetime.datetime.now().strftime('%d.%m.%Y')
-        q = QtSql.QSqlQuery(self.database)
-        q.prepare(
+        query = QtSql.QSqlQuery(self.database)
+        query.prepare(
             'INSERT INTO roms (patient_id, TiedotPvm) VALUES (:patient_id, :datestr)'
         )
-        q.bindValue(':patient_id', patient_id)
-        q.bindValue(':datestr', datestr)
-        if not q.exec():
-            db_failure(q, fatal=False)
+        query.bindValue(':patient_id', patient_id)
+        query.bindValue(':datestr', datestr)
+        if not query.exec():
+            db_failure(query, fatal=False)
         else:
-            self._edit_rom(q.lastInsertId(), newly_created=True)
+            self._edit_rom(query.lastInsertId(), newly_created=True)
 
     def _editor_closing(self, id):
         """Callback for a closing a ROM editor"""
