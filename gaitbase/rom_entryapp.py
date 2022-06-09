@@ -265,7 +265,7 @@ class EntryApp(QtWidgets.QMainWindow):
         # They must have an ._autocalculate() method which updates the widget
         # and ._autoinputs list which lists the necessary input widgets.
         self.autowidgets = list()
-        weight_widget = self.spAntropPaino
+        weight_widget = self.dataAntropPaino
         for widget in allwidgets:
             wname = widget.objectName()
             # handle the 'magic' autowidgets with weight normalized data
@@ -284,19 +284,13 @@ class EntryApp(QtWidgets.QMainWindow):
         # set various widget convenience methods/properties
         # input widgets are specially named and will be automatically
         # collected into a dict
-        for widget in allwidgets:
+        data_widgets = [w for w in allwidgets if w.objectName()[:4] == 'data']
+        for widget in data_widgets:
             wname = widget.objectName()
-            wsave = True
             # w.unit returns the unit for each input (may change dynamically)
             widget.unit = lambda: ''
-            if wname[:4] == 'data':  # a data entry widget
-                raise RuntimeError(widget.__class__)
-
-
-
-
-
-            if wname[:2] == 'sp':  # spinbox or doublespinbox
+            widget_class = widget.__class__.__name__
+            if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
                 # -lambdas need default arguments because of late binding
                 # -lambda expression needs to consume unused 'new value' arg,
                 # therefore two parameters (except for QTextEdit...)
@@ -305,33 +299,33 @@ class EntryApp(QtWidgets.QMainWindow):
                 widget.setVal = lambda val, w=widget: spinbox_setval(w, val)
                 widget.getVal = lambda w=widget: spinbox_getval(w)
                 widget.unit = lambda w=widget: w.suffix() if isint(w.getVal()) else ''
-            elif wname[:2] == 'ln':  # lineedit
+            elif widget_class == 'QLineEdit':
                 # for text editors, do not perform data updates on every value change...
                 # w.textChanged.connect(lambda x, w=w: self.values_changed(w))
                 widget.setVal = widget.setText
                 widget.getVal = lambda w=widget: w.text().strip()
                 # instead, update values when focus is lost (editing completed)
                 widget.installEventFilter(self)
-            elif wname[:2] == 'cb':  # combobox
+            elif widget_class == 'QComboBox':
                 widget.currentIndexChanged.connect(
                     lambda x, w=widget: self.values_changed(w)
                 )
                 widget.setVal = lambda val, w=widget: combobox_setval(w, val)
                 widget.getVal = lambda w=widget: combobox_getval(w)
-            elif wname[:3] == 'cmt':  # comment text field
+            elif widget_class == 'QTextEdit':
                 # for text editors, do not perform data updates on every value change...
                 # w.textChanged.connect(lambda w=w: self.values_changed(w))
                 widget.setVal = widget.setPlainText
                 widget.getVal = lambda w=widget: w.toPlainText().strip()
                 # instead, update values when focus is lost (editing completed)
                 widget.installEventFilter(self)
-            elif wname[:2] == 'xb':  # checkbox
+            elif widget_class == 'QCheckBox':
                 widget.stateChanged.connect(lambda x, w=widget: self.values_changed(w))
                 widget.yes_text = Constants.checkbox_yestext
                 widget.no_text = Constants.checkbox_notext
                 widget.setVal = lambda val, w=widget: checkbox_setval(w, val)
                 widget.getVal = lambda w=widget: checkbox_getval(w)
-            elif wname[:3] == 'csb':  # CheckableSpinBox
+            elif widget_class == 'CheckableSpinBox':
                 widget.valueChanged.connect(lambda w=widget: self.values_changed(w))
                 widget.getVal = widget.value
                 widget.setVal = widget.setValue
@@ -339,9 +333,8 @@ class EntryApp(QtWidgets.QMainWindow):
                     lambda w=widget: w.getSuffix() if isint(w.getVal()) else ''
                 )
             else:
-                wsave = False
-            if wsave:
-                self.input_widgets[wname] = widget
+                raise RuntimeError(f'Invalid type of data input widget: {widget_class}')
+            self.input_widgets[wname] = widget
 
         # slot called on tab change
         self.maintab.currentChanged.connect(self.page_change)
@@ -352,31 +345,21 @@ class EntryApp(QtWidgets.QMainWindow):
         self.firstwidget = dict()
         # TODO: check/fix
         self.firstwidget[self.tabTiedot] = self.rdonly_firstname
-        self.firstwidget[self.tabKysely] = self.lnKyselyPaivittainenMatka
-        self.firstwidget[self.tabAntrop] = self.spAntropAlaraajaOik
-        self.firstwidget[self.tabLonkka] = self.csbLonkkaFleksioOik
-        self.firstwidget[self.tabNilkka] = self.csbNilkkaSoleusCatchOik
-        self.firstwidget[self.tabPolvi] = self.csbPolviEkstensioVapOik
-        self.firstwidget[self.tabIsokin] = self.spIsokinPolviEkstensioOik
-        self.firstwidget[self.tabVirheas] = self.spVirheasAnteversioOik
-        self.firstwidget[self.tabTasap] = self.spTasapOik
+        self.firstwidget[self.tabKysely] = self.dataKyselyPaivittainenMatka
+        self.firstwidget[self.tabAntrop] = self.dataAntropAlaraajaOik
+        self.firstwidget[self.tabLonkka] = self.dataLonkkaFleksioOik
+        self.firstwidget[self.tabNilkka] = self.dataNilkkaSoleusCatchOik
+        self.firstwidget[self.tabPolvi] = self.dataPolviEkstensioVapOik
+        self.firstwidget[self.tabIsokin] = self.dataIsokinPolviEkstensioOik
+        self.firstwidget[self.tabVirheas] = self.dataVirheasAnteversioOik
+        self.firstwidget[self.tabTasap] = self.dataTasapOik
         self.total_widgets = len(self.input_widgets)
 
         self.statusbar.showMessage(Finnish.ready.format(n=self.total_widgets))
 
-        """ Set up widget -> varname translation dict. Variable names
-        are derived by removing 2-3 leading characters (indicating widget type)
-        from widget names (except for comment box variables cmt* which are
-        identical with widget names).
-        """
         self.widget_to_var = dict()
         for wname in self.input_widgets:
-            if wname[:3] == 'cmt':
-                varname = wname
-            elif wname[:3] == 'csb':  # custom widget
-                varname = wname[3:]
-            else:
-                varname = wname[2:]
+            varname = wname[4:]
             self.widget_to_var[wname] = varname
 
         # try to increase font size
