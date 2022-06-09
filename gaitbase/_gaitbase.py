@@ -88,10 +88,13 @@ class PatientEditor(QtWidgets.QDialog):
     """Dialog to edit a patient"""
 
     def __init__(self, check_patient, patient=None, parent=None):
-        """check_patient is a callback which will check that the
-        Patient instance is ok and can be inserted into the database.
-        If patient is provided, its values will be displayed for editing.
-        Otherwise a new patiewt will be created.
+        """Init the patient edit window.
+        
+        check_patient is a callback which will check that the
+        Patient record is ok and can be inserted into the database.
+        It should accept one argument (the patient record).
+        If a patient record is provided, its values will be displayed for
+        editing. Otherwise, a new patient will be created.
         """
         uifile = resource_filename('gaitbase', 'edit_patient.ui')
         super().__init__(parent)
@@ -101,7 +104,7 @@ class PatientEditor(QtWidgets.QDialog):
         self.btnCancel.clicked.connect(self.reject)
         self.patient_check_callback = check_patient
         self._patient = patient or PatientData()
-        self._orig_patient = copy(self._patient)
+        self._original_patient = copy(self._patient)
         # set widget default values
         self.lnFirstName.setText(self._patient.firstname)
         self.lnLastName.setText(self._patient.lastname)
@@ -110,8 +113,8 @@ class PatientEditor(QtWidgets.QDialog):
         self.lnDiagnosis.setText(self._patient.diagnosis)
 
     @property
-    def patient(self):
-        """Return current patient record"""
+    def patient(self) -> PatientData:
+        """Return a patient record corresponding to current input data"""
         self._patient.firstname = self.lnFirstName.text()
         self._patient.lastname = self.lnLastName.text()
         self._patient.ssn = self.lnSSN.text()
@@ -121,8 +124,8 @@ class PatientEditor(QtWidgets.QDialog):
 
     def accept(self):
         """Guard for superclass accept - check patient first"""
-        p_ok, result = self.patient_check_callback(self.patient)
-        if p_ok:
+        patient_ok, result = self.patient_check_callback(self.patient)
+        if patient_ok:
             super().accept()
         else:
             msg = f'Please fix the following errors: {result}'
