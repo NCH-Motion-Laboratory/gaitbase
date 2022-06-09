@@ -18,7 +18,7 @@ def confirm_dialog(msg):
     dlg.addButton(
         QtWidgets.QPushButton(Finnish.no_button), QtWidgets.QMessageBox.NoRole
     )
-    dlg.exec_()
+    dlg.exec()
     return dlg.buttonRole(dlg.clickedButton())
 
 
@@ -30,7 +30,7 @@ def message_dialog(msg):
     dlg.addButton(
         QtWidgets.QPushButton(Finnish.ok_button), QtWidgets.QMessageBox.YesRole
     )
-    dlg.exec_()
+    dlg.exec()
 
 
 class MyLineEdit(QtWidgets.QLineEdit):

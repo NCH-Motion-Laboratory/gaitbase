@@ -28,7 +28,7 @@ def qt_message_dialog(msg):
     dlg.setWindowTitle('Message')
     dlg.setText(msg)
     dlg.addButton(QtWidgets.QPushButton('Ok'), QtWidgets.QMessageBox.YesRole)
-    dlg.exec_()
+    dlg.exec()
 
 
 def make_my_shortcut():
@@ -147,7 +147,7 @@ def qt_confirm_dialog(msg):
     dlg.setText(msg)
     dlg.addButton(QtWidgets.QPushButton('Yes'), QtWidgets.QMessageBox.YesRole)
     dlg.addButton(QtWidgets.QPushButton('No'), QtWidgets.QMessageBox.NoRole)
-    dlg.exec_()
+    dlg.exec()
     return dlg.buttonRole(dlg.clickedButton()) == QtWidgets.QMessageBox.YesRole
 
 
@@ -533,8 +533,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         """Confirm and close application."""
         if not self.CONFIRM_EXIT or qt_confirm_dialog('Do you want to exit?'):
             # close all ROM editor windows
-            for ed in list(self.editors.values()):
-                ed.force_close()
+            for editor in list(self.editors.values()):
+                editor.force_close()
             event.accept()
         else:
             event.ignore()
