@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Custom widgets for gaitbase ROM entry app
+Custom widgets for gaitbase ROM entry app.
 """
 
 from PyQt5 import QtWidgets, QtCore
@@ -92,7 +92,7 @@ class CheckableSpinBox(QtWidgets.QWidget):
     __pyqtSignals__ = 'valueChanged'
 
     def __init__(self, parent=None):
-        super(CheckableSpinBox, self).__init__(parent)
+        super().__init__(parent)
         self.degSpinBox = QtWidgets.QSpinBox()
         self.degSpinBox.valueChanged.connect(self.valueChanged.emit)
         self.degSpinBox.setMinimumSize(100, 0)
@@ -138,7 +138,7 @@ class CheckableSpinBox(QtWidgets.QWidget):
         elif event.key() == QtCore.Qt.Key_Space:
             self.toggleCheckBox()
         else:
-            super(CheckableSpinBox, self).keyPressEvent(event)
+            super().keyPressEvent(event)
 
     """ Set some values as Qt properties, mostly so that they can be easily
     changed from Qt Designer. """
