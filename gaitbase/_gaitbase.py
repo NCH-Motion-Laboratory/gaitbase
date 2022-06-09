@@ -43,6 +43,8 @@ class PatientData:
     firstname: str = ''
     lastname: str = ''
     ssn: str = ''
+    # lab internal patient code; note that this is different from the SQL
+    # patient id, which is automatically assigned by the SQL engine
     patient_code: str = ''
     diagnosis: str = ''
 
@@ -51,7 +53,6 @@ class PatientData:
 
         Returns a tuple of (is_valid, reason).
         """
-        # return (True, '')  # DEBUG insertion
         if not check_hetu(self.ssn):
             return (False, 'Invalid SSN')
         elif not validate_code(self.patient_code):
@@ -89,7 +90,7 @@ class PatientEditor(QtWidgets.QDialog):
 
     def __init__(self, check_patient, patient=None, parent=None):
         """Init the patient edit window.
-        
+
         check_patient is a callback which will check that the
         Patient record is ok and can be inserted into the database.
         It should accept one argument (the patient record).
@@ -329,8 +330,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         dlg = PatientEditor(self._check_new_patient)
         if not dlg.exec():
             return
-        id = self._insert_patient(dlg._patient)
-        if id is None:
+        patient_id = self._insert_patient(dlg._patient)
+        if patient_id is None:
             return
         self.patient_model.select()
         # clear the filter so that the newly inserted patient is visible
@@ -338,7 +339,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         # select the newly created patient
         # this is surprisingly hard to do
         for k in range(self.patient_model.rowCount()):
-            if self.patient_model.record(k).value('patient_id') == id:
+            if self.patient_model.record(k).value('patient_id') == patient_id:
                 idx = self.patient_model.index(k, 1, QtCore.QModelIndex())
                 idx_filter = self.patient_filter.mapFromSource(idx)
                 self.tvPatient.selectionModel().select(
@@ -370,7 +371,7 @@ class PatientDialog(QtWidgets.QMainWindow):
                 )
         return patient.is_valid()
 
-    def _update_patient(self, patient : PatientData, patient_id):
+    def _update_patient(self, patient: PatientData, patient_id):
         """Update an existing patient record.
 
         patient is a patient record containing the updated information.
@@ -378,7 +379,9 @@ class PatientDialog(QtWidgets.QMainWindow):
         """
         query = QtSql.QSqlQuery(self.database)
         query.prepare(
-            'UPDATE patients SET firstname = :firstname, lastname = :lastname, ssn = :ssn, patient_code = :patient_code, diagnosis = :diagnosis WHERE patient_id = :patient_id'
+            'UPDATE patients SET firstname = :firstname, lastname = :lastname, '
+            'ssn = :ssn, patient_code = :patient_code, diagnosis = :diagnosis '
+            'WHERE patient_id = :patient_id'
         )
         for field in fields(patient):
             query.bindValue(':' + field.name, getattr(patient, field.name))
@@ -387,11 +390,12 @@ class PatientDialog(QtWidgets.QMainWindow):
             db_failure(query, fatal=False)
         self.patient_model.select()
 
-    def _insert_patient(self, patient : PatientData):
+    def _insert_patient(self, patient: PatientData):
         """Insert a new patient record into the database."""
         query = QtSql.QSqlQuery(self.database)
         query.prepare(
-            'INSERT INTO patients (firstname, lastname, ssn, patient_code, diagnosis) VALUES (:firstname, :lastname, :ssn, :patient_code, :diagnosis)'
+            'INSERT INTO patients (firstname, lastname, ssn, patient_code, diagnosis) '
+            'VALUES (:firstname, :lastname, :ssn, :patient_code, :diagnosis)'
         )
         for field in fields(patient):
             query.bindValue(':' + field.name, getattr(patient, field.name))
@@ -411,9 +415,9 @@ class PatientDialog(QtWidgets.QMainWindow):
             rec.value('lastname'),
             rec.value('ssn'),
         )
-        msg = f"WARNING: are you sure you want to delete the patient\n\n"
+        msg = "WARNING: are you sure you want to delete the patient\n\n"
         msg += f"{firstname} {lastname}, {ssn}\n\n"
-        msg += f"and ALL associated measurements? There is no undo."
+        msg += "and ALL associated measurements? There is no undo."
         if not qt_confirm_dialog(msg):
             return
         # close any ROM dialogs related to this patient
@@ -431,8 +435,9 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.rom_model.select()
 
     def _edit_rom(self, rom_id=None, newly_created=False):
-        """Open a ROM measurement in an editor.
+        """Open a ROM measurement in an instance of the ROM editor.
 
+        Note that multiple ROMs may be open at the same time.
         If rom_id is None, will open the currently selected ROM.
         """
         if rom_id is None and (rom_id := self.current_rom_id) is None:
@@ -455,10 +460,10 @@ class PatientDialog(QtWidgets.QMainWindow):
         # we use an EntryApp instance to create the report
         # the instance is not shown as a window
         app = EntryApp(self.database, rom_id, False)
-        fn = named_tempfile(suffix='.xls')
+        fname = named_tempfile(suffix='.xls')
         report = app.make_excel_report(cfg.templates.xls)
-        report.save(fn)
-        _startfile(fn)
+        report.save(fname)
+        _startfile(fname)
         app.force_close()
 
     def _rom_text_report(self):
@@ -469,11 +474,11 @@ class PatientDialog(QtWidgets.QMainWindow):
         # we use an EntryApp instance to create the report
         # the instance is not shown as a window
         app = EntryApp(self.database, rom_id, False)
-        fn = named_tempfile(suffix='.txt')
+        fname = named_tempfile(suffix='.txt')
         report_txt = app.make_txt_report(cfg.templates.text)
-        with open(fn, 'w', encoding='utf-8') as f:
+        with open(fname, 'w', encoding='utf-8') as f:
             f.write(report_txt)
-        _startfile(fn)
+        _startfile(fname)
         app.force_close()
 
     def _new_rom(self):
@@ -494,9 +499,9 @@ class PatientDialog(QtWidgets.QMainWindow):
         else:
             self._edit_rom(query.lastInsertId(), newly_created=True)
 
-    def _editor_closing(self, id):
+    def _editor_closing(self, rom_id):
         """Callback for a closing a ROM editor"""
-        self.editors.pop(id)
+        self.editors.pop(rom_id)
         self.rom_model.select()
 
     def _delete_rom(self):
@@ -504,7 +509,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         if (rom_idx := self.current_rom_index) is None:
             message_dialog('Please select a ROM first')
             return
-        msg = f"WARNING: are you sure you want to delete this ROM measurement? There is no undo."
+        msg = 'WARNING: are you sure you want to delete this ROM measurement? There is no undo.'
         if qt_confirm_dialog(msg):
             if (rom_id := self.current_rom_id) in self.editors:
                 self.editors[rom_id].force_close()
@@ -536,17 +541,18 @@ class PatientDialog(QtWidgets.QMainWindow):
 
 
 def main():
+
     app = QtWidgets.QApplication(sys.argv)
     pdi = PatientDialog()
 
-    def my_excepthook(type, value, tback):
+    def my_excepthook(exc_type, value, tback):
         """Custom exception handler for fatal (unhandled) exceptions:
         report to user via GUI and terminate program."""
-        tb_full = ''.join(traceback.format_exception(type, value, tback))
+        tb_full = ''.join(traceback.format_exception(exc_type, value, tback))
         msg = f'Oops! An unhandled exception occurred:\n{tb_full}'
         msg += '\nThe application will be closed now.'
         message_dialog(msg)
-        sys.__excepthook__(type, value, tback)
+        sys.__excepthook__(exc_type, value, tback)
         app.quit()
 
     sys.excepthook = my_excepthook
