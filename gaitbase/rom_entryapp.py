@@ -132,10 +132,10 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def init_readonly_fields(self):
         """Fill the read-only patient info widgets"""
-        patient_id = self.select(['patient_id'])[0].value()
-        query = QSqlQuery(self.database)
+        patient_id = self.select(['patient_id'])[0].value()  # SQL id of current patient
         thevars = ['firstname', 'lastname', 'ssn', 'patient_code', 'diagnosis']
         varlist = ','.join(thevars)
+        query = QSqlQuery(self.database)
         query.prepare(f'SELECT {varlist} FROM patients WHERE patient_id = :patient_id')
         query.bindValue(':patient_id', patient_id)
         if not query.exec() or not query.first():
@@ -230,6 +230,10 @@ class EntryApp(QtWidgets.QMainWindow):
             else:
                 raise ValueError(f'Tried to set combobox to invalid value {val}')
 
+        # collect all widgets (whether data input widgets or something else)
+        allwidgets = self.findChildren(QtWidgets.QWidget)
+        # special input widgets which the app uses to collect data
+        data_widgets = [w for w in allwidgets if w.objectName()[:4] == 'data']
 
         # Change lineEdit to a custom one for spinboxes. This cannot be done in
         # the main widget loop below, because the old QLineEdits get destroyed in
@@ -245,20 +249,17 @@ class EntryApp(QtWidgets.QMainWindow):
                 # delegate the event to the overridden superclass handler
                 super(obj.__class__, obj).keyPressEvent(event)
 
-        for widget in self.findChildren((QtWidgets.QSpinBox, QtWidgets.QDoubleSpinBox)):
-            wname = widget.objectName()
-            if wname[:2] == 'sp':
+        for widget in data_widgets:
+            widget_class = widget.__class__.__name__
+            if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
                 widget.setLineEdit(MyLineEdit())
                 widget.keyPressEvent = lambda event, w=widget: keyPressEvent_resetOnEsc(
                     w, event
                 )
-
-        # CheckableSpinBoxes get a special LineEdit that catches space and mouse
-        # press events. 
-        for widget in self.findChildren(CheckableSpinBox):
-            widget.degSpinBox.setLineEdit(DegLineEdit())
-
-        allwidgets = self.findChildren(QtWidgets.QWidget)
+            elif widget_class == 'CheckableSpinBox':
+                # CheckableSpinBoxes get a special LineEdit that catches space
+                # and mouse press events. 
+                widget.degSpinBox.setLineEdit(DegLineEdit())
 
         def _weight_normalize(widget):
             """Auto calculate callback for weight normalized widgets"""
@@ -289,7 +290,6 @@ class EntryApp(QtWidgets.QMainWindow):
         # set various widget convenience methods/properties
         # input widgets are specially named and will be automatically
         # collected into a dict
-        data_widgets = [w for w in allwidgets if w.objectName()[:4] == 'data']
         for widget in data_widgets:
             wname = widget.objectName()
             # w.unit returns the unit for each input (may change dynamically)
