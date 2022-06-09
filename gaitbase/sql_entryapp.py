@@ -323,8 +323,6 @@ class EntryApp(QtWidgets.QMainWindow):
                 wsave = False
             if wsave:
                 self.input_widgets[wname] = w
-                # TODO: specify whether input value is 'mandatory' or not
-                w.important = False
 
         # slot called on tab change
         self.maintab.currentChanged.connect(self.page_change)
@@ -415,7 +413,7 @@ class EntryApp(QtWidgets.QMainWindow):
                 event.ignore()
 
     def _validate_date(self, datestr):
-        """Validate date"""
+        """Validate a date of dd.mm.yyyy"""
         try:
             datetime.datetime.strptime(datestr, '%d.%m.%Y')
             return True
