@@ -385,9 +385,9 @@ class EntryApp(QtWidgets.QMainWindow):
         if self.BACKUP_NEW_ROMS and self.newly_created:
             # XXX: this will overwrite existing files, but they should be uniquely named due to
             # timestamp in the filename
-            fn = self._compose_json_filename()
+            fname = self._compose_json_filename()
             try:
-                self.save_file(fn)
+                self.dump_json(fname)
             except IOError:  # ignore errors for now
                 pass
         self.closing.emit(self.rom_id)
@@ -471,11 +471,11 @@ class EntryApp(QtWidgets.QMainWindow):
         fn += '.json'
         return Constants.json_backup_path / fn
 
-    def save_file(self, fn):
+    def dump_json(self, fname):
         """Save data into given file in utf-8 encoding"""
         # ID data is not updated from widgets in the SQL version, so get it separately
         rdata = self.data | self.get_patient_id_data()
-        with open(fn, 'w', encoding='utf-8') as f:
+        with open(fname, 'w', encoding='utf-8') as f:
             f.write(json.dumps(rdata, ensure_ascii=False, indent=True, sort_keys=True))
 
     def make_txt_report(self, template, include_units=True):
