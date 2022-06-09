@@ -83,6 +83,8 @@ class EntryApp(QtWidgets.QMainWindow):
         """Handle database failures"""
         err = query.lastError().databaseText()
         msg = f'Got a database error: "{err}"\n'
+        # if there is no error, it usually means that a column does not exist
+        # this is most commonly due to schema changes
         if not err:
             msg += '(this may be due to schema not matching the UI variables)\n'
         msg += 'In case of a locking error, close all other applications '
@@ -116,16 +118,10 @@ class EntryApp(QtWidgets.QMainWindow):
         varlist = ','.join(f'{var} = :{var}' for var in thevars)
         q.prepare(f'UPDATE roms SET {varlist} WHERE rom_id = :rom_id')
         q.bindValue(':rom_id', self.rom_id)
-        # XXX: note that we don't do any type conversion here. For a given
-        # variable, the type of the value might change from one write to another
-        # (i.e. from string "Ei mitattu" to float 5.0). This works with SQLite,
-        # since it uses dynamic typing. For any other database engine, it will
-        # be necessary to convert the values on read/write, so that static types
-        # are maintained.
         for var, val in zip(thevars, values):
             q.bindValue(f':{var}', val)
         if not q.exec():
-            # it's possible that locking failures may occur, so make them non-fatal
+            # it's possible that locking failures may occur here, so make them non-fatal
             self.db_failure(q, fatal=False)
 
     def init_readonly_fields(self):
