@@ -4,36 +4,25 @@
 @author: Jussi (jnu@iki.fi)
 """
 
-import sys
-import json
 import datetime
-from PyQt5.QtSql import QSqlQuery
-import sip
-from PyQt5 import uic, QtCore, QtWidgets
-import webbrowser
+import json
 import logging
-from pkg_resources import resource_filename
 
-from .constants import Constants, Finnish
-from .config import cfg
-from .widgets import (
-    MyLineEdit,
-    DegLineEdit,
-    CheckableSpinBox,
-    message_dialog,
-)
+import sip
+from pkg_resources import resource_filename
+from PyQt5 import QtCore, QtWidgets, uic
+from PyQt5.QtSql import QSqlQuery
+
 from . import reporter
+from .config import cfg
+from .constants import Constants, Finnish
+from .widgets import CheckableSpinBox, DegLineEdit, MyLineEdit, message_dialog
 
 logger = logging.getLogger(__name__)
 
 
-def debug_print(msg):
-    print(msg)
-    sys.stdout.flush()
-
-
 def pyqt_disable_autoconv(func):
-    """Disable Qt type autoconversion for a function.
+    """Decorator to disable Qt type autoconversion for a function.
 
     PyQt functions decorated with this will return QVariants from many Qt
     functions, instead of native Python types. The QVariants then need to be
@@ -50,8 +39,9 @@ def pyqt_disable_autoconv(func):
 
 
 class EntryApp(QtWidgets.QMainWindow):
-    """Data entry window"""
+    """Data entry application"""
 
+    # this signal will be emitted when the window is closing
     closing = QtCore.pyqtSignal(object)
 
     def __init__(self, database=None, rom_id=None, newly_created=None):
@@ -181,7 +171,7 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def eventFilter(self, source, event):
         """Captures the FocusOut event for text widgets.
-        
+
         The idea is to perform data updates when widget focus is lost.
         """
         if event.type() == QtCore.QEvent.FocusOut:
@@ -502,11 +492,11 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def _read_data(self):
         """Read input data from database"""
-        vars = list(self.data.keys())
+        thevars = list(self.data.keys())
         # get data as QVariants, and ignore NULL ones (which correspond to missing data in database)
-        qvals = self.select(vars)
+        qvals = self.select(thevars)
         record_di = {
-            var: qval.value() for var, qval in zip(vars, qvals) if not qval.isNull()
+            var: qval.value() for var, qval in zip(thevars, qvals) if not qval.isNull()
         }
         self.data = self.data_empty | record_di
         self.restore_forms()
