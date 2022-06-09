@@ -11,7 +11,7 @@ from gaitbase.dump_varlist import _get_var_affs
 DB_FILEPATH = Path('patients.db')
 
 if DB_FILEPATH.is_file():
-    raise RuntimeError('File already exists!')
+    raise RuntimeError(f'File {DB_FILEPATH} already exists!')
 conn = sqlite3.connect(DB_FILEPATH)
 conn.execute('PRAGMA foreign_keys = ON;')
 
