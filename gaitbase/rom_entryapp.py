@@ -52,8 +52,9 @@ class EntryApp(QtWidgets.QMainWindow):
         uifile = resource_filename('gaitbase', 'rom_entryapp.ui')
         uic.loadUi(uifile, self)
         self.confirm_close = True  # used to implement force close
-        self.init_widgets()
-        self.data = {}
+        self.input_widgets = dict()
+        self._init_widgets()
+        self.data = dict()
         self.read_forms()  # read default data from widgets
         self.data_empty = self.data.copy()
         # whether to update internal dict of variables on input changes
@@ -169,10 +170,14 @@ class EntryApp(QtWidgets.QMainWindow):
             self.values_changed(source)
         return super().eventFilter(source, event)
 
-    def init_widgets(self):
-        """Make a dict of our input widgets and install some callbacks and
-        convenience methods etc."""
-        self.input_widgets = {}
+    def _init_widgets(self):
+        """Init and record the input widgets.
+        
+        Also installs some convenience methods, etc.
+        """
+
+        # injecting the getval() and setval() functions allow getting/setting
+        # data for every widget with an uniform interface
 
         def spinbox_getval(widget):
             """Return spinbox value"""
@@ -225,6 +230,12 @@ class EntryApp(QtWidgets.QMainWindow):
             else:
                 raise ValueError(f'Tried to set combobox to invalid value {val}')
 
+
+        # Change lineEdit to a custom one for spinboxes. This cannot be done in
+        # the main widget loop below, because the old QLineEdits get destroyed in
+        # the process (by Qt) and the loop then segfaults while trying to
+        # reference them (the loop collects all QLineEdits at the start).
+        # Also install a special keypress event handler. """
         def keyPressEvent_resetOnEsc(obj, event):
             """Special event handler for spinboxes. Resets value (sets it
             to minimum) when Esc is pressed."""
@@ -234,11 +245,6 @@ class EntryApp(QtWidgets.QMainWindow):
                 # delegate the event to the overridden superclass handler
                 super(obj.__class__, obj).keyPressEvent(event)
 
-        # Change lineEdit to custom one for spinboxes. This cannot be done in
-        # the main widget loop below, because the old QLineEdits get destroyed in
-        # the process (by Qt) and the loop then segfaults while trying to
-        # dereference them (the loop collects all QLineEdits at the start).
-        # Also install special keypress event handler. """
         for widget in self.findChildren((QtWidgets.QSpinBox, QtWidgets.QDoubleSpinBox)):
             wname = widget.objectName()
             if wname[:2] == 'sp':
@@ -247,9 +253,8 @@ class EntryApp(QtWidgets.QMainWindow):
                     w, event
                 )
 
-        # CheckableSpinBoxes get a special LineEdit that catches space
-        # and mouse press events
-
+        # CheckableSpinBoxes get a special LineEdit that catches space and mouse
+        # press events. 
         for widget in self.findChildren(CheckableSpinBox):
             widget.degSpinBox.setLineEdit(DegLineEdit())
 
@@ -339,11 +344,10 @@ class EntryApp(QtWidgets.QMainWindow):
         # slot called on tab change
         self.maintab.currentChanged.connect(self.page_change)
 
-        """ First widget of each page. This is used to do focus/selectall on
-        the 1st widget on page change so that data can be entered immediately.
-        Only needed for spinbox / lineedit widgets. """
+        # Set first widget (top widget) of each page. This is used to do
+        # focus/selectall on the 1st widget on page change, so that data can be
+        # entered immediately.
         self.firstwidget = dict()
-        # TODO: check/fix
         self.firstwidget[self.tabTiedot] = self.rdonly_firstname
         self.firstwidget[self.tabKysely] = self.dataKyselyPaivittainenMatka
         self.firstwidget[self.tabAntrop] = self.dataAntropAlaraajaOik
