@@ -363,12 +363,12 @@ class EntryApp(QtWidgets.QMainWindow):
 
     @property
     def units(self):
-        """Return dict indicating the units for each variable. This may change
-        dynamically as the unit may be set to '' for special values."""
-        return {
-            self.widget_to_var[wname]: self.input_widgets[wname].unit()
-            for wname in self.input_widgets
-        }
+        """Return dict indicating the units for each variable. The units may change dynamically depending on the values entered"""
+        units = dict()
+        for wname, widget in self.input_widgets.items():
+            varname = self.widget_to_var[wname]
+            units[varname] = widget.unit()
+        return units
 
     @property
     def vars_default(self):
