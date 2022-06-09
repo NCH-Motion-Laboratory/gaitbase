@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-
 Qt Designer plugin for CheckableSpinBox.
 Makes it possible to properly see the widget in Qt Designer.
 Also required to properly write the .ui file containing custom widgets.

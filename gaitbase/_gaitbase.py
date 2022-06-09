@@ -168,7 +168,7 @@ class PatientDialog(QtWidgets.QMainWindow):
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        uifile = resource_filename('gaitbase', 'patients.ui')
+        uifile = resource_filename('gaitbase', 'gaitbase_main.ui')
         uic.loadUi(uifile, self)
         self.editors = dict()
 
