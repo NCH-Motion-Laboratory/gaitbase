@@ -17,6 +17,7 @@ from . import reporter
 from .config import cfg
 from .constants import Constants, Finnish
 from .widgets import CheckableSpinBox, DegLineEdit, MyLineEdit, message_dialog
+from .utils import isint
 
 logger = logging.getLogger(__name__)
 
@@ -238,14 +239,6 @@ class EntryApp(QtWidgets.QMainWindow):
             else:
                 # delegate the event to the overridden superclass handler
                 super(obj.__class__, obj).keyPressEvent(event)
-
-        def isint(x):
-            """Test for integer"""
-            try:
-                int(x)
-                return True
-            except ValueError:
-                return False
 
         # Change lineEdit to custom one for spinboxes. This cannot be done in
         # the main widget loop below, because the old QLineEdits get destroyed in

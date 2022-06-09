@@ -49,3 +49,12 @@ def _startfile(target):
         os.startfile(target)
     else:
         subprocess.call(['xdg-open', target])
+
+
+def isint(x):
+    """Test for integer"""
+    try:
+        int(x)
+        return True
+    except ValueError:
+        return False
