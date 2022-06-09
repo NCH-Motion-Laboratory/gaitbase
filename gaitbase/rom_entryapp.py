@@ -67,9 +67,9 @@ class EntryApp(QtWidgets.QMainWindow):
         if newly_created:
             # automatically set the date field
             datestr = datetime.datetime.now().strftime('%d.%m.%Y')
-            self.lnTiedotPvm.setText(datestr)
+            self.dataTiedotPvm.setText(datestr)
             # for a newly created entry, initialize the database row w/ default values
-            self.values_changed(self.lnTiedotPvm)
+            self.values_changed(self.dataTiedotPvm)
         elif database is not None:
             # for existing entry, read values from database
             self._read_data()
@@ -289,6 +289,13 @@ class EntryApp(QtWidgets.QMainWindow):
             wsave = True
             # w.unit returns the unit for each input (may change dynamically)
             widget.unit = lambda: ''
+            if wname[:4] == 'data':  # a data entry widget
+                raise RuntimeError(widget.__class__)
+
+
+
+
+
             if wname[:2] == 'sp':  # spinbox or doublespinbox
                 # -lambdas need default arguments because of late binding
                 # -lambda expression needs to consume unused 'new value' arg,
