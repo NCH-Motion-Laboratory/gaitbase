@@ -56,7 +56,7 @@ class EntryApp(QtWidgets.QMainWindow):
         self.read_forms()  # read default data from widgets
         self.data_empty = self.data.copy()
         # whether to update internal dict of variables on input changes
-        self.update_dict = True
+        self.do_update_data = True
         self.database = database
         self.rom_id = rom_id
         self.newly_created = newly_created
@@ -437,7 +437,7 @@ class EntryApp(QtWidgets.QMainWindow):
         ]
         for widget in autowidgets_this:
             widget._autocalculate()
-        if self.update_dict:
+        if self.do_update_data:
             # update internal data dict
             wname = widget.objectName()
             varname = self.widget_to_var[wname]
@@ -513,11 +513,11 @@ class EntryApp(QtWidgets.QMainWindow):
         """Restore widget input values from self.data. Need to disable widget
         callbacks and automatic data saving while programmatic updating of
         widgets is taking place."""
-        self.update_dict = False
+        self.do_update_data = False
         for wname, widget in self.input_widgets.items():
             varname = self.widget_to_var[wname]
             widget.setVal(self.data[varname])
-        self.update_dict = True
+        self.do_update_data = True
 
     def read_forms(self):
         """Read self.data from widget inputs. Usually not needed, since
