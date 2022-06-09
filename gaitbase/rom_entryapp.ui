@@ -50,7 +50,7 @@
         <item>
          <layout class="QGridLayout" name="gridLayout_13">
           <item row="6" column="2">
-           <widget class="QLineEdit" name="lnTiedotMittaajat">
+           <widget class="QLineEdit" name="dataTiedotMittaajat">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -83,7 +83,7 @@
            </widget>
           </item>
           <item row="5" column="2">
-           <widget class="QLineEdit" name="lnTiedotPvm">
+           <widget class="QLineEdit" name="dataTiedotPvm">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -314,7 +314,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QTextEdit" name="cmtTiedot">
+           <widget class="QTextEdit" name="datacmtTiedot">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -451,7 +451,7 @@
             <item>
              <layout class="QGridLayout" name="gridLayout_16">
               <item row="20" column="2">
-               <widget class="QCheckBox" name="xbKyselyFAQKavelenJonkinVerranSisalla">
+               <widget class="QCheckBox" name="dataKyselyFAQKavelenJonkinVerranSisalla">
                 <property name="text">
                  <string/>
                 </property>
@@ -465,14 +465,14 @@
                </widget>
               </item>
               <item row="25" column="2">
-               <widget class="QCheckBox" name="xbKyselyFAQKavelenUlkonaKaikissaMaastoissa">
+               <widget class="QCheckBox" name="dataKyselyFAQKavelenUlkonaKaikissaMaastoissa">
                 <property name="text">
                  <string/>
                 </property>
                </widget>
               </item>
               <item row="9" column="2">
-               <widget class="QComboBox" name="cbFMSPitkatMatkat">
+               <widget class="QComboBox" name="dataFMSPitkatMatkat">
                 <item>
                  <property name="text">
                   <string>N Ei vastausta</string>
@@ -523,7 +523,7 @@
                </widget>
               </item>
               <item row="22" column="2">
-               <widget class="QCheckBox" name="xbKyselyFAQKavelenPitempiaMatkojaUlkonaTasaisella">
+               <widget class="QCheckBox" name="dataKyselyFAQKavelenPitempiaMatkojaUlkonaTasaisella">
                 <property name="text">
                  <string/>
                 </property>
@@ -569,7 +569,7 @@
                </widget>
               </item>
               <item row="17" column="2">
-               <widget class="QCheckBox" name="xbKyselyFAQAskellanTuettuna">
+               <widget class="QCheckBox" name="dataKyselyFAQAskellanTuettuna">
                 <property name="text">
                  <string/>
                 </property>
@@ -583,17 +583,17 @@
                </widget>
               </item>
               <item row="29" column="2">
-               <widget class="QLineEdit" name="lnKyselyKipuKuvaus"/>
+               <widget class="QLineEdit" name="dataKyselyKipuKuvaus"/>
               </item>
               <item row="16" column="2">
-               <widget class="QCheckBox" name="xbKyselyFAQEiAskeleita">
+               <widget class="QCheckBox" name="dataKyselyFAQEiAskeleita">
                 <property name="text">
                  <string/>
                 </property>
                </widget>
               </item>
               <item row="5" column="2">
-               <widget class="QComboBox" name="cbKyselyPaivittainenYhtajaksMatkaIlmanApuv">
+               <widget class="QComboBox" name="dataKyselyPaivittainenYhtajaksMatkaIlmanApuv">
                 <item>
                  <property name="text">
                   <string>Ei vastausta</string>
@@ -627,7 +627,7 @@
                </widget>
               </item>
               <item row="21" column="2">
-               <widget class="QCheckBox" name="xbKyselyKavelenJonkinVerranUlkona">
+               <widget class="QCheckBox" name="dataKyselyKavelenJonkinVerranUlkona">
                 <property name="text">
                  <string/>
                 </property>
@@ -661,17 +661,17 @@
                </widget>
               </item>
               <item row="2" column="2">
-               <widget class="QLineEdit" name="lnKyselyPaivittainenMatka"/>
+               <widget class="QLineEdit" name="dataKyselyPaivittainenMatka"/>
               </item>
               <item row="19" column="2">
-               <widget class="QCheckBox" name="xbKyselyFAQKavelenLyhyitaMatkojaKotona">
+               <widget class="QCheckBox" name="dataKyselyFAQKavelenLyhyitaMatkojaKotona">
                 <property name="text">
                  <string/>
                 </property>
                </widget>
               </item>
               <item row="24" column="2">
-               <widget class="QCheckBox" name="xbKyselyFAQKavelenUlkonaEpatasaisellaPientaApua">
+               <widget class="QCheckBox" name="dataKyselyFAQKavelenUlkonaEpatasaisellaPientaApua">
                 <property name="text">
                  <string/>
                 </property>
@@ -685,7 +685,7 @@
                </widget>
               </item>
               <item row="23" column="2">
-               <widget class="QCheckBox" name="xbKyselyFAQKavelenPitempiaMatkojaUlkonaEpatasaisellaApua">
+               <widget class="QCheckBox" name="dataKyselyFAQKavelenPitempiaMatkojaUlkonaEpatasaisellaApua">
                 <property name="text">
                  <string/>
                 </property>
@@ -699,7 +699,7 @@
                </widget>
               </item>
               <item row="4" column="2">
-               <widget class="QComboBox" name="cbKyselyPaivittainenYhtajaksMatkaApuv">
+               <widget class="QComboBox" name="dataKyselyPaivittainenYhtajaksMatkaApuv">
                 <item>
                  <property name="text">
                   <string>Ei vastausta</string>
@@ -780,7 +780,7 @@
                </widget>
               </item>
               <item row="28" column="2">
-               <widget class="QCheckBox" name="xbKyselyKipujaViim6kk">
+               <widget class="QCheckBox" name="dataKyselyKipujaViim6kk">
                 <property name="text">
                  <string/>
                 </property>
@@ -816,7 +816,7 @@ täysin ja saatan tarvita pientä apua.</string>
                </widget>
               </item>
               <item row="26" column="2">
-               <widget class="QLineEdit" name="lnKyselyFAQKOmmentit"/>
+               <widget class="QLineEdit" name="dataKyselyFAQKOmmentit"/>
               </item>
               <item row="6" column="1">
                <widget class="QLabel" name="label_121">
@@ -847,7 +847,7 @@ käyttö on sallittu kaikissa kohdissa.</string>
                </widget>
               </item>
               <item row="7" column="2">
-               <widget class="QComboBox" name="cbFMSLyhyetMatkat">
+               <widget class="QComboBox" name="dataFMSLyhyetMatkat">
                 <item>
                  <property name="text">
                   <string>N Ei vastausta</string>
@@ -899,7 +899,7 @@ rattaita pidemmillä matkoilla ja vaihtelevissa maastoissa.</string>
                </widget>
               </item>
               <item row="11" column="2">
-               <widget class="QLineEdit" name="lnKyselyApuvRajoittavat"/>
+               <widget class="QLineEdit" name="dataKyselyApuvRajoittavat"/>
               </item>
               <item row="17" column="1">
                <widget class="QLabel" name="label_135">
@@ -924,7 +924,7 @@ ja valvontaa turvallisuuden takia.</string>
                </widget>
               </item>
               <item row="8" column="2">
-               <widget class="QComboBox" name="cbFMSKoulussa">
+               <widget class="QComboBox" name="dataFMSKoulussa">
                 <item>
                  <property name="text">
                   <string>N Ei vastausta</string>
@@ -968,7 +968,7 @@ ja valvontaa turvallisuuden takia.</string>
                </widget>
               </item>
               <item row="12" column="2">
-               <widget class="QLineEdit" name="lnKyselyApuvKaytossa"/>
+               <widget class="QLineEdit" name="dataKyselyApuvKaytossa"/>
               </item>
               <item row="7" column="1">
                <widget class="QLabel" name="label_124">
@@ -994,7 +994,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
                </widget>
               </item>
               <item row="18" column="2">
-               <widget class="QCheckBox" name="xbKyselyFAQKavelenTerapiassa">
+               <widget class="QCheckBox" name="dataKyselyFAQKavelenTerapiassa">
                 <property name="text">
                  <string/>
                 </property>
@@ -1008,7 +1008,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
                </widget>
               </item>
               <item row="13" column="2">
-               <widget class="QLineEdit" name="lnKyselyApuvMuutokset"/>
+               <widget class="QLineEdit" name="dataKyselyApuvMuutokset"/>
               </item>
               <item row="0" column="1">
                <spacer name="verticalSpacer_11">
@@ -1040,7 +1040,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
                </spacer>
               </item>
               <item row="30" column="2">
-               <widget class="QTextEdit" name="cmtKysely"/>
+               <widget class="QTextEdit" name="datacmtKysely"/>
               </item>
              </layout>
             </item>
@@ -1110,7 +1110,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="12" column="2">
-           <widget class="QDoubleSpinBox" name="spAntropPaino">
+           <widget class="QDoubleSpinBox" name="dataAntropPaino">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1147,7 +1147,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="10" column="2">
-           <widget class="QSpinBox" name="spAntropSIAS">
+           <widget class="QSpinBox" name="dataAntropSIAS">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1185,7 +1185,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="7" column="2">
-           <widget class="QSpinBox" name="spAntropNilkkaOik">
+           <widget class="QSpinBox" name="dataAntropNilkkaOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1223,7 +1223,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="7" column="4">
-           <widget class="QSpinBox" name="spAntropNilkkaVas">
+           <widget class="QSpinBox" name="dataAntropNilkkaVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1254,7 +1254,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="4">
-           <widget class="QSpinBox" name="spAntropJalkateraVas">
+           <widget class="QSpinBox" name="dataAntropJalkateraVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1285,7 +1285,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="QSpinBox" name="spAntropJalkateraOik">
+           <widget class="QSpinBox" name="dataAntropJalkateraOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1316,7 +1316,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="3" column="2">
-           <widget class="QSpinBox" name="spAntropAlaraajaOik">
+           <widget class="QSpinBox" name="dataAntropAlaraajaOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1384,7 +1384,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="13" column="4">
-           <widget class="QDoubleSpinBox" name="spAntropKenganNumeroVas">
+           <widget class="QDoubleSpinBox" name="dataAntropKenganNumeroVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1421,7 +1421,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="14" column="2">
-           <widget class="QSpinBox" name="spAntropKenganPituusOik">
+           <widget class="QSpinBox" name="dataAntropKenganPituusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1452,7 +1452,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="4">
-           <widget class="QSpinBox" name="spAntropPolviVas">
+           <widget class="QSpinBox" name="dataAntropPolviVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1483,7 +1483,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="11" column="2">
-           <widget class="QSpinBox" name="spAntropPituus">
+           <widget class="QSpinBox" name="dataAntropPituus">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1514,7 +1514,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="2">
-           <widget class="QSpinBox" name="spAntropPolviOik">
+           <widget class="QSpinBox" name="dataAntropPolviOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1545,7 +1545,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="3" column="4">
-           <widget class="QSpinBox" name="spAntropAlaraajaVas">
+           <widget class="QSpinBox" name="dataAntropAlaraajaVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1583,7 +1583,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="13" column="2">
-           <widget class="QDoubleSpinBox" name="spAntropKenganNumeroOik">
+           <widget class="QDoubleSpinBox" name="dataAntropKenganNumeroOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1620,7 +1620,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="14" column="4">
-           <widget class="QSpinBox" name="spAntropKenganPituusVas">
+           <widget class="QSpinBox" name="dataAntropKenganPituusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1688,7 +1688,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="4">
-           <widget class="QSpinBox" name="spAntropPolviTuetVas">
+           <widget class="QSpinBox" name="dataAntropPolviTuetVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1719,7 +1719,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="2">
-           <widget class="QSpinBox" name="spAntropPolviTuetOik">
+           <widget class="QSpinBox" name="dataAntropPolviTuetOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1764,7 +1764,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="8" column="2">
-           <widget class="QSpinBox" name="spAntropNilkkaTuetOik">
+           <widget class="QSpinBox" name="dataAntropNilkkaTuetOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1795,7 +1795,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="8" column="4">
-           <widget class="QSpinBox" name="spAntropNilkkaTuetVas">
+           <widget class="QSpinBox" name="dataAntropNilkkaTuetVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1876,7 +1876,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item>
-           <widget class="QTextEdit" name="cmtAntrop">
+           <widget class="QTextEdit" name="datacmtAntrop">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1922,7 +1922,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
         <item>
          <layout class="QGridLayout" name="gridLayout">
           <item row="6" column="2">
-           <widget class="CheckableSpinBox" name="csbLonkkaEkstensioVapOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioVapOik"/>
           </item>
           <item row="15" column="1">
            <widget class="QLabel" name="label_29">
@@ -1957,7 +1957,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="CheckableSpinBox" name="csbLonkkaEkstensioPolvi90Oik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioPolvi90Oik"/>
           </item>
           <item row="17" column="1">
            <widget class="QLabel" name="label_17">
@@ -1967,7 +1967,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="7" column="4">
-           <widget class="CheckableSpinBox" name="csbLonkkaEkstensioAvVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioAvVas"/>
           </item>
           <item row="2" column="6" colspan="3">
            <widget class="QLabel" name="label_88">
@@ -1999,7 +1999,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="19" column="4">
-           <widget class="CheckableSpinBox" name="csbLonkkaSisakiertoVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaSisakiertoVas"/>
           </item>
           <item row="20" column="1">
            <widget class="QLabel" name="label_55">
@@ -2009,7 +2009,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="7" column="2">
-           <widget class="CheckableSpinBox" name="csbLonkkaEkstensioAvOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioAvOik"/>
           </item>
           <item row="18" column="1">
            <widget class="QLabel" name="label_34">
@@ -2026,13 +2026,13 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="4" column="4">
-           <widget class="CheckableSpinBox" name="csbLonkkaFleksioVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaFleksioVas"/>
           </item>
           <item row="11" column="2">
-           <widget class="CheckableSpinBox" name="csbLonkkaAbduktioLonkka0Polvi90Oik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkka0Polvi90Oik"/>
           </item>
           <item row="10" column="2">
-           <widget class="CheckableSpinBox" name="csbLonkkaExtLagOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaExtLagOik"/>
           </item>
           <item row="16" column="1">
            <widget class="QLabel" name="label_16">
@@ -2042,7 +2042,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="4" column="6">
-           <widget class="QComboBox" name="cbLonkkaFleksioModAOik">
+           <widget class="QComboBox" name="dataLonkkaFleksioModAOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2093,7 +2093,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="19" column="6">
-           <widget class="QComboBox" name="cbLonkkaSisakiertoModAOik">
+           <widget class="QComboBox" name="dataLonkkaSisakiertoModAOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2144,10 +2144,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="4">
-           <widget class="CheckableSpinBox" name="csbLonkkaAdduktioVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAdduktioVas"/>
           </item>
           <item row="4" column="8">
-           <widget class="QComboBox" name="cbLonkkaFleksioModAVas">
+           <widget class="QComboBox" name="dataLonkkaFleksioModAVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2198,7 +2198,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="6">
-           <widget class="QComboBox" name="cbLonkkaEkstensioModAOik">
+           <widget class="QComboBox" name="dataLonkkaEkstensioModAOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2261,7 +2261,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="12" column="6">
-           <widget class="QComboBox" name="cbLonkkaAdduktoritModAOik">
+           <widget class="QComboBox" name="dataLonkkaAdduktoritModAOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2312,13 +2312,13 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="2">
-           <widget class="CheckableSpinBox" name="csbLonkkaAdduktioOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAdduktioOik"/>
           </item>
           <item row="13" column="4">
-           <widget class="CheckableSpinBox" name="csbLonkkaAbduktioLonkka0Vas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkka0Vas"/>
           </item>
           <item row="13" column="2">
-           <widget class="CheckableSpinBox" name="csbLonkkaAbduktioLonkka0Oik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkka0Oik"/>
           </item>
           <item row="9" column="1">
            <widget class="QLabel" name="label_11">
@@ -2333,10 +2333,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="15" column="4">
-           <widget class="CheckableSpinBox" name="csbLonkkaAbduktioLonkkaFleksVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkkaFleksVas"/>
           </item>
           <item row="15" column="2">
-           <widget class="CheckableSpinBox" name="csbLonkkaAbduktioLonkkaFleksOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkkaFleksOik"/>
           </item>
           <item row="4" column="1">
            <widget class="QLabel" name="label_7">
@@ -2358,13 +2358,13 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="4">
-           <widget class="CheckableSpinBox" name="csbLonkkaEkstensioVapVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioVapVas"/>
           </item>
           <item row="4" column="2">
-           <widget class="CheckableSpinBox" name="csbLonkkaFleksioOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaFleksioOik"/>
           </item>
           <item row="9" column="4">
-           <widget class="CheckableSpinBox" name="csbLonkkaEkstensioPolvi90Vas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioPolvi90Vas"/>
           </item>
           <item row="3" column="8">
            <widget class="QLabel" name="label_90">
@@ -2406,7 +2406,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="19" column="2">
-           <widget class="CheckableSpinBox" name="csbLonkkaSisakiertoOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaSisakiertoOik"/>
           </item>
           <item row="2" column="2" colspan="3">
            <widget class="QLabel" name="label_77">
@@ -2449,33 +2449,33 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="20" column="4">
-           <widget class="CheckableSpinBox" name="csbLonkkaUlkokiertoVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaUlkokiertoVas"/>
           </item>
           <item row="11" column="4">
-           <widget class="CheckableSpinBox" name="csbLonkkaAbduktioLonkka0Polvi90Vas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkka0Polvi90Vas"/>
           </item>
           <item row="10" column="4">
-           <widget class="CheckableSpinBox" name="csbLonkkaExtLagVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaExtLagVas"/>
           </item>
           <item row="12" column="4">
-           <widget class="CheckableSpinBox" name="csbLonkkaAdduktoritCatchVas">
+           <widget class="CheckableSpinBox" name="dataLonkkaAdduktoritCatchVas">
             <property name="defaultText">
              <string>Ei</string>
             </property>
            </widget>
           </item>
           <item row="12" column="2">
-           <widget class="CheckableSpinBox" name="csbLonkkaAdduktoritCatchOik">
+           <widget class="CheckableSpinBox" name="dataLonkkaAdduktoritCatchOik">
             <property name="defaultText">
              <string>Ei</string>
             </property>
            </widget>
           </item>
           <item row="20" column="2">
-           <widget class="CheckableSpinBox" name="csbLonkkaUlkokiertoOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaUlkokiertoOik"/>
           </item>
           <item row="6" column="8">
-           <widget class="QComboBox" name="cbLonkkaEkstensioModAVas">
+           <widget class="QComboBox" name="dataLonkkaEkstensioModAVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2526,7 +2526,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="20" column="6">
-           <widget class="QComboBox" name="cbLonkkaUlkokiertoModAOik">
+           <widget class="QComboBox" name="dataLonkkaUlkokiertoModAOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2577,7 +2577,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="20" column="8">
-           <widget class="QComboBox" name="cbLonkkaUlkokiertoModAVas">
+           <widget class="QComboBox" name="dataLonkkaUlkokiertoModAVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2628,7 +2628,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="12" column="8">
-           <widget class="QComboBox" name="cbLonkkaAdduktoritModAVas">
+           <widget class="QComboBox" name="dataLonkkaAdduktoritModAVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2706,7 +2706,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="19" column="8">
-           <widget class="QComboBox" name="cbLonkkaSisakiertoModAVas">
+           <widget class="QComboBox" name="dataLonkkaSisakiertoModAVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2805,10 +2805,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="17" column="2">
-           <widget class="QLineEdit" name="lnLonkkaOberOik"/>
+           <widget class="QLineEdit" name="dataLonkkaOberOik"/>
           </item>
           <item row="17" column="4">
-           <widget class="QLineEdit" name="lnLonkkaOberVas"/>
+           <widget class="QLineEdit" name="dataLonkkaOberVas"/>
           </item>
           <item row="1" column="2">
            <spacer name="verticalSpacer_37">
@@ -2870,7 +2870,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="1" column="7">
-           <widget class="QTextEdit" name="cmtLonkkaSpast">
+           <widget class="QTextEdit" name="datacmtLonkkaSpast">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2906,7 +2906,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="1" column="3">
-           <widget class="QTextEdit" name="cmtLonkkaPROM">
+           <widget class="QTextEdit" name="datacmtLonkkaPROM">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2951,7 +2951,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="3" column="3">
-           <widget class="QTextEdit" name="cmtLonkkaMuut">
+           <widget class="QTextEdit" name="datacmtLonkkaMuut">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -2986,28 +2986,28 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
         <item>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="11" column="2">
-           <widget class="CheckableSpinBox" name="csbPolviRectusCatchOik">
+           <widget class="CheckableSpinBox" name="dataPolviRectusCatchOik">
             <property name="defaultText">
              <string>Ei</string>
             </property>
            </widget>
           </item>
           <item row="16" column="4">
-           <widget class="CheckableSpinBox" name="csbPolviPopliteaVastakkLonkka90Vas">
+           <widget class="CheckableSpinBox" name="dataPolviPopliteaVastakkLonkka90Vas">
             <property name="maximum">
              <number>0</number>
             </property>
            </widget>
           </item>
           <item row="11" column="4">
-           <widget class="CheckableSpinBox" name="csbPolviRectusCatchVas">
+           <widget class="CheckableSpinBox" name="dataPolviRectusCatchVas">
             <property name="defaultText">
              <string>Ei</string>
             </property>
            </widget>
           </item>
           <item row="10" column="4">
-           <widget class="CheckableSpinBox" name="csbPolviFleksioVatsamakuuVas"/>
+           <widget class="CheckableSpinBox" name="dataPolviFleksioVatsamakuuVas"/>
           </item>
           <item row="15" column="1">
            <widget class="QLabel" name="label_23">
@@ -3071,7 +3071,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="2">
-           <widget class="CheckableSpinBox" name="csbPolviEkstensioVapOik"/>
+           <widget class="CheckableSpinBox" name="dataPolviEkstensioVapOik"/>
           </item>
           <item row="2" column="2" colspan="3">
            <widget class="QLabel" name="label_86">
@@ -3090,7 +3090,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="10" column="2">
-           <widget class="CheckableSpinBox" name="csbPolviFleksioVatsamakuuOik"/>
+           <widget class="CheckableSpinBox" name="dataPolviFleksioVatsamakuuOik"/>
           </item>
           <item row="6" column="1">
            <widget class="QLabel" name="label_27">
@@ -3153,13 +3153,13 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="4">
-           <widget class="CheckableSpinBox" name="csbPolviEkstensioVapVas"/>
+           <widget class="CheckableSpinBox" name="dataPolviEkstensioVapVas"/>
           </item>
           <item row="6" column="4">
-           <widget class="CheckableSpinBox" name="csbPolviEkstensioAvVas"/>
+           <widget class="CheckableSpinBox" name="dataPolviEkstensioAvVas"/>
           </item>
           <item row="12" column="4">
-           <widget class="CheckableSpinBox" name="csbPolviHamstringCatchVas">
+           <widget class="CheckableSpinBox" name="dataPolviHamstringCatchVas">
             <property name="defaultText">
              <string>Ei</string>
             </property>
@@ -3169,7 +3169,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="12" column="6">
-           <widget class="QComboBox" name="cbPolviHamstringModAOik">
+           <widget class="QComboBox" name="dataPolviHamstringModAOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -3227,10 +3227,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="2">
-           <widget class="CheckableSpinBox" name="csbPolviEkstensioAvOik"/>
+           <widget class="CheckableSpinBox" name="dataPolviEkstensioAvOik"/>
           </item>
           <item row="9" column="4">
-           <widget class="CheckableSpinBox" name="csbPolviFleksioSelinmakuuVas"/>
+           <widget class="CheckableSpinBox" name="dataPolviFleksioSelinmakuuVas"/>
           </item>
           <item row="3" column="9">
            <spacer name="horizontalSpacer_28">
@@ -3246,7 +3246,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="12" column="2">
-           <widget class="CheckableSpinBox" name="csbPolviHamstringCatchOik">
+           <widget class="CheckableSpinBox" name="dataPolviHamstringCatchOik">
             <property name="defaultText">
              <string>Ei</string>
             </property>
@@ -3256,7 +3256,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="CheckableSpinBox" name="csbPolviFleksioSelinmakuuOik"/>
+           <widget class="CheckableSpinBox" name="dataPolviFleksioSelinmakuuOik"/>
           </item>
           <item row="12" column="1">
            <widget class="QLabel" name="label_233">
@@ -3312,7 +3312,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="12" column="8">
-           <widget class="QComboBox" name="cbPolviHamstringModAVas">
+           <widget class="QComboBox" name="dataPolviHamstringModAVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -3363,21 +3363,21 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="2">
-           <widget class="CheckableSpinBox" name="csbPolviPopliteaVastakkLonkka90Oik">
+           <widget class="CheckableSpinBox" name="dataPolviPopliteaVastakkLonkka90Oik">
             <property name="maximum">
              <number>0</number>
             </property>
            </widget>
           </item>
           <item row="15" column="4">
-           <widget class="CheckableSpinBox" name="csbPolviPopliteaVastakkLonkka0Vas">
+           <widget class="CheckableSpinBox" name="dataPolviPopliteaVastakkLonkka0Vas">
             <property name="maximum">
              <number>0</number>
             </property>
            </widget>
           </item>
           <item row="15" column="2">
-           <widget class="CheckableSpinBox" name="csbPolviPopliteaVastakkLonkka0Oik">
+           <widget class="CheckableSpinBox" name="dataPolviPopliteaVastakkLonkka0Oik">
             <property name="maximum">
              <number>0</number>
             </property>
@@ -3391,7 +3391,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="11" column="6">
-           <widget class="QComboBox" name="cbPolviRectusModAOik">
+           <widget class="QComboBox" name="dataPolviRectusModAOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -3442,7 +3442,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="11" column="8">
-           <widget class="QComboBox" name="cbPolviRectusModAVas">
+           <widget class="QComboBox" name="dataPolviRectusModAVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -3574,7 +3574,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
         <item>
          <layout class="QGridLayout" name="gridLayout_5">
           <item row="3" column="3">
-           <widget class="QTextEdit" name="cmtPolviSpast">
+           <widget class="QTextEdit" name="datacmtPolviSpast">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -3596,7 +3596,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="1" column="3">
-           <widget class="QTextEdit" name="cmtPolviPROM">
+           <widget class="QTextEdit" name="datacmtPolviPROM">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -3685,7 +3685,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
         <item>
          <layout class="QGridLayout" name="gridLayout_11">
           <item row="16" column="5" colspan="2">
-           <widget class="QLineEdit" name="lnNilkkaConfusionVas">
+           <widget class="QLineEdit" name="dataNilkkaConfusionVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -3695,7 +3695,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="2" colspan="2">
-           <widget class="QLineEdit" name="lnNilkkaConfusionOik">
+           <widget class="QLineEdit" name="dataNilkkaConfusionOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -3717,7 +3717,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="10" column="6">
-           <widget class="QCheckBox" name="xbNilkkaGastroKlonusVas">
+           <widget class="QCheckBox" name="dataNilkkaGastroKlonusVas">
             <property name="text">
              <string>Klonus</string>
             </property>
@@ -3736,7 +3736,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="2">
-           <widget class="CheckableSpinBox" name="csbNilkkaSoleusCatchOik">
+           <widget class="CheckableSpinBox" name="dataNilkkaSoleusCatchOik">
             <property name="defaultText">
              <string>Ei</string>
             </property>
@@ -3756,7 +3756,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="6">
-           <widget class="QCheckBox" name="xbNilkkaSoleusKlonusVas">
+           <widget class="QCheckBox" name="dataNilkkaSoleusKlonusVas">
             <property name="text">
              <string>Klonus</string>
             </property>
@@ -3812,7 +3812,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="8">
-           <widget class="QComboBox" name="cbNilkkaSoleusModAOik">
+           <widget class="QComboBox" name="dataNilkkaSoleusModAOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -3863,7 +3863,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="10">
-           <widget class="QComboBox" name="cbNilkkaSoleusModAVas">
+           <widget class="QComboBox" name="dataNilkkaSoleusModAVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -3927,7 +3927,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="5" column="5">
-           <widget class="CheckableSpinBox" name="csbNilkkaSoleusCatchVas">
+           <widget class="CheckableSpinBox" name="dataNilkkaSoleusCatchVas">
             <property name="defaultText">
              <string>Ei</string>
             </property>
@@ -3959,10 +3959,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="14" column="5">
-           <widget class="CheckableSpinBox" name="csbNilkkaPlantaarifleksioPROMVas"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaPlantaarifleksioPROMVas"/>
           </item>
           <item row="14" column="2">
-           <widget class="CheckableSpinBox" name="csbNilkkaPlantaarifleksioPROMOik"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaPlantaarifleksioPROMOik"/>
           </item>
           <item row="3" column="10">
            <widget class="QLabel" name="label_253">
@@ -3978,14 +3978,14 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="3">
-           <widget class="QCheckBox" name="xbNilkkaSoleusKlonusOik">
+           <widget class="QCheckBox" name="dataNilkkaSoleusKlonusOik">
             <property name="text">
              <string>Klonus</string>
             </property>
            </widget>
           </item>
           <item row="10" column="2">
-           <widget class="CheckableSpinBox" name="csbNilkkaGastroCatchOik">
+           <widget class="CheckableSpinBox" name="dataNilkkaGastroCatchOik">
             <property name="defaultText">
              <string>Ei</string>
             </property>
@@ -4004,7 +4004,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="10" column="8">
-           <widget class="QComboBox" name="cbNilkkaGastroModAOik">
+           <widget class="QComboBox" name="dataNilkkaGastroModAOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4062,14 +4062,14 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="10" column="3">
-           <widget class="QCheckBox" name="xbNilkkaGastroKlonusOik">
+           <widget class="QCheckBox" name="dataNilkkaGastroKlonusOik">
             <property name="text">
              <string>Klonus</string>
             </property>
            </widget>
           </item>
           <item row="10" column="10">
-           <widget class="QComboBox" name="cbNilkkaGastroModAVas">
+           <widget class="QComboBox" name="dataNilkkaGastroModAVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4120,7 +4120,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="10" column="5">
-           <widget class="CheckableSpinBox" name="csbNilkkaGastroCatchVas">
+           <widget class="CheckableSpinBox" name="dataNilkkaGastroCatchVas">
             <property name="defaultText">
              <string>Ei</string>
             </property>
@@ -4157,22 +4157,22 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi90AROMOik"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi90AROMOik"/>
           </item>
           <item row="11" column="2">
-           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi0PROMOik"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi0PROMOik"/>
           </item>
           <item row="11" column="5">
-           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi0PROMVas"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi0PROMVas"/>
           </item>
           <item row="8" column="2">
-           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi90PROMOik"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi90PROMOik"/>
           </item>
           <item row="8" column="5">
-           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi90PROMVas"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi90PROMVas"/>
           </item>
           <item row="12" column="2">
-           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi0AROMOik"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi0AROMOik"/>
           </item>
           <item row="5" column="9">
            <spacer name="horizontalSpacer_14">
@@ -4191,7 +4191,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="12" column="5">
-           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi0AROMVas"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi0AROMVas"/>
           </item>
           <item row="5" column="7">
            <spacer name="horizontalSpacer_15">
@@ -4210,7 +4210,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="9" column="5">
-           <widget class="CheckableSpinBox" name="csbNilkkaDorsifPolvi90AROMVas"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi90AROMVas"/>
           </item>
           <item row="5" column="4">
            <spacer name="horizontalSpacer_12">
@@ -4236,34 +4236,34 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="15" column="2">
-           <widget class="CheckableSpinBox" name="csbNilkkaPlantaarifleksioAROMOik"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaPlantaarifleksioAROMOik"/>
           </item>
           <item row="15" column="5">
-           <widget class="CheckableSpinBox" name="csbNilkkaPlantaarifleksioAROMVas"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaPlantaarifleksioAROMVas"/>
           </item>
           <item row="12" column="3">
-           <widget class="QCheckBox" name="xbNilkkaDorsifPolvi0AROMEversioOik">
+           <widget class="QCheckBox" name="dataNilkkaDorsifPolvi0AROMEversioOik">
             <property name="text">
              <string>Eversio</string>
             </property>
            </widget>
           </item>
           <item row="9" column="3">
-           <widget class="QCheckBox" name="xbNilkkaDorsifPolvi90AROMEversioOik">
+           <widget class="QCheckBox" name="dataNilkkaDorsifPolvi90AROMEversioOik">
             <property name="text">
              <string>Eversio</string>
             </property>
            </widget>
           </item>
           <item row="12" column="6">
-           <widget class="QCheckBox" name="xbNilkkaDorsifPolvi0AROMEversioVas">
+           <widget class="QCheckBox" name="dataNilkkaDorsifPolvi0AROMEversioVas">
             <property name="text">
              <string>Eversio</string>
             </property>
            </widget>
           </item>
           <item row="9" column="6">
-           <widget class="QCheckBox" name="xbNilkkaDorsifPolvi90AROMEversioVas">
+           <widget class="QCheckBox" name="dataNilkkaDorsifPolvi90AROMEversioVas">
             <property name="text">
              <string>Eversio</string>
             </property>
@@ -4316,7 +4316,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="3" column="3">
-           <widget class="QTextEdit" name="cmtNilkkaSpast">
+           <widget class="QTextEdit" name="datacmtNilkkaSpast">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4358,7 +4358,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="1" column="3">
-           <widget class="QTextEdit" name="cmtNilkkaAROM">
+           <widget class="QTextEdit" name="datacmtNilkkaAROM">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4394,7 +4394,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="0" column="3">
-           <widget class="QTextEdit" name="cmtNilkkaPROM">
+           <widget class="QTextEdit" name="datacmtNilkkaPROM">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4450,7 +4450,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="14" column="7">
-           <widget class="QSpinBox" name="spJalkatNavDropSeistenOik">
+           <widget class="QSpinBox" name="dataJalkatNavDropSeistenOik">
             <property name="specialValueText">
              <string>Ei mitattu</string>
             </property>
@@ -4469,7 +4469,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="14" column="9">
-           <widget class="QSpinBox" name="spJalkatNavDropSeistenVas">
+           <widget class="QSpinBox" name="dataJalkatNavDropSeistenVas">
             <property name="specialValueText">
              <string>Ei mitattu</string>
             </property>
@@ -4488,7 +4488,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="13" column="7">
-           <widget class="QSpinBox" name="spJalkatNavDropIstuenOik">
+           <widget class="QSpinBox" name="dataJalkatNavDropIstuenOik">
             <property name="specialValueText">
              <string>Ei mitattu</string>
             </property>
@@ -4507,7 +4507,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="13" column="9">
-           <widget class="QSpinBox" name="spJalkatNavDropIstuenVas">
+           <widget class="QSpinBox" name="dataJalkatNavDropIstuenVas">
             <property name="specialValueText">
              <string>Ei mitattu</string>
             </property>
@@ -4540,7 +4540,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="2">
-           <widget class="QComboBox" name="cbJalkatEtuosanAsento2Oik">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento2Oik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4622,7 +4622,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="12" column="4">
-           <widget class="QComboBox" name="cbJalkatKeskiosanliikeVas">
+           <widget class="QComboBox" name="dataJalkatKeskiosanliikeVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4663,7 +4663,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="19" column="4">
-           <widget class="QComboBox" name="cbJalkatVaivaisenluuVas">
+           <widget class="QComboBox" name="dataJalkatVaivaisenluuVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4727,7 +4727,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="9" column="4">
-           <widget class="QComboBox" name="cbJalkatTakaosanLiikeInversioVas">
+           <widget class="QComboBox" name="dataJalkatTakaosanLiikeInversioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4768,7 +4768,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="4">
-           <widget class="QComboBox" name="cbJalkatEtuosanAsento2Vas">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento2Vas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4831,7 +4831,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="4">
-           <widget class="QComboBox" name="cbJalkatTakaosanAsentoVas">
+           <widget class="QComboBox" name="dataJalkatTakaosanAsentoVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4894,7 +4894,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="11" column="2">
-           <widget class="QComboBox" name="cbJalkatHolvikaariOik">
+           <widget class="QComboBox" name="dataJalkatHolvikaariOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4937,7 +4937,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="QComboBox" name="cbJalkatTakaosanLiikeInversioOik">
+           <widget class="QComboBox" name="dataJalkatTakaosanLiikeInversioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4978,7 +4978,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="8" column="4">
-           <widget class="QComboBox" name="cbJalkatTakaosanLiikeEversioVas">
+           <widget class="QComboBox" name="dataJalkatTakaosanLiikeEversioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5042,7 +5042,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="9">
-           <widget class="QComboBox" name="cbJalkatEtuosanAsento1KuormVas">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento1KuormVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5112,14 +5112,14 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="7">
-           <widget class="QCheckBox" name="xbPainelevy">
+           <widget class="QCheckBox" name="dataPainelevy">
             <property name="text">
              <string>Tehty</string>
             </property>
            </widget>
           </item>
           <item row="15" column="9">
-           <widget class="QLineEdit" name="lnJalkatColemanVas"/>
+           <widget class="QLineEdit" name="dataJalkatColemanVas"/>
           </item>
           <item row="20" column="1">
            <widget class="QLabel" name="label_31">
@@ -5142,7 +5142,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="2">
-           <widget class="QComboBox" name="cbJalkatSubtalarOik">
+           <widget class="QComboBox" name="dataJalkatSubtalarOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5178,7 +5178,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="11" column="9">
-           <widget class="QComboBox" name="cbJalkatEtuosanAsento2KuormVas">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento2KuormVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5234,7 +5234,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="8" column="9">
-           <widget class="QComboBox" name="cbJalkatKeskiosanAsentoKuormVas">
+           <widget class="QComboBox" name="dataJalkatKeskiosanAsentoKuormVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5290,7 +5290,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="12" column="2">
-           <widget class="QComboBox" name="cbJalkatKeskiosanliikeOik">
+           <widget class="QComboBox" name="dataJalkatKeskiosanliikeOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5331,7 +5331,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="17" column="4">
-           <widget class="QComboBox" name="cbJalkat1sadeVas">
+           <widget class="QComboBox" name="dataJalkat1sadeVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5362,7 +5362,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="2">
-           <widget class="QComboBox" name="cbJalkatTakaosanAsentoOik">
+           <widget class="QComboBox" name="dataJalkatTakaosanAsentoOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5445,7 +5445,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="11" column="4">
-           <widget class="QComboBox" name="cbJalkatHolvikaariVas">
+           <widget class="QComboBox" name="dataJalkatHolvikaariVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5508,7 +5508,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="17" column="2">
-           <widget class="QComboBox" name="cbJalkat1sadeOik">
+           <widget class="QComboBox" name="dataJalkat1sadeOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5539,7 +5539,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="15" column="2">
-           <widget class="QComboBox" name="cbJalkatEtuosanAsento1Oik">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento1Oik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5648,7 +5648,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="19" column="2">
-           <widget class="QComboBox" name="cbJalkatVaivaisenluuOik">
+           <widget class="QComboBox" name="dataJalkatVaivaisenluuOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5696,10 +5696,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="20" column="4">
-           <widget class="QLineEdit" name="lnJalkatKovettumatVas"/>
+           <widget class="QLineEdit" name="dataJalkatKovettumatVas"/>
           </item>
           <item row="5" column="4">
-           <widget class="QComboBox" name="cbJalkatSubtalarVas">
+           <widget class="QComboBox" name="dataJalkatSubtalarVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5735,7 +5735,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="20" column="2">
-           <widget class="QLineEdit" name="lnJalkatKovettumatOik"/>
+           <widget class="QLineEdit" name="dataJalkatKovettumatOik"/>
           </item>
           <item row="17" column="1">
            <widget class="QLabel" name="label_283">
@@ -5766,7 +5766,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="12" column="7">
-           <widget class="QComboBox" name="cbJalkatFeissinLinjaOik">
+           <widget class="QComboBox" name="dataJalkatFeissinLinjaOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5819,7 +5819,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="11" column="7">
-           <widget class="QComboBox" name="cbJalkatEtuosanAsento2KuormOik">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento2KuormOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5875,10 +5875,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="15" column="7">
-           <widget class="QLineEdit" name="lnJalkatColemanOik"/>
+           <widget class="QLineEdit" name="dataJalkatColemanOik"/>
           </item>
           <item row="9" column="7">
-           <widget class="QComboBox" name="cbJalkatEtuosanAsento1KuormOik">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento1KuormOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5954,7 +5954,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="8" column="2">
-           <widget class="QComboBox" name="cbJalkatTakaosanLiikeEversioOik">
+           <widget class="QComboBox" name="dataJalkatTakaosanLiikeEversioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5995,7 +5995,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="7">
-           <widget class="QComboBox" name="cbJalkatTakaosanAsentoKuormOik">
+           <widget class="QComboBox" name="dataJalkatTakaosanAsentoKuormOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6056,7 +6056,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="9">
-           <widget class="QComboBox" name="cbJalkatTakaosanAsentoKuormVas">
+           <widget class="QComboBox" name="dataJalkatTakaosanAsentoKuormVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6117,7 +6117,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="9">
-           <widget class="QComboBox" name="cbJalkatTakaosanKiertoKuormVas">
+           <widget class="QComboBox" name="dataJalkatTakaosanKiertoKuormVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6153,7 +6153,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="12" column="9">
-           <widget class="QComboBox" name="cbJalkatFeissinLinjaVas">
+           <widget class="QComboBox" name="dataJalkatFeissinLinjaVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6199,7 +6199,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="8" column="7">
-           <widget class="QComboBox" name="cbJalkatKeskiosanAsentoKuormOik">
+           <widget class="QComboBox" name="dataJalkatKeskiosanAsentoKuormOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6268,7 +6268,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="7">
-           <widget class="QComboBox" name="cbJalkatTakaosanKiertoKuormOik">
+           <widget class="QComboBox" name="dataJalkatTakaosanKiertoKuormOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6340,10 +6340,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="18" column="2">
-           <widget class="CheckableSpinBox" name="csbJalkat1MTPojennusOik"/>
+           <widget class="CheckableSpinBox" name="dataJalkat1MTPojennusOik"/>
           </item>
           <item row="18" column="4">
-           <widget class="CheckableSpinBox" name="csbJalkat1MTPojennusVas"/>
+           <widget class="CheckableSpinBox" name="dataJalkat1MTPojennusVas"/>
           </item>
           <item row="17" column="6">
            <widget class="QLabel" name="label_307">
@@ -6353,10 +6353,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="17" column="7" colspan="3">
-           <widget class="QLineEdit" name="lnJalkatPainelevyTiedot"/>
+           <widget class="QLineEdit" name="dataJalkatPainelevyTiedot"/>
           </item>
           <item row="15" column="4">
-           <widget class="QComboBox" name="cbJalkatEtuosanAsento1Vas">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento1Vas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6488,7 +6488,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="0" column="3">
-           <widget class="QTextEdit" name="cmtJalkateraKuormittamattomana">
+           <widget class="QTextEdit" name="datacmtJalkateraKuormittamattomana">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6510,7 +6510,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="1" column="3">
-           <widget class="QTextEdit" name="cmtJalkateraKuormitettuna">
+           <widget class="QTextEdit" name="datacmtJalkateraKuormitettuna">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6586,7 +6586,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
         <item>
          <layout class="QGridLayout" name="gridLayout_3">
           <item row="16" column="2">
-           <widget class="QComboBox" name="cbVoimaLonkkaUlkokiertoOik">
+           <widget class="QComboBox" name="dataVoimaLonkkaUlkokiertoOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6687,7 +6687,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="15" column="8">
-           <widget class="QComboBox" name="cbSelPolviEkstensioVas">
+           <widget class="QComboBox" name="dataSelPolviEkstensioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6723,7 +6723,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="15" column="4">
-           <widget class="QComboBox" name="cbVoimaPolviEkstensioVas">
+           <widget class="QComboBox" name="dataVoimaPolviEkstensioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6840,7 +6840,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="5" column="2">
-           <widget class="QComboBox" name="cbVoimaPolviFleksioOik">
+           <widget class="QComboBox" name="dataVoimaPolviFleksioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6941,7 +6941,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="11" column="2">
-           <widget class="QComboBox" name="cbVoimaSelka">
+           <widget class="QComboBox" name="dataVoimaSelka">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7042,7 +7042,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="13" column="2">
-           <widget class="QComboBox" name="cbVoimaVatsaVinotOik">
+           <widget class="QComboBox" name="dataVoimaVatsaVinotOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7143,7 +7143,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="4" column="2">
-           <widget class="QComboBox" name="cbVoimaLonkkaEkstensioPolvi90Oik">
+           <widget class="QComboBox" name="dataVoimaLonkkaEkstensioPolvi90Oik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7244,7 +7244,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="7" column="2">
-           <widget class="QComboBox" name="cbVoimaLonkkaAbduktioLonkka0Oik">
+           <widget class="QComboBox" name="dataVoimaLonkkaAbduktioLonkka0Oik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7345,7 +7345,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="6">
-           <widget class="QComboBox" name="cbSelLonkkaAdduktioOik">
+           <widget class="QComboBox" name="dataSelLonkkaAdduktioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7381,7 +7381,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="4" column="8">
-           <widget class="QComboBox" name="cbSelLonkkaEkstensioPolvi90Vas">
+           <widget class="QComboBox" name="dataSelLonkkaEkstensioPolvi90Vas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7417,7 +7417,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="QComboBox" name="cbVoimaLonkkaAdduktioOik">
+           <widget class="QComboBox" name="dataVoimaLonkkaAdduktioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7518,7 +7518,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="8" column="2">
-           <widget class="QComboBox" name="cbVoimaLonkkaAbduktioLonkkaFleksOik">
+           <widget class="QComboBox" name="dataVoimaLonkkaAbduktioLonkkaFleksOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7678,7 +7678,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="9" column="8">
-           <widget class="QComboBox" name="cbSelLonkkaAdduktioVas">
+           <widget class="QComboBox" name="dataSelLonkkaAdduktioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7778,7 +7778,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="12" column="2">
-           <widget class="QComboBox" name="cbVoimaVatsaSuorat">
+           <widget class="QComboBox" name="dataVoimaVatsaSuorat">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7879,7 +7879,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="5" column="8">
-           <widget class="QComboBox" name="cbSelPolviFleksioVas">
+           <widget class="QComboBox" name="dataSelPolviFleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7928,7 +7928,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="4" column="6">
-           <widget class="QComboBox" name="cbSelLonkkaEkstensioPolvi90Oik">
+           <widget class="QComboBox" name="dataSelLonkkaEkstensioPolvi90Oik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7964,7 +7964,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="7" column="6">
-           <widget class="QComboBox" name="cbSelLonkkaAbduktioLonkka0Oik">
+           <widget class="QComboBox" name="dataSelLonkkaAbduktioLonkka0Oik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8000,7 +8000,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="13" column="4">
-           <widget class="QComboBox" name="cbVoimaVatsaVinotVas">
+           <widget class="QComboBox" name="dataVoimaVatsaVinotVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8101,7 +8101,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="3" column="6">
-           <widget class="QComboBox" name="cbSelLonkkaEkstensioPolvi0Oik">
+           <widget class="QComboBox" name="dataSelLonkkaEkstensioPolvi0Oik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8176,7 +8176,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="3" column="2">
-           <widget class="QComboBox" name="cbVoimaLonkkaEkstensioPolvi0Oik">
+           <widget class="QComboBox" name="dataVoimaLonkkaEkstensioPolvi0Oik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8300,7 +8300,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item row="5" column="6">
-           <widget class="QComboBox" name="cbSelPolviFleksioOik">
+           <widget class="QComboBox" name="dataSelPolviFleksioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8365,7 +8365,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item row="3" column="4">
-           <widget class="QComboBox" name="cbVoimaLonkkaEkstensioPolvi0Vas">
+           <widget class="QComboBox" name="dataVoimaLonkkaEkstensioPolvi0Vas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8466,7 +8466,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="4" column="4">
-           <widget class="QComboBox" name="cbVoimaLonkkaEkstensioPolvi90Vas">
+           <widget class="QComboBox" name="dataVoimaLonkkaEkstensioPolvi90Vas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8567,7 +8567,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="5" column="4">
-           <widget class="QComboBox" name="cbVoimaPolviFleksioVas">
+           <widget class="QComboBox" name="dataVoimaPolviFleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8668,7 +8668,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="7" column="4">
-           <widget class="QComboBox" name="cbVoimaLonkkaAbduktioLonkka0Vas">
+           <widget class="QComboBox" name="dataVoimaLonkkaAbduktioLonkka0Vas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8769,7 +8769,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="8" column="4">
-           <widget class="QComboBox" name="cbVoimaLonkkaAbduktioLonkkaFleksVas">
+           <widget class="QComboBox" name="dataVoimaLonkkaAbduktioLonkkaFleksVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8870,7 +8870,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="9" column="4">
-           <widget class="QComboBox" name="cbVoimaLonkkaAdduktioVas">
+           <widget class="QComboBox" name="dataVoimaLonkkaAdduktioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8971,7 +8971,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="3" column="8">
-           <widget class="QComboBox" name="cbSelLonkkaEkstensioPolvi0Vas">
+           <widget class="QComboBox" name="dataSelLonkkaEkstensioPolvi0Vas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9007,7 +9007,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="7" column="8">
-           <widget class="QComboBox" name="cbSelLonkkaAbduktioLonkka0Vas">
+           <widget class="QComboBox" name="dataSelLonkkaAbduktioLonkka0Vas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9043,7 +9043,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="15" column="6">
-           <widget class="QComboBox" name="cbSelPolviEkstensioOik">
+           <widget class="QComboBox" name="dataSelPolviEkstensioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9086,7 +9086,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="14" column="4">
-           <widget class="QComboBox" name="cbVoimaLonkkaFleksioVas">
+           <widget class="QComboBox" name="dataVoimaLonkkaFleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9187,7 +9187,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="14" column="2">
-           <widget class="QComboBox" name="cbVoimaLonkkaFleksioOik">
+           <widget class="QComboBox" name="dataVoimaLonkkaFleksioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9288,7 +9288,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="16" column="8">
-           <widget class="QComboBox" name="cbSelLonkkaUlkokiertoVas">
+           <widget class="QComboBox" name="dataSelLonkkaUlkokiertoVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9324,7 +9324,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="16" column="4">
-           <widget class="QComboBox" name="cbVoimaLonkkaUlkokiertoVas">
+           <widget class="QComboBox" name="dataVoimaLonkkaUlkokiertoVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9432,7 +9432,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="14" column="8">
-           <widget class="QComboBox" name="cbSelLonkkaFleksioVas">
+           <widget class="QComboBox" name="dataSelLonkkaFleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9475,7 +9475,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="14" column="6">
-           <widget class="QComboBox" name="cbSelLonkkaFleksioOik">
+           <widget class="QComboBox" name="dataSelLonkkaFleksioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9518,7 +9518,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="16" column="6">
-           <widget class="QComboBox" name="cbSelLonkkaUlkokiertoOik">
+           <widget class="QComboBox" name="dataSelLonkkaUlkokiertoOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9554,7 +9554,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="15" column="2">
-           <widget class="QComboBox" name="cbVoimaPolviEkstensioOik">
+           <widget class="QComboBox" name="dataVoimaPolviEkstensioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9655,7 +9655,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="17" column="2">
-           <widget class="QComboBox" name="cbVoimaLonkkaSisakiertoOik">
+           <widget class="QComboBox" name="dataVoimaLonkkaSisakiertoOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9756,7 +9756,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="17" column="4">
-           <widget class="QComboBox" name="cbVoimaLonkkaSisakiertoVas">
+           <widget class="QComboBox" name="dataVoimaLonkkaSisakiertoVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9857,7 +9857,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="17" column="6">
-           <widget class="QComboBox" name="cbSelLonkkaSisakiertoOik">
+           <widget class="QComboBox" name="dataSelLonkkaSisakiertoOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9893,7 +9893,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="17" column="8">
-           <widget class="QComboBox" name="cbSelLonkkaSisakiertoVas">
+           <widget class="QComboBox" name="dataSelLonkkaSisakiertoVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -10008,7 +10008,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item>
-           <widget class="QTextEdit" name="cmtVoima1">
+           <widget class="QTextEdit" name="datacmtVoima1">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -10055,7 +10055,7 @@ lonkka fleksiossa</string>
         <item>
          <layout class="QGridLayout" name="gridLayout_8">
           <item row="7" column="4">
-           <widget class="QComboBox" name="cbVoimaExtHallucisLongusVas">
+           <widget class="QComboBox" name="dataVoimaExtHallucisLongusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -10163,7 +10163,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="5" column="2">
-           <widget class="QComboBox" name="cbVoimaTibialisPosteriorOik">
+           <widget class="QComboBox" name="dataVoimaTibialisPosteriorOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -10272,7 +10272,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="7" column="8">
-           <widget class="QComboBox" name="cbSelExtHallucisLongusVas">
+           <widget class="QComboBox" name="dataSelExtHallucisLongusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -10308,7 +10308,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="9" column="8">
-           <widget class="QComboBox" name="cbSel25OjennusVas">
+           <widget class="QComboBox" name="dataSel25OjennusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -10344,7 +10344,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="9" column="4">
-           <widget class="QComboBox" name="cbVoima25OjennusVas">
+           <widget class="QComboBox" name="dataVoima25OjennusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -10452,7 +10452,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="8" column="4">
-           <widget class="QComboBox" name="cbVoimaFlexHallucisLongusVas">
+           <widget class="QComboBox" name="dataVoimaFlexHallucisLongusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -10569,7 +10569,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item row="12" column="4">
-           <widget class="QComboBox" name="cbVoimaSoleusVas">
+           <widget class="QComboBox" name="dataVoimaSoleusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -10670,7 +10670,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="7" column="2">
-           <widget class="QComboBox" name="cbVoimaExtHallucisLongusOik">
+           <widget class="QComboBox" name="dataVoimaExtHallucisLongusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -10771,7 +10771,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="11" column="2">
-           <widget class="QComboBox" name="cbVoimaGastroOik">
+           <widget class="QComboBox" name="dataVoimaGastroOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -10872,7 +10872,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="4" column="2">
-           <widget class="QComboBox" name="cbVoimaTibialisAnteriorOik">
+           <widget class="QComboBox" name="dataVoimaTibialisAnteriorOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -10973,7 +10973,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="11" column="4">
-           <widget class="QComboBox" name="cbVoimaGastroVas">
+           <widget class="QComboBox" name="dataVoimaGastroVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11074,7 +11074,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="4" column="6">
-           <widget class="QComboBox" name="cbSelTibialisAnteriorOik">
+           <widget class="QComboBox" name="dataSelTibialisAnteriorOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11110,7 +11110,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="6" column="4">
-           <widget class="QComboBox" name="cbVoimaPeroneusVas">
+           <widget class="QComboBox" name="dataVoimaPeroneusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11219,7 +11219,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="10" column="4">
-           <widget class="QComboBox" name="cbVoima25KoukistusVas">
+           <widget class="QComboBox" name="dataVoima25KoukistusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11320,7 +11320,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="12" column="6">
-           <widget class="QComboBox" name="cbSelSoleusOik">
+           <widget class="QComboBox" name="dataSelSoleusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11356,7 +11356,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="4" column="8">
-           <widget class="QComboBox" name="cbSelTibialisAnteriorVas">
+           <widget class="QComboBox" name="dataSelTibialisAnteriorVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11392,7 +11392,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="10" column="8">
-           <widget class="QComboBox" name="cbSel25KoukistusVas">
+           <widget class="QComboBox" name="dataSel25KoukistusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11428,7 +11428,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="5" column="8">
-           <widget class="QComboBox" name="cbSelTibialisPosteriorVas">
+           <widget class="QComboBox" name="dataSelTibialisPosteriorVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11464,7 +11464,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="10" column="6">
-           <widget class="QComboBox" name="cbSel25KoukistusOik">
+           <widget class="QComboBox" name="dataSel25KoukistusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11513,7 +11513,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="12" column="8">
-           <widget class="QComboBox" name="cbSelSoleusVas">
+           <widget class="QComboBox" name="dataSelSoleusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11561,7 +11561,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="8" column="6">
-           <widget class="QComboBox" name="cbSelFlexHallucisLongusOik">
+           <widget class="QComboBox" name="dataSelFlexHallucisLongusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11639,7 +11639,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="7" column="6">
-           <widget class="QComboBox" name="cbSelExtHallucisLongusOik">
+           <widget class="QComboBox" name="dataSelExtHallucisLongusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11675,7 +11675,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="12" column="2">
-           <widget class="QComboBox" name="cbVoimaSoleusOik">
+           <widget class="QComboBox" name="dataVoimaSoleusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11816,7 +11816,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item row="5" column="6">
-           <widget class="QComboBox" name="cbSelTibialisPosteriorOik">
+           <widget class="QComboBox" name="dataSelTibialisPosteriorOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11852,7 +11852,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="10" column="2">
-           <widget class="QComboBox" name="cbVoima25KoukistusOik">
+           <widget class="QComboBox" name="dataVoima25KoukistusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -11969,7 +11969,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item row="6" column="6">
-           <widget class="QComboBox" name="cbSelPeroneusOik">
+           <widget class="QComboBox" name="dataSelPeroneusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12018,7 +12018,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="6" column="8">
-           <widget class="QComboBox" name="cbSelPeroneusVas">
+           <widget class="QComboBox" name="dataSelPeroneusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12054,7 +12054,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="11" column="6">
-           <widget class="QComboBox" name="cbSelGastroOik">
+           <widget class="QComboBox" name="dataSelGastroOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12090,7 +12090,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="11" column="8">
-           <widget class="QComboBox" name="cbSelGastroVas">
+           <widget class="QComboBox" name="dataSelGastroVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12126,7 +12126,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="9" column="6">
-           <widget class="QComboBox" name="cbSel25OjennusOik">
+           <widget class="QComboBox" name="dataSel25OjennusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12162,7 +12162,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="6" column="2">
-           <widget class="QComboBox" name="cbVoimaPeroneusOik">
+           <widget class="QComboBox" name="dataVoimaPeroneusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12263,7 +12263,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="8" column="8">
-           <widget class="QComboBox" name="cbSelFlexHallucisLongusVas">
+           <widget class="QComboBox" name="dataSelFlexHallucisLongusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12299,7 +12299,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="5" column="4">
-           <widget class="QComboBox" name="cbVoimaTibialisPosteriorVas">
+           <widget class="QComboBox" name="dataVoimaTibialisPosteriorVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12413,7 +12413,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="8" column="2">
-           <widget class="QComboBox" name="cbVoimaFlexHallucisLongusOik">
+           <widget class="QComboBox" name="dataVoimaFlexHallucisLongusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12529,7 +12529,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="QComboBox" name="cbVoima25OjennusOik">
+           <widget class="QComboBox" name="dataVoima25OjennusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12643,7 +12643,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item row="4" column="4">
-           <widget class="QComboBox" name="cbVoimaTibialisAnteriorVas">
+           <widget class="QComboBox" name="dataVoimaTibialisAnteriorVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12823,7 +12823,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item>
-           <widget class="QTextEdit" name="cmtVoima2">
+           <widget class="QTextEdit" name="datacmtVoima2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12883,7 +12883,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="10" column="4">
-           <widget class="QSpinBox" name="spIsokinPolviLiikenopeusFleksioVas">
+           <widget class="QSpinBox" name="dataIsokinPolviLiikenopeusFleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12917,7 +12917,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="10" column="2">
-           <widget class="QSpinBox" name="spIsokinPolviLiikenopeusFleksioOik">
+           <widget class="QSpinBox" name="dataIsokinPolviLiikenopeusFleksioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -12951,7 +12951,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="7" column="4">
-           <widget class="QSpinBox" name="spIsokinPolviLiikenopeusEkstensioVas">
+           <widget class="QSpinBox" name="dataIsokinPolviLiikenopeusEkstensioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13005,7 +13005,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="4" column="4">
-           <widget class="QSpinBox" name="spIsokinPolviFleksioVas">
+           <widget class="QSpinBox" name="dataIsokinPolviFleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13075,7 +13075,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="7" column="2">
-           <widget class="QSpinBox" name="spIsokinPolviLiikenopeusEkstensioOik">
+           <widget class="QSpinBox" name="dataIsokinPolviLiikenopeusEkstensioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13109,7 +13109,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="8" column="4">
-           <widget class="QSpinBox" name="spIsokinPolviFleksioMomenttiVasNormUn">
+           <widget class="QSpinBox" name="dataIsokinPolviFleksioMomenttiVasNormUn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13140,7 +13140,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="3" column="4">
-           <widget class="QSpinBox" name="spIsokinPolviEkstensioVas">
+           <widget class="QSpinBox" name="dataIsokinPolviEkstensioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13178,7 +13178,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="5" column="4">
-           <widget class="QSpinBox" name="spIsokinPolviEkstensioMomenttiVasNormUn">
+           <widget class="QSpinBox" name="dataIsokinPolviEkstensioMomenttiVasNormUn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13209,7 +13209,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="6" column="2">
-           <widget class="QDoubleSpinBox" name="spIsokinPolviEkstensioMomenttiOikNorm">
+           <widget class="QDoubleSpinBox" name="dataIsokinPolviEkstensioMomenttiOikNorm">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13256,7 +13256,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="6" column="4">
-           <widget class="QDoubleSpinBox" name="spIsokinPolviEkstensioMomenttiVasNorm">
+           <widget class="QDoubleSpinBox" name="dataIsokinPolviEkstensioMomenttiVasNorm">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13290,7 +13290,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="QDoubleSpinBox" name="spIsokinPolviFleksioMomenttiOikNorm">
+           <widget class="QDoubleSpinBox" name="dataIsokinPolviFleksioMomenttiOikNorm">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13337,7 +13337,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item row="5" column="2">
-           <widget class="QSpinBox" name="spIsokinPolviEkstensioMomenttiOikNormUn">
+           <widget class="QSpinBox" name="dataIsokinPolviEkstensioMomenttiOikNormUn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13375,7 +13375,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="8" column="2">
-           <widget class="QSpinBox" name="spIsokinPolviFleksioMomenttiOikNormUn">
+           <widget class="QSpinBox" name="dataIsokinPolviFleksioMomenttiOikNormUn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13426,7 +13426,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="9" column="4">
-           <widget class="QDoubleSpinBox" name="spIsokinPolviFleksioMomenttiVasNorm">
+           <widget class="QDoubleSpinBox" name="dataIsokinPolviFleksioMomenttiVasNorm">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13460,7 +13460,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="3" column="2">
-           <widget class="QSpinBox" name="spIsokinPolviEkstensioOik">
+           <widget class="QSpinBox" name="dataIsokinPolviEkstensioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13505,7 +13505,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="4" column="2">
-           <widget class="QSpinBox" name="spIsokinPolviFleksioOik">
+           <widget class="QSpinBox" name="dataIsokinPolviFleksioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13564,7 +13564,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="17" column="2">
-           <widget class="QSpinBox" name="spIsokinNilkkaDorsifleksioMomenttiOikNormUn">
+           <widget class="QSpinBox" name="dataIsokinNilkkaDorsifleksioMomenttiOikNormUn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13602,7 +13602,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="12" column="2">
-           <widget class="QSpinBox" name="spIsokinNilkkaPlantaarifleksioOik">
+           <widget class="QSpinBox" name="dataIsokinNilkkaPlantaarifleksioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13633,7 +13633,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="14" column="4">
-           <widget class="QSpinBox" name="spIsokinNilkkaPlantaarifleksioMomenttiVasNormUn">
+           <widget class="QSpinBox" name="dataIsokinNilkkaPlantaarifleksioMomenttiVasNormUn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13671,7 +13671,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="19" column="4">
-           <widget class="QSpinBox" name="spIsokinNilkkaLiikenopeusDorsifleksioVas">
+           <widget class="QSpinBox" name="dataIsokinNilkkaLiikenopeusDorsifleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13705,7 +13705,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="16" column="4">
-           <widget class="QSpinBox" name="spIsokinNilkkaLiikenopeusPlantaarifleksioVas">
+           <widget class="QSpinBox" name="dataIsokinNilkkaLiikenopeusPlantaarifleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13739,7 +13739,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="17" column="4">
-           <widget class="QSpinBox" name="spIsokinNilkkaDorsifleksioMomenttiVasNormUn">
+           <widget class="QSpinBox" name="dataIsokinNilkkaDorsifleksioMomenttiVasNormUn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13770,7 +13770,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="19" column="2">
-           <widget class="QSpinBox" name="spIsokinNilkkaLiikenopeusDorsifleksioOik">
+           <widget class="QSpinBox" name="dataIsokinNilkkaLiikenopeusDorsifleksioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13811,7 +13811,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="13" column="4">
-           <widget class="QSpinBox" name="spIsokinNilkkaDorsifleksioVas">
+           <widget class="QSpinBox" name="dataIsokinNilkkaDorsifleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13849,7 +13849,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="16" column="2">
-           <widget class="QSpinBox" name="spIsokinNilkkaLiikenopeusPlantaarifleksioOik">
+           <widget class="QSpinBox" name="dataIsokinNilkkaLiikenopeusPlantaarifleksioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13883,7 +13883,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="14" column="2">
-           <widget class="QSpinBox" name="spIsokinNilkkaPlantaarifleksioMomenttiOikNormUn">
+           <widget class="QSpinBox" name="dataIsokinNilkkaPlantaarifleksioMomenttiOikNormUn">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13921,7 +13921,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="13" column="2">
-           <widget class="QSpinBox" name="spIsokinNilkkaDorsifleksioOik">
+           <widget class="QSpinBox" name="dataIsokinNilkkaDorsifleksioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13952,7 +13952,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="12" column="4">
-           <widget class="QSpinBox" name="spIsokinNilkkaPlantaarifleksioVas">
+           <widget class="QSpinBox" name="dataIsokinNilkkaPlantaarifleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -13983,7 +13983,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="15" column="4">
-           <widget class="QDoubleSpinBox" name="spIsokinNilkkaPlantaarifleksioMomenttiVasNorm">
+           <widget class="QDoubleSpinBox" name="dataIsokinNilkkaPlantaarifleksioMomenttiVasNorm">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14014,7 +14014,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="18" column="4">
-           <widget class="QDoubleSpinBox" name="spIsokinNilkkaDorsifleksioMomenttiVasNorm">
+           <widget class="QDoubleSpinBox" name="dataIsokinNilkkaDorsifleksioMomenttiVasNorm">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14045,7 +14045,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="15" column="2">
-           <widget class="QDoubleSpinBox" name="spIsokinNilkkaPlantaarifleksioMomenttiOikNorm">
+           <widget class="QDoubleSpinBox" name="dataIsokinNilkkaPlantaarifleksioMomenttiOikNorm">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14076,7 +14076,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="18" column="2">
-           <widget class="QDoubleSpinBox" name="spIsokinNilkkaDorsifleksioMomenttiOikNorm">
+           <widget class="QDoubleSpinBox" name="dataIsokinNilkkaDorsifleksioMomenttiOikNorm">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14157,7 +14157,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item>
-           <widget class="QTextEdit" name="cmtIsokin">
+           <widget class="QTextEdit" name="datacmtIsokin">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14203,7 +14203,7 @@ lonkka fleksiossa</string>
         <item>
          <layout class="QGridLayout" name="gridLayout_12">
           <item row="9" column="4">
-           <widget class="QSpinBox" name="spVirheasJalkaReisiVas">
+           <widget class="QSpinBox" name="dataVirheasJalkaReisiVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14257,7 +14257,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item row="11" column="4">
-           <widget class="QSpinBox" name="spVirheasBimalleoliVas">
+           <widget class="QSpinBox" name="dataVirheasBimalleoliVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14312,7 +14312,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="10" column="2">
-           <widget class="QSpinBox" name="spVirheasJalkateraEtuTakaOik">
+           <widget class="QSpinBox" name="dataVirheasJalkateraEtuTakaOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14346,7 +14346,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="5" column="2">
-           <widget class="QSpinBox" name="spVirheasPatellaAltaOik">
+           <widget class="QSpinBox" name="dataVirheasPatellaAltaOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14380,7 +14380,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="5" column="4">
-           <widget class="QSpinBox" name="spVirheasPatellaAltaVas">
+           <widget class="QSpinBox" name="dataVirheasPatellaAltaVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14427,7 +14427,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="11" column="2">
-           <widget class="QSpinBox" name="spVirheasBimalleoliOik">
+           <widget class="QSpinBox" name="dataVirheasBimalleoliOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14461,7 +14461,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="12" column="4">
-           <widget class="QSpinBox" name="spVirheas2ndtoeVas">
+           <widget class="QSpinBox" name="dataVirheas2ndtoeVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14495,7 +14495,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="QSpinBox" name="spVirheasJalkaReisiOik">
+           <widget class="QSpinBox" name="dataVirheasJalkaReisiOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14529,7 +14529,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="10" column="4">
-           <widget class="QSpinBox" name="spVirheasJalkateraEtuTakaVas">
+           <widget class="QSpinBox" name="dataVirheasJalkateraEtuTakaVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14576,7 +14576,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="4" column="2">
-           <widget class="QSpinBox" name="spVirheasAnteversioOik">
+           <widget class="QSpinBox" name="dataVirheasAnteversioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14617,7 +14617,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="4" column="4">
-           <widget class="QSpinBox" name="spVirheasAnteversioVas">
+           <widget class="QSpinBox" name="dataVirheasAnteversioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14651,7 +14651,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="12" column="2">
-           <widget class="QSpinBox" name="spVirheas2ndtoeOik">
+           <widget class="QSpinBox" name="dataVirheas2ndtoeOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14721,7 +14721,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item row="7" column="4">
-           <widget class="QLineEdit" name="lnPolvenValgusVas">
+           <widget class="QLineEdit" name="dataPolvenValgusVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14738,7 +14738,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="7" column="2">
-           <widget class="QLineEdit" name="lnPolvenValgusOik">
+           <widget class="QLineEdit" name="dataPolvenValgusOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14755,7 +14755,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="8" column="2">
-           <widget class="QSpinBox" name="spQkulmaOik">
+           <widget class="QSpinBox" name="dataQkulmaOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14789,7 +14789,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="8" column="4">
-           <widget class="QSpinBox" name="spQkulmaVas">
+           <widget class="QSpinBox" name="dataQkulmaVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14886,7 +14886,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item>
-           <widget class="QTextEdit" name="cmtVirheas">
+           <widget class="QTextEdit" name="datacmtVirheas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -14997,7 +14997,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item row="3" column="2">
-           <widget class="QSpinBox" name="spTasapOik">
+           <widget class="QSpinBox" name="dataTasapOik">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -15026,7 +15026,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="3" column="4">
-           <widget class="QSpinBox" name="spTasapVas">
+           <widget class="QSpinBox" name="dataTasapVas">
             <property name="minimumSize">
              <size>
               <width>100</width>
@@ -15114,7 +15114,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item>
-           <widget class="QTextEdit" name="cmtTasap">
+           <widget class="QTextEdit" name="datacmtTasap">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -15186,56 +15186,56 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item row="5" column="1">
-           <widget class="QCheckBox" name="xbEMGVas">
+           <widget class="QCheckBox" name="dataEMGVas">
             <property name="text">
              <string>Vastus</string>
             </property>
            </widget>
           </item>
           <item row="2" column="1">
-           <widget class="QCheckBox" name="xbEMGSol">
+           <widget class="QCheckBox" name="dataEMGSol">
             <property name="text">
              <string>Soleus</string>
             </property>
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QCheckBox" name="xbEMGTibA">
+           <widget class="QCheckBox" name="dataEMGTibA">
             <property name="text">
              <string>Tibialis anterior</string>
             </property>
            </widget>
           </item>
           <item row="6" column="1">
-           <widget class="QCheckBox" name="xbEMGHam">
+           <widget class="QCheckBox" name="dataEMGHam">
             <property name="text">
              <string>Hamstring</string>
             </property>
            </widget>
           </item>
           <item row="4" column="1">
-           <widget class="QCheckBox" name="xbEMGRec">
+           <widget class="QCheckBox" name="dataEMGRec">
             <property name="text">
              <string>Rectus</string>
             </property>
            </widget>
           </item>
           <item row="3" column="1">
-           <widget class="QCheckBox" name="xbEMGGas">
+           <widget class="QCheckBox" name="dataEMGGas">
             <property name="text">
              <string>Gastrocnemius</string>
             </property>
            </widget>
           </item>
           <item row="7" column="1">
-           <widget class="QCheckBox" name="xbEMGGlut">
+           <widget class="QCheckBox" name="dataEMGGlut">
             <property name="text">
              <string>Gluteus</string>
             </property>
            </widget>
           </item>
           <item row="1" column="1">
-           <widget class="QCheckBox" name="xbEMGPer">
+           <widget class="QCheckBox" name="dataEMGPer">
             <property name="text">
              <string>Peroneus</string>
             </property>
@@ -15305,7 +15305,7 @@ lonkka fleksiossa</string>
            </spacer>
           </item>
           <item>
-           <widget class="QTextEdit" name="cmtEMG">
+           <widget class="QTextEdit" name="datacmtEMG">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
