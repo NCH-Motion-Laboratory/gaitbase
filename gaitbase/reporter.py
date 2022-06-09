@@ -119,25 +119,25 @@ class Report:
         xls_template must be in .xls (not xlsx) format, since style info
         cannot be read from xlsx (xlutils limitation).
         """
-        rb = open_workbook(xls_template, formatting_info=True)
-        wb = copy(rb)
-        r_sheet = rb.sheet_by_index(0)
-        w_sheet = wb.get_sheet(0)
+        workbook_in = open_workbook(xls_template, formatting_info=True)
+        workbook_out = copy(workbook_in)
+        r_sheet = workbook_in.sheet_by_index(0)
+        w_sheet = workbook_out.get_sheet(0)
         # loop through cells, conditionally replace fields with variable names.
         # for unclear reasons, wb and rb are very different structures,
         # so we read from rb and write to corresponding cells of wb
         # (using the hacky methods above)
         for row in range(r_sheet.nrows):
             for col in range(r_sheet.ncols):
-                cl = r_sheet.cell(row, col)
-                varname = cl.value
+                cell = r_sheet.cell(row, col)
+                varname = cell.value
                 if varname:  # format non-empty cells
                     newval = self._cond_format(varname, self.data)
                     # apply replacement dict only if formatting actually did
                     # something. this is to avoid changing text-only cells.
                     if newval != varname:
-                        for str, newstr in iter(self.cell_postprocess_dict.items()):
-                            if str in newval:
-                                newval = newval.replace(str, newstr)
+                        for oldstr, newstr in iter(self.cell_postprocess_dict.items()):
+                            if oldstr in newval:
+                                newval = newval.replace(oldstr, newstr)
                     _setOutCell(w_sheet, col, row, newval)
-        return wb
+        return workbook_out
