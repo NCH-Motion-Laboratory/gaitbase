@@ -465,13 +465,13 @@ class EntryApp(QtWidgets.QMainWindow):
     def _compose_json_filename(self):
         """Make up a JSON filename"""
         pdata = self.get_patient_id_data() | self.data
-        fn = pdata['TiedotID']
-        fn += '_'
-        fn += ''.join(reversed(pdata['TiedotNimi'].split()))
-        fn += '_'
-        fn += datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
-        fn += '.json'
-        return Constants.json_backup_path / fn
+        fname = pdata['TiedotID']
+        fname += '_'
+        fname += ''.join(reversed(pdata['TiedotNimi'].split()))
+        fname += '_'
+        fname += datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
+        fname += '.json'
+        return Constants.json_backup_path / fname
 
     def dump_json(self, fname):
         """Save data into given file in utf-8 encoding"""
