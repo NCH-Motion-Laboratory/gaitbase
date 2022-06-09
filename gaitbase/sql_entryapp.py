@@ -450,22 +450,6 @@ class EntryApp(QtWidgets.QMainWindow):
             # perform the corresponding SQL update
             self.update_rom([varname], [newval])
 
-    def keyerror_dialog(self, origkeys, newkeys):
-        """Report missing / unknown keys to user."""
-        cmnkeys = origkeys.intersection(newkeys)
-        extra_in_new = newkeys - cmnkeys
-        not_in_new = origkeys - cmnkeys
-        li = list()
-        if extra_in_new:
-            # keys in data but not in UI - data lost
-            li.append(Finnish.keys_extra.format(keys=', '.join(extra_in_new)))
-        if not_in_new:
-            # keys in UI but not in data. this is acceptable
-            li.append(Finnish.keys_not_found.format(keys=', '.join(not_in_new)))
-        # only show the dialog if data was lost (not for missing values)
-        if extra_in_new:
-            message_dialog(''.join(li))
-
     @property
     def data_with_units(self):
         """Append units to values"""
