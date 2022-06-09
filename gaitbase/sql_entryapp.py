@@ -93,27 +93,27 @@ class EntryApp(QtWidgets.QMainWindow):
             message_dialog(msg)
 
     @pyqt_disable_autoconv
-    def select(self, vars):
+    def select(self, thevars):
         """Perform select on current ROM row to get data.
-        vars is a list of desired variables.
+        thevars is a list of desired variables.
         Will return a list of QVariant objects.
         Use QVariant().value() to get the values.
         """
         q = QSqlQuery(self.database)
-        varlist = ','.join(vars)
+        varlist = ','.join(thevars)
         q.prepare(f'SELECT {varlist} FROM roms WHERE rom_id = :rom_id')
         q.bindValue(':rom_id', self.rom_id)
         if not q.exec() or not q.first():
             self.db_failure(q, fatal=True)
-        results = tuple(q.value(k) for k in range(len(vars)))
+        results = tuple(q.value(k) for k in range(len(thevars)))
         return results
 
-    def update_rom(self, vars, values):
+    def update_rom(self, thevars, values):
         """Update ROM row with a list of fields and corresponding values"""
-        if not len(vars) == len(values):
+        if not len(thevars) == len(values):
             raise ValueError('Arguments need to be of equal length')
         q = QSqlQuery(self.database)
-        varlist = ','.join(f'{var} = :{var}' for var in vars)
+        varlist = ','.join(f'{var} = :{var}' for var in thevars)
         q.prepare(f'UPDATE roms SET {varlist} WHERE rom_id = :rom_id')
         q.bindValue(':rom_id', self.rom_id)
         # XXX: note that we don't do any type conversion here. For a given
@@ -122,7 +122,7 @@ class EntryApp(QtWidgets.QMainWindow):
         # since it uses dynamic typing. For any other database engine, it will
         # be necessary to convert the values on read/write, so that static types
         # are maintained.
-        for var, val in zip(vars, values):
+        for var, val in zip(thevars, values):
             q.bindValue(f':{var}', val)
         if not q.exec():
             # it's possible that locking failures may occur, so make them non-fatal
@@ -132,13 +132,13 @@ class EntryApp(QtWidgets.QMainWindow):
         """Fill the read-only patient info widgets"""
         patient_id = self.select(['patient_id'])[0].value()
         q = QSqlQuery(self.database)
-        vars = ['firstname', 'lastname', 'ssn', 'patient_code', 'diagnosis']
-        varlist = ','.join(vars)
+        thevars = ['firstname', 'lastname', 'ssn', 'patient_code', 'diagnosis']
+        varlist = ','.join(thevars)
         q.prepare(f'SELECT {varlist} FROM patients WHERE patient_id = :patient_id')
         q.bindValue(':patient_id', patient_id)
         if not q.exec() or not q.first():
             self.db_failure(fatal=True)
-        for k, var in enumerate(vars):
+        for k, var in enumerate(thevars):
             val = q.value(k)
             widget_name = 'rdonly_' + var
             self.__dict__[widget_name].setText(val)
