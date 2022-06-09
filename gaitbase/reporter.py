@@ -61,15 +61,15 @@ class Report:
         self.report_text = ''
         self.data = data.copy()  # be sure not to mutate args
         self.data_text = data.copy()
-        for key, it in self.data_text.items():
-            if it in self.text_replace_dict:
-                self.data_text[key] = self.text_replace_dict[it]
+        for key, item in self.data_text.items():
+            if item in self.text_replace_dict:
+                self.data_text[key] = self.text_replace_dict[item]
         self.fields_default = field_default_vals
         self._item_separator = '. '  # inserted by item_sep()
 
-    def __add__(self, s):
+    def __add__(self, text):
         """Format and add a text block to report"""
-        self.report_text += self._cond_format(s, self.data_text)
+        self.report_text += self._cond_format(text, self.data_text)
         return self
 
     def item_sep(self):
@@ -84,23 +84,23 @@ class Report:
     def __repr__(self):
         return self.report_text
 
-    def _cond_format(self, s, data):
-        """Conditionally format string s. Fields given as {variable} are
-        formatted using the data. If all fields are default, an
-        empty string is returned."""
-        flds = list(Report._get_fields(s))
+    def _cond_format(self, thestr, data):
+        """Conditionally format string thestr. Fields given as {variable} are
+        formatted using the data. If all fields are default, an empty string is
+        returned."""
+        flds = list(Report._get_fields(thestr))
         if not flds or any(fld not in self.fields_default for fld in flds):
-            return s.format(**data)
+            return thestr.format(**data)
         else:
             return ''
 
     @staticmethod
-    def _get_fields(s):
+    def _get_fields(thestr):
         """Yield fields from a format string, e.g.
         input: '{foo} is {bar}', output: ('foo', 'bar')
         """
-        fi = string.Formatter()
-        pit = fi.parse(s)  # returns parser generator
+        formatter = string.Formatter()
+        pit = formatter.parse(thestr)  # returns parser generator
         for items in pit:
             if items[1]:
                 yield items[1]  # = the field
