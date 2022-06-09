@@ -88,6 +88,7 @@ class EntryApp(QtWidgets.QMainWindow):
             msg += 'In case of a locking error, close all other applications '
             msg += 'that may be using the database, and try again.'
         else:
+            # empty error seems to occur when all table columns can not be read
             msg = 'Could not read all variables from database. '
             msg += 'This may be due to a mismatch between the UI widgets '
             msg += 'and the database schema.'
@@ -98,12 +99,14 @@ class EntryApp(QtWidgets.QMainWindow):
 
     @pyqt_disable_autoconv
     def select(self, thevars):
-        """Perform select on current ROM row to get data.
+        """Do select() on current ROM row to get data.
+
         thevars is a list of desired variables.
-        Will return a list of QVariant objects.
-        Use QVariant().value() to get the values.
+        Returns a tuple of QVariant objects.
+        Use QVariant.value() to get the values.
         """
         query = QSqlQuery(self.database)
+        # form a SQL query for desired variables
         varlist = ','.join(thevars)
         query.prepare(f'SELECT {varlist} FROM roms WHERE rom_id = :rom_id')
         query.bindValue(':rom_id', self.rom_id)
@@ -147,8 +150,8 @@ class EntryApp(QtWidgets.QMainWindow):
 
         In the SQL version, the patient data is not part of ROM measurements
         anymore, instead residing in the patients table. The returned keys are
-        identical to the old (standalone) version. Mostly for purposes of
-        reporting, which expects the ID data to be available.
+        identical to the old (standalone) version. This is mostly for purposes
+        of reporting, which expects the ID data to be available.
         """
         return {
             'TiedotID': self.rdonly_patient_code.text(),
