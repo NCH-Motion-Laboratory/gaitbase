@@ -101,41 +101,41 @@ class EntryApp(QtWidgets.QMainWindow):
         Will return a list of QVariant objects.
         Use QVariant().value() to get the values.
         """
-        q = QSqlQuery(self.database)
+        query = QSqlQuery(self.database)
         varlist = ','.join(thevars)
-        q.prepare(f'SELECT {varlist} FROM roms WHERE rom_id = :rom_id')
-        q.bindValue(':rom_id', self.rom_id)
-        if not q.exec() or not q.first():
-            self.db_failure(q, fatal=True)
-        results = tuple(q.value(k) for k in range(len(thevars)))
+        query.prepare(f'SELECT {varlist} FROM roms WHERE rom_id = :rom_id')
+        query.bindValue(':rom_id', self.rom_id)
+        if not query.exec() or not query.first():
+            self.db_failure(query, fatal=True)
+        results = tuple(query.value(k) for k in range(len(thevars)))
         return results
 
     def update_rom(self, thevars, values):
         """Update ROM row with a list of fields and corresponding values"""
         if not len(thevars) == len(values):
             raise ValueError('Arguments need to be of equal length')
-        q = QSqlQuery(self.database)
+        query = QSqlQuery(self.database)
         varlist = ','.join(f'{var} = :{var}' for var in thevars)
-        q.prepare(f'UPDATE roms SET {varlist} WHERE rom_id = :rom_id')
-        q.bindValue(':rom_id', self.rom_id)
+        query.prepare(f'UPDATE roms SET {varlist} WHERE rom_id = :rom_id')
+        query.bindValue(':rom_id', self.rom_id)
         for var, val in zip(thevars, values):
-            q.bindValue(f':{var}', val)
-        if not q.exec():
+            query.bindValue(f':{var}', val)
+        if not query.exec():
             # it's possible that locking failures may occur here, so make them non-fatal
-            self.db_failure(q, fatal=False)
+            self.db_failure(query, fatal=False)
 
     def init_readonly_fields(self):
         """Fill the read-only patient info widgets"""
         patient_id = self.select(['patient_id'])[0].value()
-        q = QSqlQuery(self.database)
+        query = QSqlQuery(self.database)
         thevars = ['firstname', 'lastname', 'ssn', 'patient_code', 'diagnosis']
         varlist = ','.join(thevars)
-        q.prepare(f'SELECT {varlist} FROM patients WHERE patient_id = :patient_id')
-        q.bindValue(':patient_id', patient_id)
-        if not q.exec() or not q.first():
+        query.prepare(f'SELECT {varlist} FROM patients WHERE patient_id = :patient_id')
+        query.bindValue(':patient_id', patient_id)
+        if not query.exec() or not query.first():
             self.db_failure(fatal=True)
         for k, var in enumerate(thevars):
-            val = q.value(k)
+            val = query.value(k)
             widget_name = 'rdonly_' + var
             self.__dict__[widget_name].setText(val)
             self.__dict__[widget_name].setEnabled(False)
