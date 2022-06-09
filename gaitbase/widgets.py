@@ -155,14 +155,14 @@ class CheckableSpinBox(QtWidgets.QWidget):
     def getSuffix(self):
         return self.degSpinBox.suffix()
 
-    def setMinimum(self, min):
-        self.degSpinBox.setMinimum(min)
+    def setMinimum(self, minval):
+        self.degSpinBox.setMinimum(minval)
 
     def getMinimum(self):
         return self.degSpinBox.minimum()
 
-    def setMaximum(self, max):
-        self.degSpinBox.setMaximum(max)
+    def setMaximum(self, maxval):
+        self.degSpinBox.setMaximum(maxval)
 
     def getMaximum(self):
         return self.degSpinBox.maximum()
