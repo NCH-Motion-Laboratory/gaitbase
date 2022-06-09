@@ -16,23 +16,22 @@ TODO:
 
 """
 
-from PyQt5 import QtWidgets, QtSql, QtCore, uic
-import sys
-from pathlib import Path
-from dataclasses import dataclass, fields
-from copy import copy
 import datetime
-import traceback
-from pkg_resources import resource_filename
 import sys
+import traceback
+from copy import copy
+from dataclasses import dataclass, fields
+from pathlib import Path
 
-from ulstools.num import check_hetu
+from pkg_resources import resource_filename
+from PyQt5 import QtCore, QtSql, QtWidgets, uic
 from ulstools.env import make_shortcut, named_tempfile
+from ulstools.num import check_hetu
 
-from .rom_entryapp import EntryApp
-from .widgets import message_dialog
-from .utils import validate_code, _startfile
 from .config import cfg
+from .rom_entryapp import EntryApp
+from .utils import _startfile, validate_code
+from .widgets import message_dialog
 
 
 def qt_message_dialog(msg):
