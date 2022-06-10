@@ -169,76 +169,98 @@ class EntryApp(QtWidgets.QMainWindow):
             self.values_changed(source)
         return super().eventFilter(source, event)
 
+    @staticmethod
+    def get_value(widget):
+        """Get the value from a data input widget"""
+        widget_class = widget.__class__.__name__
+
+        if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
+            if widget.value() == widget.minimum():
+                val = widget.no_value_text
+            else:
+                val = widget.value()
+
+        elif widget_class == 'QLineEdit':
+            val = widget.text().strip()
+
+        elif widget_class == 'QCheckBox':
+            state = int(widget.checkState())
+            if state == 0:
+                val = widget.no_text
+            elif state == 2:
+                val = widget.yes_text
+            else:
+                raise RuntimeError('unexpected checkbox value')
+
+        elif widget_class == 'QComboBox':
+            val = widget.currentText()
+
+        elif widget_class == 'QTextEdit':
+            val = widget.toPlainText().strip()
+
+        elif widget_class == 'CheckableSpinBox':
+            val = widget.value()
+
+        else:
+            raise RuntimeError(f'Invalid class of input widget: {widget_class}')
+        return val
+
+    @staticmethod
+    def set_value(widget, value):
+        """Set the value of a data input widget"""
+        widget_class = widget.__class__.__name__
+
+        if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
+            if value == widget.no_value_text:
+                value = widget.minimum()
+            widget.setValue(value)
+
+        elif widget_class == 'QLineEdit':
+            widget.setText(value)
+
+        elif widget_class == 'QCheckBox':
+            if value == widget.yes_text:
+                widget.setCheckState(2)
+            elif value == widget.no_text:
+                widget.setCheckState(0)
+            else:
+                raise RuntimeError(f'Unexpected checkbox value: {value}')
+
+        elif widget_class == 'QComboBox':
+            idx = widget.findText(value)
+            if idx >= 0:
+                widget.setCurrentIndex(idx)
+            else:
+                raise RuntimeError(f'Invalid combobox value: {value}')
+
+        elif widget_class == 'QTextEdit':
+            widget.setPlainText(value)
+
+        elif widget_class == 'CheckableSpinBox':
+            widget.setValue(value)
+
+        else:
+            raise RuntimeError(f'Invalid class of input widget: {widget_class}')
+
     def _init_widgets(self):
         """Init and record the input widgets.
 
         Also installs some convenience methods, etc.
         """
 
-        # injecting the getval() and setval() functions allow getting/setting
-        # data for every widget with an uniform interface
-
-        def spinbox_getval(widget):
-            """Return spinbox value"""
-            return (
-                widget.no_value_text
-                if widget.value() == widget.minimum()
-                else widget.value()
-            )
-
-        def spinbox_setval(widget, val):
-            """Set spinbox value"""
-            val = widget.minimum() if val == widget.no_value_text else val
-            widget.setValue(val)
-
-        def checkbox_getval(widget):
-            """Return yestext or notext for checkbox enabled/disabled,
-            respectively."""
-            val = int(widget.checkState())
-            if val == 0:
-                return widget.no_text
-            elif val == 2:
-                return widget.yes_text
-            else:
-                raise RuntimeError(
-                    f'Unexpected checkbox value: {val} for {widget.objectName()}'
-                )
-
-        def checkbox_setval(widget, val):
-            """Set checkbox value to enabled for val == yestext and
-            disabled for val == notext"""
-            if val == widget.yes_text:
-                widget.setCheckState(2)
-            elif val == widget.no_text:
-                widget.setCheckState(0)
-            else:
-                raise RuntimeError(
-                    f'Unexpected checkbox entry value: {val} for {widget.objectName()}'
-                )
-
-        def combobox_getval(widget):
-            """Get combobox current choice as text"""
-            return widget.currentText()
-
-        def combobox_setval(widget, val):
-            """Set combobox value according to val (unicode) (must be one of
-            the combobox items)"""
-            idx = widget.findText(val)
-            if idx >= 0:
-                widget.setCurrentIndex(idx)
-            else:
-                raise ValueError(f'Tried to set combobox to invalid value {val}')
-
         # collect all widgets (whether data input widgets or something else)
         allwidgets = self.findChildren(QtWidgets.QWidget)
-        # special input widgets which the app uses to collect data
+        # data input widgets
         data_widgets = [w for w in allwidgets if w.objectName()[:4] == 'data']
 
         def _weight_normalize(widget):
             """Auto calculate callback for weight normalized widgets"""
-            val, weight = (w.getVal() for w in widget._autoinputs)
+            val, weight = (self.get_value(w) for w in widget._autoinputs)
             noval = Constants.spinbox_novalue_text
-            widget.setVal(noval if val == noval or weight == noval else val / weight)
+            if val == noval or weight == noval:
+                self.set_value(widget, noval)
+            else:
+                self.set_value(widget, val / weight)
 
         # Autowidgets are special widgets with automatically computed values.
         # They must have an ._autocalculate() method which updates the widget
@@ -263,7 +285,7 @@ class EntryApp(QtWidgets.QMainWindow):
         # set various widget convenience methods/properties, collect input
         # widgets into a dict
         # NOTE: this loop will implicitly cause destruction of certain widgets
-        # (e.g. QLineEdits) by replacing them with new ones. Do not reuse the 
+        # (e.g. QLineEdits) by replacing them with new ones. Do not reuse the
         # 'allwidgets' variable after this loop.
         for widget in data_widgets:
             wname = widget.objectName()
@@ -276,9 +298,9 @@ class EntryApp(QtWidgets.QMainWindow):
                 # therefore two parameters (except for QTextEdit...)
                 widget.valueChanged.connect(lambda x, w=widget: self.values_changed(w))
                 widget.no_value_text = Constants.spinbox_novalue_text
-                widget.setVal = lambda val, w=widget: spinbox_setval(w, val)
-                widget.getVal = lambda w=widget: spinbox_getval(w)
-                widget.unit = lambda w=widget: w.suffix() if isint(w.getVal()) else ''
+                widget.unit = (
+                    lambda w=widget: w.suffix() if isint(self.get_value(w)) else ''
+                )
                 widget.setLineEdit(MyLineEdit())
                 widget.keyPressEvent = lambda event, w=widget: keyPressEvent_resetOnEsc(
                     w, event
@@ -286,35 +308,25 @@ class EntryApp(QtWidgets.QMainWindow):
             elif widget_class == 'QLineEdit':
                 # for text editors, do not perform data updates on every value change...
                 # w.textChanged.connect(lambda x, w=w: self.values_changed(w))
-                widget.setVal = widget.setText
-                widget.getVal = lambda w=widget: w.text().strip()
                 # instead, update values when focus is lost (editing completed)
                 widget.installEventFilter(self)
             elif widget_class == 'QComboBox':
                 widget.currentIndexChanged.connect(
                     lambda x, w=widget: self.values_changed(w)
                 )
-                widget.setVal = lambda val, w=widget: combobox_setval(w, val)
-                widget.getVal = lambda w=widget: combobox_getval(w)
             elif widget_class == 'QTextEdit':
                 # for text editors, do not perform data updates on every value change...
                 # w.textChanged.connect(lambda w=w: self.values_changed(w))
-                widget.setVal = widget.setPlainText
-                widget.getVal = lambda w=widget: w.toPlainText().strip()
                 # instead, update values when focus is lost (editing completed)
                 widget.installEventFilter(self)
             elif widget_class == 'QCheckBox':
                 widget.stateChanged.connect(lambda x, w=widget: self.values_changed(w))
                 widget.yes_text = Constants.checkbox_yestext
                 widget.no_text = Constants.checkbox_notext
-                widget.setVal = lambda val, w=widget: checkbox_setval(w, val)
-                widget.getVal = lambda w=widget: checkbox_getval(w)
             elif widget_class == 'CheckableSpinBox':
                 widget.valueChanged.connect(lambda w=widget: self.values_changed(w))
-                widget.getVal = widget.value
-                widget.setVal = widget.setValue
                 widget.unit = (
-                    lambda w=widget: w.getSuffix() if isint(w.getVal()) else ''
+                    lambda w=widget: w.getSuffix() if isint(self.get_value(w)) else ''
                 )
                 widget.degSpinBox.setLineEdit(DegLineEdit())
             else:
@@ -430,7 +442,7 @@ class EntryApp(QtWidgets.QMainWindow):
             # update internal data dict
             wname = widget.objectName()
             varname = self.widget_to_var[wname]
-            newval = widget.getVal()
+            newval = self.get_value(widget)
             self.data[varname] = newval
             # perform the corresponding SQL update
             self.update_rom([varname], [newval])
@@ -505,12 +517,12 @@ class EntryApp(QtWidgets.QMainWindow):
         self.do_update_data = False
         for wname, widget in self.input_widgets.items():
             varname = self.widget_to_var[wname]
-            widget.setVal(self.data[varname])
+            self.set_value(widget, self.data[varname])
         self.do_update_data = True
 
     def read_forms(self):
         """Read self.data from widget inputs. Usually not needed, since
         it's updated automatically."""
         for wname, widget in self.input_widgets.items():
-            var = self.widget_to_var[wname]
-            self.data[var] = widget.getVal()
+            varname = self.widget_to_var[wname]
+            self.data[varname] = self.get_value(widget)
