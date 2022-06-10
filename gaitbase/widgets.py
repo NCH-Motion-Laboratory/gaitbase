@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Custom widgets for gaitbase ROM entry app.
+Custom widgets, dialogs and related Qt code.
 """
 
 from PyQt5 import QtWidgets, QtCore
 from .constants import Constants, Finnish
+from .utils import isint
 
 
 def confirm_dialog(msg):
@@ -41,6 +42,103 @@ def keyPressEvent_resetOnEsc(obj, event):
     else:
         # delegate the event to the overridden superclass handler
         super(obj.__class__, obj).keyPressEvent(event)
+
+
+def get_widget_value(widget):
+    """Get the value from a data input widget"""
+    widget_class = widget.__class__.__name__
+
+    if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
+        if widget.value() == widget.minimum():
+            val = widget.no_value_text
+        else:
+            val = widget.value()
+
+    elif widget_class == 'QLineEdit':
+        val = widget.text().strip()
+
+    elif widget_class == 'QCheckBox':
+        state = int(widget.checkState())
+        if state == 0:
+            val = widget.no_text
+        elif state == 2:
+            val = widget.yes_text
+        else:
+            raise RuntimeError('unexpected checkbox value')
+
+    elif widget_class == 'QComboBox':
+        val = widget.currentText()
+
+    elif widget_class == 'QTextEdit':
+        val = widget.toPlainText().strip()
+
+    elif widget_class == 'CheckableSpinBox':
+        val = widget.value()
+
+    else:
+        raise RuntimeError(f'Invalid class of input widget: {widget_class}')
+    return val
+
+
+def set_widget_value(widget, value):
+    """Set the value of a data input widget"""
+    widget_class = widget.__class__.__name__
+
+    if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
+        if value == widget.no_value_text:
+            value = widget.minimum()
+        widget.setValue(value)
+
+    elif widget_class == 'QLineEdit':
+        widget.setText(value)
+
+    elif widget_class == 'QCheckBox':
+        if value == widget.yes_text:
+            widget.setCheckState(2)
+        elif value == widget.no_text:
+            widget.setCheckState(0)
+        else:
+            raise RuntimeError(f'Unexpected checkbox value: {value}')
+
+    elif widget_class == 'QComboBox':
+        idx = widget.findText(value)
+        if idx >= 0:
+            widget.setCurrentIndex(idx)
+        else:
+            raise RuntimeError(f'Invalid combobox value: {value}')
+
+    elif widget_class == 'QTextEdit':
+        widget.setPlainText(value)
+
+    elif widget_class == 'CheckableSpinBox':
+        widget.setValue(value)
+
+    else:
+        raise RuntimeError(f'Invalid class of input widget: {widget_class}')
+
+
+def get_widget_units(widget):
+    """Get units of data associated with widget.
+    
+    We only return a unit if the widget has a numeric value.
+    """
+    widget_class = widget.__class__.__name__
+    if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
+        if isint(get_widget_value(widget)):
+            units = widget.suffix()
+        else:
+            units = ''
+    elif widget_class == 'CheckableSpinBox':
+        if isint(get_widget_value(widget)):
+            units = widget.getSuffix()
+        else:
+            units = ''
+    else:
+        # currently no units for other widget types
+        units = ''
+    return units
+
+
 
 
 class MyLineEdit(QtWidgets.QLineEdit):
