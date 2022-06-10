@@ -50,7 +50,7 @@ def get_widget_value(widget):
 
     if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
         if widget.value() == widget.minimum():
-            val = widget.no_value_text
+            val = Constants.spinbox_novalue_text
         else:
             val = widget.value()
 
@@ -60,9 +60,9 @@ def get_widget_value(widget):
     elif widget_class == 'QCheckBox':
         state = int(widget.checkState())
         if state == 0:
-            val = widget.no_text
+            val = Constants.checkbox_notext
         elif state == 2:
-            val = widget.yes_text
+            val = Constants.checkbox_yestext
         else:
             raise RuntimeError('unexpected checkbox value')
 
@@ -85,7 +85,7 @@ def set_widget_value(widget, value):
     widget_class = widget.__class__.__name__
 
     if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
-        if value == widget.no_value_text:
+        if value == Constants.spinbox_novalue_text:
             value = widget.minimum()
         widget.setValue(value)
 
@@ -93,9 +93,9 @@ def set_widget_value(widget, value):
         widget.setText(value)
 
     elif widget_class == 'QCheckBox':
-        if value == widget.yes_text:
+        if value == Constants.checkbox_yestext:
             widget.setCheckState(2)
-        elif value == widget.no_text:
+        elif value == Constants.checkbox_notext:
             widget.setCheckState(0)
         else:
             raise RuntimeError(f'Unexpected checkbox value: {value}')

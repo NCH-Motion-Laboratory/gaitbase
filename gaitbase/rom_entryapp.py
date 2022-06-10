@@ -20,7 +20,6 @@ from .constants import Constants, Finnish
 from .widgets import (
     DegLineEdit,
     MyLineEdit,
-    get_widget_units,
     message_dialog,
     keyPressEvent_resetOnEsc,
     get_widget_value,
@@ -230,7 +229,6 @@ class EntryApp(QtWidgets.QMainWindow):
                 # -lambda expression needs to consume unused 'new value' arg,
                 # therefore two parameters (except for QTextEdit...)
                 widget.valueChanged.connect(lambda x, w=widget: self.values_changed(w))
-                widget.no_value_text = Constants.spinbox_novalue_text
                 widget.setLineEdit(MyLineEdit())
                 widget.keyPressEvent = lambda event, w=widget: keyPressEvent_resetOnEsc(
                     w, event
@@ -247,8 +245,6 @@ class EntryApp(QtWidgets.QMainWindow):
                 )
             elif widget_class == 'QCheckBox':
                 widget.stateChanged.connect(lambda x, w=widget: self.values_changed(w))
-                widget.yes_text = Constants.checkbox_yestext
-                widget.no_text = Constants.checkbox_notext
             elif widget_class == 'CheckableSpinBox':
                 widget.valueChanged.connect(lambda w=widget: self.values_changed(w))
                 widget.degSpinBox.setLineEdit(DegLineEdit())
