@@ -17,7 +17,7 @@ from PyQt5.QtSql import QSqlQuery
 from . import reporter
 from .config import cfg
 from .constants import Constants, Finnish
-from .widgets import CheckableSpinBox, DegLineEdit, MyLineEdit, message_dialog
+from .widgets import DegLineEdit, MyLineEdit, message_dialog, keyPressEvent_resetOnEsc
 from .utils import isint
 
 logger = logging.getLogger(__name__)
@@ -102,9 +102,8 @@ class EntryApp(QtWidgets.QMainWindow):
     def select(self, thevars):
         """Do select() on current ROM row to get data.
 
-        thevars is a list of desired variables.
-        Returns a tuple of QVariant objects.
-        Use QVariant.value() to get the values.
+        thevars is a list of desired variables. Returns a tuple of QVariant
+        objects. Afterwards, use QVariant.value() to get the actual values.
         """
         query = QSqlQuery(self.database)
         # form a SQL query for desired variables
@@ -146,7 +145,7 @@ class EntryApp(QtWidgets.QMainWindow):
             self.__dict__[widget_name].setText(val)
             self.__dict__[widget_name].setEnabled(False)
 
-    def get_patient_id_data(self):
+    def get_patient_data(self):
         """Get patient id data from the read-only fields as a dict.
 
         In the SQL version, the patient data is not part of ROM measurements
@@ -172,7 +171,7 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def _init_widgets(self):
         """Init and record the input widgets.
-        
+
         Also installs some convenience methods, etc.
         """
 
@@ -235,32 +234,6 @@ class EntryApp(QtWidgets.QMainWindow):
         # special input widgets which the app uses to collect data
         data_widgets = [w for w in allwidgets if w.objectName()[:4] == 'data']
 
-        # Change lineEdit to a custom one for spinboxes. This cannot be done in
-        # the main widget loop below, because the old QLineEdits get destroyed in
-        # the process (by Qt) and the loop then segfaults while trying to
-        # reference them (the loop collects all QLineEdits at the start).
-        # Also install a special keypress event handler. """
-        def keyPressEvent_resetOnEsc(obj, event):
-            """Special event handler for spinboxes. Resets value (sets it
-            to minimum) when Esc is pressed."""
-            if event.key() == QtCore.Qt.Key_Escape:
-                obj.setValue(obj.minimum())
-            else:
-                # delegate the event to the overridden superclass handler
-                super(obj.__class__, obj).keyPressEvent(event)
-
-        for widget in data_widgets:
-            widget_class = widget.__class__.__name__
-            if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
-                widget.setLineEdit(MyLineEdit())
-                widget.keyPressEvent = lambda event, w=widget: keyPressEvent_resetOnEsc(
-                    w, event
-                )
-            elif widget_class == 'CheckableSpinBox':
-                # CheckableSpinBoxes get a special LineEdit that catches space
-                # and mouse press events. 
-                widget.degSpinBox.setLineEdit(DegLineEdit())
-
         def _weight_normalize(widget):
             """Auto calculate callback for weight normalized widgets"""
             val, weight = (w.getVal() for w in widget._autoinputs)
@@ -272,7 +245,7 @@ class EntryApp(QtWidgets.QMainWindow):
         # and ._autoinputs list which lists the necessary input widgets.
         self.autowidgets = list()
         weight_widget = self.dataAntropPaino
-        for widget in allwidgets:
+        for widget in data_widgets:
             wname = widget.objectName()
             # handle the 'magic' autowidgets with weight normalized data
             if wname[-4:] == 'Norm':
@@ -287,9 +260,11 @@ class EntryApp(QtWidgets.QMainWindow):
         for widget in self.autowidgets:
             widget.setEnabled(False)
 
-        # set various widget convenience methods/properties
-        # input widgets are specially named and will be automatically
-        # collected into a dict
+        # set various widget convenience methods/properties, collect input
+        # widgets into a dict
+        # NOTE: this loop will implicitly cause destruction of certain widgets
+        # (e.g. QLineEdits) by replacing them with new ones. Do not reuse the 
+        # 'allwidgets' variable after this loop.
         for widget in data_widgets:
             wname = widget.objectName()
             # w.unit returns the unit for each input (may change dynamically)
@@ -304,6 +279,10 @@ class EntryApp(QtWidgets.QMainWindow):
                 widget.setVal = lambda val, w=widget: spinbox_setval(w, val)
                 widget.getVal = lambda w=widget: spinbox_getval(w)
                 widget.unit = lambda w=widget: w.suffix() if isint(w.getVal()) else ''
+                widget.setLineEdit(MyLineEdit())
+                widget.keyPressEvent = lambda event, w=widget: keyPressEvent_resetOnEsc(
+                    w, event
+                )
             elif widget_class == 'QLineEdit':
                 # for text editors, do not perform data updates on every value change...
                 # w.textChanged.connect(lambda x, w=w: self.values_changed(w))
@@ -337,6 +316,7 @@ class EntryApp(QtWidgets.QMainWindow):
                 widget.unit = (
                     lambda w=widget: w.getSuffix() if isint(w.getVal()) else ''
                 )
+                widget.degSpinBox.setLineEdit(DegLineEdit())
             else:
                 raise RuntimeError(f'Invalid type of data input widget: {widget_class}')
             self.input_widgets[wname] = widget
@@ -359,12 +339,13 @@ class EntryApp(QtWidgets.QMainWindow):
         self.firstwidget[self.tabTasap] = self.dataTasapOik
         self.total_widgets = len(self.input_widgets)
 
-        self.statusbar.showMessage(Finnish.ready.format(n=self.total_widgets))
-
+        # widget to varname translation dict
         self.widget_to_var = dict()
         for wname in self.input_widgets:
             varname = wname[4:]
             self.widget_to_var[wname] = varname
+
+        self.statusbar.showMessage(Finnish.ready.format(n=self.total_widgets))
 
         # try to increase font size
         self.setStyleSheet(f'QWidget {{ font-size: {cfg.visual.fontsize}pt;}}')
@@ -472,7 +453,7 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def _compose_json_filename(self):
         """Make up a JSON filename"""
-        pdata = self.get_patient_id_data() | self.data
+        pdata = self.get_patient_data() | self.data
         fname = pdata['TiedotID']
         fname += '_'
         fname += ''.join(reversed(pdata['TiedotNimi'].split()))
@@ -484,7 +465,7 @@ class EntryApp(QtWidgets.QMainWindow):
     def dump_json(self, fname):
         """Save data into given file in utf-8 encoding"""
         # ID data is not updated from widgets in the SQL version, so get it separately
-        rdata = self.data | self.get_patient_id_data()
+        rdata = self.data | self.get_patient_data()
         with open(fname, 'w', encoding='utf-8') as f:
             f.write(json.dumps(rdata, ensure_ascii=False, indent=True, sort_keys=True))
 
@@ -492,14 +473,14 @@ class EntryApp(QtWidgets.QMainWindow):
         """Create text report from current data"""
         data = self.data_with_units if include_units else self.data
         # ID data is not updated from widgets in the SQL version, so get it separately
-        rdata = data | self.get_patient_id_data()
+        rdata = data | self.get_patient_data()
         rep = reporter.Report(rdata, self.vars_default)
         return rep.make_text_report(template)
 
     def make_excel_report(self, xls_template):
         """Create Excel report from current data"""
         # ID data is not updated from widgets in the SQL version, so get it separately
-        rdata = self.data | self.get_patient_id_data()
+        rdata = self.data | self.get_patient_data()
         rep = reporter.Report(rdata, self.vars_default)
         return rep.make_excel_report(xls_template)
 

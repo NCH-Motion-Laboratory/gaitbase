@@ -33,6 +33,16 @@ def message_dialog(msg):
     dlg.exec()
 
 
+def keyPressEvent_resetOnEsc(obj, event):
+    """Special event handler for spinboxes. Resets value (sets it
+    to minimum) when Esc is pressed."""
+    if event.key() == QtCore.Qt.Key_Escape:
+        obj.setValue(obj.minimum())
+    else:
+        # delegate the event to the overridden superclass handler
+        super(obj.__class__, obj).keyPressEvent(event)
+
+
 class MyLineEdit(QtWidgets.QLineEdit):
     """Custom line edit that selects the input on mouse click."""
 
