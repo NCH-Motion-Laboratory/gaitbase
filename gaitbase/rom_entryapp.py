@@ -26,6 +26,7 @@ from .widgets import (
     get_widget_units,
     set_widget_value,
 )
+from gaitbase import widgets
 
 logger = logging.getLogger(__name__)
 
@@ -33,9 +34,9 @@ logger = logging.getLogger(__name__)
 def pyqt_disable_autoconv(func):
     """Decorator to disable Qt type autoconversion for a function.
 
-    PyQt functions decorated with this will return QVariants from many Qt
+    PyQt functions decorated with this one will return QVariants from many Qt
     functions, instead of native Python types. The QVariants then need to be
-    converted manually, often using value().
+    manually converted to Python types.
     """
 
     def wrapper(*args, **kwargs):
@@ -283,16 +284,15 @@ class EntryApp(QtWidgets.QMainWindow):
 
         # FIXME: make sure we always start on 1st tab
 
-    @property
-    def units(self):
-        """Return dict indicating the units for each variable.
-
-        The units may change dynamically depending on the values entered"""
-        units = dict()
-        for wname, widget in self.input_widgets.items():
-            varname = self.widget_to_var[wname]
-            units[varname] = get_widget_units(widget)
-        return units
+    
+    def get_var_units(self, varname):
+        """Get units for a variable
+        
+        The units may change dynamically depending on widget states.
+        """
+        widget_name = [wname for wname, varname_ in self.widget_to_var.items() if varname_ == varname][0]
+        widget = self.input_widgets[widget_name]
+        return get_widget_units(widget)
 
     @property
     def vars_default(self):
@@ -368,17 +368,6 @@ class EntryApp(QtWidgets.QMainWindow):
             # perform the corresponding SQL update
             self.update_rom([varname], [newval])
 
-    def data_with_units(self):
-        """Append units to values"""
-        data_units_di = dict()
-        for varname, value in self.data.items():
-            data_units_di[varname] = f'{self.data[key]}{self.units[key]}'
-        return data_units_di
-
-
-
-
-
     def _read_data(self):
         """Read input data from database"""
         thevars = list(self.data.keys())
@@ -410,7 +399,13 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def make_txt_report(self, template, include_units=True):
         """Create text report from current data"""
-        data = self.data_with_units if include_units else self.data
+        if include_units:
+            data = dict()
+            for varname, value in self.data.items():
+                units = self.get_var_units(varname)
+                data[varname] = f'{value}{units}'
+        else:
+            data = self.data
         # ID data is not updated from widgets in the SQL version, so get it separately
         rdata = data | self.get_patient_data()
         rep = reporter.Report(rdata, self.vars_default)
