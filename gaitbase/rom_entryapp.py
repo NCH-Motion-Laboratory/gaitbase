@@ -353,9 +353,9 @@ class EntryApp(QtWidgets.QMainWindow):
 
         This does several things, most importantly updates the database.
         """
-        # find autowidgets that depend on w and update them
+        # find autowidgets that depend on the argument widget and update them
         autowidgets_this = [
-            widget for widget in self.autowidgets if widget in widget._autoinputs
+            w for w in self.autowidgets if widget in w._autoinputs
         ]
         for widget in autowidgets_this:
             widget._autocalculate()
@@ -368,10 +368,16 @@ class EntryApp(QtWidgets.QMainWindow):
             # perform the corresponding SQL update
             self.update_rom([varname], [newval])
 
-    @property
     def data_with_units(self):
         """Append units to values"""
-        return {key: f'{self.data[key]}{self.units[key]}' for key in self.data}
+        data_units_di = dict()
+        for varname, value in self.data.items():
+            data_units_di[varname] = f'{self.data[key]}{self.units[key]}'
+        return data_units_di
+
+
+
+
 
     def _read_data(self):
         """Read input data from database"""
