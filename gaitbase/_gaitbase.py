@@ -254,7 +254,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.tvROM.resizeColumnsToContents()
         self.tvPatient.selectRow(0)
 
-        self.statusbar.showMessage(f'Ready, using database {cfg.database.database}')
+        self.msg_db_ready = f'Ready, using database {cfg.database.database}'
+        self.statusbar.showMessage(self.msg_db_ready)
 
     def _rom_show_all(self, show_all):
         """If show_all is True, show all ROM vars in table"""
@@ -465,8 +466,11 @@ class PatientDialog(QtWidgets.QMainWindow):
         fname = named_tempfile(suffix='.xls')
         report = app.make_excel_report(cfg.templates.xls)
         report.save(fname)
+        self.statusbar.showMessage('Opening report in Excel...')
         _startfile(fname)
         app.force_close()
+        self.statusbar.showMessage(self.msg_db_ready)
+
 
     def _rom_text_report(self):
         """Create a text report of the current ROM"""
@@ -480,8 +484,10 @@ class PatientDialog(QtWidgets.QMainWindow):
         report_txt = app.make_txt_report(cfg.templates.text)
         with open(fname, 'w', encoding='utf-8') as f:
             f.write(report_txt)
+        self.statusbar.showMessage('Opening report in text editor...')
         _startfile(fname)
         app.force_close()
+        self.statusbar.showMessage(self.msg_db_ready)        
 
     def _new_rom(self):
         """Create a new ROM measurement"""
