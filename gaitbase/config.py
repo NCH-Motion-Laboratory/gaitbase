@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-Gait database utils.
+Handles the configuration for the gait database.
 
+If the user-specific config file does not exist (e.g. on the first run of the
+package), it is created in the user's home directory. Next, the package default
+configuration is loaded. Finally the configuration is updated from the user's
+config file.
 """
+
 from pathlib import Path
 from configdot import parse_config, update_config, dump_config
 from pkg_resources import resource_filename
