@@ -254,6 +254,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         self.tvROM.resizeColumnsToContents()
         self.tvPatient.selectRow(0)
 
+        self.statusbar.showMessage(f'Ready, using database {cfg.database.database}')
+
     def _rom_show_all(self, show_all):
         """If show_all is True, show all ROM vars in table"""
         for k in range(self.rom_model.columnCount()):

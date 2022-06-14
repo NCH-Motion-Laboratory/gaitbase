@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1180</width>
-    <height>600</height>
+    <width>1276</width>
+    <height>651</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,46 +17,17 @@
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <layout class="QGridLayout" name="gridLayout">
-      <item row="4" column="3">
-       <widget class="QCheckBox" name="cbShowAllROM">
-        <property name="text">
-         <string>Show all ROM data</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="4" colspan="2">
-       <widget class="QLineEdit" name="lineEdit">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-       </widget>
-      </item>
-      <item row="5" column="0" colspan="6">
-       <widget class="QTableView" name="tvROM">
-        <property name="editTriggers">
-         <set>QAbstractItemView::NoEditTriggers</set>
-        </property>
-        <property name="selectionMode">
-         <enum>QAbstractItemView::SingleSelection</enum>
-        </property>
-        <property name="selectionBehavior">
-         <enum>QAbstractItemView::SelectRows</enum>
-        </property>
-        <property name="sortingEnabled">
-         <bool>true</bool>
-        </property>
-        <attribute name="verticalHeaderVisible">
-         <bool>false</bool>
-        </attribute>
-       </widget>
-      </item>
       <item row="6" column="0">
        <widget class="QPushButton" name="btnOpenROM">
         <property name="text">
          <string>Edit ROM</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="1">
+       <widget class="QPushButton" name="btnNewROM">
+        <property name="text">
+         <string>New ROM</string>
         </property>
        </widget>
       </item>
@@ -70,6 +41,44 @@
         </property>
         <property name="text">
          <string>Filter (name, SSN, code or diagnosis):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="0">
+       <widget class="QPushButton" name="btnOpenROMExcel">
+        <property name="text">
+         <string>Generate Excel report</string>
+        </property>
+       </widget>
+      </item>
+      <item row="6" column="2">
+       <widget class="QPushButton" name="btnDeleteROM">
+        <property name="text">
+         <string>Delete ROM</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="3">
+       <widget class="QCheckBox" name="cbShowAllROM">
+        <property name="text">
+         <string>Show all ROM data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="7" column="1">
+       <widget class="QPushButton" name="btnOpenROMText">
+        <property name="text">
+         <string>Generate text report</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="4" colspan="2">
+       <widget class="QLineEdit" name="lineEdit">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
         </property>
        </widget>
       </item>
@@ -91,6 +100,39 @@
         <property name="text">
          <string>Edit patient</string>
         </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QPushButton" name="btnNewPatient">
+        <property name="text">
+         <string>New patient</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QPushButton" name="btnDeletePatient">
+        <property name="text">
+         <string>Delete patient</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0" colspan="6">
+       <widget class="QTableView" name="tvROM">
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::SingleSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <property name="sortingEnabled">
+         <bool>true</bool>
+        </property>
+        <attribute name="verticalHeaderVisible">
+         <bool>false</bool>
+        </attribute>
        </widget>
       </item>
       <item row="1" column="0" colspan="6">
@@ -119,47 +161,18 @@
         </property>
        </widget>
       </item>
-      <item row="6" column="1">
-       <widget class="QPushButton" name="btnNewROM">
-        <property name="text">
-         <string>New ROM</string>
+      <item row="8" column="1">
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
         </property>
-       </widget>
-      </item>
-      <item row="7" column="0">
-       <widget class="QPushButton" name="btnOpenROMExcel">
-        <property name="text">
-         <string>Generate Excel report</string>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
         </property>
-       </widget>
-      </item>
-      <item row="6" column="2">
-       <widget class="QPushButton" name="btnDeleteROM">
-        <property name="text">
-         <string>Delete ROM</string>
-        </property>
-       </widget>
-      </item>
-      <item row="7" column="1">
-       <widget class="QPushButton" name="btnOpenROMText">
-        <property name="text">
-         <string>Generate text report</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1">
-       <widget class="QPushButton" name="btnNewPatient">
-        <property name="text">
-         <string>New patient</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="2">
-       <widget class="QPushButton" name="btnDeletePatient">
-        <property name="text">
-         <string>Delete patient</string>
-        </property>
-       </widget>
+       </spacer>
       </item>
      </layout>
     </item>
@@ -170,7 +183,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1180</width>
+     <width>1276</width>
      <height>21</height>
     </rect>
    </property>
