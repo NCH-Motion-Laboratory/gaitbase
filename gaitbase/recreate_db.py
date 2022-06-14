@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Recreate the gait database. This will add the patients table and the table for
-ROM measurements. When new measurement modalities are introduced, the script
-needs to be adapted to create the corresponding tables.
+Recreate the gait database. Currently, this will create the patients table and
+the table for ROM measurements. When new measurement modalities are introduced,
+the script needs to be adapted to create the corresponding tables.
 
 """
 from pathlib import Path
@@ -37,7 +37,7 @@ query = """CREATE TABLE roms (
     patient_id integer NOT NULL REFERENCES patients (patient_id) ON DELETE CASCADE,
     """
 
-# add the ROM vars and their type affinities
+# add columns for the ROM vars and their type affinities
 var_affs = get_vars_and_affinities()
 for k, (varname, affinity) in enumerate(var_affs.items(), 1):
     # insert comma, unless at last item
