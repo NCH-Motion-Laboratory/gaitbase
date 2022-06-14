@@ -198,8 +198,14 @@ class EntryApp(QtWidgets.QMainWindow):
                 set_widget_value(widget, val / weight)
 
         # Autowidgets are special widgets with automatically computed values.
-        # They must have an ._autocalculate() method which updates the widget
+        # Their values cannot be directly modified by the user.
+        # They must have an ._autocalculate() method which updates the widget,
         # and ._autoinputs list which lists the necessary input widgets.
+        #
+        # Currently the mechanism is used to implement widgets for weight
+        # normalized data. In this case, each autowidget has two inputs: the
+        # weight and the unnormalized value.
+        #
         self.autowidgets = list()
         weight_widget = self.dataAntropPaino
         for widget in data_widgets:
