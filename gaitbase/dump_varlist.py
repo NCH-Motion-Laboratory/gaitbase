@@ -9,6 +9,7 @@ Dump gaitbase variable names and their SQLite affinities.
 import io
 import json
 import sys
+import argparse
 
 from PyQt5 import QtWidgets
 
@@ -37,9 +38,31 @@ def get_vars_and_affinities():
 
 if __name__ == '__main__':
 
-    FN_OUT = "variable_affinity.txt"
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        '-a',
+        '--affinities',
+        help='also print out variable affinities',
+        action='store_true',
+    )
+    parser.add_argument(
+        '-j',
+        '--json',
+        help='dump in JSON format',
+        action='store_true',
+    )
+    args = parser.parse_args()
     var_affs = get_vars_and_affinities()
-    
-    with io.open(FN_OUT, 'w', encoding='utf-8') as f:
-        f.write(json.dumps(var_affs, ensure_ascii=False, indent=True, sort_keys=True))
-    print(f'wrote {len(var_affs)} variables into {FN_OUT}')
+
+    if args.affinities:
+        if args.json:
+            out = json.dumps(var_affs, ensure_ascii=False, indent=True, sort_keys=True)
+        else:
+            out = '\n'.join([f'{varname}: {aff}' for varname, aff in var_affs.items()])
+    else:
+        sorted_vars = sorted(var_affs.keys(), key=str.casefold)
+        if args.json:
+            out = json.dumps(sorted_vars, ensure_ascii=False, indent=True)
+        else:
+            out = '\n'.join(sorted_vars)
+    print(out)
