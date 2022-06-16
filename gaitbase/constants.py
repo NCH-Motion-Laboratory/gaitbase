@@ -25,6 +25,8 @@ class Constants:
     # changed in the reports by search&replace without affecting other 'Ei'
     # where to write backup JSON files
     json_backup_path: str = Path('Z:/Misc/ROM_backup')
+    # conditional separator
+    conditional_dot = 1
 
 
 @dataclass

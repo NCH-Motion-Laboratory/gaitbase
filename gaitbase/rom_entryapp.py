@@ -416,8 +416,6 @@ class EntryApp(QtWidgets.QMainWindow):
             data = self.data
         # ID data is not updated from widgets in the SQL version, so get it separately
         rdata = data | self.get_patient_data()
-        # DEBUG: uncomment to adapt to template changes without restarting app
-        importlib.reload(reporter)
         rep = reporter.Report(rdata, self.vars_default)
         return rep.make_text_report(template)
 
@@ -425,8 +423,6 @@ class EntryApp(QtWidgets.QMainWindow):
         """Create Excel report from current data"""
         # ID data is not updated from widgets in the SQL version, so get it separately
         rdata = self.data | self.get_patient_data()
-        # DEBUG: uncomment to adapt to template changes without restarting app
-        importlib.reload(reporter)
         rep = reporter.Report(rdata, self.vars_default)
         return rep.make_excel_report(xls_template)
 

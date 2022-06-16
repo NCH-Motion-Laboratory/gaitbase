@@ -10,6 +10,9 @@ from asyncio.log import logger
 import string
 from xlrd import open_workbook
 from xlutils.copy import copy
+import importlib
+
+from gaitbase.constants import Constants
 
 
 # Next 2 xlrd hacks copied from:
@@ -69,10 +72,15 @@ class Report:
         self._item_separator = '. '  # inserted by item_sep()
 
     def process_blocks(self, blocks):
-        for block in blocks:
-            block_formatted = self._cond_format(block, self.data_text)            
-            if block_formatted:
-                self.report_text += block_formatted
+        block_formatted = ''
+        for k, block in enumerate(blocks):
+            if block == Constants.conditional_dot:
+                if blocks[k-1] != Constants.conditional_dot and block_formatted:
+                    self.report_text += self._item_separator
+            else:
+                block_formatted = self._cond_format(block, self.data_text)            
+                if block_formatted:
+                    self.report_text += block_formatted
 
     def item_sep(self):
         """Insert item separator if appropriate"""
@@ -109,7 +117,8 @@ class Report:
 
     def make_text_report(self, py_template):
         """Create report using the Python template py_template"""
-        from templates import text_template_test
+        from .templates import text_template_test
+        importlib.reload(text_template_test)
         self.process_blocks(text_template_test.report_blocks)
         return self.report_text
 
