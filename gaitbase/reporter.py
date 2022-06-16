@@ -62,7 +62,6 @@ class Report:
         # string replacements to be done in Excel report cells
         # these will be applied after filling in the data
         self.cell_postprocess_dict = {'(EI)': '', '(Kyllä)': '(kl.)'}
-        self.report_text = ''
         self.data = data.copy()  # be sure not to mutate args
         self.data_text = data.copy()
         for key, item in self.data_text.items():
@@ -72,42 +71,34 @@ class Report:
         self._item_separator = '. '  # inserted by item_sep()
 
     def process_blocks(self, blocks):
+        """Process a list of text/separator block into text"""
         block_formatted = ''
+        report_text = ''
         for k, block in enumerate(blocks):
             if block == Constants.conditional_dot:
                 if blocks[k-1] != Constants.conditional_dot and block_formatted:
-                    self.report_text += self._item_separator
+                    report_text += self._item_separator
             else:
                 block_formatted = self._cond_format(block, self.data_text)            
                 if block_formatted:
-                    self.report_text += block_formatted
-
-    def item_sep(self):
-        """Insert item separator if appropriate"""
-        seplen = len(self._item_separator)
-        if (
-            self.report_text[-seplen:] != self._item_separator
-            and self.report_text[-2:] != ': '
-        ):  # bit of a hack
-            self.report_text += self._item_separator
-
-    def __repr__(self):
-        return self.report_text
+                    report_text += block_formatted
 
     def _cond_format(self, thestr, data):
         """Conditionally format string thestr. Fields given as {variable} are
         formatted using the data. If all fields are default, an empty string is
         returned."""
-        flds = list(Report._get_fields(thestr))
+        flds = list(Report._get_format_fields(thestr))
         if not flds or any(fld not in self.fields_default for fld in flds):
             return thestr.format(**data)
         else:
             return ''
 
     @staticmethod
-    def _get_fields(thestr):
-        """Yield fields from a format string, e.g.
-        input: '{foo} is {bar}', output: ('foo', 'bar')
+    def _get_format_fields(thestr):
+        """Yield fields from a format string.
+        
+        Example:
+        input: '{foo} is {bar}' would give output: ('foo', 'bar')
         """
         formatter = string.Formatter()
         pit = formatter.parse(thestr)  # returns parser generator
@@ -117,10 +108,9 @@ class Report:
 
     def make_text_report(self, py_template):
         """Create report using the Python template py_template"""
-        from .templates import text_template_test
+        importlib.import_module(py_template)
         importlib.reload(text_template_test)
-        self.process_blocks(text_template_test.report_blocks)
-        return self.report_text
+        return self.process_blocks(text_template_test.report_blocks)
 
     def make_excel_report(self, xls_template):
         """Create an Excel report (xlrd workbook) from a template.
