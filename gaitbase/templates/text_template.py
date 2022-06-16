@@ -62,7 +62,7 @@ Nivelten passiiviset liikelaajuudet (oikea/vasen), NR = normaalin rajoissa:
 self += 'Lonkka: '
 self += 'Thomasin testi (vapaasti) {LonkkaEkstensioVapOik}/{LonkkaEkstensioVapVas}. '
 self += 'Thomasin testi (avustettuna) {LonkkaEkstensioAvOik}/{LonkkaEkstensioAvVas}. '
-self += 'Thomasin testi (polvi 90°) {LonkkaEkstensioPolvi90Oik}/{LonkkaEkstensioPolvi90Vas}. ' 
+self += 'Thomasin testi (polvi 90°) {LonkkaEkstensioPolvi90Oik}/{LonkkaEkstensioPolvi90Vas}. '
 self += 'Koukistus {LonkkaFleksioOik}/{LonkkaFleksioVas}. '
 self += 'Loitonnus (lonkka 0°, polvi 90°) {LonkkaAbduktioLonkka0Polvi90Oik}/{LonkkaAbduktioLonkka0Polvi90Vas}. '
 self += 'Loitonnus (lonkka 0°, polvi 0°) {LonkkaAbduktioLonkka0Oik}/{LonkkaAbduktioLonkka0Vas}. '
@@ -76,14 +76,20 @@ self += '\n'
 self += 'Polvi: '
 self += 'Ojennus (vapaasti) {PolviEkstensioVapOik}/{PolviEkstensioVapVas}. '
 self += 'Ojennus (avustettuna) {PolviEkstensioAvOik}/{PolviEkstensioAvVas}. '
-self += 'Koukistus (vatsamakuu) {PolviFleksioVatsamakuuOik}/{PolviFleksioVatsamakuuVas}. '
-self += 'Koukistus (selinmakuu) {PolviFleksioSelinmakuuOik}/{PolviFleksioSelinmakuuVas}. '
+self += (
+    'Koukistus (vatsamakuu) {PolviFleksioVatsamakuuOik}/{PolviFleksioVatsamakuuVas}. '
+)
+self += (
+    'Koukistus (selinmakuu) {PolviFleksioSelinmakuuOik}/{PolviFleksioSelinmakuuVas}. '
+)
 self += 'Popliteakulma {PolviPopliteaVastakkLonkka0Oik}/{PolviPopliteaVastakkLonkka0Vas}, popliteakulma (true) {PolviPopliteaVastakkLonkka90Oik}/{PolviPopliteaVastakkLonkka90Vas}.'
 self += '\n'
 self += 'Kommentit: {cmtPolviPROM}\n'
 self += '\n'
 self += 'Nilkka: '
-self += 'Koukistus (polvi 90°) {NilkkaDorsifPolvi90PROMOik}/{NilkkaDorsifPolvi90PROMVas}. '
+self += (
+    'Koukistus (polvi 90°) {NilkkaDorsifPolvi90PROMOik}/{NilkkaDorsifPolvi90PROMVas}. '
+)
 self += 'Koukistus (polvi 0°) {NilkkaDorsifPolvi0PROMOik}/{NilkkaDorsifPolvi0PROMVas}. '
 self += 'Ojennus {NilkkaPlantaarifleksioPROMOik}/{NilkkaPlantaarifleksioPROMVas}.'
 self += '\n'
@@ -96,7 +102,9 @@ self += """
 Nivelten aktiiviset liikelaajuudet: 
 """
 self += 'Nilkka: '
-self += 'Koukistus (polvi 90°) {NilkkaDorsifPolvi90AROMOik}/{NilkkaDorsifPolvi90AROMVas}'
+self += (
+    'Koukistus (polvi 90°) {NilkkaDorsifPolvi90AROMOik}/{NilkkaDorsifPolvi90AROMVas}'
+)
 self += ' (pyrkii lisäksi eversioon {NilkkaDorsifPolvi90AROMEversioOik}/{NilkkaDorsifPolvi90AROMEversioVas})'
 self.item_sep()
 self += 'Koukistus (polvi 0°) {NilkkaDorsifPolvi0AROMOik}/{NilkkaDorsifPolvi0AROMVas}'
@@ -109,7 +117,9 @@ self += 'Kommentit: {cmtNilkkaAROM}\n'
 self += """
 Alaraajojen spastisuus:
 """
-self += 'Catch: Lonkan adduktorit {LonkkaAdduktoritCatchOik}/{LonkkaAdduktoritCatchVas}. '
+self += (
+    'Catch: Lonkan adduktorit {LonkkaAdduktoritCatchOik}/{LonkkaAdduktoritCatchVas}. '
+)
 self += 'Hamstringit {PolviHamstringCatchOik}/{PolviHamstringCatchVas}. '
 self += 'Rectus femorikset {PolviRectusCatchOik}/{PolviRectusCatchVas}. '
 self += 'Soleukset {NilkkaSoleusCatchOik}/{NilkkaSoleusCatchVas}'
@@ -172,9 +182,13 @@ self += """
 Jalkaterä kuormitettuna: (+ = lievä, ++ = kohtalainen, +++ = voimakas):
 """
 self += 'Takaosan (kantaluun) asento {JalkatTakaosanAsentoKuormOik}/{JalkatTakaosanAsentoKuormVas}. '
-self += 'Keskiosan asento {JalkatKeskiosanAsentoKuormOik}/{JalkatKeskiosanAsentoKuormVas}. '
+self += (
+    'Keskiosan asento {JalkatKeskiosanAsentoKuormOik}/{JalkatKeskiosanAsentoKuormVas}. '
+)
 self += 'Etuosan asento 1: {JalkatEtuosanAsento1KuormOik}/{JalkatEtuosanAsento1KuormVas}, etuosan asento 2: {JalkatEtuosanAsento2KuormOik}/{JalkatEtuosanAsento2KuormVas}. '
-self += 'Takaosan kierto: {JalkatTakaosanKiertoKuormOik}/{JalkatTakaosanKiertoKuormVas}. '
+self += (
+    'Takaosan kierto: {JalkatTakaosanKiertoKuormOik}/{JalkatTakaosanKiertoKuormVas}. '
+)
 self += "Coleman's block test: {JalkatColemanOik}/{JalkatColemanVas}. "
 self += 'Feissin linja: {JalkatFeissinLinjaOik} / {JalkatFeissinLinjaVas}. '
 self += 'Navicular drop, istuen: {JalkatNavDropIstuenOik}/{JalkatNavDropIstuenVas}. '
@@ -266,17 +280,20 @@ self += '\n'
 self += 'Kommentit (voimat): {cmtVoima1} {cmtVoima2} \n'
 
 # some extra logic to add the names of EMG electrodes
-emg_chs = {'EMGSol': 'soleus',
-           'EMGGas': 'gastrocnemius',
-           'EMGPer': 'peroneous',
-           'EMGTibA': 'tibialis anterior',
-           'EMGRec': 'rectus',
-           'EMGHam': 'hamstring',
-           'EMGVas': 'vastus',
-           'EMGGlut': 'gluteus'}
+emg_chs = {
+    'EMGSol': 'soleus',
+    'EMGGas': 'gastrocnemius',
+    'EMGPer': 'peroneous',
+    'EMGTibA': 'tibialis anterior',
+    'EMGRec': 'rectus',
+    'EMGHam': 'hamstring',
+    'EMGVas': 'vastus',
+    'EMGGlut': 'gluteus',
+}
 
-emgs_in_use = [desc for ch, desc in emg_chs.items()
-               if self.data[ch] == Constants.checkbox_yestext]
+emgs_in_use = [
+    desc for ch, desc in emg_chs.items() if self.data[ch] == Constants.checkbox_yestext
+]
 emgs_str = ', '.join(emgs_in_use)
 
 if emgs_str:
