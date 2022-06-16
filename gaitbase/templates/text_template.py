@@ -13,6 +13,14 @@ measured) the Report instance will discard that block.
 """
 from gaitbase.constants import Constants
 
+
+self += """
+TEST BLOCK
+
+"""
+self.item_sep()
+
+
 self += """
 
 LIIKELAAJUUDET JA VOIMAT
@@ -115,7 +123,7 @@ self += '\n'
 self += 'Kommentit: {cmtNilkkaAROM}\n'
 
 self += """
-Alaraajojen spastisuus:
+Alaraajojen spastisuus: 
 """
 self += (
     'Catch: Lonkan adduktorit {LonkkaAdduktoritCatchOik}/{LonkkaAdduktoritCatchVas}. '

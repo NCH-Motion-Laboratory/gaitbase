@@ -6,6 +6,7 @@ Create reports for liikelaajuus
 @author: Jussi (jnu@iki.fi)
 """
 
+from asyncio.log import logger
 import string
 from xlrd import open_workbook
 from xlutils.copy import copy
@@ -67,10 +68,11 @@ class Report:
         self.fields_default = field_default_vals
         self._item_separator = '. '  # inserted by item_sep()
 
-    def __add__(self, text):
-        """Format and add a text block to report"""
-        self.report_text += self._cond_format(text, self.data_text)
-        return self
+    def process_blocks(self, blocks):
+        for block in blocks:
+            block_formatted = self._cond_format(block, self.data_text)            
+            if block_formatted:
+                self.report_text += block_formatted
 
     def item_sep(self):
         """Insert item separator if appropriate"""
@@ -107,8 +109,8 @@ class Report:
 
     def make_text_report(self, py_template):
         """Create report using the Python template py_template"""
-        code = compile(open(py_template, "rb").read(), py_template, 'exec')
-        exec(code, locals())  # execute the report code; it directly modifies self
+        from templates import text_template_test
+        self.process_blocks(text_template_test.report_blocks)
         return self.report_text
 
     def make_excel_report(self, xls_template):
