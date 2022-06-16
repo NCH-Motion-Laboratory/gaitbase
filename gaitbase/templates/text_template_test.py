@@ -1,13 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Python template for the text report. This is a Python file called by exec() and
-works by modifying an existing variable called 'self' (instance of Report
-class).
-
-The idea is to add 'text blocks' containing text and fields to the Report()
-instance (self) one by one. The field values are automatically filled in by the
-Report class. If all variables for the block have default values (i.e. were not
-measured) the Report instance will discard that block.
+Python template for the text report. This is a Python file called by exec().
 
 @author: Jussi (jnu@iki.fi)
 """
@@ -16,8 +9,6 @@ from gaitbase.constants import Constants
 
 conditional_dot = Constants.conditional_dot
 
-
-# %%
 blocks = ([
 """
 LIIKELAAJUUDET JA VOIMAT
@@ -27,6 +18,10 @@ Patient name: {TiedotNimi}
 Social security number: {TiedotHetu}
 Diagnosis: {TiedotDiag}
 Date of gait analysis: {TiedotPvm}
+""",
+
+"""
+Kommentit: {cmtTiedot}
 """,
 
 """
@@ -40,12 +35,12 @@ SIAS: {AntropSIAS}
 Kengännumero: {AntropKenganNumeroOik} / {AntropKenganNumeroVas}
 """,
 
-"""Kommentit: {cmtAntrop}
+"""
+Kommentit: {cmtAntrop}
 """,
 
 """
-MITTAAJAT:
-{TiedotMittaajat}
+MITTAAJAT: {TiedotMittaajat}
 """,
 
 """
@@ -60,12 +55,13 @@ TESTAUS- JA ARVIOINTITULOKSET:
 
 OHEISMITTAUSTEN TULOKSET:
 
-
-Nivelten passiiviset liikelaajuudet (oikea/vasen), NR = normaalin rajoissa:
-
-Lonkka:
 """,
 
+"""
+Nivelten passiiviset liikelaajuudet (oikea/vasen), NR = normaalin rajoissa:
+""",
+
+'Lonkka:',
 'Thomasin testi (vapaasti) {LonkkaEkstensioVapOik}/{LonkkaEkstensioVapVas}. ',
 'Thomasin testi (avustettuna) {LonkkaEkstensioAvOik}/{LonkkaEkstensioAvVas}. ',
 'Thomasin testi (polvi 90°) {LonkkaEkstensioPolvi90Oik}/{LonkkaEkstensioPolvi90Vas}. ',
@@ -76,10 +72,30 @@ Lonkka:
 'Lähennys {LonkkaAdduktioOik}/{LonkkaAdduktioVas}. ',
 'Sisäkierto {LonkkaSisakiertoOik}/{LonkkaSisakiertoVas}. ',
 'Ulkokierto {LonkkaUlkokiertoOik}/{LonkkaUlkokiertoVas}. ',
-'Kommentit {cmtLonkkaPROM}'
+"""
+Kommentit {cmtLonkkaPROM}
 
+""",
 
+'Polvi:',
+'Ojennus (vapaasti) {PolviEkstensioVapOik}/{PolviEkstensioVapVas}. ',
+'Ojennus (avustettuna) {PolviEkstensioAvOik}/{PolviEkstensioAvVas}. ',
+'Koukistus (vatsamakuu) {PolviFleksioVatsamakuuOik}/{PolviFleksioVatsamakuuVas}. ',
+'Koukistus (selinmakuu) {PolviFleksioSelinmakuuOik}/{PolviFleksioSelinmakuuVas}. ',
+'Popliteakulma {PolviPopliteaVastakkLonkka0Oik}/{PolviPopliteaVastakkLonkka0Vas}, '\
+'popliteakulma (true) {PolviPopliteaVastakkLonkka90Oik}/{PolviPopliteaVastakkLonkka90Vas}.'),
+ """
+'Kommentit: {cmtPolviPROM}
 
+""",
+'Nilkka:',
+'Koukistus (polvi 90°) {NilkkaDorsifPolvi90PROMOik}/{NilkkaDorsifPolvi90PROMVas}. ',
+'Koukistus (polvi 0°) {NilkkaDorsifPolvi0PROMOik}/{NilkkaDorsifPolvi0PROMVas}. ',
+'Ojennus {NilkkaPlantaarifleksioPROMOik}/{NilkkaPlantaarifleksioPROMVas}.',
+ """
+'Kommentit: {cmtNilkkaPROM}\n'
+
+""",
 
 ])
 

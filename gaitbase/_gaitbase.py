@@ -481,12 +481,16 @@ class PatientDialog(QtWidgets.QMainWindow):
         # the instance is not shown as a window
         app = EntryApp(self.database, rom_id, False)
         fname = named_tempfile(suffix='.txt')
-        report_txt = app.make_txt_report(cfg.templates.text)
-        with open(fname, 'w', encoding='utf-8') as f:
-            f.write(report_txt)
-        self.statusbar.showMessage('Opening report in text editor...')
-        _startfile(fname)
-        app.force_close()
+        try:
+            report_txt = app.make_txt_report(cfg.templates.text)
+            with open(fname, 'w', encoding='utf-8') as f:
+                f.write(report_txt)
+            self.statusbar.showMessage('Opening report in text editor...')
+            _startfile(fname)
+        except SyntaxError as e:
+            message_dialog(f'The report template contains syntax errors:\n{e}')
+        finally:
+            app.force_close()
         self.statusbar.showMessage(self.msg_db_ready)        
 
     def _new_rom(self):
