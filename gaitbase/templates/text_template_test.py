@@ -18,7 +18,7 @@ conditional_dot = Constants.conditional_dot
 
 
 # %%
-report_blocks = ([
+blocks = ([
 """
 LIIKELAAJUUDET JA VOIMAT
 

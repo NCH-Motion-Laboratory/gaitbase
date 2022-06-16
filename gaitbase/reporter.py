@@ -71,7 +71,7 @@ class Report:
         self._item_separator = '. '  # inserted by item_sep()
 
     def process_blocks(self, blocks):
-        """Process a list of text/separator block into text"""
+        """Process a list of text/separator blocks into text"""
         block_formatted = ''
         report_text = ''
         for k, block in enumerate(blocks):
@@ -82,6 +82,7 @@ class Report:
                 block_formatted = self._cond_format(block, self.data_text)            
                 if block_formatted:
                     report_text += block_formatted
+        return report_text
 
     def _cond_format(self, thestr, data):
         """Conditionally format string thestr. Fields given as {variable} are
@@ -108,9 +109,13 @@ class Report:
 
     def make_text_report(self, py_template):
         """Create report using the Python template py_template"""
-        importlib.import_module(py_template)
-        importlib.reload(text_template_test)
-        return self.process_blocks(text_template_test.report_blocks)
+        # compile the template code
+        template_code = compile(open(py_template, "rb").read(), py_template, 'exec')
+        # namespace of executed code
+        exec_namespace = dict()
+        exec(template_code, exec_namespace)
+        blocks = exec_namespace['blocks']
+        return self.process_blocks(blocks)
 
     def make_excel_report(self, xls_template):
         """Create an Excel report (xlrd workbook) from a template.
