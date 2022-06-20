@@ -405,7 +405,11 @@ class EntryApp(QtWidgets.QMainWindow):
                 units = self.get_var_units(varname)
                 data[varname] = f'{value}{units}'
         else:
-            data = self.data
+            data = self.data.copy()  # don't mutate the original
+        # some text replacements to improve readability
+        for field, value in data.items():
+            if value in cfg.report.text_replace:
+                data[field] = cfg.report.text_replace[value]
         # patient ID data is needed for the report, but it's not part of the ROM
         # table, so get it separately
         report_data = data | self.get_patient_data()
@@ -414,12 +418,7 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def make_excel_report(self, xls_template):
         """Create Excel report from current data"""
-        # patient ID data is needed for the report, but it's not part of the ROM
-        # table, so get it separately
-        report_data = self.data | self.get_patient_data()
-        data_default = self.data_default | self.get_patient_data()        
-        rep = reporter.Report(report_data, data_default)
-        return rep.make_excel_report(xls_template)
+        return reporter.make_excel_report(xls_template, self.data)
 
     def n_modified(self):
         """Count modified values."""
