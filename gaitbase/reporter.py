@@ -13,33 +13,6 @@ from xlutils.copy import copy
 from gaitbase.constants import Constants
 from .config import cfg
 
-# Next 2 xlrd hacks copied from:
-# http://stackoverflow.com/questions/3723793/
-# preserving-styles-using-pythons-xlrd-xlwt-and-xlutils-copy?lq=1
-
-
-def _getOutCell(outSheet, colIndex, rowIndex):
-    """HACK: Extract the internal xlwt cell representation."""
-    row = outSheet._Worksheet__rows.get(rowIndex)
-    if not row:
-        return None
-    cell = row._Row__cells.get(colIndex)
-    return cell
-
-
-def _setOutCell(outSheet, col, row, value):
-    """Change cell value without changing formatting."""
-    # HACK to retain cell style.
-    previousCell = _getOutCell(outSheet, col, row)
-    # END HACK, PART I
-    outSheet.write(row, col, value)
-    # HACK, PART II
-    if previousCell:
-        newCell = _getOutCell(outSheet, col, row)
-        if newCell:
-            newCell.xf_idx = previousCell.xf_idx
-    # END HACK
-
 
 def make_text_report(template, data, fields_at_default):
     """Create report using a Python template"""
@@ -116,11 +89,33 @@ def make_excel_report(xls_template, data, fields_at_default):
             if cell_value:  # format non-empty cells only
                 # if variable is at default, the result will be an empty cell
                 new_value = _conditional_format(cell_value, data, fields_at_default)
-                # apply replacement dict only if formatting changed something.
-                # this is to avoid changing text-only cells.
+                # apply replacement dict only if formatting changed something;
+                # this is to avoid changing text-only cells
                 if new_value != cell_value:
                     for oldstr, newstr in cfg.report.xls_replace.items():
                         if oldstr in new_value:
                             new_value = new_value.replace(oldstr, newstr)
-                _setOutCell(w_sheet, col, row, new_value)
+                _xlrd_set_cell(w_sheet, col, row, new_value)
     return workbook_out
+
+
+def _xlrd_get_cell(outSheet, colIndex, rowIndex):
+    """HACK: Extract the internal cell representation."""
+    row = outSheet._Worksheet__rows.get(rowIndex)
+    if not row:
+        return None
+    cell = row._Row__cells.get(colIndex)
+    return cell
+
+
+def _xlrd_set_cell(outSheet, col, row, value):
+    """HACK: change cell value without changing formatting.
+    See: http://stackoverflow.com/questions/3723793/
+    preserving-styles-using-pythons-xlrd-xlwt-and-xlutils-copy?lq=1
+    """
+    previousCell = _xlrd_get_cell(outSheet, col, row)
+    outSheet.write(row, col, value)
+    if previousCell:
+        newCell = _xlrd_get_cell(outSheet, col, row)
+        if newCell:
+            newCell.xf_idx = previousCell.xf_idx
