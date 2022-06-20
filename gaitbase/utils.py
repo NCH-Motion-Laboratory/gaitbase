@@ -6,21 +6,10 @@ Gait database utils.
 
 import subprocess
 import sys
-import random
 import os
+import datetime
 
 
-def _random_ssn():
-    """Generate random Finnish SSN for debug purposes"""
-    d = random.randint(1, 28)
-    m = random.randint(1, 12)
-    y = random.randint(0, 99)
-    chr = random.choice('A+-')
-    n = random.randint(0, 999)
-    ssn = f'{d:02d}{m:02d}{y:02d}{chr}{n:03d}'
-    chrs = "0123456789ABCDEFHJKLMNPRSTUVWXY"
-    chk = chrs[(int(ssn[:6] + ssn[7:10])) % 31]
-    return ssn + chk
 
 
 def validate_code(code):
@@ -59,3 +48,13 @@ def isint(x):
         return True
     except ValueError:
         return False
+
+
+def _validate_date(self, datestr):
+    """Validate a date of dd.mm.yyyy"""
+    try:
+        datetime.datetime.strptime(datestr, '%d.%m.%Y')
+        return True
+    except ValueError:
+        return False
+

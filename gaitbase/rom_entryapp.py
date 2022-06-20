@@ -27,6 +27,7 @@ from .widgets import (
     get_widget_units,
     set_widget_value,
 )
+from .utils import _validate_date
 
 logger = logging.getLogger(__name__)
 
@@ -302,8 +303,7 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def do_close(self, event):
         """The actual closing ritual"""
-        # XXX: we may want to undo the database entry, if no values were entered
-        # if self.n_modified() == 0:
+        # XXX: we may want to undo the database entry, if no values were entered?
         # XXX: if ROM was newly created, we also create JSON for backup purposes
         # this is for the "beta phase"  only
         if self.BACKUP_NEW_ROMS and self.newly_created:
@@ -332,18 +332,10 @@ class EntryApp(QtWidgets.QMainWindow):
                 message_dialog(msg)
                 event.ignore()
 
-    def _validate_date(self, datestr):
-        """Validate a date of dd.mm.yyyy"""
-        try:
-            datetime.datetime.strptime(datestr, '%d.%m.%Y')
-            return True
-        except ValueError:
-            return False
-
     def _validate_outputs(self):
         """Validate inputs before closing"""
         date = self.data['TiedotPvm']
-        if not self._validate_date(date):
+        if not _validate_date(date):
             return False, 'Päivämäärän täytyy olla oikea ja muodossa pp.kk.vvvv'
         else:
             return True, ''
@@ -422,10 +414,6 @@ class EntryApp(QtWidgets.QMainWindow):
         # table, so get it separately
         report_data = self.data | self.get_patient_data()
         return reporter.make_excel_report(xls_template, report_data, self.vars_at_default)
-
-    def n_modified(self):
-        """Count modified values."""
-        return len([x for x in self.data if self.data[x] != self.data_default[x]])
 
     def page_change(self):
         """Callback for tab change"""
