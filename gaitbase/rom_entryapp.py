@@ -21,7 +21,7 @@ from .constants import Constants, Finnish
 from .widgets import (
     DegLineEdit,
     MyLineEdit,
-    message_dialog,
+    qt_message_dialog,
     keyPressEvent_resetOnEsc,
     get_widget_value,
     get_widget_units,
@@ -105,7 +105,7 @@ class EntryApp(QtWidgets.QMainWindow):
         if fatal:
             raise RuntimeError(msg)
         else:
-            message_dialog(msg)
+            qt_message_dialog(msg)
 
     @pyqt_disable_autoconv
     def select(self, thevars):
@@ -329,7 +329,7 @@ class EntryApp(QtWidgets.QMainWindow):
             if status_ok:
                 self.do_close(event)
             else:
-                message_dialog(msg)
+                qt_message_dialog(msg)
                 event.ignore()
 
     def _validate_outputs(self):

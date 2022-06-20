@@ -8,7 +8,7 @@ from .constants import Constants, Finnish
 from .utils import isint
 
 
-def confirm_dialog(msg):
+def qt_yesno_dialog(msg):
     """Show yes/no dialog."""
     dlg = QtWidgets.QMessageBox()
     dlg.setText(msg)
@@ -23,8 +23,8 @@ def confirm_dialog(msg):
     return dlg.buttonRole(dlg.clickedButton())
 
 
-def message_dialog(msg):
-    """Show message with an 'OK' button."""
+def qt_message_dialog(msg):
+    """Show a message with 'OK' button."""
     dlg = QtWidgets.QMessageBox()
     dlg.setWindowTitle(Constants.dialog_title)
     dlg.setText(msg)
@@ -116,23 +116,18 @@ def set_widget_value(widget, value):
     else:
         raise RuntimeError(f'Invalid class of input widget: {widget_class}')
 
+        
 
 def get_widget_units(widget):
-    """Get units of data associated with widget.
+    """Get units of data associated with a ROM data entry widget.
 
     We only return a unit if the widget has a numeric value.
     """
     widget_class = widget.__class__.__name__
     if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
-        if isint(get_widget_value(widget)):
-            units = widget.suffix()
-        else:
-            units = ''
+        units = widget.suffix() if isint(get_widget_value(widget)) else ''
     elif widget_class == 'CheckableSpinBox':
-        if isint(get_widget_value(widget)):
-            units = widget.getSuffix()
-        else:
-            units = ''
+        units = widget.getSuffix() if isint(get_widget_value(widget)) else ''
     else:
         # currently no units for other widget types
         units = ''
@@ -150,8 +145,7 @@ class MyLineEdit(QtWidgets.QLineEdit):
         self.selectAll()
 
     def mouseReleaseEvent(self, event):
-        """Make drag & release select all too (prevent selection
-        of partial text)"""
+        # make drag & release select all too (to prevent selection of partial text)
         super().mouseReleaseEvent(event)
         self.selectAll()
 
@@ -168,8 +162,7 @@ class DegLineEdit(QtWidgets.QLineEdit):
         self.selectAll()
 
     def mouseReleaseEvent(self, event):
-        """Make drag & release select all too (prevent selection of
-        partial text)"""
+        # make drag & release select all too (prevent selection of partial text)
         super().mouseReleaseEvent(event)
         self.selectAll()
 
@@ -182,12 +175,12 @@ class DegLineEdit(QtWidgets.QLineEdit):
 
 
 class CheckableSpinBox(QtWidgets.QWidget):
-    """Custom widget: Spinbox (degrees) with checkbox, which indicates
-    a 'default' value. If the checkbox is checked, disable spinbox, in which
-    case value() will return the default value shown next to checkbox
-    (defaultText property). Otherwise value() will return the spinbox value.
-    setValue() takes either the default value, the 'special value' (not
-    measured) or an integer.
+    """Custom spinbox with checkbox, which indicates a 'default' value.
+    
+    If the checkbox is checked, disable spinbox, in which case value() will
+    return the default value, which is shown next to checkbox (defaultText property).
+    Otherwise value() will normally return the spinbox value. setValue() takes either the
+    default value, the 'special value' (not measured) or an integer.
     """
 
     # signal has to be defined here for unclear reasons
@@ -222,15 +215,16 @@ class CheckableSpinBox(QtWidgets.QWidget):
         self.setFocusPolicy(QtCore.Qt.StrongFocus)
         self.setFocusProxy(self.degSpinBox)
 
-        # Widget defaults are tailored for this program. For some instances
-        # of the widget, these values will be modified already by Qt Designer
-        # (in the .ui file), so we set them only here and do not touch them
-        # later in the code. If exporting the widget, these can be deleted or
-        # set to some other constants.
-        self.setDefaultText('NR')
-        self.setSuffix('°')
-        # the minimum is also the "special" value, which causes the widget to
-        # display the SpecialValueText instead of a number
+        # Widget defaults are tailored for this program. For some instances of
+        # the widget, these values will be modified by Qt Designer (in the .ui
+        # file), so we set them only here and do not touch them later in the
+        # code.
+        self.setDefaultText('NR')  # "normaalin rajoissa"
+        self.setSuffix('°')  # use degrees by default
+        # The minimum value is also the "special" value, which causes the widget
+        # to display the SpecialValueText instead of a number. Thus, the minimum
+        # value should be smaller (usually by one) than the actual expected
+        # minimum value.
         self.setMinimum(-181)
         self.setMaximum(180)
         self.degSpinBox.setValue(-181)
@@ -246,8 +240,8 @@ class CheckableSpinBox(QtWidgets.QWidget):
         else:
             super().keyPressEvent(event)
 
-    """ Set some values as Qt properties, mostly so that they can be easily
-    changed from Qt Designer. """
+    # set some values as Qt properties, mostly so that they can be easily
+    # changed from Qt Designer
 
     def setDefaultText(self, text):
         self.normalCheckBox.setText(text)
@@ -279,29 +273,35 @@ class CheckableSpinBox(QtWidgets.QWidget):
     maximum = QtCore.pyqtProperty('int', getMaximum, setMaximum)
 
     def value(self):
-        if self.normalCheckBox.checkState() == 0:
+        """Get the current widget value"""
+        if self.normalCheckBox.checkState() == 0:  # checkbox not checked
             val = self.degSpinBox.value()
             if val == self.degSpinBox.minimum():
                 return str(self.specialtext)
             else:
                 return val
-        elif self.normalCheckBox.checkState() == 2:
+        elif self.normalCheckBox.checkState() == 2:  # checkbox checked
             return str(self.getDefaultText())
 
     def setValue(self, val):
+        """Set the widget value"""        
         if val == self.getDefaultText():
+            # the default value - enable checkbox
             self.normalCheckBox.setCheckState(2)
         else:
             self.normalCheckBox.setCheckState(0)
+            # handle the "special value"
             if val == self.specialtext:
                 self.degSpinBox.setValue(self.degSpinBox.minimum())
             else:
                 self.degSpinBox.setValue(val)
 
     def selectAll(self):
+        """Delegate selectAll to the spinbox component"""
         self.degSpinBox.selectAll()
 
     def setFocus(self):
+        """Delegate focus to the spinbox component"""
         self.degSpinBox.setFocus()
 
     def setSpinBox(self, state):
@@ -316,6 +316,7 @@ class CheckableSpinBox(QtWidgets.QWidget):
             self.valueChanged.emit()
 
     def toggleCheckBox(self):
+        """Toggle the checkbox value"""
         if self.normalCheckBox.checkState() == 2:
             self.normalCheckBox.setCheckState(0)
         else:

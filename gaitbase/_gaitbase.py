@@ -19,7 +19,7 @@ from ulstools.num import check_hetu
 from .config import cfg
 from .rom_entryapp import EntryApp
 from .utils import _startfile, validate_code
-from .widgets import message_dialog
+from .widgets import qt_message_dialog
 
 
 def qt_message_dialog(msg):
@@ -160,7 +160,7 @@ def db_failure(query, fatal=False):
     if fatal:
         raise RuntimeError(msg)
     else:
-        message_dialog(msg)
+        qt_message_dialog(msg)
 
 
 class PatientDialog(QtWidgets.QMainWindow):
@@ -179,7 +179,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         if not Path(cfg.database.database).is_file():
             msg = f'The database {cfg.database.database} does not exist. '
             msg += 'Please set the correct location in the config.'
-            message_dialog(msg)
+            qt_message_dialog(msg)
             sys.exit()
         self.database.setDatabaseName(cfg.database.database)
         self.database.open()
@@ -319,7 +319,7 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _edit_patient(self):
         """Edit an existing patient"""
         if self._current_patient_row is None:
-            message_dialog('Select a patient first')
+            qt_message_dialog('Select a patient first')
             return
         rec = self.patient_model.record(self._current_patient_row)
         patient = self._record_to_patient(rec)
@@ -409,7 +409,7 @@ class PatientDialog(QtWidgets.QMainWindow):
 
     def _delete_current_patient(self):
         if self._current_patient_row is None:
-            message_dialog('Select a patient first')
+            qt_message_dialog('Select a patient first')
             return
         rec = self.patient_model.record(self._current_patient_row)
         patient_id = rec.value('patient_id')
@@ -444,10 +444,10 @@ class PatientDialog(QtWidgets.QMainWindow):
         If rom_id is None, will open the currently selected ROM.
         """
         if rom_id is None and (rom_id := self.current_rom_id) is None:
-            message_dialog('Please select a ROM first')
+            qt_message_dialog('Please select a ROM first')
             return
         if rom_id in self.editors:
-            message_dialog('This ROM is already open')
+            qt_message_dialog('This ROM is already open')
             return
         app = EntryApp(self.database, rom_id, newly_created)
         app.closing.connect(self._editor_closing)
@@ -458,7 +458,7 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _rom_excel_report(self):
         """Create an Excel report of the current ROM"""
         if (rom_id := self.current_rom_id) is None:
-            message_dialog('Please select a ROM first')
+            qt_message_dialog('Please select a ROM first')
             return
         # we use an EntryApp instance to create the report
         # the instance is not shown as a window
@@ -475,7 +475,7 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _rom_text_report(self):
         """Create a text report of the current ROM"""
         if (rom_id := self.current_rom_id) is None:
-            message_dialog('Please select a ROM first')
+            qt_message_dialog('Please select a ROM first')
             return
         # we use an EntryApp instance to create the report
         # the instance is not shown as a window
@@ -488,7 +488,7 @@ class PatientDialog(QtWidgets.QMainWindow):
             self.statusbar.showMessage('Opening report in text editor...')
             _startfile(fname)
         except SyntaxError as e:
-            message_dialog(f'The report template contains syntax errors:\n{e}')
+            qt_message_dialog(f'The report template contains syntax errors:\n{e}')
         finally:
             app.force_close()
         self.statusbar.showMessage(self.msg_db_ready)        
@@ -519,7 +519,7 @@ class PatientDialog(QtWidgets.QMainWindow):
     def _delete_rom(self):
         """Delete the selected ROM measurement from database"""
         if (rom_idx := self.current_rom_index) is None:
-            message_dialog('Please select a ROM first')
+            qt_message_dialog('Please select a ROM first')
             return
         msg = 'WARNING: are you sure you want to delete this ROM measurement? There is no undo.'
         if qt_confirm_dialog(msg):
@@ -563,7 +563,7 @@ def main():
         tb_full = ''.join(traceback.format_exception(exc_type, value, tback))
         msg = f'Oops! An unhandled exception occurred:\n{tb_full}'
         msg += '\nThe application will be closed now.'
-        message_dialog(msg)
+        qt_message_dialog(msg)
         sys.__excepthook__(exc_type, value, tback)
         app.quit()
 

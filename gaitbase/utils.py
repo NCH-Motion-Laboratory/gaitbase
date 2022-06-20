@@ -10,8 +10,6 @@ import os
 import datetime
 
 
-
-
 def validate_code(code):
     """Check if patient code is valid"""
     # TODO: might be nicer via regex
@@ -57,4 +55,3 @@ def _validate_date(self, datestr):
         return True
     except ValueError:
         return False
-
