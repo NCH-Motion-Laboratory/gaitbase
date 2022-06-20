@@ -418,7 +418,9 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def make_excel_report(self, xls_template):
         """Create Excel report from current data"""
-        return reporter.make_excel_report(xls_template, self.data)
+        report_data = self.data | self.get_patient_data()
+        data_default = self.data_default | self.get_patient_data()
+        return reporter.make_excel_report(xls_template, report_data, data_default)
 
     def n_modified(self):
         """Count modified values."""

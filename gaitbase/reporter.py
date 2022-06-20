@@ -7,6 +7,7 @@ Create reports for liikelaajuus
 """
 
 import string
+from attr import field
 from xlrd import open_workbook
 from xlutils.copy import copy
 
@@ -93,7 +94,7 @@ def _get_format_fields(thestr):
             yield items[1]  # = the field
 
 
-def make_excel_report(xls_template, data):
+def make_excel_report(xls_template, data, data_default):
     """Create an Excel report (xlrd workbook) from a template.
     xls_template should have Python-style format strings in cells that
     should be filled in, e.g. {TiedotNimi} would fill the cell using
@@ -101,6 +102,7 @@ def make_excel_report(xls_template, data):
     xls_template must be in .xls (not xlsx) format, since style info
     cannot be read from xlsx (xlutils limitation).
     """
+    fields_at_default = [fld for fld in data if data[fld] == data_default[fld]]
     workbook_in = open_workbook(xls_template, formatting_info=True)
     workbook_out = copy(workbook_in)
     r_sheet = workbook_in.sheet_by_index(0)
@@ -111,7 +113,7 @@ def make_excel_report(xls_template, data):
             cell = r_sheet.cell(row, col)
             cell_value = cell.value
             if cell_value:  # format non-empty cells only
-                new_value = _conditional_format(cell_value, data)
+                new_value = _conditional_format(cell_value, data, fields_at_default)
                 # apply replacement dict only if formatting changed something.
                 # this is to avoid changing text-only cells.
                 if new_value != cell_value:
