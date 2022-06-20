@@ -2,10 +2,12 @@
 """
 Qt Designer plugin for CheckableSpinBox.
 Makes it possible to properly see the widget in Qt Designer.
-Also required to properly write the .ui file containing custom widgets.
+Also may required for Designer to properly write the .ui file containing custom
+widgets.
 This is a bare minimum implementation - Designer will complain about some
 methods not being provided, but it works. Before running Qt Designer, do
 'export PYQTDESIGNERPATH=path' where path is the path to the plugin.
+NB: for some reason, Designer refuses to display the widget in Linux.
 
 
 @author: Jussi (jnu@iki.fi)
