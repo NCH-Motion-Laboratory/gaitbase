@@ -41,6 +41,58 @@ def _setOutCell(outSheet, col, row, value):
     # END HACK
 
 
+def make_text_report(template, data, data_default):
+    """Create report using a Python template"""
+    # compile the template code
+    template_code = compile(open(template, "rb").read(), template, 'exec')
+    # namespace of executed code
+    exec_namespace = dict()
+    exec(template_code, exec_namespace)
+    blocks = exec_namespace['blocks']
+    return process_blocks(blocks, data, data_default)
+
+
+def process_blocks(blocks, data, data_default):
+    """Process a list of text/separator blocks into text"""
+    ITEM_SEPARATOR = '. '
+    block_formatted = ''
+    report_text = ''
+    for k, block in enumerate(blocks):
+        if block == Constants.conditional_dot:
+            if blocks[k - 1] != Constants.conditional_dot and block_formatted:
+                report_text += ITEM_SEPARATOR
+        else:
+            block_formatted = _cond_format(block, data, data_default)
+            if block_formatted:
+                report_text += block_formatted
+    return report_text
+
+
+def _cond_format(thestr, data, data_default):
+    """Conditionally format string thestr. Fields given as {variable} are
+    formatted using the data. If all fields are default, an empty string is
+    returned."""
+    fields_at_default = [fld for fld in data if data[fld] == data_default[fld]]
+    flds = list(_get_format_fields(thestr))
+    if not flds or any(fld not in fields_at_default for fld in flds):
+        return thestr.format(**data)
+    else:
+        return ''
+
+
+def _get_format_fields(thestr):
+    """Yield fields from a format string.
+
+    Example:
+    input: '{foo} is {bar}' would give output: ('foo', 'bar')
+    """
+    formatter = string.Formatter()
+    pit = formatter.parse(thestr)  # returns parser generator
+    for items in pit:
+        if items[1]:
+            yield items[1]  # = the field
+
+
 class Report:
     """A class to create text and Excel (.xls) reports from data.
 
@@ -65,9 +117,7 @@ class Report:
         for key, item in self.data_text.items():
             if item in self.text_replace_dict:
                 self.data_text[key] = self.text_replace_dict[item]
-        self.fields_at_default = [
-            fld for fld in data if data[fld] == data_default[fld]
-        ]
+        fields_at_default = [fld for fld in data if data[fld] == data_default[fld]]
         self._item_separator = '. '  # inserted by item_sep()
 
     def process_blocks(self, blocks):
