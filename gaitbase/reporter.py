@@ -43,6 +43,10 @@ def _setOutCell(outSheet, col, row, value):
 
 def make_text_report(template, data, fields_at_default):
     """Create report using a Python template"""
+    # some text replacements to improve readability
+    for field, value in data.items():
+        if value in cfg.report.text_replace:
+            data[field] = cfg.report.text_replace[value]
     # compile the template code
     template_code = compile(open(template, "rb").read(), template, 'exec')
     # namespace of executed code
