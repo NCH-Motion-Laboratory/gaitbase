@@ -66,7 +66,7 @@ class EntryApp(QtWidgets.QMainWindow):
         self._init_widgets()
         self.data = dict()
         self.read_forms()  # read default data from widgets
-        self.data_empty = self.data.copy()
+        self.data_default = self.data.copy()
         # whether to update internal dict of variables on input changes
         self.do_update_data = True
         self.database = database
@@ -302,12 +302,6 @@ class EntryApp(QtWidgets.QMainWindow):
         widget = self.input_widgets[widget_name]
         return get_widget_units(widget)
 
-    @property
-    def vars_default(self):
-        """Return a list of variables that are at their default (unmodified)
-        state."""
-        return [key for key in self.data if self.data[key] == self.data_empty[key]]
-
     def do_close(self, event):
         """The actual closing ritual"""
         # XXX: we may want to undo the database entry, if no values were entered
@@ -384,7 +378,7 @@ class EntryApp(QtWidgets.QMainWindow):
         record_di = {
             var: qval.value() for var, qval in zip(thevars, qvals) if not qval.isNull()
         }
-        self.data = self.data_empty | record_di
+        self.data = self.data_default | record_di
         self.restore_forms()
 
     def _compose_json_filename(self):
@@ -417,7 +411,7 @@ class EntryApp(QtWidgets.QMainWindow):
         # patient ID data is needed for the report, but it's not part of the ROM
         # table, so get it separately
         report_data = data | self.get_patient_data()
-        rep = reporter.Report(report_data, self.vars_default)
+        rep = reporter.Report(report_data, self.data_default)
         return rep.make_text_report(template)
 
     def make_excel_report(self, xls_template):
@@ -425,12 +419,12 @@ class EntryApp(QtWidgets.QMainWindow):
         # patient ID data is needed for the report, but it's not part of the ROM
         # table, so get it separately
         report_data = self.data | self.get_patient_data()
-        rep = reporter.Report(report_data, self.vars_default)
+        rep = reporter.Report(report_data, self.data_default)
         return rep.make_excel_report(xls_template)
 
     def n_modified(self):
         """Count modified values."""
-        return len([x for x in self.data if self.data[x] != self.data_empty[x]])
+        return len([x for x in self.data if self.data[x] != self.data_default[x]])
 
     def page_change(self):
         """Callback for tab change"""

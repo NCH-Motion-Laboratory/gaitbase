@@ -53,7 +53,7 @@ class Report:
     The purpose is to easily generate reports where blocks with no input data
     are not printed at all."""
 
-    def __init__(self, data, field_default_vals):
+    def __init__(self, data, data_default):
         """Init report with data."""
         # text replacements for text report, to make it prettier
         self.text_replace_dict = {'Ei mitattu': '-', 'EI': 'Ei'}
@@ -65,7 +65,9 @@ class Report:
         for key, item in self.data_text.items():
             if item in self.text_replace_dict:
                 self.data_text[key] = self.text_replace_dict[item]
-        self.fields_default = field_default_vals
+        self.fields_at_default = [
+            fld for fld in data if data[fld] == data_default[fld]
+        ]
         self._item_separator = '. '  # inserted by item_sep()
 
     def process_blocks(self, blocks):
@@ -74,10 +76,10 @@ class Report:
         report_text = ''
         for k, block in enumerate(blocks):
             if block == Constants.conditional_dot:
-                if blocks[k-1] != Constants.conditional_dot and block_formatted:
+                if blocks[k - 1] != Constants.conditional_dot and block_formatted:
                     report_text += self._item_separator
             else:
-                block_formatted = self._cond_format(block, self.data_text)            
+                block_formatted = self._cond_format(block, self.data_text)
                 if block_formatted:
                     report_text += block_formatted
         return report_text
@@ -87,7 +89,7 @@ class Report:
         formatted using the data. If all fields are default, an empty string is
         returned."""
         flds = list(Report._get_format_fields(thestr))
-        if not flds or any(fld not in self.fields_default for fld in flds):
+        if not flds or any(fld not in self.fields_at_default for fld in flds):
             return thestr.format(**data)
         else:
             return ''
@@ -95,7 +97,7 @@ class Report:
     @staticmethod
     def _get_format_fields(thestr):
         """Yield fields from a format string.
-        
+
         Example:
         input: '{foo} is {bar}' would give output: ('foo', 'bar')
         """
