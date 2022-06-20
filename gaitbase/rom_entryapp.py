@@ -9,7 +9,6 @@ import datetime
 import json
 import logging
 
-import importlib
 import sip
 from pkg_resources import resource_filename
 from PyQt5 import QtCore, QtWidgets, uic
@@ -28,7 +27,6 @@ from .widgets import (
     get_widget_units,
     set_widget_value,
 )
-from gaitbase import widgets
 
 logger = logging.getLogger(__name__)
 
