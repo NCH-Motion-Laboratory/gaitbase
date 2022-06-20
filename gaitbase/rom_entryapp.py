@@ -292,7 +292,7 @@ class EntryApp(QtWidgets.QMainWindow):
 
     
     def get_var_units(self, varname):
-        """Get units for a variable
+        """Get units for a variable.
         
         The units may change dynamically depending on widget states.
         """
@@ -397,6 +397,11 @@ class EntryApp(QtWidgets.QMainWindow):
         with open(fname, 'w', encoding='utf-8') as f:
             f.write(json.dumps(rdata, ensure_ascii=False, indent=True, sort_keys=True))
 
+    @property
+    def vars_at_default(self):
+        """Return varnames that are at their default values"""
+        return [var for var in self.data if self.data[var] == self.data_default[var]]
+
     def make_txt_report(self, template, include_units=True):
         """Create text report from current data"""
         if include_units:
@@ -413,14 +418,12 @@ class EntryApp(QtWidgets.QMainWindow):
         # patient ID data is needed for the report, but it's not part of the ROM
         # table, so get it separately
         report_data = data | self.get_patient_data()
-        data_default = self.data_default | self.get_patient_data()
-        return reporter.make_text_report(template, report_data, data_default)
+        return reporter.make_text_report(template, report_data, self.vars_at_default)
 
     def make_excel_report(self, xls_template):
         """Create Excel report from current data"""
         report_data = self.data | self.get_patient_data()
-        data_default = self.data_default | self.get_patient_data()
-        return reporter.make_excel_report(xls_template, report_data, data_default)
+        return reporter.make_excel_report(xls_template, report_data, self.vars_at_default)
 
     def n_modified(self):
         """Count modified values."""
