@@ -6,11 +6,9 @@ Create reports for liikelaajuus
 @author: Jussi (jnu@iki.fi)
 """
 
-from asyncio.log import logger
 import string
 from xlrd import open_workbook
 from xlutils.copy import copy
-import importlib
 
 from gaitbase.constants import Constants
 
