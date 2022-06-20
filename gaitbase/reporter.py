@@ -43,16 +43,17 @@ def _setOutCell(outSheet, col, row, value):
 
 def make_text_report(template, data, data_default):
     """Create report using a Python template"""
+    fields_at_default = [fld for fld in data if data[fld] == data_default[fld]]
     # compile the template code
     template_code = compile(open(template, "rb").read(), template, 'exec')
     # namespace of executed code
     exec_namespace = dict()
     exec(template_code, exec_namespace)
     blocks = exec_namespace['blocks']
-    return process_blocks(blocks, data, data_default)
+    return process_blocks(blocks, data, fields_at_default)
 
 
-def process_blocks(blocks, data, data_default):
+def process_blocks(blocks, data, fields_at_default):
     """Process a list of text/separator blocks into text"""
     ITEM_SEPARATOR = '. '
     block_formatted = ''
@@ -62,17 +63,16 @@ def process_blocks(blocks, data, data_default):
             if blocks[k - 1] != Constants.conditional_dot and block_formatted:
                 report_text += ITEM_SEPARATOR
         else:
-            block_formatted = _cond_format(block, data, data_default)
+            block_formatted = _cond_format(block, data, fields_at_default)
             if block_formatted:
                 report_text += block_formatted
     return report_text
 
 
-def _cond_format(thestr, data, data_default):
+def _cond_format(thestr, data, fields_at_default):
     """Conditionally format string thestr. Fields given as {variable} are
     formatted using the data. If all fields are default, an empty string is
     returned."""
-    fields_at_default = [fld for fld in data if data[fld] == data_default[fld]]
     flds = list(_get_format_fields(thestr))
     if not flds or any(fld not in fields_at_default for fld in flds):
         return thestr.format(**data)

@@ -417,7 +417,8 @@ class EntryApp(QtWidgets.QMainWindow):
         # patient ID data is needed for the report, but it's not part of the ROM
         # table, so get it separately
         report_data = self.data | self.get_patient_data()
-        rep = reporter.Report(report_data, self.data_default)
+        data_default = self.data_default | self.get_patient_data()        
+        rep = reporter.Report(report_data, data_default)
         return rep.make_excel_report(xls_template)
 
     def n_modified(self):
