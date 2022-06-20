@@ -119,7 +119,7 @@ def set_widget_value(widget, value):
 
 def get_widget_units(widget):
     """Get units of data associated with widget.
-    
+
     We only return a unit if the widget has a numeric value.
     """
     widget_class = widget.__class__.__name__
@@ -137,8 +137,6 @@ def get_widget_units(widget):
         # currently no units for other widget types
         units = ''
     return units
-
-
 
 
 class MyLineEdit(QtWidgets.QLineEdit):
