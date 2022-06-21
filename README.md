@@ -1,31 +1,11 @@
-<!-----
-
-Yay, no errors, warnings, or alerts!
-
-Conversion time: 0.46 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β33
-* Tue Jun 21 2022 02:00:07 GMT-0700 (PDT)
-* Source doc: gaitbase technotes
-* Tables are currently converted to HTML tables.
------>
-
 
 
 # gaitbase
 
 
 ## Overview 
+
+NOTE: this is for the purposes of Helsinki Gait Lab and most of the user interface is in Finnish. Thus, it's probably not useful for other labs in its current state.
 
 gaitbase is a simple SQLite patient database with a Qt-based GUI. The GUI allows the user to browse, insert, delete and search patients.
 
@@ -122,11 +102,6 @@ Finally, the QSpinBox.suffix property should be set to indicate the units of the
 For QComboBox widgets, the only configuration necessary is to input the relevant choices in Qt Designer. One of the choices should be “Ei mitattu” (unmeasured) and it should be the default.
 
 
-## CheckableSpinBox - custom widget
-
-The CheckableSpinBox is a custom widget whose code is contained in gaitbase/widgets.py. Its purpose is to store either a regular numeric value, or alternatively to indicate that the variable is “within normal range” (NR), without specifying its actual value. To this end, the widget contains a regular spinbox and a checkbox. If the checkbox is unchecked, the widget functions like a regular spinbox. If the checkbox is checked, the spinbox becomes inactive and the widget returns ‘NR’ whenever its value is queried.
-
-The CheckableSpinBox can be configured in Qt Designer just like the other spinboxes. By default, it is set to display degrees from -180 to 180. To be able to use the widget in Qt Designer, you must set the environment variable PYQTDESIGNERPATH to point to the package directory (the directory containing checkablespinbox_plugin.py) before launching Qt Designer.
 
 
 ## Example: introducing a new variable
@@ -146,7 +121,13 @@ To introduce a new ROM variable, you must insert a new UI widget in Qt Designer,
 
 CheckableSpinBox is a custom Qt widget. Its main purpose is to support variables that may be either measured or be declared to be within “normal range”, without supplying an exact value. By default, the widget will consist of a spinbox with an associated checkbox. If the checkbox is checked, it indicates “normal range”, and the spinbox is disabled. In this state, the widget will return its defaultText property as its input value. If the checkbox is unchecked, the widget functions like a normal spinbox.
 
-By default, CheckableSpinBoxes accept values from -180 to 180, with an unit (suffix) of degrees. The defaultText is set to ‘NR’ (normal range) by default. The widget may be configured in Qt Designer, similarly to the spinbox.
+The CheckableSpinBox can be configured in Qt Designer just like the other
+spinboxes. By default, CheckableSpinBoxes accept values from -180 to 180, with
+an unit (suffix) of degrees. The defaultText is set to ‘NR’ (normal range) by
+default. These widget defaults are set in the plugin code. To be able to use the
+widget in Qt Designer, you must set the environment variable PYQTDESIGNERPATH to
+point to the package directory (the directory containing
+checkablespinbox_plugin.py) before launching Qt Designer.
 
 
 ## Relationship between widgets and SQLite columns
