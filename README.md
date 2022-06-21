@@ -11,12 +11,15 @@ gaitbase is a simple SQLite patient database with a Qt-based GUI. The GUI allows
 
 In addition to patients, various measurement modalities can be implemented. The idea is to have a SQL table for each modality. Each row in such a table corresponds to one measurement (session), and each column corresponds to a variable. Every row must be associated with a patient in the patients table. Data for each modality will be shown in the main patient window when a patient is selected.
 
+## Installation
+
+The installation is easiest using conda (Anaconda or Miniconda). Clone this repository, change directory to the repository root and run `conda env create`. This should create a conda environment called `gaitbase` with all the dependencies. Finally you can install the package itself (in development mode) using `pip install -e .`.
+
 ## Overview of the ROM app
 
 Currently, one modality is implemented: range of motion (ROM). This modality includes ROM, strength and other manual measurements typically carried out by physiotherapists. The ROM SQL schema currently includes 300+ different variables (columns). When a patient is selected, the GUI shows the ROM measurements corresponding to that patient.
 
 When a measurement is opened, it is loaded in the ROM editor window. The editor contains a lot of data entry widgets, organized into tabs. Each variable corresponds to an entry widget. The entry widgets are recognized by their special names, and the variable names are automatically derived from the widgets. On the SQL side, the ROM data is contained in a table called “roms”. Each row in the table corresponds to a patient (entry in the patients table).  Whenever new ROM data is entered, this table is updated accordingly and the changes are immediately committed. Thus, crashes should not cause significant data loss.
-
 
 ## Data entry widgets
 
