@@ -117,9 +117,9 @@ To introduce a new ROM variable, you must insert a new UI widget in Qt Designer,
 
 ## The `CheckableSpinBox` widget
 
-`CheckableSpinBox` is a custom Qt widget. Its main purpose is to support variables that may be either measured or be declared to be within “normal range”, without supplying an exact value. By default, the widget will consist of a spinbox with an associated checkbox. If the checkbox is checked, it indicates “normal range”, and the spinbox is disabled. In this state, the widget will return its defaultText property as its input value. If the checkbox is unchecked, the widget functions like a normal spinbox.
+`CheckableSpinBox` is a custom Qt widget. Its main purpose is to support variables whose values may be either specified as usual, or alternatively declared as  being “within normal range”, without supplying an exact value. The widget consists of a spinbox with an associated checkbox. If the checkbox is checked, it indicates “within normal range”, and the spinbox is disabled. In this state, the widget will return its `defaultText` property as its input value. If the checkbox is unchecked, the widget functions like a normal spinbox and returns the spinbox value.
 
-The CheckableSpinBox can be configured in Qt Designer just like the other spinboxes. By default, CheckableSpinBoxes accept values from -180 to 180, with a unit (suffix) of degrees. The defaultText is set to ‘NR’ (normal range) by default. These widget defaults are set in the plugin code. To be able to use the widget in Qt Designer, you must set the environment variable `PYQTDESIGNERPATH` to point to the package directory (the directory containing `checkablespinbox_plugin.py`) before launching Qt Designer.
+`CheckableSpinBox` can be configured in Qt Designer just like the other spinboxes. By default, `CheckableSpinBox` accepts values from -180 to 180, with a unit (suffix) of degrees. The `defaultText` is set to ‘NR’ (normal range) by default. The widget defaults are set in the plugin code. To be able to use and modify the widget in Qt Designer, you must set the environment variable `PYQTDESIGNERPATH` to point to the package directory (the directory containing `checkablespinbox_plugin.py`) before launching Qt Designer. If this is successful, the widget will appear on the left side widget panel.
 
 
 ## Relationship between widgets and SQLite columns
@@ -160,9 +160,9 @@ The package has a default configuration file under `gaitbase/data/default.cfg`. 
 The most important options are the database path (`database.database`) and the template paths (`template.text` and `template.xls`).
 
 
-## Random notes on SQLite
+## Implementation notes
 
-SQLite is designed for a local database file. Having the database file on a network drive is not really kosher. In this situation, a proper database server would be a more correct solution. However, database servers have their disadvantages. A server needs to be set up and maintained, the database files must be backed up etc. Additionally, it's tricky (if even possible) to set up access to a database server from outside the hospital. The network drives, on the other hand, are easy to access using VPN from home. 
+SQLite is designed for a local database file. Having the database file on a network drive is not recommended. For a central multiuser database, a proper database server would be a more correct solution. However, such servers have their disadvantages. A server needs to be set up and maintained, the database files must be backed up etc. Additionally, it's tricky (if even possible) to set up access to a database server from outside the hospital. The network drives, on the other hand, are easy to access using VPN from home. 
 
 While the network drive approach has worked thus far, multiple clients can cause a significant slowdown in database access. The reason is probably that Windows network filesystems disable caching when multiple clients perform read/write access on a file.
 
