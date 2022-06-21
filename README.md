@@ -168,7 +168,7 @@ While the network drive approach has worked thus far, multiple clients can cause
 
 sqlite3 database writes require an EXCLUSIVE lock while they are carried out. This means that all SHARED locks must be released before writes can take place. For example, QtSql may hold SHARED locks indefinitely in some circumstances (e.g. lazy reads), preventing writes (at least writes from different processes). These problems must be worked around, i.e. locks must be released as soon as possible after reads are completed.
 
-SQLite uses NULL for values that are completely missing (e.g. due to schema changes). These are different from default values written out by the UI. NULL means that the value was never written to the database. The program detects NULL values and converts them to default values for each variable. Note that in the Qt SQL interface, NULL values can only be read correctly by disabling PyQt type autoconversion, reading data as QVariants and using isNull() to detect NULLs. Hence, the ROM entry app does all SQL reads with the autoconversion feature disabled.
+SQLite uses `NULL` for values that are completely missing (e.g. due to schema changes). These are different from default values written out by the UI. `NULL` means that the value was never written to the database. The program detects NULL values and converts them to default values for each variable. Note that in the Qt SQL interface, `NULL` values can only be read correctly by disabling PyQt type autoconversion, reading data as `QVariants` and using `isNull()` to detect `NULL` values. Hence, the ROM entry app does all SQL reads with the autoconversion feature disabled.
 
 TODO:
 
