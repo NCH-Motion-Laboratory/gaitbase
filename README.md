@@ -16,7 +16,7 @@ In addition to patients, various measurement modalities can be implemented. The 
 
 Currently, one modality is implemented: range of motion (ROM). This modality includes ROM, strength and other manual measurements typically carried out by physiotherapists. The ROM SQL schema currently includes 300+ different variables (columns). When a patient is selected, the GUI shows the ROM measurements corresponding to that patient.
 
-When a measurement is opened, it is loaded in the ROM editor window (rom_entryapp.py). The editor contains a lot of data entry widgets, organized into tabs. Each variable corresponds to an entry widget. The entry widgets are recognized by their special names, and the variable names are automatically derived from the widgets. On the SQL side, the ROM data is contained in a table called “roms”. Each row in the table corresponds to a patient (entry in the patients table).  Whenever new ROM data is entered, this table is updated accordingly and the changes are immediately committed. Thus, crashes should not cause significant data loss.
+When a measurement is opened, it is loaded in the ROM editor window (`rom_entryapp.py`). The editor contains a lot of data entry widgets, organized into tabs. Each variable corresponds to an entry widget. The entry widgets are recognized by their special names, and the variable names are automatically derived from the widgets. On the SQL side, the ROM data is contained in a table called “roms”. Each row in the table corresponds to a patient (entry in the patients table).  Whenever new ROM data is entered, this table is updated accordingly and the changes are immediately committed. Thus, crashes should not cause significant data loss.
 
 
 ## Data entry widgets
