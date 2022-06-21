@@ -25,7 +25,7 @@ def make_text_report(template, data, fields_at_default):
     # namespace of executed code
     exec_namespace = dict()
     exec(template_code, exec_namespace)
-    blocks = exec_namespace['blocks']
+    blocks = exec_namespace['text_blocks']
     return process_blocks(blocks, data, fields_at_default)
 
 

@@ -9,7 +9,7 @@ from gaitbase.constants import Constants
 
 conditional_dot = Constants.conditional_dot
 
-blocks = ([
+text_blocks = [
 """
 LIIKELAAJUUDET JA VOIMAT
 
@@ -97,5 +97,5 @@ Kommentit {cmtLonkkaPROM}
 
 """,
 
-])
+]
 
