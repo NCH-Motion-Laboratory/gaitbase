@@ -116,7 +116,6 @@ def set_widget_value(widget, value):
     else:
         raise RuntimeError(f'Invalid class of input widget: {widget_class}')
 
-        
 
 def get_widget_units(widget):
     """Get units of data associated with a ROM data entry widget.
@@ -176,7 +175,7 @@ class DegLineEdit(QtWidgets.QLineEdit):
 
 class CheckableSpinBox(QtWidgets.QWidget):
     """Custom spinbox with checkbox, which indicates a 'default' value.
-    
+
     If the checkbox is checked, disable spinbox, in which case value() will
     return the default value, which is shown next to checkbox (defaultText property).
     Otherwise value() will normally return the spinbox value. setValue() takes either the
@@ -284,7 +283,7 @@ class CheckableSpinBox(QtWidgets.QWidget):
             return str(self.getDefaultText())
 
     def setValue(self, val):
-        """Set the widget value"""        
+        """Set the widget value"""
         if val == self.getDefaultText():
             # the default value - enable checkbox
             self.normalCheckBox.setCheckState(2)

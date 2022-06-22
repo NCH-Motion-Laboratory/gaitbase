@@ -49,7 +49,9 @@ if not Path(cfg.templates.text).is_file():
     logger.warning(
         f'configured text template {cfg.templates.text} not found - using default'
     )
-    cfg.templates.text = resource_filename('gaitbase', 'templates/text_template_test.py')
+    cfg.templates.text = resource_filename(
+        'gaitbase', 'templates/text_template_test.py'
+    )
 
 if not Path(cfg.templates.xls).is_file():
     logger.warning(

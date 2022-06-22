@@ -203,7 +203,7 @@ class EntryApp(QtWidgets.QMainWindow):
         data_widgets = [
             w
             for w in allwidgets
-            if w.objectName()[:len(input_widget_prefix)] == input_widget_prefix
+            if w.objectName()[: len(input_widget_prefix)] == input_widget_prefix
         ]
 
         def _weight_normalize(widget):
@@ -244,15 +244,17 @@ class EntryApp(QtWidgets.QMainWindow):
         # set various widget convenience methods/properties, collect input
         # widgets into a dict
         # NOTE: this loop will implicitly cause destruction of certain widgets
-        # (e.g. QLineEdits) by replacing them with new ones. Do not reuse the
-        # 'allwidgets' variable after this loop.
+        # (e.g. QLineEdits) by replacing them with new ones. Do not try to reuse
+        # the 'allwidgets' variable after this loop, it will cause a crash.
         for widget in data_widgets:
             wname = widget.objectName()
             widget_class = widget.__class__.__name__
             if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
                 # -lambdas need default arguments because of late binding
                 # -lambda expression needs to consume unused 'new value' arg
-                widget.valueChanged.connect(lambda new_value, w=widget: self.values_changed(w))
+                widget.valueChanged.connect(
+                    lambda new_value, w=widget: self.values_changed(w)
+                )
                 widget.setLineEdit(MyLineEdit())
                 widget.keyPressEvent = lambda event, w=widget: keyPressEvent_resetOnEsc(
                     w, event
@@ -268,7 +270,9 @@ class EntryApp(QtWidgets.QMainWindow):
                     lambda new_value, w=widget: self.values_changed(w)
                 )
             elif widget_class == 'QCheckBox':
-                widget.stateChanged.connect(lambda new_value, w=widget: self.values_changed(w))
+                widget.stateChanged.connect(
+                    lambda new_value, w=widget: self.values_changed(w)
+                )
             elif widget_class == 'CheckableSpinBox':
                 widget.valueChanged.connect(lambda w=widget: self.values_changed(w))
                 widget.degSpinBox.setLineEdit(DegLineEdit())
@@ -297,7 +301,7 @@ class EntryApp(QtWidgets.QMainWindow):
         # widget to varname translation dict
         self.widget_to_var = dict()
         for wname in self.input_widgets:
-            varname = wname[len(input_widget_prefix):]
+            varname = wname[len(input_widget_prefix) :]
             self.widget_to_var[wname] = varname
 
         self.statusbar.showMessage(Finnish.ready.format(n=self.total_widgets))
@@ -312,6 +316,7 @@ class EntryApp(QtWidgets.QMainWindow):
 
         The units may change dynamically depending on widget states.
         """
+        # get widget name corresponding to variable; this is a bit clumsy
         widget_name = [
             wname
             for wname, varname_ in self.widget_to_var.items()

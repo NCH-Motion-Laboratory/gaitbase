@@ -487,9 +487,7 @@ class PatientDialog(QtWidgets.QMainWindow):
             return
         patient_id = rec.value('patient_id')
         query = QtSql.QSqlQuery(self.database)
-        query.prepare(
-            'INSERT INTO roms (patient_id) VALUES (:patient_id)'
-        )
+        query.prepare('INSERT INTO roms (patient_id) VALUES (:patient_id)')
         query.bindValue(':patient_id', patient_id)
         if not query.exec():
             db_failure(query, fatal=False)
