@@ -57,6 +57,19 @@ class EntryApp(QtWidgets.QMainWindow):
     closing = QtCore.pyqtSignal(object)
 
     def __init__(self, database=None, rom_id=None, newly_created=None):
+        """_summary_
+
+        Args:
+            database QSqlDatabase | None
+                The database connection. Can be None if the editor window needs
+                to be launched without database access (e.g. for debug purposes)
+            rom_id: int | None
+                SQL ID of ROM to edit. 
+            newly_created bool | None
+                Whether the entry is newly created. This needs to be explicitly
+                specified, since we don't create the database entry, it's
+                already created by _gaitbase.py.
+        """
         super().__init__()
         # load user interface made with Qt Designer
         uifile = resource_filename('gaitbase', 'rom_entryapp.ui')
@@ -71,15 +84,16 @@ class EntryApp(QtWidgets.QMainWindow):
         self.do_update_data = True
         self.database = database
         self.rom_id = rom_id
+        if newly_created is None:
+            newly_created is False
         self.newly_created = newly_created
         if database is not None:
             # the read only fields are uneditable, they reside in the patients table
             self.init_readonly_fields()
         if newly_created:
-            # automatically set the date field
+            # for newly created entries, automatically set the date field to current date
             datestr = datetime.datetime.now().strftime('%d.%m.%Y')
             self.dataTiedotPvm.setText(datestr)
-            # for a newly created entry, initialize the database row w/ default values
             self.values_changed(self.dataTiedotPvm)
         elif database is not None:
             # for existing entry, read values from database
