@@ -55,8 +55,8 @@ def isint(x):
         return False
 
 
-def _validate_date(self, datestr):
-    """Validate a date of dd.mm.yyyy"""
+def _validate_date(datestr):
+    """Validate a date in form of dd.mm.yyyy"""
     try:
         datetime.datetime.strptime(datestr, '%d.%m.%Y')
         return True
