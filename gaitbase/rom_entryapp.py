@@ -33,10 +33,10 @@ from .utils import _validate_date
 logger = logging.getLogger(__name__)
 
 
-def pyqt_disable_autoconv(func):
+def pyqt_disable_autoconversion(func):
     """Decorator to disable Qt type autoconversion for a function.
 
-    PyQt functions decorated with this one will return QVariants from many Qt
+    PyQt functions decorated with this will return QVariants from many Qt
     functions, instead of native Python types. The QVariants then need to be
     manually converted to Python types.
     """
@@ -64,7 +64,7 @@ class EntryApp(QtWidgets.QMainWindow):
                 The database connection. Can be None if the editor window needs
                 to be launched without database access (e.g. for debug purposes)
             rom_id: int | None
-                SQL ID of ROM to edit. 
+                SQL ID of ROM to edit.
             newly_created bool | None
                 Whether the entry was newly created. This needs to be explicitly
                 specified since we don't create the database entry, it's already
@@ -121,7 +121,7 @@ class EntryApp(QtWidgets.QMainWindow):
         else:
             qt_message_dialog(msg)
 
-    @pyqt_disable_autoconv
+    @pyqt_disable_autoconversion
     def select(self, thevars):
         """Do select() on current ROM row to get data.
 
@@ -199,7 +199,12 @@ class EntryApp(QtWidgets.QMainWindow):
         # collect all widgets (whether data input widgets or something else)
         allwidgets = self.findChildren(QtWidgets.QWidget)
         # data input widgets
-        data_widgets = [w for w in allwidgets if w.objectName()[:4] == 'data']
+        input_widget_prefix = Constants.input_widget_prefix
+        data_widgets = [
+            w
+            for w in allwidgets
+            if w.objectName()[:len(input_widget_prefix)] == input_widget_prefix
+        ]
 
         def _weight_normalize(widget):
             """Auto calculate callback for weight normalized widgets"""
@@ -293,7 +298,7 @@ class EntryApp(QtWidgets.QMainWindow):
         # widget to varname translation dict
         self.widget_to_var = dict()
         for wname in self.input_widgets:
-            varname = wname[4:]
+            varname = wname[len(input_widget_prefix):]
             self.widget_to_var[wname] = varname
 
         self.statusbar.showMessage(Finnish.ready.format(n=self.total_widgets))
@@ -303,13 +308,16 @@ class EntryApp(QtWidgets.QMainWindow):
 
         # FIXME: make sure we always start on 1st tab
 
-    
     def get_var_units(self, varname):
         """Get units for a variable.
-        
+
         The units may change dynamically depending on widget states.
         """
-        widget_name = [wname for wname, varname_ in self.widget_to_var.items() if varname_ == varname][0]
+        widget_name = [
+            wname
+            for wname, varname_ in self.widget_to_var.items()
+            if varname_ == varname
+        ][0]
         widget = self.input_widgets[widget_name]
         return get_widget_units(widget)
 
@@ -358,9 +366,7 @@ class EntryApp(QtWidgets.QMainWindow):
         This does several things, most importantly updates the database.
         """
         # find autowidgets that depend on the argument widget and update them
-        autowidgets_this = [
-            w for w in self.autowidgets if widget in w._autoinputs
-        ]
+        autowidgets_this = [w for w in self.autowidgets if widget in w._autoinputs]
         for widget in autowidgets_this:
             widget._autocalculate()
         if self.do_update_data:
@@ -424,7 +430,9 @@ class EntryApp(QtWidgets.QMainWindow):
         # patient ID data is needed for the report, but it's not part of the ROM
         # table, so get it separately
         report_data = self.data | self.get_patient_data()
-        return reporter.make_excel_report(xls_template, report_data, self.vars_at_default)
+        return reporter.make_excel_report(
+            xls_template, report_data, self.vars_at_default
+        )
 
     def page_change(self):
         """Callback for tab change"""
@@ -448,7 +456,7 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def read_data_from_widgets(self):
         """Read the internal data dictionary from widget inputs.
-       
+
         Usually not needed, since the dictionary is updated automatically
         whenever widget inputs change.
         """

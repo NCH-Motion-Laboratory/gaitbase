@@ -4,13 +4,15 @@ Configuration for gaitbase ROM entry app
 """
 
 from dataclasses import dataclass
-from pathlib import Path
 
 
 @dataclass
 class Constants:
     """Some constants"""
 
+    # magic prefix for data entry widgets
+    input_widget_prefix = 'data'
+    # window title
     dialog_title: str = 'Gaitbase'
     # The 'not measured' value for spinboxes. For regular spinboxes, this is the
     # value that gets written to data files, but it does not affect the value
