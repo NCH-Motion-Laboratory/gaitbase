@@ -251,25 +251,24 @@ class EntryApp(QtWidgets.QMainWindow):
             widget_class = widget.__class__.__name__
             if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
                 # -lambdas need default arguments because of late binding
-                # -lambda expression needs to consume unused 'new value' arg,
-                # therefore two parameters (except for QTextEdit...)
-                widget.valueChanged.connect(lambda x, w=widget: self.values_changed(w))
+                # -lambda expression needs to consume unused 'new value' arg
+                widget.valueChanged.connect(lambda new_value, w=widget: self.values_changed(w))
                 widget.setLineEdit(MyLineEdit())
                 widget.keyPressEvent = lambda event, w=widget: keyPressEvent_resetOnEsc(
                     w, event
                 )
             elif widget_class in ('QLineEdit', 'QTextEdit'):
                 # for text editors, do not perform data updates on every value change, like so:
-                # w.textChanged.connect(lambda x, w=w: self.values_changed(w))
+                # w.textChanged.connect(lambda new_value, w=w: self.values_changed(w))
                 # since it will make the editor slow
                 # instead, update the values when focus is lost (editing completed)
                 widget.installEventFilter(self)
             elif widget_class == 'QComboBox':
                 widget.currentIndexChanged.connect(
-                    lambda x, w=widget: self.values_changed(w)
+                    lambda new_value, w=widget: self.values_changed(w)
                 )
             elif widget_class == 'QCheckBox':
-                widget.stateChanged.connect(lambda x, w=widget: self.values_changed(w))
+                widget.stateChanged.connect(lambda new_value, w=widget: self.values_changed(w))
             elif widget_class == 'CheckableSpinBox':
                 widget.valueChanged.connect(lambda w=widget: self.values_changed(w))
                 widget.degSpinBox.setLineEdit(DegLineEdit())
