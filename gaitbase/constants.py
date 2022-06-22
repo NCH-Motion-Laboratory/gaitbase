@@ -23,8 +23,6 @@ class Constants:
     checkbox_notext: str = 'EI'
     # the (hacky) idea here is that by virtue of case sensitivity, 'EI' can be
     # changed in the reports by search&replace without affecting other 'Ei'
-    # where to write backup JSON files
-    json_backup_path: str = Path('Z:/Misc/ROM_backup')
     # conditional separator
     conditional_dot = 1
 

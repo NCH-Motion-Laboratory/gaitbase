@@ -83,7 +83,6 @@ class EntryApp(QtWidgets.QMainWindow):
         elif database is not None:
             # for existing entry, read values from database
             self._read_data()
-        self.BACKUP_NEW_ROMS = True  # also dump new ROMs into JSON files
 
     def force_close(self):
         """Force close without confirmation"""
@@ -306,7 +305,7 @@ class EntryApp(QtWidgets.QMainWindow):
         # XXX: we may want to undo the database entry, if no values were entered?
         # XXX: if ROM was newly created, we also create JSON for backup purposes
         # this is for the "beta phase"  only
-        if self.BACKUP_NEW_ROMS and self.newly_created:
+        if cfg.json.dump_json and self.newly_created:
             # XXX: this will overwrite existing files, but they should be uniquely named due to
             # timestamp in the filename
             fname = self._compose_json_filename()
@@ -380,7 +379,7 @@ class EntryApp(QtWidgets.QMainWindow):
         fname += '_'
         fname += datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
         fname += '.json'
-        return Constants.json_backup_path / fname
+        return Path(cfg.json.json_path) / fname
 
     def dump_json(self, fname):
         """Save data into given file in utf-8 encoding"""
