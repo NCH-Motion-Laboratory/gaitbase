@@ -4,7 +4,6 @@ Update the ROM table schema. Necessary when new ROM variables are introduced.
 
 """
 
-# %%
 import argparse
 from pathlib import Path
 import sqlite3

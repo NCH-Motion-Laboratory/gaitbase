@@ -13,27 +13,13 @@ from pathlib import Path
 
 from pkg_resources import resource_filename
 from PyQt5 import QtCore, QtSql, QtWidgets, uic
-from ulstools.env import make_shortcut, named_tempfile
+from ulstools.env import named_tempfile
 from ulstools.num import check_hetu
 
 from .config import cfg
 from .rom_entryapp import EntryApp
 from .utils import _startfile, validate_code
 from .widgets import qt_message_dialog
-
-
-def qt_message_dialog(msg):
-    """Show message with an 'OK' button."""
-    dlg = QtWidgets.QMessageBox()
-    dlg.setWindowTitle('Message')
-    dlg.setText(msg)
-    dlg.addButton(QtWidgets.QPushButton('Ok'), QtWidgets.QMessageBox.YesRole)
-    dlg.exec()
-
-
-def make_my_shortcut():
-    """Make a desktop shortcut"""
-    make_shortcut('gaitbase', 'run_gaitbase.py', title='Gait database')
 
 
 @dataclass
@@ -471,7 +457,6 @@ class PatientDialog(QtWidgets.QMainWindow):
         app.force_close()
         self.statusbar.showMessage(self.msg_db_ready)
 
-
     def _rom_text_report(self):
         """Create a text report of the current ROM"""
         if (rom_id := self.current_rom_id) is None:
@@ -491,7 +476,7 @@ class PatientDialog(QtWidgets.QMainWindow):
             qt_message_dialog(f'The report template contains syntax errors:\n{e}')
         finally:
             app.force_close()
-        self.statusbar.showMessage(self.msg_db_ready)        
+        self.statusbar.showMessage(self.msg_db_ready)
 
     def _new_rom(self):
         """Create a new ROM measurement"""
