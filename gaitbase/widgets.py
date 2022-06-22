@@ -5,7 +5,7 @@ Custom widgets, dialogs and related Qt code.
 
 from PyQt5 import QtWidgets, QtCore
 from .constants import Constants, Finnish
-from .utils import isint
+from .utils import isnumeric
 
 
 def qt_message_dialog(msg):
@@ -39,6 +39,10 @@ def get_widget_value(widget):
         else:
             val = widget.value()
 
+    elif widget_class == 'CheckableSpinBox':
+        # CheckableSpinBox handles the special value condition by itself
+        val = widget.value()
+
     elif widget_class == 'QLineEdit':
         val = widget.text().strip()
 
@@ -57,9 +61,6 @@ def get_widget_value(widget):
     elif widget_class == 'QTextEdit':
         val = widget.toPlainText().strip()
 
-    elif widget_class == 'CheckableSpinBox':
-        val = widget.value()
-
     else:
         raise RuntimeError(f'Invalid class of input widget: {widget_class}')
     return val
@@ -72,6 +73,10 @@ def set_widget_value(widget, value):
     if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
         if value == Constants.spinbox_novalue_text:
             value = widget.minimum()
+        widget.setValue(value)
+
+    elif widget_class == 'CheckableSpinBox':
+        # CheckableSpinBox handles the special value condition by itself
         widget.setValue(value)
 
     elif widget_class == 'QLineEdit':
@@ -95,9 +100,6 @@ def set_widget_value(widget, value):
     elif widget_class == 'QTextEdit':
         widget.setPlainText(value)
 
-    elif widget_class == 'CheckableSpinBox':
-        widget.setValue(value)
-
     else:
         raise RuntimeError(f'Invalid class of input widget: {widget_class}')
 
@@ -105,13 +107,13 @@ def set_widget_value(widget, value):
 def get_widget_units(widget):
     """Get units of data associated with a ROM data entry widget.
 
-    We only return a unit if the widget has a numeric value.
+    We only return a unit if the widget returns a numeric value.
     """
     widget_class = widget.__class__.__name__
     if widget_class in ('QSpinBox', 'QDoubleSpinBox'):
-        units = widget.suffix() if isint(get_widget_value(widget)) else ''
+        units = widget.suffix() if isnumeric(get_widget_value(widget)) else ''
     elif widget_class == 'CheckableSpinBox':
-        units = widget.getSuffix() if isint(get_widget_value(widget)) else ''
+        units = widget.getSuffix() if isnumeric(get_widget_value(widget)) else ''
     else:
         # currently no units for other widget types
         units = ''

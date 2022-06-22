@@ -62,13 +62,9 @@ def _startfile(target):
         subprocess.call(['xdg-open', target])
 
 
-def isint(x):
-    """Test for integer"""
-    try:
-        int(x)
-        return True
-    except ValueError:
-        return False
+def isnumeric(x):
+    """Test for numeric values (float or integer)"""
+    return isinstance(x, int) or isinstance(x, float)
 
 
 def _validate_date(datestr):
