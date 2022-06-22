@@ -8,21 +8,6 @@ from .constants import Constants, Finnish
 from .utils import isint
 
 
-def qt_yesno_dialog(msg):
-    """Show yes/no dialog."""
-    dlg = QtWidgets.QMessageBox()
-    dlg.setText(msg)
-    dlg.setWindowTitle(Constants.dialog_title)
-    dlg.addButton(
-        QtWidgets.QPushButton(Finnish.yes_button), QtWidgets.QMessageBox.YesRole
-    )
-    dlg.addButton(
-        QtWidgets.QPushButton(Finnish.no_button), QtWidgets.QMessageBox.NoRole
-    )
-    dlg.exec()
-    return dlg.buttonRole(dlg.clickedButton())
-
-
 def qt_message_dialog(msg):
     """Show a message with 'OK' button."""
     dlg = QtWidgets.QMessageBox()
