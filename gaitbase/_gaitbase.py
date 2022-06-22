@@ -437,7 +437,7 @@ class PatientDialog(QtWidgets.QMainWindow):
             return
         if rom_id in self._rom_windows:
             qt_message_dialog('This ROM is already open')
-            return
+            retur
         app = EntryApp(self.database, rom_id, newly_created)
         app.closing.connect(self._editor_closing)
         # keep tracks of editor windows (keyed by rom id number)
@@ -486,14 +486,11 @@ class PatientDialog(QtWidgets.QMainWindow):
         if (rec := self.patient_model.record(self._current_patient_row)) is None:
             return
         patient_id = rec.value('patient_id')
-        # autoinsert current date
-        datestr = datetime.datetime.now().strftime('%d.%m.%Y')
         query = QtSql.QSqlQuery(self.database)
         query.prepare(
-            'INSERT INTO roms (patient_id, TiedotPvm) VALUES (:patient_id, :datestr)'
+            'INSERT INTO roms (patient_id) VALUES (:patient_id)'
         )
         query.bindValue(':patient_id', patient_id)
-        query.bindValue(':datestr', datestr)
         if not query.exec():
             db_failure(query, fatal=False)
         else:

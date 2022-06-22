@@ -56,7 +56,7 @@ class EntryApp(QtWidgets.QMainWindow):
     # this signal will be emitted when the window is closing
     closing = QtCore.pyqtSignal(object)
 
-    def __init__(self, database=None, rom_id=None, newly_created=None):
+    def __init__(self, database=None, rom_id=None, newly_created=False):
         """_summary_
 
         Args:
@@ -66,9 +66,9 @@ class EntryApp(QtWidgets.QMainWindow):
             rom_id: int | None
                 SQL ID of ROM to edit. 
             newly_created bool | None
-                Whether the entry is newly created. This needs to be explicitly
-                specified, since we don't create the database entry, it's
-                already created by _gaitbase.py.
+                Whether the entry was newly created. This needs to be explicitly
+                specified since we don't create the database entry, it's already
+                created by _gaitbase.py.
         """
         super().__init__()
         # load user interface made with Qt Designer
@@ -77,27 +77,27 @@ class EntryApp(QtWidgets.QMainWindow):
         self.confirm_close = True  # used to implement force close
         self.input_widgets = dict()
         self._init_widgets()
-        self.data = dict()
-        self.read_forms()  # read default data from widgets
+        self.data = dict()  # our internal copy of widget input data
+        self.read_data_from_widgets()
+        # read the widgets at their default state to determine default values
         self.data_default = self.data.copy()
         # whether to update internal dict of variables on input changes
         self.do_update_data = True
-        self.database = database
         self.rom_id = rom_id
-        if newly_created is None:
-            newly_created is False
         self.newly_created = newly_created
+        self.database = database
         if database is not None:
-            # the read only fields are uneditable, they reside in the patients table
-            self.init_readonly_fields()
-        if newly_created:
-            # for newly created entries, automatically set the date field to current date
-            datestr = datetime.datetime.now().strftime('%d.%m.%Y')
-            self.dataTiedotPvm.setText(datestr)
-            self.values_changed(self.dataTiedotPvm)
-        elif database is not None:
-            # for existing entry, read values from database
-            self._read_data()
+            # the read only fields contain patient info from the patients table;
+            # they are read only once at startup, and never writteh by this module
+            self.init_patient_widgets()
+            if newly_created:
+                # automatically set the date field to current date
+                datestr = datetime.datetime.now().strftime('%d.%m.%Y')
+                self.dataTiedotPvm.setText(datestr)
+                self.values_changed(self.dataTiedotPvm)
+            else:
+                self.read_data()
+                self.update_widgets()
 
     def force_close(self):
         """Force close without confirmation"""
@@ -152,7 +152,7 @@ class EntryApp(QtWidgets.QMainWindow):
             # it's possible that locking failures may occur here, so make them non-fatal
             self.db_failure(query, fatal=False)
 
-    def init_readonly_fields(self):
+    def init_patient_widgets(self):
         """Fill the read-only patient info widgets"""
         patient_id = self.select(['patient_id'])[0].value()  # SQL id of current patient
         thevars = ['firstname', 'lastname', 'ssn', 'patient_code', 'diagnosis']
@@ -171,10 +171,8 @@ class EntryApp(QtWidgets.QMainWindow):
     def get_patient_data(self):
         """Get patient id data from the read-only fields as a dict.
 
-        In the SQL version, the patient data is not part of ROM measurements
-        anymore, instead residing in the patients table. The returned keys are
-        identical to the old (standalone) version. This is mostly for purposes
-        of reporting, which expects the ID data to be available.
+        This is mostly for purposes of reporting, which expects the ID data to
+        be available.
         """
         return {
             'TiedotID': self.rdonly_patient_code.text(),
@@ -193,9 +191,9 @@ class EntryApp(QtWidgets.QMainWindow):
         return super().eventFilter(source, event)
 
     def _init_widgets(self):
-        """Init and record the input widgets.
+        """Initialize and collect the input widgets.
 
-        Also installs some convenience methods, etc.
+        Also installs some convenience methods etc.
         """
 
         # collect all widgets (whether data input widgets or something else)
@@ -374,8 +372,8 @@ class EntryApp(QtWidgets.QMainWindow):
             # perform the corresponding SQL update
             self.update_rom([varname], [newval])
 
-    def _read_data(self):
-        """Read input data from database"""
+    def read_data(self):
+        """Update the internal data dict from the database"""
         thevars = list(self.data.keys())
         # get data as QVariants, and ignore NULL ones (which correspond to missing data in database)
         qvals = self.select(thevars)
@@ -383,7 +381,6 @@ class EntryApp(QtWidgets.QMainWindow):
             var: qval.value() for var, qval in zip(thevars, qvals) if not qval.isNull()
         }
         self.data = self.data_default | record_di
-        self.restore_forms()
 
     def _compose_json_filename(self):
         """Make up a JSON filename"""
@@ -439,19 +436,22 @@ class EntryApp(QtWidgets.QMainWindow):
                 widget.selectAll()
                 widget.setFocus()
 
-    def restore_forms(self):
-        """Restore widget input values from self.data. Need to disable widget
-        callbacks and automatic data saving while programmatic updating of
-        widgets is taking place."""
+    def update_widgets(self):
+        """Restore widget input values from the internal data dictionary"""
+        # need to disable widget callbacks and automatic data saving while
+        # programmatic updating of widgets is taking place
         self.do_update_data = False
         for wname, widget in self.input_widgets.items():
             varname = self.widget_to_var[wname]
             set_widget_value(widget, self.data[varname])
         self.do_update_data = True
 
-    def read_forms(self):
-        """Read self.data from widget inputs. Usually not needed, since
-        it's updated automatically."""
+    def read_data_from_widgets(self):
+        """Read the internal data dictionary from widget inputs.
+       
+        Usually not needed, since the dictionary is updated automatically
+        whenever widget inputs change.
+        """
         for wname, widget in self.input_widgets.items():
             varname = self.widget_to_var[wname]
             self.data[varname] = get_widget_value(widget)
