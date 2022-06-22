@@ -23,18 +23,17 @@ def validate_code(code):
     """Check if patient code is valid.
     
     Currently we accept patient codes of the form:
-    XNNNN_FS
+    XNNNN_FMS or XNNNN_FS
 
     where X is a code corresponding to the diagnosis:
+    D : diplegic CP
+    H : hemiplegic CP
     C : unspecified CP
-    E : misc. diagnoses
-    D : diplegia
-    H : hemiplegia
     M : meningomyelocele
+    E : other diagnosis
 
-    NNNN is running number
-
-
+    NNNN is running number that should be unique for each code (but not between
+    codes), and FMS (or FS) are initials of the patient (front, middle, surname).
     """
     # TODO: might be nicer via regex
     if not code:
