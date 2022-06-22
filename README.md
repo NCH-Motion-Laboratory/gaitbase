@@ -4,7 +4,7 @@
 
 ## Overview 
 
-gaitbase is a simple SQLite patient database with a Qt-based GUI. The GUI allows the user to browse, insert, delete and search patients.
+gaitbase is a simple SQLite patient database with a Qt-based GUI. The GUI allows the user to browse, insert, delete and search patients, and enter various measurement values.
 
 NOTE: this program is for the purposes of Helsinki Movement Lab and most of the user interface is in Finnish. Thus, it's probably not useful for other labs in its current state.
 
