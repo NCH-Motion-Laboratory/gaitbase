@@ -12,6 +12,8 @@ NOTE: this program is for the purposes of Helsinki Movement Lab and most of the 
 
 The installation is easiest using conda. Clone this repository, change directory to the repository root and run `conda env create`. This should create a conda environment called `gaitbase` with the necessary dependencies. Next, activate the environment and install the package itself by running `pip install .` in the repository root. If you want to install in development mode, use `pip install -e .` instead.
 
+On Windows, you can create a desktop shortcut by running `gaitbase_make_shortcut` in the activated environment.
+
 ## The ROM modality
 
 In addition to the patient information, various measurement modalities can be stored in the database. The idea is to have a separate SQL table for each modality.
