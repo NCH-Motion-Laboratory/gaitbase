@@ -47,10 +47,13 @@ class PatientData:
 
 
 class NonLazyQSqlTableModel(QtSql.QSqlTableModel):
-    """QSqlTableModel without the prefetch feature.
+    """QSqlTableModel without the lazy fetch feature.
 
-    This works for small tables. The purpose is to prevent SQL locking that
-    occurs with prefetch.
+    Initially, QSqlTableModel will only fetch 256 first rows from a table, to
+    speed up access to large tables. It then reads further rows as necessary. In
+    case of SQLite, this behavior results in a SHARED lock to the database being
+    held indefinitely, preventing writes. This class disables the lazy fetch
+    feature.
     """
 
     def fetchMore(self, parent: QtCore.QModelIndex = ...) -> None:
@@ -156,7 +159,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         super().__init__(parent)
         uifile = resource_filename('gaitbase', 'gaitbase_main.ui')
         uic.loadUi(uifile, self)
-        self.editors = dict()
+        self._rom_windows = dict()
 
         # some configurable stuff
         self.CONFIRM_EXIT = False
@@ -416,8 +419,8 @@ class PatientDialog(QtWidgets.QMainWindow):
         q.exec()
         while q.next():
             rom_id = q.value(0)
-            if rom_id in self.editors:
-                self.editors[rom_id].force_close()
+            if rom_id in self._rom_windows:
+                self._rom_windows[rom_id].force_close()
         self.patient_model.removeRow(self._current_patient_row)
         # need to update, otherwise empty rows appear in the view
         self.patient_model.select()
@@ -432,13 +435,13 @@ class PatientDialog(QtWidgets.QMainWindow):
         if rom_id is None and (rom_id := self.current_rom_id) is None:
             qt_message_dialog('Please select a ROM first')
             return
-        if rom_id in self.editors:
+        if rom_id in self._rom_windows:
             qt_message_dialog('This ROM is already open')
             return
         app = EntryApp(self.database, rom_id, newly_created)
         app.closing.connect(self._editor_closing)
         # keep tracks of editor windows (keyed by rom id number)
-        self.editors[rom_id] = app
+        self._rom_windows[rom_id] = app
         app.show()
 
     def _rom_excel_report(self):
@@ -498,7 +501,7 @@ class PatientDialog(QtWidgets.QMainWindow):
 
     def _editor_closing(self, rom_id):
         """Callback for a closing a ROM editor"""
-        self.editors.pop(rom_id)
+        self._rom_windows.pop(rom_id)
         self.rom_model.select()
 
     def _delete_rom(self):
@@ -508,8 +511,8 @@ class PatientDialog(QtWidgets.QMainWindow):
             return
         msg = 'WARNING: are you sure you want to delete this ROM measurement? There is no undo.'
         if qt_confirm_dialog(msg):
-            if (rom_id := self.current_rom_id) in self.editors:
-                self.editors[rom_id].force_close()
+            if (rom_id := self.current_rom_id) in self._rom_windows:
+                self._rom_windows[rom_id].force_close()
             self.rom_model.removeRow(rom_idx.row())
             self.rom_model.select()
 
@@ -530,7 +533,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         """Confirm and close application."""
         if not self.CONFIRM_EXIT or qt_confirm_dialog('Do you want to exit?'):
             # close all ROM editor windows
-            for editor in list(self.editors.values()):
+            for editor in list(self._rom_windows.values()):
                 editor.force_close()
             event.accept()
         else:
