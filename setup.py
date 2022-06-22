@@ -18,7 +18,7 @@ setup(
     entry_points={
         'console_scripts': [
             'gaitbase=gaitbase._gaitbase:main',
-            'gaitbase_make_shortcut=gaitbase._gaitbase:make_my_shortcut',
+            'gaitbase_make_shortcut=gaitbase.utils:make_my_shortcut',
         ]
     },
     include_package_data=True,

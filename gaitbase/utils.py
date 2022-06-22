@@ -9,6 +9,13 @@ import sys
 import os
 import datetime
 
+from ulstools.env import make_shortcut
+
+
+def make_my_shortcut():
+    """Make a desktop shortcut"""
+    make_shortcut('gaitbase', 'run_gaitbase.py', title='Gait database')
+
 
 def validate_code(code):
     """Check if patient code is valid"""
