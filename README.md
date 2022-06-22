@@ -24,7 +24,7 @@ When a measurement is opened, it is loaded in the ROM editor window. The editor 
 
 ## Data entry widgets
 
-The UI is created in Qt Designer. (Nowadays there is a newer alternative called Qt Creator, which may also work). The widgets for data entry are given names starting with the string `data`. The app gathers input data from these widgets, and automatically derives variable names from the widget names by removing the `data` prefix. Currently, six types of data entry widgets are supported:
+The UI is created in Qt Designer. (Nowadays there is a newer alternative called Qt Creator, which may also work). The widgets for data entry are given names starting with the string `data`. The app gathers input data from these widgets, and automatically derives variable names from the widget names by removing the `data` prefix. Currently, seven types of data entry widgets are supported:
 
 
 <table>
