@@ -19,13 +19,26 @@ def qt_message_dialog(msg):
     dlg.exec()
 
 
+def qt_confirm_dialog(msg):
+    """Show dialog with message and Yes and No buttons.
+
+    Returns True/False for Yes/No pressed"""
+    dlg = QtWidgets.QMessageBox()
+    dlg.setWindowTitle('Confirm')
+    dlg.setText(msg)
+    dlg.addButton(QtWidgets.QPushButton('Yes'), QtWidgets.QMessageBox.YesRole)
+    dlg.addButton(QtWidgets.QPushButton('No'), QtWidgets.QMessageBox.NoRole)
+    dlg.exec()
+    return dlg.buttonRole(dlg.clickedButton()) == QtWidgets.QMessageBox.YesRole
+
+
 def keyPressEvent_resetOnEsc(obj, event):
     """Special event handler for spinboxes. Resets value (sets it
     to minimum) when Esc is pressed."""
     if event.key() == QtCore.Qt.Key_Escape:
         obj.setValue(obj.minimum())
     else:
-        # delegate the event to the overridden superclass handler
+        # delegate to the handler in the widget's superclass
         super(obj.__class__, obj).keyPressEvent(event)
 
 

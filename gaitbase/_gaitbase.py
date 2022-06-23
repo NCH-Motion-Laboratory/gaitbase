@@ -4,7 +4,6 @@ Gait database.
 
 """
 
-import datetime
 import sys
 import traceback
 from copy import copy
@@ -19,7 +18,7 @@ from ulstools.num import check_hetu
 from .config import cfg
 from .rom_entryapp import EntryApp
 from .utils import _startfile, validate_code
-from .widgets import qt_message_dialog
+from .widgets import qt_message_dialog, qt_confirm_dialog
 
 
 @dataclass
@@ -127,17 +126,6 @@ class PatientEditor(QtWidgets.QDialog):
             'Are you sure you want to cancel changes?'
         ):
             super().reject()
-
-
-def qt_confirm_dialog(msg):
-    """Show dialog with message and Yes and No buttons, return True if confirmed"""
-    dlg = QtWidgets.QMessageBox()
-    dlg.setWindowTitle('Confirm')
-    dlg.setText(msg)
-    dlg.addButton(QtWidgets.QPushButton('Yes'), QtWidgets.QMessageBox.YesRole)
-    dlg.addButton(QtWidgets.QPushButton('No'), QtWidgets.QMessageBox.NoRole)
-    dlg.exec()
-    return dlg.buttonRole(dlg.clickedButton()) == QtWidgets.QMessageBox.YesRole
 
 
 def db_failure(query, fatal=False):
@@ -541,13 +529,15 @@ def main():
     pdi = PatientDialog()
 
     def my_excepthook(exc_type, value, tback):
-        """Custom exception handler for fatal (unhandled) exceptions:
-        report to user via GUI and terminate program."""
+        """Custom exception handler for fatal (unhandled) exceptions.
+
+        Report the exception to the user by a GUI dialog and terminate.
+        """
         tb_full = ''.join(traceback.format_exception(exc_type, value, tback))
         msg = f'Oops! An unhandled exception occurred:\n{tb_full}'
         msg += '\nThe application will be closed now.'
         qt_message_dialog(msg)
-        sys.__excepthook__(exc_type, value, tback)
+        sys.__excepthook__(exc_type, value, tback)  # call the default exception handler
         app.quit()
 
     sys.excepthook = my_excepthook
