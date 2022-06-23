@@ -16,10 +16,10 @@ from .config import cfg
 
 def make_text_report(template, data, fields_at_default):
     """Create report using a Python template"""
-    # replace field values to improve readability
+    # replace some values to improve readability
     for field, value in data.items():
-        if value in cfg.report.text_replace:
-            data[field] = cfg.report.text_replace[value]
+        if value in cfg.report.replace_data:
+            data[field] = cfg.report.replace_data[value]
     # compile the template code
     template_code = compile(open(template, "rb").read(), template, 'exec')
     # namespace of executed code
@@ -97,21 +97,24 @@ def make_excel_report(xls_template, data, fields_at_default):
     workbook_out = copy(workbook_in)
     r_sheet = workbook_in.sheet_by_index(0)
     w_sheet = workbook_out.get_sheet(0)
+    # replace some values to improve readability
+    for field, value in data.items():
+        if value in cfg.report.replace_data:
+            data[field] = cfg.report.replace_data[value]
     # loop through cells, conditionally replace fields with variable names
     for row in range(r_sheet.nrows):
         for col in range(r_sheet.ncols):
             cell = r_sheet.cell(row, col)
-            cell_value = cell.value
-            if cell_value:  # format non-empty cells only
+            cell_text = cell.value
+            if cell_text:  # format non-empty cells only
                 # if all variables are at default, the result will be an empty cell
-                new_value = _conditional_format(cell_value, data, fields_at_default)
-                # apply replacement dict only if formatting changed something;
-                # this is to avoid changing text-only cells
-                if new_value != cell_value:
-                    for oldstr, newstr in cfg.report.xls_replace.items():
-                        if oldstr in new_value:
-                            new_value = new_value.replace(oldstr, newstr)
-                _xlrd_set_cell(w_sheet, col, row, new_value)
+                cell_text_formatted = _conditional_format(cell_text, data, fields_at_default)
+                # apply replacement text only if formatting changed something
+                # (to avoid undesired changes to text-only cells)
+                if cell_text_formatted != cell_text:
+                    for oldstr, newstr in cfg.report.xls_replace_strings.items():
+                        cell_text_formatted = cell_text_formatted.replace(oldstr, newstr)
+                _xlrd_set_cell(w_sheet, col, row, cell_text_formatted)
     return workbook_out
 
 

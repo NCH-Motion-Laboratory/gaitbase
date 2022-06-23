@@ -25,8 +25,6 @@ class Constants:
     # 'yes' and 'no' values for checkboxes. Written to data files.
     checkbox_yestext: str = 'Kyllä'
     checkbox_notext: str = 'EI'
-    # the (hacky) idea here is that by virtue of case sensitivity, 'EI' can be
-    # changed in the reports by search&replace without affecting other 'Ei'
     # conditional separator
     conditional_dot = 1
 
