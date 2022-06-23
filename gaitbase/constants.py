@@ -10,6 +10,8 @@ from dataclasses import dataclass
 class Constants:
     """Some constants"""
 
+    # allowable patient code prefixes
+    patient_code_prefixes = 'CDEHM'
     # magic prefix for data entry widgets
     input_widget_prefix = 'data'
     # window title
