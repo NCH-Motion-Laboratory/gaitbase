@@ -25,7 +25,9 @@ cfg_package_fn = resource_filename(__name__, 'data/default.cfg')
 cfg_user_fn = Path.home() / '.gaitbase.cfg'
 
 # provide the global cfg instance
-cfg = parse_config(cfg_package_fn)
+# we assume that config files are encoded in utf-8
+cfg = parse_config(cfg_package_fn, encoding='utf-8')
+
 # update cfg from user file, but do not overwrite comments
 if cfg_user_fn.is_file():
     logger.debug(f'reading user config from {cfg_user_fn}')
@@ -43,7 +45,7 @@ else:
         f.writelines(cfg_txt)
 
 # revert user-defined paths if they are invalid
-cfg_package = parse_config(cfg_package_fn)
+cfg_package = parse_config(cfg_package_fn, encoding='utf-8')
 
 if not Path(cfg.templates.text).is_file():
     logger.warning(
