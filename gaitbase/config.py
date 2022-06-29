@@ -44,21 +44,12 @@ else:
     with open(cfg_user_fn, 'w', encoding='utf8') as f:
         f.writelines(cfg_txt)
 
-# revert user-defined paths if they are invalid
-cfg_package = parse_config(cfg_package_fn, encoding='utf-8')
-
-if not Path(cfg.templates.text).is_file():
-    logger.warning(
-        f'configured text template {cfg.templates.text} not found - using default'
-    )
+if cfg.templates.text is None:
     cfg.templates.text = resource_filename(
-        'gaitbase', 'templates/text_template_test.py'
+        'gaitbase', 'templates/text_template.py'
     )
 
-if not Path(cfg.templates.xls).is_file():
-    logger.warning(
-        f'configured XLS template {cfg.templates.xls} not found - using default'
-    )
+if cfg.templates.xls is None:
     cfg.templates.xls = resource_filename(
         'gaitbase', 'templates/rom_excel_template.xls'
     )
