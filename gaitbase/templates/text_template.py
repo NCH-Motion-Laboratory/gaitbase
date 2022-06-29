@@ -1,6 +1,18 @@
 # -*- coding: utf-8 -*-
 """
-Python template for the text report. This is a Python file called by exec().
+Python template for the text report.
+
+The template must define a variable called text_blocks, which must be an
+iterable of text blocks (strings). Each block may contain fields, denoted by
+curly braces. The fields will be replaced by their corresponding values. If a
+block contains fields and ALL of the fields are at their default values, the
+block will be discarded.
+
+Any columns in the SQL 'patients' and 'roms' tables are valid field names.
+
+The code in this file is executed by exec(). Any Python logic may be used to
+build the text_blocks variable. However for readability, it may be a good idea
+to minimize the amount of code and keep the template as "textual" as possible.
 
 @author: Jussi (jnu@iki.fi)
 """
@@ -31,6 +43,7 @@ Nilkat: {AntropNilkkaOik} / {AntropNilkkaVas}
 Polvet: {AntropPolviOik} / {AntropPolviVas}
 Paino: {AntropPaino}
 Pituus: {AntropPituus}
+Jalkaterän pituus: {AntropJalkateraOik} / {AntropJalkateraVas}
 SIAS: {AntropSIAS}
 Kengännumero: {AntropKenganNumeroOik} / {AntropKenganNumeroVas}
 """,
@@ -43,19 +56,8 @@ Kommentit: {cmtAntrop}
 MITTAAJAT: {TiedotMittaajat}
 """,
 
-"""
-TULOSYY:
 
 
-PÄÄTULOKSET KÄVELYANALYYSIN POHJALTA:
-
-
-TESTAUS- JA ARVIOINTITULOKSET:
-
-
-OHEISMITTAUSTEN TULOKSET:
-
-""",
 
 """
 Nivelten passiiviset liikelaajuudet (oikea/vasen), NR = normaalin rajoissa:
