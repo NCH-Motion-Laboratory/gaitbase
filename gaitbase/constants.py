@@ -24,6 +24,8 @@ class Constants:
     spinbox_novalue_text: str = 'Ei mitattu'
     # 'yes' and 'no' values for checkboxes. Written to data files.
     checkbox_yestext: str = 'Kyllä'
+    # the 'no' value should really be 'Ei' but is capitalized for historical
+    # reasons; it's automatically uncapitalized for reports
     checkbox_notext: str = 'EI'
     # conditional separator
     conditional_dot = 1

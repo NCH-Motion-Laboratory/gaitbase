@@ -15,7 +15,25 @@ from .config import cfg
 
 
 def make_text_report(template, data, fields_at_default):
-    """Create report using a Python template"""
+    """Create a text report using a Python template.
+
+    For documentation of the template format, see the example templates under
+    gaitbase/templates.
+
+    Parameters
+    ----------
+    template : str | Path
+        Path to the template.
+    data : dict
+        Fields and their corresponding values.
+    fields_at_default : list
+        Fields that are at their default values.
+
+    Returns
+    -------
+    str
+        The resulting text.
+    """
     # replace some values to improve readability
     for field, value in data.items():
         if value in cfg.report.replace_data:
@@ -26,10 +44,10 @@ def make_text_report(template, data, fields_at_default):
     exec_namespace = dict()
     exec(template_code, exec_namespace)
     blocks = exec_namespace['text_blocks']
-    return process_blocks(blocks, data, fields_at_default)
+    return _process_blocks(blocks, data, fields_at_default)
 
 
-def process_blocks(blocks, data, fields_at_default):
+def _process_blocks(blocks, data, fields_at_default):
     """Process a list of text/separator blocks into text"""
     ITEM_SEPARATOR = '. '
     block_formatted = ''
@@ -72,26 +90,26 @@ def _get_format_fields(thestr):
 def make_excel_report(xls_template, data, fields_at_default):
     """Make an Excel report from a template.
 
-    Parameters
-    ----------
-    xls_template : string
-        Path to the XLS template.
-    data : dict
-        The fields (variables) and the corresponding data.
-    fields_at_default : list
-        Fields that are at their default values. For such fields, the cell will 
-
-    Returns
-    -------
-    workbook
-        xlrd workbook.
-
     The template should have Python-style format strings in cells that should be
     filled in, e.g. {TiedotNimi} would fill the cell using the corresponding key
     in self.data.
 
     xls_template must be in .xls (not xlsx) format, since style info cannot be
     read from xlsx (xlutils limitation).
+
+    Parameters
+    ----------
+    xls_template : str | Path
+        Path to the template.
+    data : dict
+        Fields and their corresponding values.
+    fields_at_default : list
+        Fields that are at their default values.
+
+    Returns
+    -------
+    workbook
+        xlrd workbook.
     """
     workbook_in = open_workbook(xls_template, formatting_info=True)
     workbook_out = copy(workbook_in)
@@ -108,12 +126,16 @@ def make_excel_report(xls_template, data, fields_at_default):
             cell_text = cell.value
             if cell_text:  # format non-empty cells only
                 # if all variables are at default, the result will be an empty cell
-                cell_text_formatted = _conditional_format(cell_text, data, fields_at_default)
+                cell_text_formatted = _conditional_format(
+                    cell_text, data, fields_at_default
+                )
                 # apply replacement text only if formatting changed something
                 # (to avoid undesired changes to text-only cells)
                 if cell_text_formatted != cell_text:
                     for oldstr, newstr in cfg.report.xls_replace_strings.items():
-                        cell_text_formatted = cell_text_formatted.replace(oldstr, newstr)
+                        cell_text_formatted = cell_text_formatted.replace(
+                            oldstr, newstr
+                        )
                 _xlrd_set_cell(w_sheet, col, row, cell_text_formatted)
     return workbook_out
 
