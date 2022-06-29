@@ -4442,187 +4442,8 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
        <layout class="QVBoxLayout" name="verticalLayout_7">
         <item>
          <layout class="QGridLayout" name="gridLayout_18">
-          <item row="13" column="6">
-           <widget class="QLabel" name="label_36">
-            <property name="text">
-             <string>Navicular drop, istuen</string>
-            </property>
-           </widget>
-          </item>
-          <item row="14" column="7">
-           <widget class="QSpinBox" name="dataJalkatNavDropSeistenOik">
-            <property name="specialValueText">
-             <string>Ei mitattu</string>
-            </property>
-            <property name="suffix">
-             <string> mm</string>
-            </property>
-            <property name="minimum">
-             <number>-1</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-            <property name="value">
-             <number>-1</number>
-            </property>
-           </widget>
-          </item>
-          <item row="14" column="9">
-           <widget class="QSpinBox" name="dataJalkatNavDropSeistenVas">
-            <property name="specialValueText">
-             <string>Ei mitattu</string>
-            </property>
-            <property name="suffix">
-             <string> mm</string>
-            </property>
-            <property name="minimum">
-             <number>-1</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-            <property name="value">
-             <number>-1</number>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="7">
-           <widget class="QSpinBox" name="dataJalkatNavDropIstuenOik">
-            <property name="specialValueText">
-             <string>Ei mitattu</string>
-            </property>
-            <property name="suffix">
-             <string> mm</string>
-            </property>
-            <property name="minimum">
-             <number>-1</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-            <property name="value">
-             <number>-1</number>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="9">
-           <widget class="QSpinBox" name="dataJalkatNavDropIstuenVas">
-            <property name="specialValueText">
-             <string>Ei mitattu</string>
-            </property>
-            <property name="suffix">
-             <string> mm</string>
-            </property>
-            <property name="minimum">
-             <number>-1</number>
-            </property>
-            <property name="maximum">
-             <number>100</number>
-            </property>
-            <property name="value">
-             <number>-1</number>
-            </property>
-           </widget>
-          </item>
-          <item row="14" column="6">
-           <widget class="QLabel" name="label_45">
-            <property name="text">
-             <string>Navicular drop, seisten</string>
-            </property>
-           </widget>
-          </item>
-          <item row="16" column="1">
-           <widget class="QLabel" name="label_282">
-            <property name="text">
-             <string>Etuosan asento 2.</string>
-            </property>
-           </widget>
-          </item>
-          <item row="16" column="2">
-           <widget class="QComboBox" name="dataJalkatEtuosanAsento2Oik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>NEU</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ADD+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ADD++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ADD+++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ABD+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ABD++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ABD+++</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="2" column="4">
-           <widget class="QLabel" name="label_273">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Vasen</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QLabel" name="label_286">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Kuormittamattomana:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="12" column="4">
-           <widget class="QComboBox" name="dataJalkatKeskiosanliikeVas">
+          <item row="11" column="2">
+           <widget class="QComboBox" name="dataJalkatHolvikaariOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4647,191 +4468,32 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
             <item>
              <property name="text">
-              <string>RAJ</string>
+              <string>matala</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>Hypermobiili</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Ei liikettä</string>
+              <string>korkea</string>
              </property>
             </item>
            </widget>
           </item>
-          <item row="19" column="4">
-           <widget class="QComboBox" name="dataJalkatVaivaisenluuVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Ei</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Kyllä+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Kyllä++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Kyllä+++</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="11" column="6">
-           <widget class="QLabel" name="label_291">
+          <item row="6" column="1">
+           <widget class="QLabel" name="label_279">
             <property name="text">
-             <string>Etuosan asento 2.</string>
+             <string>Takaosan asento</string>
             </property>
            </widget>
           </item>
-          <item row="19" column="3">
-           <spacer name="horizontalSpacer_9">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="9" column="4">
-           <widget class="QComboBox" name="dataJalkatTakaosanLiikeInversioVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>TYYP</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>RAJ</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Hypermobiili</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Ei liikettä</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="16" column="4">
-           <widget class="QComboBox" name="dataJalkatEtuosanAsento2Vas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>NEU</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ADD+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ADD++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ADD+++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ABD+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ABD++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ABD+++</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="15" column="1">
-           <widget class="QLabel" name="label_281">
+          <item row="9" column="6">
+           <widget class="QLabel" name="label_290">
             <property name="text">
              <string>Etuosan asento 1.</string>
             </property>
            </widget>
           </item>
-          <item row="6" column="4">
-           <widget class="QComboBox" name="dataJalkatTakaosanAsentoVas">
+          <item row="5" column="9">
+           <widget class="QComboBox" name="dataJalkatTakaosanAsentoKuormVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -4884,161 +4546,11 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
               <string>VAR+++</string>
              </property>
             </item>
-           </widget>
-          </item>
-          <item row="13" column="1" colspan="4">
-           <widget class="Line" name="line_7">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="2">
-           <widget class="QComboBox" name="dataJalkatHolvikaariOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
             <item>
              <property name="text">
-              <string>Ei mitattu</string>
+              <string>päkiäkontakti</string>
              </property>
             </item>
-            <item>
-             <property name="text">
-              <string>TYYP</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>matala</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>korkea</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="9" column="1">
-           <widget class="QLabel" name="label_213">
-            <property name="text">
-             <string>Takaosan liike, inversio</string>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="2">
-           <widget class="QComboBox" name="dataJalkatTakaosanLiikeInversioOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>TYYP</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>RAJ</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Hypermobiili</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Ei liikettä</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="8" column="4">
-           <widget class="QComboBox" name="dataJalkatTakaosanLiikeEversioVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>TYYP</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>RAJ</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Hypermobiili</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Ei liikettä</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="5" column="5">
-           <spacer name="horizontalSpacer_70">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>60</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="15" column="6">
-           <widget class="QLabel" name="label_292">
-            <property name="text">
-             <string>Coleman block test</string>
-            </property>
            </widget>
           </item>
           <item row="9" column="9">
@@ -5097,48 +4609,40 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
            </widget>
           </item>
-          <item row="5" column="6">
-           <widget class="QLabel" name="label_288">
-            <property name="text">
-             <string>Takaosan asento</string>
+          <item row="11" column="4">
+           <widget class="QComboBox" name="dataJalkatHolvikaariVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-           </widget>
-          </item>
-          <item row="9" column="6">
-           <widget class="QLabel" name="label_290">
-            <property name="text">
-             <string>Etuosan asento 1.</string>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
             </property>
-           </widget>
-          </item>
-          <item row="16" column="7">
-           <widget class="QCheckBox" name="dataPainelevy">
-            <property name="text">
-             <string>Tehty</string>
-            </property>
-           </widget>
-          </item>
-          <item row="15" column="9">
-           <widget class="QLineEdit" name="dataJalkatColemanVas"/>
-          </item>
-          <item row="20" column="1">
-           <widget class="QLabel" name="label_31">
-            <property name="text">
-             <string>Kovettumat</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="6">
-           <widget class="QLabel" name="label_310">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Kuormitettuna:</string>
-            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TYYP</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>matala</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>korkea</string>
+             </property>
+            </item>
            </widget>
           </item>
           <item row="5" column="2">
@@ -5177,64 +4681,15 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
            </widget>
           </item>
-          <item row="11" column="9">
-           <widget class="QComboBox" name="dataJalkatEtuosanAsento2KuormVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+          <item row="12" column="6">
+           <widget class="QLabel" name="label_13">
+            <property name="text">
+             <string>Feissin linja</string>
             </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>NEU</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ADD+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ADD++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ADD+++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ABD+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ABD++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>ABD+++</string>
-             </property>
-            </item>
            </widget>
           </item>
-          <item row="8" column="9">
-           <widget class="QComboBox" name="dataJalkatKeskiosanAsentoKuormVas">
+          <item row="9" column="7">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento1KuormOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5289,8 +4744,8 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
            </widget>
           </item>
-          <item row="12" column="2">
-           <widget class="QComboBox" name="dataJalkatKeskiosanliikeOik">
+          <item row="8" column="2">
+           <widget class="QComboBox" name="dataJalkatTakaosanLiikeEversioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5330,35 +4785,17 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
            </widget>
           </item>
-          <item row="17" column="4">
-           <widget class="QComboBox" name="dataJalkat1sadeVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+          <item row="2" column="2">
+           <widget class="QLabel" name="label_276">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
             </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
+            <property name="text">
+             <string>Oikea</string>
             </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>mobiili</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>rigidi</string>
-             </property>
-            </item>
            </widget>
           </item>
           <item row="6" column="2">
@@ -5417,35 +4854,96 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
            </widget>
           </item>
-          <item row="11" column="1">
-           <widget class="QLabel" name="label_274">
-            <property name="text">
-             <string>Holvikaari (med. pitk)</string>
+          <item row="13" column="9">
+           <widget class="QSpinBox" name="dataJalkatNavDropIstuenVas">
+            <property name="specialValueText">
+             <string>Ei mitattu</string>
+            </property>
+            <property name="suffix">
+             <string> mm</string>
+            </property>
+            <property name="minimum">
+             <number>-1</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="value">
+             <number>-1</number>
             </property>
            </widget>
           </item>
-          <item row="5" column="0">
-           <spacer name="horizontalSpacer_68">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+          <item row="2" column="4">
+           <widget class="QLabel" name="label_273">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
             </property>
-            <property name="sizeHint" stdset="0">
+            <property name="text">
+             <string>Vasen</string>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="7">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento2KuormOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>100</width>
+              <height>0</height>
              </size>
             </property>
-           </spacer>
-          </item>
-          <item row="8" column="6">
-           <widget class="QLabel" name="label_289">
-            <property name="text">
-             <string>Keskiosan asento</string>
-            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>NEU</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ADD+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ADD++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ADD+++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ABD+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ABD++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ABD+++</string>
+             </property>
+            </item>
            </widget>
           </item>
-          <item row="11" column="4">
-           <widget class="QComboBox" name="dataJalkatHolvikaariVas">
+          <item row="12" column="4">
+           <widget class="QComboBox" name="dataJalkatKeskiosanliikeVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5470,18 +4968,69 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
             <item>
              <property name="text">
-              <string>matala</string>
+              <string>RAJ</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>korkea</string>
+              <string>Hypermobiili</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Ei liikettä</string>
              </property>
             </item>
            </widget>
           </item>
-          <item row="2" column="2">
-           <widget class="QLabel" name="label_276">
+          <item row="8" column="1">
+           <widget class="QLabel" name="label_275">
+            <property name="text">
+             <string>Takaosan liike, eversio</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <spacer name="horizontalSpacer_68">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="14" column="6">
+           <widget class="QLabel" name="label_45">
+            <property name="text">
+             <string>Navicular drop, seisten</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="5">
+           <spacer name="horizontalSpacer_70">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>60</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="20" column="2">
+           <widget class="QLineEdit" name="dataJalkatKovettumatOik"/>
+          </item>
+          <item row="2" column="7">
+           <widget class="QLabel" name="label_295">
             <property name="font">
              <font>
               <weight>75</weight>
@@ -5493,22 +5042,15 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </property>
            </widget>
           </item>
-          <item row="16" column="6">
-           <widget class="QLabel" name="label_294">
+          <item row="11" column="6">
+           <widget class="QLabel" name="label_291">
             <property name="text">
-             <string>Painelevymittaus</string>
+             <string>Etuosan asento 2.</string>
             </property>
            </widget>
           </item>
-          <item row="6" column="1">
-           <widget class="QLabel" name="label_279">
-            <property name="text">
-             <string>Takaosan asento</string>
-            </property>
-           </widget>
-          </item>
-          <item row="17" column="2">
-           <widget class="QComboBox" name="dataJalkat1sadeOik">
+          <item row="5" column="4">
+           <widget class="QComboBox" name="dataJalkatSubtalarVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5528,18 +5070,79 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
             <item>
              <property name="text">
-              <string>mobiili</string>
+              <string>Kyllä</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>rigidi</string>
+              <string>Kyllä-tiukka</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Ei</string>
              </property>
             </item>
            </widget>
           </item>
-          <item row="15" column="2">
-           <widget class="QComboBox" name="dataJalkatEtuosanAsento1Oik">
+          <item row="6" column="4">
+           <widget class="QComboBox" name="dataJalkatTakaosanAsentoVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>NEU</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VALG+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VALG++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VALG+++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VAR+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VAR++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VAR+++</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="15" column="4">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento1Vas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5624,15 +5227,8 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
            </widget>
           </item>
-          <item row="18" column="1">
-           <widget class="QLabel" name="label_284">
-            <property name="text">
-             <string>1. MTP ojennus</string>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="8">
-           <spacer name="horizontalSpacer_60">
+          <item row="19" column="3">
+           <spacer name="horizontalSpacer_9">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -5647,179 +5243,8 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </property>
            </spacer>
           </item>
-          <item row="19" column="2">
-           <widget class="QComboBox" name="dataJalkatVaivaisenluuOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Ei</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Kyllä+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Kyllä++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Kyllä+++</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="19" column="1">
-           <widget class="QLabel" name="label_285">
-            <property name="text">
-             <string>Vaivaisenluu</string>
-            </property>
-           </widget>
-          </item>
-          <item row="20" column="4">
-           <widget class="QLineEdit" name="dataJalkatKovettumatVas"/>
-          </item>
-          <item row="5" column="4">
-           <widget class="QComboBox" name="dataJalkatSubtalarVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Kyllä</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Kyllä-tiukka</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Ei</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="20" column="2">
-           <widget class="QLineEdit" name="dataJalkatKovettumatOik"/>
-          </item>
-          <item row="17" column="1">
-           <widget class="QLabel" name="label_283">
-            <property name="text">
-             <string>1. säde</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="1">
-           <widget class="QLabel" name="label_280">
-            <property name="text">
-             <string>Subtalar neutraali</string>
-            </property>
-           </widget>
-          </item>
-          <item row="12" column="1">
-           <widget class="QLabel" name="label_269">
-            <property name="text">
-             <string>Keskiosan liike</string>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="1" colspan="4">
-           <widget class="Line" name="line_6">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="12" column="7">
-           <widget class="QComboBox" name="dataJalkatFeissinLinjaOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Normaali</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2/3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Voimakkaasti madaltunut</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>romahtanut</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="12" column="6">
-           <widget class="QLabel" name="label_13">
-            <property name="text">
-             <string>Feissin linja</string>
-            </property>
-           </widget>
-          </item>
-          <item row="11" column="7">
-           <widget class="QComboBox" name="dataJalkatEtuosanAsento2KuormOik">
+          <item row="16" column="4">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento2Vas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5874,11 +5299,8 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
            </widget>
           </item>
-          <item row="15" column="7">
-           <widget class="QLineEdit" name="dataJalkatColemanOik"/>
-          </item>
-          <item row="9" column="7">
-           <widget class="QComboBox" name="dataJalkatEtuosanAsento1KuormOik">
+          <item row="6" column="9">
+           <widget class="QComboBox" name="dataJalkatTakaosanKiertoKuormVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -5903,58 +5325,25 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
             <item>
              <property name="text">
-              <string>VALG+</string>
+              <string>korost. SR</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>VALG++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VALG+++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VAR+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VAR++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VAR+++</string>
+              <string>korost. UR</string>
              </property>
             </item>
            </widget>
           </item>
-          <item row="2" column="9">
-           <widget class="QLabel" name="label_298">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
+          <item row="6" column="6">
+           <widget class="QLabel" name="label_293">
             <property name="text">
-             <string>Vasen</string>
+             <string>Takaosan kierto</string>
             </property>
            </widget>
           </item>
-          <item row="8" column="1">
-           <widget class="QLabel" name="label_275">
-            <property name="text">
-             <string>Takaosan liike, eversio</string>
-            </property>
-           </widget>
-          </item>
-          <item row="8" column="2">
-           <widget class="QComboBox" name="dataJalkatTakaosanLiikeEversioOik">
+          <item row="12" column="2">
+           <widget class="QComboBox" name="dataJalkatKeskiosanliikeOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6055,8 +5444,29 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
            </widget>
           </item>
-          <item row="5" column="9">
-           <widget class="QComboBox" name="dataJalkatTakaosanAsentoKuormVas">
+          <item row="13" column="6">
+           <widget class="QLabel" name="label_36">
+            <property name="text">
+             <string>Navicular drop, istuen</string>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="1" colspan="4">
+           <widget class="Line" name="line_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="1">
+           <widget class="QLabel" name="label_269">
+            <property name="text">
+             <string>Keskiosan liike</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="2">
+           <widget class="QComboBox" name="dataJalkatTakaosanLiikeInversioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6076,186 +5486,45 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
             <item>
              <property name="text">
-              <string>NEU</string>
+              <string>TYYP</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>VALG+</string>
+              <string>RAJ</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>VALG++</string>
+              <string>Hypermobiili</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>VALG+++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VAR+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VAR++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VAR+++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>päkiäkontakti</string>
+              <string>Ei liikettä</string>
              </property>
             </item>
            </widget>
           </item>
-          <item row="6" column="9">
-           <widget class="QComboBox" name="dataJalkatTakaosanKiertoKuormVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+          <item row="18" column="2">
+           <widget class="CheckableSpinBox" name="dataJalkat1MTPojennusOik"/>
+          </item>
+          <item row="18" column="1">
+           <widget class="QLabel" name="label_284">
+            <property name="text">
+             <string>1. MTP ojennus</string>
             </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>NEU</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>korost. SR</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>korost. UR</string>
-             </property>
-            </item>
            </widget>
           </item>
-          <item row="12" column="9">
-           <widget class="QComboBox" name="dataJalkatFeissinLinjaVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+          <item row="10" column="1" colspan="4">
+           <widget class="Line" name="line_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Normaali</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1/3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2/3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>Voimakkaasti madaltunut</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>romahtanut</string>
-             </property>
-            </item>
            </widget>
           </item>
-          <item row="8" column="7">
-           <widget class="QComboBox" name="dataJalkatKeskiosanAsentoKuormOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>NEU</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VALG+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VALG++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VALG+++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VAR+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VAR++</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>VAR+++</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="2" column="7">
-           <widget class="QLabel" name="label_295">
+          <item row="4" column="1">
+           <widget class="QLabel" name="label_286">
             <property name="font">
              <font>
               <weight>75</weight>
@@ -6263,12 +5532,12 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
              </font>
             </property>
             <property name="text">
-             <string>Oikea</string>
+             <string>Kuormittamattomana:</string>
             </property>
            </widget>
           </item>
-          <item row="6" column="7">
-           <widget class="QComboBox" name="dataJalkatTakaosanKiertoKuormOik">
+          <item row="11" column="9">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento2KuormVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6293,35 +5562,42 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
             <item>
              <property name="text">
-              <string>korost. SR</string>
+              <string>ADD+</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>korost. UR</string>
+              <string>ADD++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ADD+++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ABD+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ABD++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ABD+++</string>
              </property>
             </item>
            </widget>
           </item>
-          <item row="6" column="6">
-           <widget class="QLabel" name="label_293">
+          <item row="17" column="1">
+           <widget class="QLabel" name="label_283">
             <property name="text">
-             <string>Takaosan kierto</string>
+             <string>1. säde</string>
             </property>
            </widget>
-          </item>
-          <item row="11" column="10">
-           <spacer name="horizontalSpacer_63">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item row="3" column="1">
            <spacer name="verticalSpacer_6">
@@ -6339,24 +5615,147 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </property>
            </spacer>
           </item>
-          <item row="18" column="2">
-           <widget class="CheckableSpinBox" name="dataJalkat1MTPojennusOik"/>
+          <item row="9" column="4">
+           <widget class="QComboBox" name="dataJalkatTakaosanLiikeInversioVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TYYP</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>RAJ</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Hypermobiili</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Ei liikettä</string>
+             </property>
+            </item>
+           </widget>
           </item>
           <item row="18" column="4">
            <widget class="CheckableSpinBox" name="dataJalkat1MTPojennusVas"/>
           </item>
-          <item row="17" column="6">
-           <widget class="QLabel" name="label_307">
+          <item row="1" column="4">
+           <spacer name="verticalSpacer_40">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="11" column="1">
+           <widget class="QLabel" name="label_274">
             <property name="text">
-             <string>Painelevymittaus, lisätietoja:</string>
+             <string>Holvikaari (med. pitk)</string>
             </property>
            </widget>
           </item>
-          <item row="17" column="7" colspan="3">
-           <widget class="QLineEdit" name="dataJalkatPainelevyTiedot"/>
+          <item row="16" column="2">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento2Oik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>NEU</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ADD+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ADD++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ADD+++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ABD+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ABD++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>ABD+++</string>
+             </property>
+            </item>
+           </widget>
           </item>
-          <item row="15" column="4">
-           <widget class="QComboBox" name="dataJalkatEtuosanAsento1Vas">
+          <item row="11" column="8">
+           <spacer name="horizontalSpacer_60">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="15" column="2">
+           <widget class="QComboBox" name="dataJalkatEtuosanAsento1Oik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -6441,21 +5840,677 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
            </widget>
           </item>
-          <item row="1" column="4">
-           <spacer name="verticalSpacer_40">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
+          <item row="8" column="7">
+           <widget class="QComboBox" name="dataJalkatKeskiosanAsentoKuormOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>NEU</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VALG+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VALG++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VALG+++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VAR+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VAR++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VAR+++</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="6">
+           <widget class="QLabel" name="label_289">
+            <property name="text">
+             <string>Keskiosan asento</string>
+            </property>
+           </widget>
+          </item>
+          <item row="15" column="1">
+           <widget class="QLabel" name="label_281">
+            <property name="text">
+             <string>Etuosan asento 1.</string>
+            </property>
+           </widget>
+          </item>
+          <item row="17" column="2">
+           <widget class="QComboBox" name="dataJalkat1sadeOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>mobiili</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>rigidi</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLabel" name="label_280">
+            <property name="text">
+             <string>Subtalar neutraali</string>
+            </property>
+           </widget>
+          </item>
+          <item row="19" column="2">
+           <widget class="QComboBox" name="dataJalkatVaivaisenluuOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Ei</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kyllä+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kyllä++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kyllä+++</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="19" column="4">
+           <widget class="QComboBox" name="dataJalkatVaivaisenluuVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Ei</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kyllä+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kyllä++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kyllä+++</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="9">
+           <widget class="QLabel" name="label_298">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Vasen</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="6">
+           <widget class="QLabel" name="label_288">
+            <property name="text">
+             <string>Takaosan asento</string>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="10">
+           <spacer name="horizontalSpacer_63">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>20</width>
+              <width>40</width>
               <height>20</height>
              </size>
             </property>
            </spacer>
+          </item>
+          <item row="4" column="6">
+           <widget class="QLabel" name="label_310">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Kuormitettuna:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="16" column="1">
+           <widget class="QLabel" name="label_282">
+            <property name="text">
+             <string>Etuosan asento 2.</string>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="7">
+           <widget class="QComboBox" name="dataJalkatFeissinLinjaOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Normaali</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1/3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2/3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Voimakkaasti madaltunut</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>romahtanut</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="17" column="4">
+           <widget class="QComboBox" name="dataJalkat1sadeVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>mobiili</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>rigidi</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="20" column="1">
+           <widget class="QLabel" name="label_31">
+            <property name="text">
+             <string>Kovettumat</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="7">
+           <widget class="QComboBox" name="dataJalkatTakaosanKiertoKuormOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>NEU</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>korost. SR</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>korost. UR</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="20" column="4">
+           <widget class="QLineEdit" name="dataJalkatKovettumatVas"/>
+          </item>
+          <item row="12" column="9">
+           <widget class="QComboBox" name="dataJalkatFeissinLinjaVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Normaali</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1/3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2/3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Voimakkaasti madaltunut</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>romahtanut</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="14" column="7">
+           <widget class="QSpinBox" name="dataJalkatNavDropSeistenOik">
+            <property name="specialValueText">
+             <string>Ei mitattu</string>
+            </property>
+            <property name="suffix">
+             <string> mm</string>
+            </property>
+            <property name="minimum">
+             <number>-1</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="value">
+             <number>-1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="1">
+           <widget class="QLabel" name="label_213">
+            <property name="text">
+             <string>Takaosan liike, inversio</string>
+            </property>
+           </widget>
+          </item>
+          <item row="19" column="1">
+           <widget class="QLabel" name="label_285">
+            <property name="text">
+             <string>Vaivaisenluu</string>
+            </property>
+           </widget>
+          </item>
+          <item row="8" column="4">
+           <widget class="QComboBox" name="dataJalkatTakaosanLiikeEversioVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TYYP</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>RAJ</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Hypermobiili</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Ei liikettä</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="9">
+           <widget class="QComboBox" name="dataJalkatKeskiosanAsentoKuormVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>NEU</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VALG+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VALG++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VALG+++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VAR+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VAR++</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>VAR+++</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="14" column="9">
+           <widget class="QSpinBox" name="dataJalkatNavDropSeistenVas">
+            <property name="specialValueText">
+             <string>Ei mitattu</string>
+            </property>
+            <property name="suffix">
+             <string> mm</string>
+            </property>
+            <property name="minimum">
+             <number>-1</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="value">
+             <number>-1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="7">
+           <widget class="QSpinBox" name="dataJalkatNavDropIstuenOik">
+            <property name="specialValueText">
+             <string>Ei mitattu</string>
+            </property>
+            <property name="suffix">
+             <string> mm</string>
+            </property>
+            <property name="minimum">
+             <number>-1</number>
+            </property>
+            <property name="maximum">
+             <number>100</number>
+            </property>
+            <property name="value">
+             <number>-1</number>
+            </property>
+           </widget>
+          </item>
+          <item row="18" column="6">
+           <widget class="QLabel" name="label_307">
+            <property name="text">
+             <string>Painelevymittaus, lisätietoja:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="18" column="7" colspan="3">
+           <widget class="QLineEdit" name="dataJalkatPainelevyTiedot"/>
+          </item>
+          <item row="17" column="6">
+           <widget class="QLabel" name="label_294">
+            <property name="text">
+             <string>Painelevymittaus</string>
+            </property>
+           </widget>
+          </item>
+          <item row="17" column="7">
+           <widget class="QCheckBox" name="dataPainelevy">
+            <property name="text">
+             <string>Tehty</string>
+            </property>
+           </widget>
+          </item>
+          <item row="16" column="6">
+           <widget class="QLabel" name="label_292">
+            <property name="text">
+             <string>Coleman block test</string>
+            </property>
+           </widget>
+          </item>
+          <item row="16" column="7">
+           <widget class="QLineEdit" name="dataJalkatColemanOik"/>
+          </item>
+          <item row="16" column="9">
+           <widget class="QLineEdit" name="dataJalkatColemanVas"/>
+          </item>
+          <item row="15" column="6">
+           <widget class="QLabel" name="label_50">
+            <property name="text">
+             <string>Jackin testi</string>
+            </property>
+           </widget>
+          </item>
+          <item row="15" column="7">
+           <widget class="QComboBox" name="dataJalkatJackTestiOik">
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Aktivoituu hyvin</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Aktivoituu hieman</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Ei aktivoidu</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="15" column="9">
+           <widget class="QComboBox" name="dataJalkatJackTestiVas">
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Aktivoituu hyvin</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Aktivoituu hieman</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Ei aktivoidu</string>
+             </property>
+            </item>
+           </widget>
           </item>
          </layout>
         </item>
@@ -15592,10 +15647,6 @@ lonkka fleksiossa</string>
   <tabstop>dataJalkatNavDropIstuenVas</tabstop>
   <tabstop>dataJalkatNavDropSeistenOik</tabstop>
   <tabstop>dataJalkatNavDropSeistenVas</tabstop>
-  <tabstop>dataJalkatColemanOik</tabstop>
-  <tabstop>dataJalkatColemanVas</tabstop>
-  <tabstop>dataPainelevy</tabstop>
-  <tabstop>dataJalkatPainelevyTiedot</tabstop>
   <tabstop>dataVoimaLonkkaEkstensioPolvi0Oik</tabstop>
   <tabstop>dataVoimaLonkkaEkstensioPolvi0Vas</tabstop>
   <tabstop>dataVoimaLonkkaEkstensioPolvi90Oik</tabstop>
