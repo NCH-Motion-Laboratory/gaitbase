@@ -10,9 +10,10 @@ NOTE: this program is for the purposes of Helsinki Movement Lab and most of the 
 
 ## Installation
 
-The installation is easiest using conda. Clone this repository, change directory to the repository root and run `conda env create`. This should create a conda environment called `gaitbase` with the necessary dependencies. Next, activate the environment and install the package itself by running `pip install .` in the repository root. If you want to install in development mode, use `pip install -e .` instead.
+The installation is easiest using conda. Clone this repository, change directory to the repository root and run `conda env create`. This should create a conda environment called `gaitbase` with the necessary dependencies. Activate the environment and run `gaitbase` to start the program. On Windows, you can create a desktop shortcut by running `gaitbase_make_shortcut` in the activated environment.
 
-On Windows, you can create a desktop shortcut by running `gaitbase_make_shortcut` in the activated environment.
+If you want to install in development mode (so that the package is actually run from the local repository clone), install as above, then run `pip uninstall gaitbase` followed by `pip install -e .` (in the repository root).
+
 
 ## The ROM modality
 
