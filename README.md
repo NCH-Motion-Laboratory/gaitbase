@@ -161,9 +161,9 @@ The most important options are the database path (`database.database`) and the t
 
 SQLite is designed to use a local database file. Having the database file on a network drive is not recommended. For a central multiuser database, a proper database server would be a more correct solution. 
 
-In general, having the database file on the network drive seems to work. For example, no data corruption has occured so far. However, multiple clients can cause a significant slowdown in database access. The reason is probably that Windows network filesystems automatically disable all caching when multiple clients perform read/write access on a file. Locking issues may also arise in some circumstances.
+In general, having the database file on the network drive seems to work. For example, no data corruption has been observed so far. However, multiple clients can cause a significant slowdown in database access. The reason is probably that Windows network filesystems automatically disable all caching when multiple clients perform read/write access on a file. Locking issues may also arise in some circumstances.
 
-The `sqlite3` locking mechanism works so that database writes require an `EXCLUSIVE` lock while they are carried out. This means that all `SHARED` locks must be released before writes can take place. For example, the `QtSql` library may hold SHARED locks indefinitely in some circumstances (e.g. lazy reads), preventing writes (at least writes from different processes). These problems must be worked around, i.e. locks must be released as soon as possible after reads are completed.
+The `sqlite3` locking mechanism works so that database writes require an `EXCLUSIVE` lock while they are carried out. This means that all `SHARED` locks must be released before writes can take place. For example, the `QtSql` library may hold `SHARED` locks indefinitely in some circumstances (e.g. lazy reads), preventing writes (at least writes from different processes). These problems must be worked around, i.e. locks must be released as soon as possible after reads are completed.
 
 ## Compatibility
 
