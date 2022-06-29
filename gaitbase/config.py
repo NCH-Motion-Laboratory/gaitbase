@@ -28,13 +28,14 @@ cfg_user_fn = Path.home() / '.gaitbase.cfg'
 # we assume that config files are encoded in utf-8
 cfg = parse_config(cfg_package_fn, encoding='utf-8')
 
-# update cfg from user file, but do not overwrite comments
+# update cfg from user file
 if cfg_user_fn.is_file():
     logger.debug(f'reading user config from {cfg_user_fn}')
     cfg_user = parse_config(cfg_user_fn)
     update_config(
         cfg,
         cfg_user,
+        create_new_items=False,
         create_new_sections=False,
         update_comments=False,
     )
@@ -44,6 +45,9 @@ else:
     with open(cfg_user_fn, 'w', encoding='utf8') as f:
         f.writelines(cfg_txt)
 
+
+# if template locations are not configured by the user, we revert to package
+# default templates
 if cfg.templates.text is None:
     cfg.templates.text = resource_filename(
         'gaitbase', 'templates/text_template.py'
