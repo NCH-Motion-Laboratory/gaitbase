@@ -17,3 +17,4 @@ dependencies:
     - pytest
     - configdot
     - https://github.com/jjnurminen/ulstools/archive/master.zip
+    - https://github.com/jjnurminen/gaitbase/archive/master.zip
