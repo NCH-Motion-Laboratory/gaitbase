@@ -5,8 +5,8 @@ Create reports for liikelaajuus
 
 @author: Jussi (jnu@iki.fi)
 """
-
 import string
+import re
 from xlrd import open_workbook
 from xlutils.copy import copy
 
@@ -48,26 +48,34 @@ def make_text_report(template, data, fields_at_default):
 
 
 def _process_blocks(blocks, data, fields_at_default):
-    """Process a list of text/separator blocks into text"""
-    ITEM_SEPARATOR = '. '
+    """Process a list of text blocks.
+
+    For template formatting rules, see the example Python template under
+    gaitbase/templates.
+    """
     block_formatted = ''
     report_text = ''
-    for k, block in enumerate(blocks):
-        if block == Constants.conditional_dot:
-            if blocks[k - 1] != Constants.conditional_dot and block_formatted:
-                report_text += ITEM_SEPARATOR
-        else:
-            block_formatted = _conditional_format(block, data, fields_at_default)
-            if block_formatted:
-                report_text += block_formatted
+    for block in blocks:
+        if block == Constants.end_line:
+            # remove preceding end-of-line comma, if any
+            report_text = re.sub(r',\s*$', '', report_text)
+            # add dot & linefeed (only at end of line)
+            if report_text[-1] != '\n':
+                report_text += '.\n'
+        elif block_formatted := _conditional_format(block, data, fields_at_default):
+            if report_text and report_text[-1] == '\n':
+                # if the block starts a new line, capitalize the first letter
+                block_formatted = block_formatted[0].upper() + block_formatted[1:]
+            report_text += block_formatted
     return report_text
 
 
 def _conditional_format(thestr, data, fields_at_default):
-    """Conditionally format string thestr. Fields given as {variable} are
-    formatted using the data. If all fields are default, an empty string is
-    returned."""
-    flds = list(_get_format_fields(thestr))
+    """Conditionally format string thestr.
+
+    Fields given as {field} are replaced with their values in the data dict. If
+    all the fields are in the fields_at_default list, an empty string is returned."""
+    flds = _get_format_fields(thestr)
     if not flds or any(fld not in fields_at_default for fld in flds):
         return thestr.format(**data)
     else:
@@ -78,13 +86,10 @@ def _get_format_fields(thestr):
     """Yield fields from a format string.
 
     Example:
-    input: '{foo} is {bar}' would give output: ('foo', 'bar')
+    thestr == '{foo} is {bar}' would yield 'foo', 'bar'
     """
     formatter = string.Formatter()
-    pit = formatter.parse(thestr)  # returns parser generator
-    for items in pit:
-        if items[1]:
-            yield items[1]  # = the field
+    return [fieldname for (_, fieldname, _, _) in formatter.parse(thestr) if fieldname]
 
 
 def make_excel_report(xls_template, data, fields_at_default):
