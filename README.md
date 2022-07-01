@@ -162,6 +162,12 @@ In general, having the database file on the network drive seems to work. For exa
 
 The `sqlite3` locking mechanism works so that database writes require an `EXCLUSIVE` lock while they are carried out. This means that all `SHARED` locks must be released before writes can take place. For example, the `QtSql` library may hold `SHARED` locks indefinitely in some circumstances (e.g. lazy reads), preventing writes (at least writes from different processes). These problems must be worked around, i.e. locks must be released as soon as possible after reads are completed.
 
+## Encoding
+
+All input (e.g. the text template ) and output files (e.g. text reports) should be in the UTF-8 encoding. Python files (such as the text template) indicate their encoding by a special header comment. For other text files, the encoding needs to be explicitly specified when opening the file. Note that UTF-8 is not the default encoding on Windows.
+
+Textual data written into the database is encoded as UTF-8. 
+
 ## Compatibility
 
 The program should work with Python 3.7+. It has been tested mostly on Windows, but seems to work equally well on Linux. However on Linux, Qt Designer refuses to load the custom widget plugin, for unknown reasons.
