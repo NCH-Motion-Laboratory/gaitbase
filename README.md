@@ -74,7 +74,7 @@ The UI is created in Qt Designer. (Nowadays there is a newer alternative called 
    </td>
    <td>Longer text (e.g. comments)
    </td>
-   <td>Leading and trailing whitespace will be stripped when reading from the widget. Linefeeds must be manually inserted when entering data into the widget.
+   <td>Leading and trailing whitespace will be stripped when reading from the widget.
    </td>
   </tr>
   <tr>
