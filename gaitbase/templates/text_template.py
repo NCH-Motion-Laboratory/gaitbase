@@ -39,7 +39,8 @@ or "block1" and "block2" will silently be merged into one block.
 @author: Jussi (jnu@iki.fi)
 """
 
-
+# relative imports may not work here, since the template can be located anywhere;
+# it's safer to explicitly import from gaitbase
 from gaitbase.constants import Constants
 
 end_line = Constants.end_line
