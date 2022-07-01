@@ -28,13 +28,11 @@ NOTE: before filling in the fields, certain values may be replaced according to
 the dictionary cfg.report.replace_data. For example, 'Ei mitattu' gets
 translated into '-' for brevity.
 
-NOTE: don't forget the comma after single-quoted strings, otherwise the Python
-parser will merge them. I.e. don't write
+NOTE: don't forget the comma after block definitions, otherwise the Python
+parser will merge them, i.e. don't write
 
 "block1"
 "block2"
-
-or "block1" and "block2" will silently be merged into one block.
 
 @author: Jussi (jnu@iki.fi)
 """
@@ -108,7 +106,7 @@ end_line,
 end_line,
 """
 Kommentit (PROM): {cmtNilkkaPROM}
-"""
+""",
 """
 Kommentit (AROM): {cmtNilkkaAROM}
 """,
