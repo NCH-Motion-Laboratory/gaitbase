@@ -83,10 +83,9 @@ def _conditional_format(thestr, data, fields_at_default):
 
 
 def _get_format_fields(thestr):
-    """Yield fields from a format string.
+    """Return a list of fields, given a format string.
 
-    Example:
-    thestr == '{foo} is {bar}' would yield 'foo', 'bar'
+    For '{foo} is {bar}' would return ['foo', 'bar']
     """
     formatter = string.Formatter()
     return [fieldname for (_, fieldname, _, _) in formatter.parse(thestr) if fieldname]

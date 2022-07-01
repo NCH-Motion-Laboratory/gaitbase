@@ -31,7 +31,6 @@ parser will merge them. I.e. don't write
 
 TODO: 
 
--utf-8 handling?
 -replacements
 
 @author: Jussi (jnu@iki.fi)
