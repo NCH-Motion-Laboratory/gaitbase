@@ -171,7 +171,7 @@ class EntryApp(QtWidgets.QMainWindow):
     def get_patient_data(self):
         """Get patient id data from the read-only fields as a dict.
 
-        This is mostly for purposes of reporting, which expects the ID data to
+        This is mostly for purposes of reporting, which needs some the ID data to
         be available.
         """
         return {

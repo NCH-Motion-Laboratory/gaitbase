@@ -463,7 +463,7 @@ class PatientDialog(QtWidgets.QMainWindow):
                 f.write(report_txt)
             self.statusbar.showMessage('Opening report in text editor...')
             _startfile(fname)
-        except SyntaxError as e:
+        except (SyntaxError, NameError) as e:
             qt_message_dialog(f'The report template contains syntax errors:\n{e}')
         except KeyError as e:
             qt_message_dialog(f'The report template refers to an unknown variable:\n{e}')

@@ -150,7 +150,7 @@ end_line,
 "lonkka koukussa {LonkkaAbduktioLonkkaFleksOik}/{LonkkaAbduktioLonkkaFleksVas}, ",
 "MAS {LonkkaFleksioModAOik}/{LonkkaFleksioModAVas}, ",
 end_line,
-"lähennys {LonkkaFleksioModAOik}/{LonkkaFleksioModAVas}, ",
+"lähennys {LonkkaAdduktioOik}/{LonkkaAdduktioVas}, ",
 end_line,
 "sisäkierto {LonkkaSisakiertoOik}/{LonkkaSisakiertoVas}, ",
 "ulkokierto {LonkkaUlkokiertoOik}/{LonkkaUlkokiertoVas}, ",
@@ -208,6 +208,7 @@ end_line,
 """
 Kommentit (jalkaterä kuormittamattomana): {cmtJalkateraKuormittamattomana}
 """,
+
 """
 Jalkaterä kuormitettuna:
 
@@ -221,10 +222,16 @@ end_line,
 end_line,
 "takaosan kierto {JalkatTakaosanKiertoKuormOik}/{JalkatTakaosanKiertoKuormVas}, ",
 "Feissin linja {JalkatFeissinLinjaOik}/{JalkatFeissinLinjaVas}, ",
-"navicular drop istuen {JalkatNavDropIstuenOik}/{JalkatNavDropIstuenVas}, "
-"navicular drop seisten {JalkatNavDropSeistenOik}/{JalkatNavDropSeistenVas}, "
-"Jackin testi {JalkatJackTestiOik}/{JalkatJackTestiVas}, ",
+"navicular drop istuen {JalkatNavDropIstuenOik}/{JalkatNavDropIstuenVas}, ",
+"navicular drop seisten {JalkatNavDropSeistenOik}/{JalkatNavDropSeistenVas}, ",
 end_line,
+"Jackin testi {JalkatJackTestiOik}/{JalkatJackTestiVas}, ",
+"Colemanin block -testi {JalkatColemanOik}/{JalkatColemanVas}",
+end_line,
+"""
+Kommentit (jalkaterä kuormitettuna): {cmtJalkateraKuormitettuna}
+""",
+
 """
 Manuaalisesti mitattu lihasvoima (asteikko 0-5):
 
