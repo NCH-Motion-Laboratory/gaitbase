@@ -528,6 +528,7 @@ def main():
     app = QtWidgets.QApplication(sys.argv)
     pdi = PatientDialog()
 
+
     def my_excepthook(exc_type, value, tback):
         """Custom exception handler for fatal (unhandled) exceptions.
 
