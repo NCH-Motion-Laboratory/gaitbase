@@ -142,15 +142,11 @@ Pituus: {AntropPituus}
 Paino: {AntropPaino}
 ```
 
-Fields are denoted by curly braces, as in standard Python string formatting. In this block, the ROM variables `AntropPituus` and `AntropPaino` would be replaced by their corresponding values. Additionally, if the block contains fields and all of the fields are at their default values, the block will not be printed, to prevent cluttering the report by noninformative text.
-
-The report may also use any other Python logic to build up the `text_blocks` variable. Note that the code in the report is executed by `exec()` without any sanity checks. After the report code has been executed, the text blocks will be processed one by one and the variables filled in. 
-
-In addition to the ROM variables, the report may refer to variables from the patients table (name, SSN, diagnosis etc.) to display patient information. 
+Fields are denoted by curly braces, as in standard Python string formatting. In this block, the ROM variables `AntropPituus` and `AntropPaino` would be replaced by their corresponding values. Additionally, if the block contains fields and all of the fields are at their default values, the block will not be printed, to prevent cluttering the report. For the exact formatting rules, see the package default template `gaitbase/templates/text_template.py`.
 
 The Excel report template works in a very similar fashion. Each cell may contain text and fields denoted by curly braces referring to variables. The program will scan through the cells in the template and replace field names by the corresponding values. 
 
-The user may define their own templates. See next section.
+The template locations can be specified in the user configuration file. If they are not specified, the program will use the package default templates.
 
 ## Package configuration
 
