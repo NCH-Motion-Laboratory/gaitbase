@@ -8,7 +8,7 @@ import argparse
 from pathlib import Path
 import sqlite3
 
-from gaitbase.dump_varlist import get_vars_and_affinities
+from .dump_varlist import get_vars_and_affinities
 
 
 def check_ui_vs_sql(db_fname, create_sql_columns=False):

@@ -8,7 +8,7 @@ the script needs to be adapted to create the corresponding tables.
 from pathlib import Path
 import sqlite3
 
-from gaitbase.dump_varlist import get_vars_and_affinities
+from .dump_varlist import get_vars_and_affinities
 
 DB_FILEPATH = Path('patients.db')
 

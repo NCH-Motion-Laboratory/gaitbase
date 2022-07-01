@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 """
-
 Run some checks on the report template.
 
 @author: jussi (jnu@iki.fi)
 """
 
-# from .rom_entryapp import EntryApp
-from gaitbase.reporter import _get_format_fields
-from gaitbase.dump_varlist import get_vars_and_affinities
+
+from .reporter import _get_format_fields
+from .dump_varlist import get_vars_and_affinities
 
 
 def _check_template(template):

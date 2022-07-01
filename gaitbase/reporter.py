@@ -10,7 +10,7 @@ import re
 from xlrd import open_workbook
 from xlutils.copy import copy
 
-from gaitbase.constants import Constants
+from .constants import Constants
 from .config import cfg
 
 

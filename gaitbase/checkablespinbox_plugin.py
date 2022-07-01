@@ -13,7 +13,7 @@ NB: for some reason, Designer refuses to display the widget in Linux.
 @author: Jussi (jnu@iki.fi)
 """
 
-from gaitbase.widgets import CheckableSpinBox
+from .widgets import CheckableSpinBox
 from PyQt5 import QtDesigner
 
 

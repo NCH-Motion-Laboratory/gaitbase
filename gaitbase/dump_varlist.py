@@ -11,7 +11,7 @@ import argparse
 
 from PyQt5 import QtWidgets
 
-from gaitbase.rom_entryapp import EntryApp
+from .rom_entryapp import EntryApp
 
 
 def _type_affinity(widget):
