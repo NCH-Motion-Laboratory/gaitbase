@@ -415,7 +415,7 @@ class EntryApp(QtWidgets.QMainWindow):
         """Return varnames that are at their default values"""
         return [var for var in self.data if self.data[var] == self.data_default[var]]
 
-    def make_txt_report(self, template, include_units=True):
+    def make_text_report(self, template, include_units=True):
         """Create text report from current data"""
         if include_units:
             data = dict()
