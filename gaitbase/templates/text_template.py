@@ -199,6 +199,38 @@ end_line,
 """
 Kommentit (jalkaterä kuormittamattomana): {cmtJalkateraKuormittamattomana}
 """,
+"""
+Jalkaterä kuormitettuna
+""",
+"takaosan (kantaluun) asento {JalkatTakaosanAsentoKuormOik}/{JalkatTakaosanAsentoKuormVas}, "
+"takaosan kierto {JalkatTakaosanKiertoKuormOik}/{JalkatTakaosanKiertoKuormVas}, ",
+"keskiosan asento {JalkatKeskiosanAsentoKuormOik}/{JalkatKeskiosanAsentoKuormVas}, ",
+"etuosan asento 1 {JalkatEtuosanAsentoKuorm1Oik}/{JalkatEtuosanAsento1KuormVas}, ",
+"etuosan asento 2 {JalkatEtuosanAsento2KuormOik}/{JalkatEtuosanAsento2KuormVas}",
+end_line,
+"takaosan kierto {JalkatTakaosanKiertoKuormOik}/{JalkatTakaosanKiertoKuormVas}, ",
+"Feissin linja {JalkatFeissinLinjaOik}/{JalkatFeissinLinjaVas}, ",
+"navicular drop istuen {JalkatNavDropIstuenOik}/{JalkatNavDropIstuenVas}, "
+"navicular drop seisten {JalkatNavDropSeistenOik}/{JalkatNavDropSeistenVas}, "
+"Jackin testi {JalkatJackTestiOik}/{JalkatJackTestiVas}",
+end_line,
+"""
+Manuaalisesti mitattu lihasvoima (asteikko 0-5):
+"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
