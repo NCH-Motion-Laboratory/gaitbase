@@ -23,11 +23,13 @@ The code in this file is executed by exec(). Any Python logic may be used to
 build the text_blocks variable. However for readability, it may be a good idea
 to minimize the amount of code and keep the template as "textual" as possible.
 
-NOTE: don't forget the comma after single-line blocks, otherwise the Python
-parser will merge subsequent lines together into a multiline block. I.e. don't write
+NOTE: don't forget the comma after single-quoted strings, otherwise the Python
+parser will merge the strings. I.e. don't write
 
-"line1"
-"line2"
+"block1"
+"block2"
+
+TODO: utf-8 handling?
 
 @author: Jussi (jnu@iki.fi)
 """
@@ -158,4 +160,58 @@ Kommentit (lonkka, spatisuus): {cmtLonkkaSpast}
 """
 Kommentit (lonkka, muut): {cmtLonkkaMuut}
 """,
+"""
+Luiset asennot:
+""",
+"jalkaterä-reisi -kulma {VirheasJalkaReisiOik}/{VirheasJalkaReisiVas}, ",
+"jalkaterän etu-takaosan kulma {VirheasJalkateraEtuTakaOik}/{VirheasJalkateraEtuTakaVas}, ",
+"bimalleoli-akseli {VirheasBimalleoliOik}/{VirheasBimalleoliVas}, ",
+"2nd toe -testi {Virheas2ndtoeOik}/{Virheas2ndtoeVas}",
+end_line,
+"patella alta {VirheasPatellaAltaOik}/{VirheasPatellaAltaVas}, ",
+"polven valgus {PolvenValgusOik}/{PolvenValgusVas}, ",
+"Q-kulma {QkulmaOik}/{QkulmaVas}, ",
+"Lonkan anteversio {VirheasAnteversioOik}/{VirheasAnteversioVas}, ",
+"Alaraajojen pituus {AntropAlaraajaOik}/{AntropAlaraajaVas}, ",
+"Jalkaterien pituus {AntropJalkateraOik}/{AntropJalkateraVas}",
+end_line,
+"""
+Kommentit (luiset asennot): {cmtVirheas}
+""",
+"""
+Jalkaterä kuormittamattomana
+""",
+"subtalar neutraali-asento {JalkatSubtalarOik}/{JalkatSubtalarVas}, ",
+"takaosan asento {JalkatTakaosanAsentoOik}/{JalkatTakaosanAsentoVas}, ",
+"takaosan liike eversioon {JalkatTakaosanLiikeEversioOik}/{JalkatTakaosanLiikeEversioVas}, ",
+"takaosan liike inversioon {JalkatTakaosanLiikeInversioOik}/{JalkatTakaosanLiikeInversioVas}",
+end_line,
+"med. holvikaari {JalkatHolvikaariOik}/{JalkatHolvikaariVas}, ",
+"midtarsaalinivelen liike {JalkatKeskiosanliikeOik}/{JalkatKeskiosanliikeVas}, ",
+"etuosan asento 1 {JalkatEtuosanAsento1Oik}/{JalkatEtuosanAsento1Vas}, ",
+"etuosan asento 2 {JalkatEtuosanAsento2Oik}/{JalkatEtuosanAsento2Vas}",
+end_line,
+"1. säde {Jalkat1sadeOik}/{Jalkat1sadeVas}, ",
+"1. MTP ojennus {Jalkat1MTPojennusOik}/{Jalkat1MTPojennusVas}, ",
+"vaivaisenluu oikea: {JalkatVaivaisenluuOik} vasen: {JalkatVaivaisenluuVas}, ",
+"kovettumat oikea: {JalkatKovettumatOik}/{JalkatKovettumatVas}",
+end_line,
+"""
+Kommentit (jalkaterä kuormittamattomana): {cmtJalkateraKuormittamattomana}
+""",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ]
