@@ -100,13 +100,13 @@ end_line,
 "Confusion-testi oikea: {NilkkaConfusionOik}, vasen: {NilkkaConfusionVas}, ",
 end_line,
 """
-Kommentit (nilkka PROM): {cmtNilkkaPROM}
+Kommentit (PROM): {cmtNilkkaPROM}
 """
 """
-Kommentit (nilkka AROM): {cmtNilkkaAROM}
+Kommentit (AROM): {cmtNilkkaAROM}
 """,
 """
-Kommentit (nilkka, spastisuus): {cmtNilkkaSpast}
+Kommentit (spastisuus): {cmtNilkkaSpast}
 """,
 
 """
@@ -125,13 +125,13 @@ end_line,
 "polven ojennus {PolviEkstensioAvOik}/{PolviEkstensioAvVas}, ",
 "vapaasti {PolviEkstensioVapOik}/{PolviEkstensioVapVas}, ",
 end_line,
-"Extensor lag {LonkkaExtLagOik}{LonkkaExtLagVas}, ",
+"Extensor lag {LonkkaExtLagOik}/{LonkkaExtLagVas}, ",
 end_line,
 """
-Kommentit (polvi PROM): {cmtPolviPROM}
+Kommentit (PROM): {cmtPolviPROM}
 """,
 """
-Kommentit (polvi, spastisuus): {cmtPolviSpast}
+Kommentit (spastisuus): {cmtPolviSpast}
 """,
 """
 Lonkka:
@@ -184,7 +184,7 @@ end_line,
 Kommentit (luiset asennot): {cmtVirheas}
 """,
 """
-Jalkaterä kuormittamattomana
+Jalkaterä kuormittamattomana:
 
 """,
 "subtalar neutraali-asento {JalkatSubtalarOik}/{JalkatSubtalarVas}, ",
@@ -199,6 +199,7 @@ end_line,
 end_line,
 "1. säde {Jalkat1sadeOik}/{Jalkat1sadeVas}, ",
 "1. MTP ojennus {Jalkat1MTPojennusOik}/{Jalkat1MTPojennusVas}, ",
+end_line,
 "vaivaisenluu oikea: {JalkatVaivaisenluuOik} vasen: {JalkatVaivaisenluuVas}, ",
 "kovettumat oikea: {JalkatKovettumatOik}/{JalkatKovettumatVas}, ",
 end_line,
@@ -206,12 +207,13 @@ end_line,
 Kommentit (jalkaterä kuormittamattomana): {cmtJalkateraKuormittamattomana}
 """,
 """
-Jalkaterä kuormitettuna
+Jalkaterä kuormitettuna:
 
 """,
 "takaosan (kantaluun) asento {JalkatTakaosanAsentoKuormOik}/{JalkatTakaosanAsentoKuormVas}, "
 "takaosan kierto {JalkatTakaosanKiertoKuormOik}/{JalkatTakaosanKiertoKuormVas}, ",
 "keskiosan asento {JalkatKeskiosanAsentoKuormOik}/{JalkatKeskiosanAsentoKuormVas}, ",
+end_line,
 "etuosan asento 1 {JalkatEtuosanAsento1KuormOik}/{JalkatEtuosanAsento1KuormVas}, ",
 "etuosan asento 2 {JalkatEtuosanAsento2KuormOik}/{JalkatEtuosanAsento2KuormVas}, ",
 end_line,
@@ -235,12 +237,14 @@ end_line,
 "isovarpaan koukistus {VoimaFlexHallucisLongusOik}/{VoimaFlexHallucisLongusVas}, ",
 "varpaiden (2-5) ojennus {Voima25OjennusOik}/{Voima25OjennusVas}, ",
 "varpaiden (2-5) koukistus {Voima25KoukistusOik}/{Voima25KoukistusVas}, ",
+end_line,
 "polven ojennus {VoimaPolviEkstensioOik}/{VoimaPolviEkstensioVas}, ",
 "polven koukistus {VoimaPolviFleksioOik}/{VoimaPolviFleksioVas}, ",
 end_line,
 "lonkan ojennus {VoimaLonkkaEkstensioPolvi0Oik}/{VoimaLonkkaEkstensioPolvi0Vas}, ",
 "lonkan ojennus polvi koukussa {VoimaLonkkaEkstensioPolvi90Oik}/{VoimaLonkkaEkstensioPolvi90Vas}, ",
 "lonkan koukistus {VoimaLonkkaFleksioOik}/{VoimaLonkkaFleksioVas}, ",
+end_line,
 "lonkan loitonnus {VoimaLonkkaAbduktioLonkka0Oik}/{VoimaLonkkaAbduktioLonkka0Vas}, ",
 "lonkan loitonnus lonkka koukussa {VoimaLonkkaAbduktioLonkkaFleksOik}/{VoimaLonkkaAbduktioLonkkaFleksVas}, ",
 end_line,
@@ -253,12 +257,12 @@ end_line,
 "selkälihakset {VoimaSelka}",
 end_line,
 """
-Kommentit (voima/selektiivisyys): {cmtVoima1} {cmtVoima2}
+Kommentit (voima): {cmtVoima1} {cmtVoima2}
 """,
 """
-Selektiivisyys
-
+Selektiivisyys:
 """,
+
 "nilkan koukistus {SelTibialisAnteriorOik}/{SelTibialisAnteriorVas}, ",
 "nilkan ojennus (gastrocnemius) {SelGastroOik}/{SelGastroVas}, ",
 "nilkan ojennus (soleus) {SelSoleusOik}/{SelSoleusVas}, ",
@@ -269,6 +273,7 @@ end_line,
 "isovarpaan koukistus {SelFlexHallucisLongusOik}/{SelFlexHallucisLongusVas}, ",
 "varpaiden (2-5) ojennus {Sel25OjennusOik}/{Sel25OjennusVas}, ",
 "varpaiden (2-5) koukistus {Sel25KoukistusOik}/{Sel25KoukistusVas}, ",
+end_line,
 "polven ojennus {SelPolviEkstensioOik}/{SelPolviEkstensioVas}, ",
 "polven koukistus {SelPolviFleksioOik}/{SelPolviFleksioVas}, ",
 end_line,
@@ -282,13 +287,8 @@ end_line,
 "lonkan ulkokierto {SelLonkkaUlkokiertoOik}/{SelLonkkaUlkokiertoVas}, ",
 end_line,
 """
-Kommentit (voima/selektiivisyys): {cmtVoima1} {cmtVoima2}
-""",
-"""
 Alaraajojen lihasaktivaatio mitattiin pintaelektroidella seuraavista lihaksista:
 
-""",
-"""
 Soleus: {EMGSol},
 Gastrocnemius: {EMGGas},
 Peroneus: {EMGPer},
@@ -296,7 +296,7 @@ Tibialis anterior: {EMGTibA},
 Rectus: {EMGRec},
 Hamstring: {EMGHam},
 Vastus: {EMGVas},
-Gluteus: {EMGGlut}
+Gluteus: {EMGGlut}.
 """,
 """
 Kommentit (EMG): {cmtEMG}
