@@ -5,8 +5,6 @@ Dump gaitbase variable names and their SQLite affinities.
 
 @author: jussi (jnu@iki.fi)
 """
-
-import io
 import json
 import sys
 import argparse
@@ -58,9 +56,12 @@ if __name__ == '__main__':
         if args.json:
             out = json.dumps(var_affs, ensure_ascii=False, indent=True, sort_keys=True)
         else:
-            out = '\n'.join([f'{varname}: {aff}' for varname, aff in var_affs.items()])
+            aff_list = sorted(
+                [f'{varname}: {aff}' for varname, aff in var_affs.items()]
+            )
+            out = '\n'.join(aff_list)
     else:
-        sorted_vars = sorted(var_affs.keys(), key=str.casefold)
+        sorted_vars = sorted(var_affs.keys())
         if args.json:
             out = json.dumps(sorted_vars, ensure_ascii=False, indent=True)
         else:
