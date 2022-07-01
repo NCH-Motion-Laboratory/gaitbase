@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-
-Create reports for liikelaajuus
+Create reports for gaitbase.
 
 @author: Jussi (jnu@iki.fi)
 """

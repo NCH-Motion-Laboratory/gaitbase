@@ -6,7 +6,7 @@ Run some checks on the report template.
 """
 
 
-from .reporter import _get_format_fields
+from .rom_reporter import _get_format_fields
 from .dump_varlist import get_vars_and_affinities
 
 

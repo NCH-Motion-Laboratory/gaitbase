@@ -16,7 +16,7 @@ from PyQt5 import QtCore, QtWidgets, uic
 from PyQt5.QtSql import QSqlQuery
 
 
-from . import reporter
+from . import rom_reporter
 from .config import cfg
 from .constants import Constants, Finnish
 from .widgets import (
@@ -418,14 +418,14 @@ class EntryApp(QtWidgets.QMainWindow):
         # patient ID data is needed for the report, but it's not part of the ROM
         # table, so get it separately
         report_data = data | self.patient_data
-        return reporter.make_text_report(template, report_data, self.vars_at_default)
+        return rom_reporter.make_text_report(template, report_data, self.vars_at_default)
 
     def make_excel_report(self, xls_template):
         """Create Excel report from current data"""
         # patient ID data is needed for the report, but it's not part of the ROM
         # table, so get it separately
         report_data = self.data | self.patient_data
-        return reporter.make_excel_report(
+        return rom_reporter.make_excel_report(
             xls_template, report_data, self.vars_at_default
         )
 
