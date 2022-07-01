@@ -38,7 +38,7 @@ The UI is created in Qt Designer. (Nowadays there is a newer alternative called 
    </td>
   </tr>
   <tr>
-   <td>`QSpinBox`, `QDoubleSpinBox`
+   <td>QSpinBox, QDoubleSpinBox
    </td>
    <td>Numeric values
    </td>
@@ -46,7 +46,7 @@ The UI is created in Qt Designer. (Nowadays there is a newer alternative called 
    </td>
   </tr>
   <tr>
-   <td>`QLineEdit`
+   <td>QLineEdit
    </td>
    <td>Short text (one line)
    </td>
@@ -70,15 +70,15 @@ The UI is created in Qt Designer. (Nowadays there is a newer alternative called 
    </td>
   </tr>
   <tr>
-   <td>`QTextEdit`
+   <td>QTextEdit
    </td>
    <td>Longer text (e.g. comments)
    </td>
-   <td>Leading and trailing whitespace will be stripped when reading from the widget.
+   <td>Leading and trailing whitespace will be stripped when reading from the widget. Linefeeds must be manually inserted when entering data into the widget.
    </td>
   </tr>
   <tr>
-   <td>`QCheckBox`
+   <td>QCheckBox
    </td>
    <td>Boolean values (yes/no)
    </td>
