@@ -3,17 +3,17 @@
 Python template for the text report.
 
 The template must define a variable called text_blocks, which must be an
-iterable of text blocks (strings). Each block may contain fields written as
-{field}. They will be replaced by their corresponding values. If a block
-contains fields and ALL of the fields are at their default values, the block
-will be discarded. Any columns in the SQL 'patients' and 'roms' tables are valid
-field names.
+iterable of text blocks (strings). The report text is built by concatenating the
+blocks. Each block may contain fields written as {field}. They will be replaced
+by their corresponding values. If a block contains fields and ALL of the fields
+are at their default values, the block will be discarded. Any columns in the SQL
+'patients' and 'roms' tables are valid field names.
 
 Besides text, a block may consist of a "smart" end-of-line (Constants.end_line).
-It prints a dot & linefeed, if the previous character in the processed text is
-not a line feed. It will also erase any preceding commas at the end of line.
-This extra logic is needed for clean output, since we do not know in advance
-which blocks on a given line will get printed. 
+It prints a dot & linefeed, if the preceding character in the resulting text is
+not a line feed. It will also erase any preceding commas at the end of line. The
+smart end-of-line should be used to terminate lines consisting of multiple
+text blocks.
 
 If a block begins a new line in the resulting report, its first letter will be
 automatically capitalized. This is necessary, since we may not know in advance
@@ -24,12 +24,15 @@ build the text_blocks variable. However for readability, it may be a good idea
 to minimize the amount of code and keep the template as "textual" as possible.
 
 NOTE: don't forget the comma after single-quoted strings, otherwise the Python
-parser will merge the strings. I.e. don't write
+parser will merge them. I.e. don't write
 
 "block1"
 "block2"
 
-TODO: utf-8 handling?
+TODO: 
+
+-utf-8 handling?
+-replacements
 
 @author: Jussi (jnu@iki.fi)
 """
