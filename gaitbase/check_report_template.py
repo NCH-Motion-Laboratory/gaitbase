@@ -29,11 +29,10 @@ def _check_template(template):
         if isinstance(block, str):
             template_fields.update(_get_format_fields(block))
 
-    # get the vars defined in the UI and compare
+    # get the ROM vars defined in the UI and compare
     ui_vars = set(get_vars_and_affinities())
-    # these are extra patient info fields that the UI provides;
-    # the report may also reference them
-    ui_vars.update({'TiedotNimi', 'TiedotID', 'TiedotHetu', 'TiedotDiag'})
+    # the report may also reference columns from the patients table
+    ui_vars.update({'firstname', 'lastname', 'ssn', 'patient_code', 'diagnosis'})
     not_in_report = ui_vars - template_fields
     unrecognized = template_fields - ui_vars
 

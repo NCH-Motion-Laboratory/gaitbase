@@ -4,24 +4,29 @@ Python template for the text report.
 
 The template must define a variable called text_blocks, which must be an
 iterable of text blocks (strings). The report text is built by concatenating the
-blocks. Each block may contain fields written as {field}. They will be replaced
-by their corresponding values. If a block contains fields and ALL of the fields
-are at their default values, the block will be discarded. Any columns in the SQL
-'patients' and 'roms' tables are valid field names.
+blocks. Each block may contain fields written as {field_name}. They will be
+replaced by the corresponding values. If a block contains fields and ALL of the
+fields are at their default values, the block will be discarded. Any columns in
+the SQL 'roms' and 'patients' table are valid field names.
 
-Besides text, a block may consist of a "smart" end-of-line (Constants.end_line).
-It prints a dot & linefeed, if the preceding character in the resulting text is
-not a line feed. It will also erase any preceding commas at the end of line. The
-smart end-of-line should be used to terminate lines consisting of multiple
-text blocks.
+Besides text, a block may consist of a "smart end-of-line" (Constants.end_line).
+It prints a dot & linefeed, IF the preceding character in the result text is not
+a line feed. It will also erase any preceding commas at the end of line. The
+smart end-of-line should be used to terminate lines consisting of multiple text
+blocks, since it's not known in advance which blocks will be printed.
 
 If a block begins a new line in the resulting report, its first letter will be
 automatically capitalized. This is necessary, since we may not know in advance
 which block begins a line.
 
-The code in this file is executed by exec(). Any Python logic may be used to
-build the text_blocks variable. However for readability, it may be a good idea
-to minimize the amount of code and keep the template as "textual" as possible.
+The code in this file is executed by exec(). In principle, any Python logic may
+be used to build the text_blocks variable. However for readability, it may be a
+good idea to minimize the amount of code and keep the template as "textual" as
+possible.
+
+NOTE: before filling in the fields, certain values may be replaced according to
+the dictionary cfg.report.replace_data. For example, 'Ei mitattu' gets
+translated into '-' for brevity.
 
 NOTE: don't forget the comma after single-quoted strings, otherwise the Python
 parser will merge them. I.e. don't write
@@ -29,12 +34,11 @@ parser will merge them. I.e. don't write
 "block1"
 "block2"
 
-TODO: 
-
--replacements
+or "block1" and "block2" will silently be merged into one block.
 
 @author: Jussi (jnu@iki.fi)
 """
+
 
 from gaitbase.constants import Constants
 
@@ -44,10 +48,10 @@ text_blocks = [
 """
 LIIKELAAJUUDET JA VOIMAT
 
-Patient code: {TiedotID}
-Patient name: {TiedotNimi}
-Social security number: {TiedotHetu}
-Diagnosis: {TiedotDiag}
+Patient code: {patient_code}
+Patient name: {firstname} {lastname}
+Social security number: {ssn}
+Diagnosis: {diagnosis}
 Date of gait analysis: {TiedotPvm}
 """,
 

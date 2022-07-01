@@ -425,10 +425,10 @@ class PatientDialog(QtWidgets.QMainWindow):
             return
         if rom_id in self._rom_windows:
             qt_message_dialog('This ROM is already open')
-            retur
+            return
         app = EntryApp(self.database, rom_id, newly_created)
         app.closing.connect(self._editor_closing)
-        # keep tracks of editor windows (keyed by rom id number)
+        # keep track of editor windows (keyed by rom id number)
         self._rom_windows[rom_id] = app
         app.show()
 
@@ -441,11 +441,15 @@ class PatientDialog(QtWidgets.QMainWindow):
         # the instance is not shown as a window
         app = EntryApp(self.database, rom_id, False)
         fname = named_tempfile(suffix='.xls')
-        report = app.make_excel_report(cfg.templates.xls)
-        report.save(fname)
-        self.statusbar.showMessage('Opening report in Excel...')
-        _startfile(fname)
-        app.force_close()
+        try:
+            report = app.make_excel_report(cfg.templates.xls)
+            report.save(fname)
+            self.statusbar.showMessage('Opening report in Excel...')
+            _startfile(fname)
+        except KeyError as e:
+            qt_message_dialog(f'The Excel report template refers to an unknown variable:\n{e}')
+        finally:
+            app.force_close()
         self.statusbar.showMessage(self.msg_db_ready)
 
     def _rom_text_report(self):

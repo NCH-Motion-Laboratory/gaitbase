@@ -152,8 +152,9 @@ class EntryApp(QtWidgets.QMainWindow):
             # it's possible that locking failures may occur here, so make them non-fatal
             self.db_failure(query, fatal=False)
 
-    def init_patient_widgets(self):
-        """Fill the read-only patient info widgets"""
+    @property
+    def patient_data(self):
+        """Return a dictionary of fields and values from the patient table"""
         patient_id = self.select(['patient_id'])[0].value()  # SQL id of current patient
         thevars = ['firstname', 'lastname', 'ssn', 'patient_code', 'diagnosis']
         varlist = ','.join(thevars)
@@ -162,24 +163,14 @@ class EntryApp(QtWidgets.QMainWindow):
         query.bindValue(':patient_id', patient_id)
         if not query.exec() or not query.first():
             self.db_failure(query, fatal=True)
-        for k, var in enumerate(thevars):
-            val = query.value(k)
-            widget_name = 'rdonly_' + var
-            self.__dict__[widget_name].setText(val)
+        return {var: query.value(k) for k, var in enumerate(thevars)}
+
+    def init_patient_widgets(self):
+        """Fill the read-only patient info widgets"""
+        for var, value in self.patient_data.items():
+            widget_name = 'rdonly_' + var  # corresponding UI widget name
+            self.__dict__[widget_name].setText(value)
             self.__dict__[widget_name].setEnabled(False)
-
-    def get_patient_data(self):
-        """Get patient id data from the read-only fields as a dict.
-
-        This is mostly for purposes of reporting, which needs some the ID data to
-        be available.
-        """
-        return {
-            'TiedotID': self.rdonly_patient_code.text(),
-            'TiedotNimi': f'{self.rdonly_firstname.text()} {self.rdonly_lastname.text()}',
-            'TiedotHetu': self.rdonly_ssn.text(),
-            'TiedotDiag': self.rdonly_diagnosis.text(),
-        }
 
     def eventFilter(self, source, event):
         """Captures the FocusOut event for text widgets.
@@ -394,10 +385,10 @@ class EntryApp(QtWidgets.QMainWindow):
 
     def _compose_json_filename(self):
         """Make up a JSON filename"""
-        pdata = self.get_patient_data() | self.data
-        fname = pdata['TiedotID']
+        pdata = self.patient_data | self.data
+        fname = pdata['patient_code']
         fname += '_'
-        fname += ''.join(reversed(pdata['TiedotNimi'].split()))
+        fname += pdata['lastname'] + pdata['firstname']
         fname += '_'
         fname += datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S')
         fname += '.json'
@@ -406,7 +397,7 @@ class EntryApp(QtWidgets.QMainWindow):
     def dump_json(self, fname):
         """Save data into given file in utf-8 encoding"""
         # ID data is not updated from widgets in the SQL version, so get it separately
-        rdata = self.data | self.get_patient_data()
+        rdata = self.data | self.patient_data
         with open(fname, 'w', encoding='utf-8') as f:
             f.write(json.dumps(rdata, ensure_ascii=False, indent=True, sort_keys=True))
 
@@ -426,14 +417,14 @@ class EntryApp(QtWidgets.QMainWindow):
             data = self.data.copy()  # don't mutate the original
         # patient ID data is needed for the report, but it's not part of the ROM
         # table, so get it separately
-        report_data = data | self.get_patient_data()
+        report_data = data | self.patient_data
         return reporter.make_text_report(template, report_data, self.vars_at_default)
 
     def make_excel_report(self, xls_template):
         """Create Excel report from current data"""
         # patient ID data is needed for the report, but it's not part of the ROM
         # table, so get it separately
-        report_data = self.data | self.get_patient_data()
+        report_data = self.data | self.patient_data
         return reporter.make_excel_report(
             xls_template, report_data, self.vars_at_default
         )
