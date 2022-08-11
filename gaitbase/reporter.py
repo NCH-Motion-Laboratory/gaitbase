@@ -143,10 +143,10 @@ def make_excel_report(xls_template, data, fields_at_default):
     return workbook_out
 
 
-def _xlrd_get_cell(outSheet, colIndex, rowIndex):
+def _xlrd_get_cell(out_sheet, col_index, row_index):
     """HACK: Extract the internal cell representation."""
-    if row := outSheet._Worksheet__rows.get(rowIndex):
-        return row._Row__cells.get(colIndex)  # a cell
+    if row := out_sheet._Worksheet__rows.get(row_index):
+        return row._Row__cells.get(col_index)  # a cell
 
 
 def _xlrd_set_cell(outSheet, col, row, value):
