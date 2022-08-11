@@ -145,18 +145,16 @@ def make_excel_report(xls_template, data, fields_at_default):
 
 def _xlrd_get_cell(out_sheet, col_ind, row_ind):
     """HACK: Extract the internal cell representation."""
-    if (row := out_sheet._Worksheet__rows.get(row_ind)):
+    if row := out_sheet._Worksheet__rows.get(row_ind):
         return row._Row__cells.get(col_ind)  # the cell
 
 
-def _xlrd_set_cell(outSheet, col, row, value):
+def _xlrd_set_cell(out_sheet, col, row, value):
     """HACK: change cell value without changing formatting.
     See: http://stackoverflow.com/questions/3723793/
     preserving-styles-using-pythons-xlrd-xlwt-and-xlutils-copy?lq=1
     """
-    previousCell = _xlrd_get_cell(outSheet, col, row)
-    outSheet.write(row, col, value)
-    if previousCell:
-        newCell = _xlrd_get_cell(outSheet, col, row)
-        if newCell:
-            newCell.xf_idx = previousCell.xf_idx
+    prev_cell = _xlrd_get_cell(out_sheet, col, row)
+    out_sheet.write(row, col, value)
+    if prev_cell and (new_cell := _xlrd_get_cell(out_sheet, col, row)):
+        new_cell.xf_idx = prev_cell.xf_idx
