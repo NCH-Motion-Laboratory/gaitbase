@@ -90,19 +90,18 @@ Nilkka:
 
 """,
 "soleus (R1) {NilkkaSoleusCatchOik}/{NilkkaSoleusCatchVas}, ",
-"koukistus pass. (R2) {NilkkaDorsifPolvi90PROMOik}/{NilkkaDorsifPolvi90PROMVas}, ",
+"polvi koukussa nilkan koukistus pass. (R2) {NilkkaDorsifPolvi90PROMOik}/{NilkkaDorsifPolvi90PROMVas}, ",
 "akt. {NilkkaDorsifPolvi90AROMOik}/{NilkkaDorsifPolvi90AROMVas}, ",
-"MAS {NilkkaSoleusModAOik}/{NilkkaSoleusModAVas}, ",
 end_line,
 "gastrocnemius (R1) {NilkkaGastroCatchOik}/{NilkkaGastroCatchVas}, ",
-"koukistus pass. (R2) {NilkkaDorsifPolvi0PROMOik}/{NilkkaDorsifPolvi0PROMVas}, ",
+"polvi suorana nilkan koukistus pass. (R2) {NilkkaDorsifPolvi0PROMOik}/{NilkkaDorsifPolvi0PROMVas}, ",
 "akt. {NilkkaDorsifPolvi0AROMOik}/{NilkkaDorsifPolvi0AROMVas}, ",
-"MAS {NilkkaGastroModAOik}/{NilkkaGastroModAVas}, ",
 end_line,
 "ojennus pass. {NilkkaPlantaarifleksioPROMOik}/{NilkkaPlantaarifleksioPROMVas}, "
 "akt. {NilkkaPlantaarifleksioAROMOik}/{NilkkaPlantaarifleksioAROMVas}, ",
 end_line,
 "Confusion-testi oikea: {NilkkaConfusionOik}, vasen: {NilkkaConfusionVas}, ",
+"MAS: soleus {NilkkaSoleusModAOik}/{NilkkaSoleusModAVas}, gastrocnemius {NilkkaGastroModAOik}/{NilkkaGastroModAVas}, ",
 end_line,
 """
 Kommentit (PROM): {cmtNilkkaPROM}
