@@ -50,7 +50,7 @@ from gaitbase.constants import Constants
 
 end_line = Constants.end_line  # constant indicating a 'smart' end-of-line
 
-# pre-evaluate some strings
+# pre-evaluate some strings to avoid cluttering the report text
 str_NilkkaDorsifPolvi0AROMEversioOik = ' (eversio)' if NilkkaDorsifPolvi0AROMEversioOik == Constants.checkbox_yestext else ''
 str_NilkkaDorsifPolvi0AROMEversioVas = ' (eversio)' if NilkkaDorsifPolvi0AROMEversioVas == Constants.checkbox_yestext else ''
 str_NilkkaDorsifPolvi90AROMEversioOik = ' (eversio)' if NilkkaDorsifPolvi90AROMEversioOik == Constants.checkbox_yestext else ''
@@ -59,6 +59,25 @@ str_NilkkaGastroKlonusOik = ' (klonus)' if NilkkaGastroKlonusOik == Constants.ch
 str_NilkkaGastroKlonusVas = ' (klonus)' if NilkkaGastroKlonusVas == Constants.checkbox_yestext else ''
 str_NilkkaSoleusKlonusOik = ' (klonus)' if NilkkaSoleusKlonusOik == Constants.checkbox_yestext else ''
 str_NilkkaSoleusKlonusVas = ' (klonus)' if NilkkaSoleusKlonusVas == Constants.checkbox_yestext else ''
+
+# compose a string of active EMG channels, names separated by comma
+_emg_desc = {'soleus': EMGSol,
+            'gastrocnemius': EMGGas,
+            'peroneus': EMGPer,
+            'tibialis anterior': EMGTibA,
+            'rectus': EMGRec,
+            'hamstring': EMGHam,
+            'vastus': EMGVas,
+            'gluteus': EMGGlut
+            }
+_list_emg_active = ', '.join(name for name, val in _emg_desc.items() if val == Constants.checkbox_yestext)
+if _list_emg_active:
+    # add a header
+    str_emg_active = 'Alaraajojen lihasaktivaatio mitattiin pintaelektrodeilla seuraavista lihaksista:\n'
+    str_emg_active += _list_emg_active
+else:
+    # if no active EMG channels, don't output any text
+    str_emg_active = ''
 
 
 # begin report text
@@ -301,8 +320,8 @@ Kommentit (voima): {cmtVoima1} {cmtVoima2}
 """,
 """
 Selektiivisyys:
-""",
 
+""",
 "nilkan koukistus {SelTibialisAnteriorOik}/{SelTibialisAnteriorVas}, ",
 "nilkan ojennus (gastrocnemius) {SelGastroOik}/{SelGastroVas}, ",
 "nilkan ojennus (soleus) {SelSoleusOik}/{SelSoleusVas}, ",
@@ -326,22 +345,12 @@ end_line,
 "lonkan sisäkierto {SelLonkkaSisakiertoOik}/{SelLonkkaSisakiertoVas}, ",
 "lonkan ulkokierto {SelLonkkaUlkokiertoOik}/{SelLonkkaUlkokiertoVas}, ",
 end_line,
-"""
-Alaraajojen lihasaktivaatio mitattiin pintaelektroidella seuraavista lihaksista:
-
-Soleus: {EMGSol},
-Gastrocnemius: {EMGGas},
-Peroneus: {EMGPer},
-Tibialis anterior: {EMGTibA},
-Rectus: {EMGRec},
-Hamstring: {EMGHam},
-Vastus: {EMGVas},
-Gluteus: {EMGGlut}.
-""",
+str_emg_active,
 """
 Kommentit (EMG): {cmtEMG}
 """,
 """
+
 * Lyhenteet ja asteikot:
 R1=catch, R2=passiivinen liikelaajuus, MAS = Modified Ashworth Scale, asteikko 0-4.
 Jalkaterä: NEU=neutraali, TYYP=tyypillinen, RAJ=rajoittunut, VAR=varus, VALG=valgus, + = lievä, ++ = kohtalainen, +++ = voimakas.
