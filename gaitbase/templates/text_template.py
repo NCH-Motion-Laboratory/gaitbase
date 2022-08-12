@@ -62,14 +62,14 @@ from gaitbase.constants import Constants
 end_line = Constants.end_line  # constant indicating a 'smart' end-of-line
 
 # pre-evaluate some strings to avoid cluttering the report text
-str_NilkkaDorsifPolvi0AROMEversioOik = ' (eversio)' if NilkkaDorsifPolvi0AROMEversioOik == Constants.checkbox_yestext else ''
-str_NilkkaDorsifPolvi0AROMEversioVas = ' (eversio)' if NilkkaDorsifPolvi0AROMEversioVas == Constants.checkbox_yestext else ''
-str_NilkkaDorsifPolvi90AROMEversioOik = ' (eversio)' if NilkkaDorsifPolvi90AROMEversioOik == Constants.checkbox_yestext else ''
-str_NilkkaDorsifPolvi90AROMEversioVas = ' (eversio)' if NilkkaDorsifPolvi90AROMEversioVas == Constants.checkbox_yestext else ''
-str_NilkkaGastroKlonusOik = ' (klonus)' if NilkkaGastroKlonusOik == Constants.checkbox_yestext else ''
-str_NilkkaGastroKlonusVas = ' (klonus)' if NilkkaGastroKlonusVas == Constants.checkbox_yestext else ''
-str_NilkkaSoleusKlonusOik = ' (klonus)' if NilkkaSoleusKlonusOik == Constants.checkbox_yestext else ''
-str_NilkkaSoleusKlonusVas = ' (klonus)' if NilkkaSoleusKlonusVas == Constants.checkbox_yestext else ''
+str_NilkkaDorsifPolvi0AROMEversioOik = '(eversio)' if NilkkaDorsifPolvi0AROMEversioOik == Constants.checkbox_yestext else ''
+str_NilkkaDorsifPolvi0AROMEversioVas = '(eversio)' if NilkkaDorsifPolvi0AROMEversioVas == Constants.checkbox_yestext else ''
+str_NilkkaDorsifPolvi90AROMEversioOik = '(eversio)' if NilkkaDorsifPolvi90AROMEversioOik == Constants.checkbox_yestext else ''
+str_NilkkaDorsifPolvi90AROMEversioVas = '(eversio)' if NilkkaDorsifPolvi90AROMEversioVas == Constants.checkbox_yestext else ''
+str_NilkkaGastroKlonusOik = '(klonus)' if NilkkaGastroKlonusOik == Constants.checkbox_yestext else ''
+str_NilkkaGastroKlonusVas = '(klonus)' if NilkkaGastroKlonusVas == Constants.checkbox_yestext else ''
+str_NilkkaSoleusKlonusOik = '(klonus)' if NilkkaSoleusKlonusOik == Constants.checkbox_yestext else ''
+str_NilkkaSoleusKlonusVas = '(klonus)' if NilkkaSoleusKlonusVas == Constants.checkbox_yestext else ''
 
 # compose a string of active EMG channels, names separated by comma
 _emg_desc = {'soleus': EMGSol,
