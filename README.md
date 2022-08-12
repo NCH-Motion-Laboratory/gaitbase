@@ -135,7 +135,7 @@ SQLite uses `NULL` for values that are completely missing from a table (e.g. due
 
 The ROM entry app supports reporting of the ROM values in text or Excel format. The reporting is based on templates.
 
-The text template defines a Python variable called `text_blocks`, which is a list of strings. Each text block (string) may contain fields referring to a ROM or patient variable. An example block would be:
+The text template defines a Python variable called `_text_blocks`, which is a list of strings. Each text block (string) may contain fields referring to a ROM or patient variable. An example block would be:
 
 ```
 Pituus: {AntropPituus}

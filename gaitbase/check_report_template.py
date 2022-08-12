@@ -21,7 +21,7 @@ def _check_template(template):
         print(f'The report template contains syntax errors:\n{e}')
         return
 
-    blocks = exec_namespace['text_blocks']
+    blocks = exec_namespace['_text_blocks']
 
     template_fields = set()
     for block in blocks:

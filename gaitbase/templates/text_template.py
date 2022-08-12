@@ -2,7 +2,7 @@
 """
 Python template for the text report.
 
-The template must define a variable called text_blocks, which must be an
+The template must define a variable called _text_blocks, which must be an
 iterable of text blocks (strings). The report text is built by concatenating the
 blocks. Each block may contain fields written as {field_name}. They will be
 replaced by the corresponding values. If a block contains fields and ALL of the
@@ -20,9 +20,13 @@ automatically capitalized. This is necessary, since we may not know in advance
 which block begins a line.
 
 The code in this file is executed by exec(). In principle, any Python logic may
-be used to build the text_blocks variable. However for readability, it may be a
+be used to build the _text_blocks variable. However for readability, it may be a
 good idea to minimize the amount of code and keep the template as "textual" as
 possible.
+
+The variable names are also brought into the global module namespace, so it's
+possible to refer to them explicitly, if needed. This is used to conditionally
+print certain items that are difficult to handle otherwise.
 
 NOTE: before filling in the fields, certain values may be replaced according to
 the dictionary cfg.report.replace_data. For example, 'Ei mitattu' gets
@@ -43,7 +47,7 @@ from gaitbase.constants import Constants
 
 end_line = Constants.end_line
 
-text_blocks = [
+_text_blocks = [
 """
 LIIKELAAJUUDET JA VOIMAT
 

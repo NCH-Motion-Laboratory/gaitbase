@@ -41,8 +41,11 @@ def make_text_report(template, data, fields_at_default):
     template_code = compile(open(template, "rb").read(), template, 'exec')
     # namespace of executed code
     exec_namespace = dict()
+    # inject the data variables into the global namespace used by exec()
+    # this allows the report code to refer to the data explicitly
+    exec_namespace.update(data)
     exec(template_code, exec_namespace)
-    blocks = exec_namespace['text_blocks']
+    blocks = exec_namespace['_text_blocks']
     return _process_blocks(blocks, data, fields_at_default)
 
 
