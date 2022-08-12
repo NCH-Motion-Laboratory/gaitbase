@@ -3,30 +3,33 @@
 Python template for the text report.
 
 The template must define a variable called _text_blocks, which must be an
-iterable of text blocks (strings). The report text is built by concatenating the
+iterable of text blocks (strings). The report is built by concatenating these
 blocks. Each block may contain fields written as {field_name}. They will be
-replaced by the corresponding values. If a block contains fields and ALL of the
-fields are at their default values, the block will be discarded. Any columns in
-the SQL 'roms' and 'patients' table are valid field names.
+replaced by the corresponding data values. If a block contains fields and ALL of
+the fields are at their default values, the block will be discarded. Any columns
+in the SQL 'roms' and 'patients' tables are valid field names.
 
 Besides text, a block may consist of a "smart end-of-line" (Constants.end_line).
-It prints a dot & linefeed, IF the preceding character in the result text is not
+It prints a dot & linefeed, if the preceding character in the result text is not
 a line feed. It will also erase any preceding commas at the end of line. The
 smart end-of-line should be used to terminate lines consisting of multiple text
 blocks, since it's not known in advance which blocks will be printed.
 
 If a block begins a new line in the resulting report, its first letter will be
 automatically capitalized. This is necessary, since we may not know in advance
-which block begins a line.
+which block will begin a line.
 
 The code in this file is executed by exec(). In principle, any Python logic may
 be used to build the _text_blocks variable. However for readability, it may be a
 good idea to minimize the amount of code and keep the template as "textual" as
 possible.
 
-The variable names are also brought into the global module namespace, so it's
-possible to refer to them explicitly, if needed. This is used to conditionally
-print certain items that are difficult to handle otherwise.
+The data variables are brought into the global module namespace of this module
+by exec(), so it's also possible to refer to them explicitly. This can used to
+conditionally print certain items that are difficult to handle otherwise, by
+using Python conditional logic or f-strings. Note that the evaluation of
+f-strings differs from regular strings: f-strings are evaluated immediately at
+definition time.
 
 NOTE: before filling in the fields, certain values may be replaced according to
 the dictionary cfg.report.replace_data. For example, 'Ei mitattu' gets
@@ -45,8 +48,20 @@ parser will merge them, i.e. don't write
 # it's safer to explicitly import from gaitbase
 from gaitbase.constants import Constants
 
-end_line = Constants.end_line
+end_line = Constants.end_line  # constant indicating a 'smart' end-of-line
 
+# pre-evaluate some strings
+str_NilkkaDorsifPolvi0AROMEversioOik = ' (eversio)' if NilkkaDorsifPolvi0AROMEversioOik == Constants.checkbox_yestext else ''
+str_NilkkaDorsifPolvi0AROMEversioVas = ' (eversio)' if NilkkaDorsifPolvi0AROMEversioVas == Constants.checkbox_yestext else ''
+str_NilkkaDorsifPolvi90AROMEversioOik = ' (eversio)' if NilkkaDorsifPolvi90AROMEversioOik == Constants.checkbox_yestext else ''
+str_NilkkaDorsifPolvi90AROMEversioVas = ' (eversio)' if NilkkaDorsifPolvi90AROMEversioVas == Constants.checkbox_yestext else ''
+str_NilkkaGastroKlonusOik = ' (klonus)' if NilkkaGastroKlonusOik == Constants.checkbox_yestext else ''
+str_NilkkaGastroKlonusVas = ' (klonus)' if NilkkaGastroKlonusVas == Constants.checkbox_yestext else ''
+str_NilkkaSoleusKlonusOik = ' (klonus)' if NilkkaSoleusKlonusOik == Constants.checkbox_yestext else ''
+str_NilkkaSoleusKlonusVas = ' (klonus)' if NilkkaSoleusKlonusVas == Constants.checkbox_yestext else ''
+
+
+# begin report text
 _text_blocks = [
 """
 LIIKELAAJUUDET JA VOIMAT
@@ -93,13 +108,16 @@ Modified Ashworth Scale (MAS) *
 Nilkka:
 
 """,
-"soleus (R1) {NilkkaSoleusCatchOik}/{NilkkaSoleusCatchVas}, ",
+# the f-string is used to immediately evaluate the local _str variables and pass
+# on the remaining variable names (in double braces) without evaluation; this
+# way, the block can still be discarded if the variables are at default values
+f"soleus (R1) {{NilkkaSoleusCatchOik}}{str_NilkkaSoleusKlonusOik}/{{NilkkaSoleusCatchVas}}{str_NilkkaSoleusKlonusVas}, ",
 "polvi koukussa nilkan koukistus pass. (R2) {NilkkaDorsifPolvi90PROMOik}/{NilkkaDorsifPolvi90PROMVas}, ",
-"akt. {NilkkaDorsifPolvi90AROMOik}/{NilkkaDorsifPolvi90AROMVas}, ",
+f"akt. {{NilkkaDorsifPolvi90AROMOik}}{str_NilkkaDorsifPolvi90AROMEversioOik}/{{NilkkaDorsifPolvi90AROMVas}}{str_NilkkaDorsifPolvi90AROMEversioVas}, ",
 end_line,
-"gastrocnemius (R1) {NilkkaGastroCatchOik}/{NilkkaGastroCatchVas}, ",
+f"gastrocnemius (R1) {{NilkkaGastroCatchOik}}{str_NilkkaGastroKlonusOik}/{{NilkkaGastroCatchVas}}{str_NilkkaGastroKlonusVas}, ",
 "polvi suorana nilkan koukistus pass. (R2) {NilkkaDorsifPolvi0PROMOik}/{NilkkaDorsifPolvi0PROMVas}, ",
-"akt. {NilkkaDorsifPolvi0AROMOik}/{NilkkaDorsifPolvi0AROMVas}, ",
+f"akt. {{NilkkaDorsifPolvi0AROMOik}}{str_NilkkaDorsifPolvi0AROMEversioOik}/{{NilkkaDorsifPolvi0AROMVas}}{str_NilkkaDorsifPolvi0AROMEversioVas}, ",
 end_line,
 "ojennus pass. {NilkkaPlantaarifleksioPROMOik}/{NilkkaPlantaarifleksioPROMVas}, "
 "akt. {NilkkaPlantaarifleksioAROMOik}/{NilkkaPlantaarifleksioAROMVas}, ",
