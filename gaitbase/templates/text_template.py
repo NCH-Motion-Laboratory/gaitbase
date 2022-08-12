@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 """
+
 Python template for the text report.
 
 The template must define a variable called _text_blocks, which must be an
-iterable of text blocks (strings). The report is built by concatenating these
+iterable of text blocks (strings). The report is built by concatenating the
 blocks. Each block may contain fields written as {field_name}. They will be
 replaced by the corresponding data values. If a block contains fields and ALL of
 the fields are at their default values, the block will be discarded. Any columns
 in the SQL 'roms' and 'patients' tables are valid field names.
 
-Besides text, a block may consist of a "smart end-of-line" (Constants.end_line).
+Besides a string, a block may consist of a "smart end-of-line" (Constants.end_line).
 It prints a dot & linefeed, if the preceding character in the result text is not
 a line feed. It will also erase any preceding commas at the end of line. The
 smart end-of-line should be used to terminate lines consisting of multiple text
@@ -22,12 +23,13 @@ which block will begin a line.
 The code in this file is executed by exec(). In principle, any Python logic may
 be used to build the _text_blocks variable. However for readability, it may be a
 good idea to minimize the amount of code and keep the template as "textual" as
-possible.
+possible. Currently, some strings are pre-evaluated, and _text_blocks is then
+defined as a simple explicit list of strings.
 
 The data variables are brought into the global module namespace of this module
 by exec(), so it's also possible to refer to them explicitly. This can used to
-conditionally print certain items that are difficult to handle otherwise, by
-using Python conditional logic or f-strings. Note that the evaluation of
+e.g. conditionally print certain items that are difficult to handle otherwise,
+by using Python conditional logic or f-strings. Note that the evaluation of
 f-strings differs from regular strings: f-strings are evaluated immediately at
 definition time.
 
@@ -40,6 +42,11 @@ parser will merge them, i.e. don't write
 
 "block1"
 "block2"
+
+NOTE: the exec() mechanism will use the latest copy of report template from the
+disk. Thus, modifications will be immediately visible in new reports, and it's
+not necessary to restart the program when debugging the template.
+
 
 @author: Jussi (jnu@iki.fi)
 """
