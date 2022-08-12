@@ -47,6 +47,10 @@ NOTE: the exec() mechanism will use the latest copy of report template from the
 disk. Thus, modifications will be immediately visible in new reports, and it's
 not necessary to restart the program when debugging the template.
 
+NOTE: instead of modifying the package default template, it's better to keep and
+modify a local copy, so the template will not be overwritten when updating the
+package. The template path can be configured in the package configuration.
+
 
 @author: Jussi (jnu@iki.fi)
 """
