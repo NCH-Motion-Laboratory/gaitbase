@@ -11,10 +11,10 @@ dependencies:
   - xlsxwriter
   - xlutils
   - pip
+  - flake8
+  - pypdf2
+  - pytest
   - pip:
-    - flake8
-    - pypdf2
-    - pytest
-    - configdot
-    - https://github.com/jjnurminen/ulstools/archive/master.zip
-    - https://github.com/jjnurminen/gaitbase/archive/master.zip
+    - https://github.com/NCH-Motion-Laboratory/configdot/archive/master.zip
+    - https://github.com/NCH-Motion-Laboratory/ulstools/archive/master.zip
+    - https://github.com/NCH-Motion-Laboratory/gaitbase/archive/master.zip
