@@ -11,7 +11,7 @@ class Constants:
     """Some constants"""
 
     # allowable patient code prefixes
-    patient_code_prefixes = 'CDEHM'
+    patient_code_prefixes = 'CDEHMT'
     # magic prefix for data entry widgets
     input_widget_prefix = 'data'
     # window title
