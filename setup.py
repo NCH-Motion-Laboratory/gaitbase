@@ -13,7 +13,7 @@ setup(
     author='Jussi Nurminen',
     author_email='jnu@iki.fi',
     license='GPLv3',
-    url='https://github.com/jjnurminen/gaitbase',
+    url='https://github.com/NCH-Motion-Laboratory/gaitbase',
     packages=find_packages(),
     entry_points={
         'console_scripts': [
