@@ -362,8 +362,8 @@ class EntryApp(QtWidgets.QMainWindow):
         """
         # find autowidgets that depend on the argument widget and update them
         autowidgets_this = [w for w in self.autowidgets if widget in w._autoinputs]
-        for widget in autowidgets_this:
-            widget._autocalculate()
+        for autowidget in autowidgets_this:
+            autowidget._autocalculate()
         if self.do_update_data:
             # update internal data dict
             wname = widget.objectName()
