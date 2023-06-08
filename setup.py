@@ -19,7 +19,8 @@ setup(
         'console_scripts': [
             'gaitbase=gaitbase._gaitbase:main',
             'gaitbase_make_shortcut=gaitbase.utils:make_my_shortcut',
+            'gaitbase_recreate_db=gaitbase.recreate_db:main'
         ]
     },
-    include_package_data=True,
+    include_package_data=True
 )
