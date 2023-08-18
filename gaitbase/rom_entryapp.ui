@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1422</width>
-    <height>751</height>
+    <width>1637</width>
+    <height>847</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
        <enum>QTabWidget::North</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>7</number>
       </property>
       <widget class="QWidget" name="tabTiedot">
        <attribute name="title">
@@ -373,8 +373,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1363</width>
-             <height>823</height>
+             <width>1354</width>
+             <height>973</height>
             </rect>
            </property>
            <property name="palette">
@@ -1922,7 +1922,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
         <item>
          <layout class="QGridLayout" name="gridLayout">
           <item row="6" column="2">
-           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioVapOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioVapOik" native="true"/>
           </item>
           <item row="15" column="1">
            <widget class="QLabel" name="label_29">
@@ -1957,7 +1957,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioPolvi90Oik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioPolvi90Oik" native="true"/>
           </item>
           <item row="17" column="1">
            <widget class="QLabel" name="label_17">
@@ -1967,7 +1967,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="7" column="4">
-           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioAvVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioAvVas" native="true"/>
           </item>
           <item row="2" column="6" colspan="3">
            <widget class="QLabel" name="label_88">
@@ -1999,7 +1999,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="19" column="4">
-           <widget class="CheckableSpinBox" name="dataLonkkaSisakiertoVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaSisakiertoVas" native="true"/>
           </item>
           <item row="20" column="1">
            <widget class="QLabel" name="label_55">
@@ -2009,7 +2009,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="7" column="2">
-           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioAvOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioAvOik" native="true"/>
           </item>
           <item row="18" column="1">
            <widget class="QLabel" name="label_34">
@@ -2026,13 +2026,13 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="4" column="4">
-           <widget class="CheckableSpinBox" name="dataLonkkaFleksioVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaFleksioVas" native="true"/>
           </item>
           <item row="11" column="2">
-           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkka0Polvi90Oik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkka0Polvi90Oik" native="true"/>
           </item>
           <item row="10" column="2">
-           <widget class="CheckableSpinBox" name="dataLonkkaExtLagOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaExtLagOik" native="true"/>
           </item>
           <item row="16" column="1">
            <widget class="QLabel" name="label_16">
@@ -2144,7 +2144,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="4">
-           <widget class="CheckableSpinBox" name="dataLonkkaAdduktioVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAdduktioVas" native="true"/>
           </item>
           <item row="4" column="8">
            <widget class="QComboBox" name="dataLonkkaFleksioModAVas">
@@ -2312,13 +2312,13 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="2">
-           <widget class="CheckableSpinBox" name="dataLonkkaAdduktioOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAdduktioOik" native="true"/>
           </item>
           <item row="13" column="4">
-           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkka0Vas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkka0Vas" native="true"/>
           </item>
           <item row="13" column="2">
-           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkka0Oik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkka0Oik" native="true"/>
           </item>
           <item row="9" column="1">
            <widget class="QLabel" name="label_11">
@@ -2333,10 +2333,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="15" column="4">
-           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkkaFleksVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkkaFleksVas" native="true"/>
           </item>
           <item row="15" column="2">
-           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkkaFleksOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkkaFleksOik" native="true"/>
           </item>
           <item row="4" column="1">
            <widget class="QLabel" name="label_7">
@@ -2358,13 +2358,13 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="4">
-           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioVapVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioVapVas" native="true"/>
           </item>
           <item row="4" column="2">
-           <widget class="CheckableSpinBox" name="dataLonkkaFleksioOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaFleksioOik" native="true"/>
           </item>
           <item row="9" column="4">
-           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioPolvi90Vas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaEkstensioPolvi90Vas" native="true"/>
           </item>
           <item row="3" column="8">
            <widget class="QLabel" name="label_90">
@@ -2406,7 +2406,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="19" column="2">
-           <widget class="CheckableSpinBox" name="dataLonkkaSisakiertoOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaSisakiertoOik" native="true"/>
           </item>
           <item row="2" column="2" colspan="3">
            <widget class="QLabel" name="label_77">
@@ -2449,30 +2449,30 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="20" column="4">
-           <widget class="CheckableSpinBox" name="dataLonkkaUlkokiertoVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaUlkokiertoVas" native="true"/>
           </item>
           <item row="11" column="4">
-           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkka0Polvi90Vas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaAbduktioLonkka0Polvi90Vas" native="true"/>
           </item>
           <item row="10" column="4">
-           <widget class="CheckableSpinBox" name="dataLonkkaExtLagVas"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaExtLagVas" native="true"/>
           </item>
           <item row="12" column="4">
-           <widget class="CheckableSpinBox" name="dataLonkkaAdduktoritCatchVas">
-            <property name="defaultText">
+           <widget class="CheckableSpinBox" name="dataLonkkaAdduktoritCatchVas" native="true">
+            <property name="defaultText" stdset="0">
              <string>Ei</string>
             </property>
            </widget>
           </item>
           <item row="12" column="2">
-           <widget class="CheckableSpinBox" name="dataLonkkaAdduktoritCatchOik">
-            <property name="defaultText">
+           <widget class="CheckableSpinBox" name="dataLonkkaAdduktoritCatchOik" native="true">
+            <property name="defaultText" stdset="0">
              <string>Ei</string>
             </property>
            </widget>
           </item>
           <item row="20" column="2">
-           <widget class="CheckableSpinBox" name="dataLonkkaUlkokiertoOik"/>
+           <widget class="CheckableSpinBox" name="dataLonkkaUlkokiertoOik" native="true"/>
           </item>
           <item row="6" column="8">
            <widget class="QComboBox" name="dataLonkkaEkstensioModAVas">
@@ -2986,28 +2986,28 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
         <item>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="11" column="2">
-           <widget class="CheckableSpinBox" name="dataPolviRectusCatchOik">
-            <property name="defaultText">
+           <widget class="CheckableSpinBox" name="dataPolviRectusCatchOik" native="true">
+            <property name="defaultText" stdset="0">
              <string>Ei</string>
             </property>
            </widget>
           </item>
           <item row="16" column="4">
-           <widget class="CheckableSpinBox" name="dataPolviPopliteaVastakkLonkka90Vas">
-            <property name="maximum">
+           <widget class="CheckableSpinBox" name="dataPolviPopliteaVastakkLonkka90Vas" native="true">
+            <property name="maximum" stdset="0">
              <number>0</number>
             </property>
            </widget>
           </item>
           <item row="11" column="4">
-           <widget class="CheckableSpinBox" name="dataPolviRectusCatchVas">
-            <property name="defaultText">
+           <widget class="CheckableSpinBox" name="dataPolviRectusCatchVas" native="true">
+            <property name="defaultText" stdset="0">
              <string>Ei</string>
             </property>
            </widget>
           </item>
           <item row="10" column="4">
-           <widget class="CheckableSpinBox" name="dataPolviFleksioVatsamakuuVas"/>
+           <widget class="CheckableSpinBox" name="dataPolviFleksioVatsamakuuVas" native="true"/>
           </item>
           <item row="15" column="1">
            <widget class="QLabel" name="label_23">
@@ -3071,7 +3071,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="2">
-           <widget class="CheckableSpinBox" name="dataPolviEkstensioVapOik"/>
+           <widget class="CheckableSpinBox" name="dataPolviEkstensioVapOik" native="true"/>
           </item>
           <item row="2" column="2" colspan="3">
            <widget class="QLabel" name="label_86">
@@ -3090,7 +3090,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="10" column="2">
-           <widget class="CheckableSpinBox" name="dataPolviFleksioVatsamakuuOik"/>
+           <widget class="CheckableSpinBox" name="dataPolviFleksioVatsamakuuOik" native="true"/>
           </item>
           <item row="6" column="1">
            <widget class="QLabel" name="label_27">
@@ -3153,17 +3153,17 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="4">
-           <widget class="CheckableSpinBox" name="dataPolviEkstensioVapVas"/>
+           <widget class="CheckableSpinBox" name="dataPolviEkstensioVapVas" native="true"/>
           </item>
           <item row="6" column="4">
-           <widget class="CheckableSpinBox" name="dataPolviEkstensioAvVas"/>
+           <widget class="CheckableSpinBox" name="dataPolviEkstensioAvVas" native="true"/>
           </item>
           <item row="12" column="4">
-           <widget class="CheckableSpinBox" name="dataPolviHamstringCatchVas">
-            <property name="defaultText">
+           <widget class="CheckableSpinBox" name="dataPolviHamstringCatchVas" native="true">
+            <property name="defaultText" stdset="0">
              <string>Ei</string>
             </property>
-            <property name="maximum">
+            <property name="maximum" stdset="0">
              <number>0</number>
             </property>
            </widget>
@@ -3227,10 +3227,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="6" column="2">
-           <widget class="CheckableSpinBox" name="dataPolviEkstensioAvOik"/>
+           <widget class="CheckableSpinBox" name="dataPolviEkstensioAvOik" native="true"/>
           </item>
           <item row="9" column="4">
-           <widget class="CheckableSpinBox" name="dataPolviFleksioSelinmakuuVas"/>
+           <widget class="CheckableSpinBox" name="dataPolviFleksioSelinmakuuVas" native="true"/>
           </item>
           <item row="3" column="9">
            <spacer name="horizontalSpacer_28">
@@ -3246,17 +3246,17 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="12" column="2">
-           <widget class="CheckableSpinBox" name="dataPolviHamstringCatchOik">
-            <property name="defaultText">
+           <widget class="CheckableSpinBox" name="dataPolviHamstringCatchOik" native="true">
+            <property name="defaultText" stdset="0">
              <string>Ei</string>
             </property>
-            <property name="maximum">
+            <property name="maximum" stdset="0">
              <number>0</number>
             </property>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="CheckableSpinBox" name="dataPolviFleksioSelinmakuuOik"/>
+           <widget class="CheckableSpinBox" name="dataPolviFleksioSelinmakuuOik" native="true"/>
           </item>
           <item row="12" column="1">
            <widget class="QLabel" name="label_233">
@@ -3363,22 +3363,22 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="16" column="2">
-           <widget class="CheckableSpinBox" name="dataPolviPopliteaVastakkLonkka90Oik">
-            <property name="maximum">
+           <widget class="CheckableSpinBox" name="dataPolviPopliteaVastakkLonkka90Oik" native="true">
+            <property name="maximum" stdset="0">
              <number>0</number>
             </property>
            </widget>
           </item>
           <item row="15" column="4">
-           <widget class="CheckableSpinBox" name="dataPolviPopliteaVastakkLonkka0Vas">
-            <property name="maximum">
+           <widget class="CheckableSpinBox" name="dataPolviPopliteaVastakkLonkka0Vas" native="true">
+            <property name="maximum" stdset="0">
              <number>0</number>
             </property>
            </widget>
           </item>
           <item row="15" column="2">
-           <widget class="CheckableSpinBox" name="dataPolviPopliteaVastakkLonkka0Oik">
-            <property name="maximum">
+           <widget class="CheckableSpinBox" name="dataPolviPopliteaVastakkLonkka0Oik" native="true">
+            <property name="maximum" stdset="0">
              <number>0</number>
             </property>
            </widget>
@@ -3736,8 +3736,8 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="5" column="2">
-           <widget class="CheckableSpinBox" name="dataNilkkaSoleusCatchOik">
-            <property name="defaultText">
+           <widget class="CheckableSpinBox" name="dataNilkkaSoleusCatchOik" native="true">
+            <property name="defaultText" stdset="0">
              <string>Ei</string>
             </property>
            </widget>
@@ -3927,8 +3927,8 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="5" column="5">
-           <widget class="CheckableSpinBox" name="dataNilkkaSoleusCatchVas">
-            <property name="defaultText">
+           <widget class="CheckableSpinBox" name="dataNilkkaSoleusCatchVas" native="true">
+            <property name="defaultText" stdset="0">
              <string>Ei</string>
             </property>
            </widget>
@@ -3959,10 +3959,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="14" column="5">
-           <widget class="CheckableSpinBox" name="dataNilkkaPlantaarifleksioPROMVas"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaPlantaarifleksioPROMVas" native="true"/>
           </item>
           <item row="14" column="2">
-           <widget class="CheckableSpinBox" name="dataNilkkaPlantaarifleksioPROMOik"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaPlantaarifleksioPROMOik" native="true"/>
           </item>
           <item row="3" column="10">
            <widget class="QLabel" name="label_253">
@@ -3985,8 +3985,8 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="10" column="2">
-           <widget class="CheckableSpinBox" name="dataNilkkaGastroCatchOik">
-            <property name="defaultText">
+           <widget class="CheckableSpinBox" name="dataNilkkaGastroCatchOik" native="true">
+            <property name="defaultText" stdset="0">
              <string>Ei</string>
             </property>
            </widget>
@@ -4120,8 +4120,8 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="10" column="5">
-           <widget class="CheckableSpinBox" name="dataNilkkaGastroCatchVas">
-            <property name="defaultText">
+           <widget class="CheckableSpinBox" name="dataNilkkaGastroCatchVas" native="true">
+            <property name="defaultText" stdset="0">
              <string>Ei</string>
             </property>
            </widget>
@@ -4157,22 +4157,22 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="2">
-           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi90AROMOik"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi90AROMOik" native="true"/>
           </item>
           <item row="11" column="2">
-           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi0PROMOik"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi0PROMOik" native="true"/>
           </item>
           <item row="11" column="5">
-           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi0PROMVas"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi0PROMVas" native="true"/>
           </item>
           <item row="8" column="2">
-           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi90PROMOik"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi90PROMOik" native="true"/>
           </item>
           <item row="8" column="5">
-           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi90PROMVas"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi90PROMVas" native="true"/>
           </item>
           <item row="12" column="2">
-           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi0AROMOik"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi0AROMOik" native="true"/>
           </item>
           <item row="5" column="9">
            <spacer name="horizontalSpacer_14">
@@ -4191,7 +4191,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="12" column="5">
-           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi0AROMVas"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi0AROMVas" native="true"/>
           </item>
           <item row="5" column="7">
            <spacer name="horizontalSpacer_15">
@@ -4210,7 +4210,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </spacer>
           </item>
           <item row="9" column="5">
-           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi90AROMVas"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaDorsifPolvi90AROMVas" native="true"/>
           </item>
           <item row="5" column="4">
            <spacer name="horizontalSpacer_12">
@@ -4236,10 +4236,10 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="15" column="2">
-           <widget class="CheckableSpinBox" name="dataNilkkaPlantaarifleksioAROMOik"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaPlantaarifleksioAROMOik" native="true"/>
           </item>
           <item row="15" column="5">
-           <widget class="CheckableSpinBox" name="dataNilkkaPlantaarifleksioAROMVas"/>
+           <widget class="CheckableSpinBox" name="dataNilkkaPlantaarifleksioAROMVas" native="true"/>
           </item>
           <item row="12" column="3">
            <widget class="QCheckBox" name="dataNilkkaDorsifPolvi0AROMEversioOik">
@@ -5507,7 +5507,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="18" column="2">
-           <widget class="CheckableSpinBox" name="dataJalkat1MTPojennusOik"/>
+           <widget class="CheckableSpinBox" name="dataJalkat1MTPojennusOik" native="true"/>
           </item>
           <item row="18" column="1">
            <widget class="QLabel" name="label_284">
@@ -5657,7 +5657,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="18" column="4">
-           <widget class="CheckableSpinBox" name="dataJalkat1MTPojennusVas"/>
+           <widget class="CheckableSpinBox" name="dataJalkat1MTPojennusVas" native="true"/>
           </item>
           <item row="1" column="4">
            <spacer name="verticalSpacer_40">
@@ -6640,838 +6640,7 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
        <layout class="QVBoxLayout" name="verticalLayout_9">
         <item>
          <layout class="QGridLayout" name="gridLayout_3">
-          <item row="16" column="2">
-           <widget class="QComboBox" name="dataVoimaLonkkaUlkokiertoOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="15" column="8">
-           <widget class="QComboBox" name="dataSelPolviEkstensioVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="15" column="4">
-           <widget class="QComboBox" name="dataVoimaPolviEkstensioVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="3" column="5">
-           <spacer name="horizontalSpacer_8">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>30</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="5" column="2">
-           <widget class="QComboBox" name="dataVoimaPolviFleksioOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="11" column="2">
-           <widget class="QComboBox" name="dataVoimaSelka">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="13" column="2">
-           <widget class="QComboBox" name="dataVoimaVatsaVinotOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="4" column="2">
-           <widget class="QComboBox" name="dataVoimaLonkkaEkstensioPolvi90Oik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="7" column="2">
-           <widget class="QComboBox" name="dataVoimaLonkkaAbduktioLonkka0Oik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="9" column="6">
-           <widget class="QComboBox" name="dataSelLonkkaAdduktioOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="4" column="8">
-           <widget class="QComboBox" name="dataSelLonkkaEkstensioPolvi90Vas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="9" column="2">
+          <item row="8" column="2">
            <widget class="QComboBox" name="dataVoimaLonkkaAdduktioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -7572,8 +6741,301 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
             </item>
            </widget>
           </item>
-          <item row="8" column="2">
-           <widget class="QComboBox" name="dataVoimaLonkkaAbduktioLonkkaFleksOik">
+          <item row="11" column="1" colspan="8">
+           <widget class="Line" name="line">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="2">
+           <widget class="QComboBox" name="dataVoimaLonkkaUlkokiertoOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="6" column="8">
+           <widget class="QComboBox" name="dataSelLonkkaAbduktioLonkka0Vas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="8">
+           <widget class="QLabel" name="label_304">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Vasen</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
+           <spacer name="horizontalSpacer_10">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLabel" name="label_324">
+            <property name="font">
+             <font>
+              <italic>false</italic>
+             </font>
+            </property>
+            <property name="text">
+             <string>Lonkan ekstensio, polvi 0°</string>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="2">
+           <widget class="QComboBox" name="dataVoimaPolviEkstensioOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="22" column="1">
+           <widget class="QLabel" name="label_278">
+            <property name="text">
+             <string>Vatsalihakset, suorat</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="4">
+           <widget class="QComboBox" name="dataVoimaLonkkaEkstensioPolvi90Vas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7674,66 +7136,34 @@ huoneesta toiseen vaatisi. Tavallisesti tarvitsen toisen ihmisen apua.</string>
            </widget>
           </item>
           <item row="9" column="1">
-           <widget class="QLabel" name="label_302">
+           <widget class="QLabel" name="label_312">
             <property name="text">
-             <string>Lonkan adduktio</string>
+             <string>Lonkan ulkokierto</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="8">
-           <widget class="QLabel" name="label_304">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
+          <item row="22" column="0">
+           <spacer name="horizontalSpacer_66">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
-            <property name="text">
-             <string>Vasen</string>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
             </property>
-           </widget>
-          </item>
-          <item row="11" column="1">
-           <widget class="QLabel" name="label_271">
-            <property name="text">
-             <string>Selkälihakset</string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="1">
-           <widget class="QLabel" name="label_296">
-            <property name="font">
-             <font>
-              <italic>false</italic>
-             </font>
-            </property>
-            <property name="text">
-             <string>Lonkan ekstensio, polvi 90°</string>
-            </property>
-           </widget>
+           </spacer>
           </item>
           <item row="5" column="1">
-           <widget class="QLabel" name="label_297">
+           <widget class="QLabel" name="label_325">
             <property name="text">
-             <string>Polven fleksio</string>
+             <string>Lonkan fleksio</string>
             </property>
            </widget>
           </item>
-          <item row="8" column="1">
-           <widget class="QLabel" name="label_301">
-            <property name="font">
-             <font>
-              <italic>false</italic>
-             </font>
-            </property>
-            <property name="text">
-             <string>Lonkan abduktio,
-lonkka fleksiossa</string>
-            </property>
-           </widget>
-          </item>
-          <item row="9" column="8">
-           <widget class="QComboBox" name="dataSelLonkkaAdduktioVas">
+          <item row="12" column="8">
+           <widget class="QComboBox" name="dataSelPolviEkstensioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7768,8 +7198,145 @@ lonkka fleksiossa</string>
             </item>
            </widget>
           </item>
-          <item row="1" column="6">
-           <widget class="QLabel" name="label_303">
+          <item row="6" column="6">
+           <widget class="QComboBox" name="dataSelLonkkaAbduktioLonkka0Oik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="9" column="4">
+           <widget class="QComboBox" name="dataVoimaLonkkaUlkokiertoVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="4">
+           <widget class="QLabel" name="label_277">
             <property name="font">
              <font>
               <weight>75</weight>
@@ -7777,63 +7344,156 @@ lonkka fleksiossa</string>
              </font>
             </property>
             <property name="text">
-             <string>Selektiivisyys</string>
-            </property>
-            <property name="textFormat">
-             <enum>Qt::AutoText</enum>
+             <string>Vasen</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="2">
-           <widget class="QLabel" name="label_257">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
+          <item row="8" column="6">
+           <widget class="QComboBox" name="dataSelLonkkaAdduktioOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="1">
+           <widget class="QLabel" name="label_302">
             <property name="text">
-             <string>Voima</string>
-            </property>
-            <property name="textFormat">
-             <enum>Qt::AutoText</enum>
+             <string>Lonkan adduktio</string>
             </property>
            </widget>
           </item>
-          <item row="7" column="1">
-           <widget class="QLabel" name="label_299">
-            <property name="font">
-             <font>
-              <italic>false</italic>
-             </font>
+          <item row="3" column="2">
+           <widget class="QComboBox" name="dataVoimaLonkkaEkstensioPolvi0Oik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-            <property name="text">
-             <string>Lonkan abduktio, lonkka 0°</string>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
             </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
            </widget>
           </item>
-          <item row="2" column="6">
-           <widget class="QLabel" name="label_260">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Oikea</string>
-            </property>
-           </widget>
-          </item>
-          <item row="12" column="1">
-           <widget class="QLabel" name="label_278">
-            <property name="text">
-             <string>Vatsalihakset, suorat</string>
-            </property>
-           </widget>
-          </item>
-          <item row="12" column="2">
-           <widget class="QComboBox" name="dataVoimaVatsaSuorat">
+          <item row="8" column="4">
+           <widget class="QComboBox" name="dataVoimaLonkkaAdduktioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7934,7 +7594,7 @@ lonkka fleksiossa</string>
            </widget>
           </item>
           <item row="5" column="8">
-           <widget class="QComboBox" name="dataSelPolviFleksioVas">
+           <widget class="QComboBox" name="dataSelLonkkaFleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -7969,93 +7629,15 @@ lonkka fleksiossa</string>
             </item>
            </widget>
           </item>
-          <item row="2" column="2">
-           <widget class="QLabel" name="label_256">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
+          <item row="10" column="1">
+           <widget class="QLabel" name="label_313">
             <property name="text">
-             <string>Oikea</string>
+             <string>Lonkan sisäkierto</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="6">
-           <widget class="QComboBox" name="dataSelLonkkaEkstensioPolvi90Oik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="7" column="6">
-           <widget class="QComboBox" name="dataSelLonkkaAbduktioLonkka0Oik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="13" column="4">
-           <widget class="QComboBox" name="dataVoimaVatsaVinotVas">
+          <item row="5" column="2">
+           <widget class="QComboBox" name="dataVoimaLonkkaFleksioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8191,47 +7773,8 @@ lonkka fleksiossa</string>
             </item>
            </widget>
           </item>
-          <item row="2" column="4">
-           <widget class="QLabel" name="label_277">
-            <property name="font">
-             <font>
-              <weight>75</weight>
-              <bold>true</bold>
-             </font>
-            </property>
-            <property name="text">
-             <string>Vasen</string>
-            </property>
-           </widget>
-          </item>
-          <item row="13" column="1">
-           <widget class="QLabel" name="label_305">
-            <property name="text">
-             <string>Vatsalihakset, vinot</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="1">
-           <widget class="QLabel" name="label_324">
-            <property name="font">
-             <font>
-              <italic>false</italic>
-             </font>
-            </property>
-            <property name="text">
-             <string>Lonkan ekstensio, polvi 0°</string>
-            </property>
-           </widget>
-          </item>
-          <item row="10" column="1" colspan="8">
-           <widget class="Line" name="line_2">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="2">
-           <widget class="QComboBox" name="dataVoimaLonkkaEkstensioPolvi0Oik">
+          <item row="21" column="2">
+           <widget class="QComboBox" name="dataVoimaSelka">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8331,31 +7874,109 @@ lonkka fleksiossa</string>
             </item>
            </widget>
           </item>
-          <item row="6" column="1" colspan="8">
-           <widget class="Line" name="line">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+          <item row="7" column="4">
+           <widget class="QComboBox" name="dataVoimaLonkkaAbduktioLonkkaFleksVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-           </widget>
-          </item>
-          <item row="3" column="7">
-           <spacer name="horizontalSpacer_11">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
+            <property name="minimumSize">
              <size>
-              <width>30</width>
-              <height>20</height>
+              <width>100</width>
+              <height>0</height>
              </size>
             </property>
-           </spacer>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
           </item>
-          <item row="5" column="6">
-           <widget class="QComboBox" name="dataSelPolviFleksioOik">
+          <item row="9" column="8">
+           <widget class="QComboBox" name="dataSelLonkkaUlkokiertoVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8390,21 +8011,331 @@ lonkka fleksiossa</string>
             </item>
            </widget>
           </item>
-          <item row="12" column="0">
-           <spacer name="horizontalSpacer_66">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
+          <item row="23" column="4">
+           <widget class="QComboBox" name="dataVoimaVatsaVinotVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-            <property name="sizeHint" stdset="0">
+            <property name="minimumSize">
              <size>
-              <width>40</width>
-              <height>20</height>
+              <width>100</width>
+              <height>0</height>
              </size>
             </property>
-           </spacer>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
           </item>
-          <item row="3" column="3">
-           <spacer name="horizontalSpacer_10">
+          <item row="7" column="2">
+           <widget class="QComboBox" name="dataVoimaLonkkaAbduktioLonkkaFleksOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="2" column="6">
+           <widget class="QLabel" name="label_260">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Oikea</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="6">
+           <widget class="QComboBox" name="dataSelLonkkaSisakiertoOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="8" column="8">
+           <widget class="QComboBox" name="dataSelLonkkaAdduktioVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="4" column="8">
+           <widget class="QComboBox" name="dataSelLonkkaEkstensioPolvi90Vas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="5">
+           <spacer name="horizontalSpacer_8">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -8418,6 +8349,1141 @@ lonkka fleksiossa</string>
              </size>
             </property>
            </spacer>
+          </item>
+          <item row="6" column="2">
+           <widget class="QComboBox" name="dataVoimaLonkkaAbduktioLonkka0Oik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="12" column="9">
+           <spacer name="horizontalSpacer_45">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="3" column="8">
+           <widget class="QComboBox" name="dataSelLonkkaEkstensioPolvi0Vas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="4" column="6">
+           <widget class="QComboBox" name="dataSelLonkkaEkstensioPolvi90Oik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="3" column="7">
+           <spacer name="horizontalSpacer_11">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="10" column="2">
+           <widget class="QComboBox" name="dataVoimaLonkkaSisakiertoOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="18" column="1" colspan="8">
+           <widget class="Line" name="line_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="22" column="2">
+           <widget class="QComboBox" name="dataVoimaVatsaSuorat">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="12" column="4">
+           <widget class="QComboBox" name="dataVoimaPolviEkstensioVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="23" column="2">
+           <widget class="QComboBox" name="dataVoimaVatsaVinotOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="12" column="1">
+           <widget class="QLabel" name="label_308">
+            <property name="text">
+             <string>Polven ekstensio</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="6">
+           <widget class="QComboBox" name="dataSelLonkkaUlkokiertoOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="6" column="4">
+           <widget class="QComboBox" name="dataVoimaLonkkaAbduktioLonkka0Vas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="4">
+           <widget class="QComboBox" name="dataVoimaLonkkaSisakiertoVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="6">
+           <widget class="QComboBox" name="dataSelLonkkaFleksioOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="23" column="1">
+           <widget class="QLabel" name="label_305">
+            <property name="text">
+             <string>Vatsalihakset, vinot</string>
+            </property>
+           </widget>
+          </item>
+          <item row="21" column="1">
+           <widget class="QLabel" name="label_271">
+            <property name="text">
+             <string>Selkälihakset</string>
+            </property>
+           </widget>
+          </item>
+          <item row="7" column="1">
+           <widget class="QLabel" name="label_301">
+            <property name="font">
+             <font>
+              <italic>false</italic>
+             </font>
+            </property>
+            <property name="text">
+             <string>Lonkan abduktio,
+lonkka fleksiossa</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="label_256">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Oikea</string>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="6">
+           <widget class="QComboBox" name="dataSelPolviEkstensioOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="5" column="4">
+           <widget class="QComboBox" name="dataVoimaLonkkaFleksioVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="10" column="8">
+           <widget class="QComboBox" name="dataSelLonkkaSisakiertoVas">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="6">
+           <widget class="QLabel" name="label_303">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Selektiivisyys</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::AutoText</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLabel" name="label_296">
+            <property name="font">
+             <font>
+              <italic>false</italic>
+             </font>
+            </property>
+            <property name="text">
+             <string>Lonkan ekstensio, polvi 90°</string>
+            </property>
+           </widget>
           </item>
           <item row="3" column="4">
            <widget class="QComboBox" name="dataVoimaLonkkaEkstensioPolvi0Vas">
@@ -8520,8 +9586,52 @@ lonkka fleksiossa</string>
             </item>
            </widget>
           </item>
-          <item row="4" column="4">
-           <widget class="QComboBox" name="dataVoimaLonkkaEkstensioPolvi90Vas">
+          <item row="0" column="2">
+           <spacer name="verticalSpacer_41">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_257">
+            <property name="font">
+             <font>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>Voima</string>
+            </property>
+            <property name="textFormat">
+             <enum>Qt::AutoText</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
+           <widget class="QLabel" name="label_299">
+            <property name="font">
+             <font>
+              <italic>false</italic>
+             </font>
+            </property>
+            <property name="text">
+             <string>Lonkan abduktio, lonkka 0°</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="2">
+           <widget class="QComboBox" name="dataVoimaLonkkaEkstensioPolvi90Oik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -8621,7 +9731,115 @@ lonkka fleksiossa</string>
             </item>
            </widget>
           </item>
-          <item row="5" column="4">
+          <item row="13" column="1">
+           <widget class="QLabel" name="label_297">
+            <property name="text">
+             <string>Polven fleksio</string>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="2">
+           <widget class="QComboBox" name="dataVoimaPolviFleksioOik">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>0</height>
+             </size>
+            </property>
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>0+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>1+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4+</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5-</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="13" column="4">
            <widget class="QComboBox" name="dataVoimaPolviFleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -8722,311 +9940,8 @@ lonkka fleksiossa</string>
             </item>
            </widget>
           </item>
-          <item row="7" column="4">
-           <widget class="QComboBox" name="dataVoimaLonkkaAbduktioLonkka0Vas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="8" column="4">
-           <widget class="QComboBox" name="dataVoimaLonkkaAbduktioLonkkaFleksVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="9" column="4">
-           <widget class="QComboBox" name="dataVoimaLonkkaAdduktioVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="3" column="8">
-           <widget class="QComboBox" name="dataSelLonkkaEkstensioPolvi0Vas">
+          <item row="13" column="6">
+           <widget class="QComboBox" name="dataSelPolviFleksioOik">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9061,8 +9976,8 @@ lonkka fleksiossa</string>
             </item>
            </widget>
           </item>
-          <item row="7" column="8">
-           <widget class="QComboBox" name="dataSelLonkkaAbduktioLonkka0Vas">
+          <item row="13" column="8">
+           <widget class="QComboBox" name="dataSelPolviFleksioVas">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -9096,921 +10011,6 @@ lonkka fleksiossa</string>
              </property>
             </item>
            </widget>
-          </item>
-          <item row="15" column="6">
-           <widget class="QComboBox" name="dataSelPolviEkstensioOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="16" column="1">
-           <widget class="QLabel" name="label_312">
-            <property name="text">
-             <string>Lonkan ulkokierto</string>
-            </property>
-           </widget>
-          </item>
-          <item row="14" column="4">
-           <widget class="QComboBox" name="dataVoimaLonkkaFleksioVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="14" column="2">
-           <widget class="QComboBox" name="dataVoimaLonkkaFleksioOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="16" column="8">
-           <widget class="QComboBox" name="dataSelLonkkaUlkokiertoVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="16" column="4">
-           <widget class="QComboBox" name="dataVoimaLonkkaUlkokiertoVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="14" column="1">
-           <widget class="QLabel" name="label_325">
-            <property name="text">
-             <string>Lonkan koukistus</string>
-            </property>
-           </widget>
-          </item>
-          <item row="14" column="8">
-           <widget class="QComboBox" name="dataSelLonkkaFleksioVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="15" column="1">
-           <widget class="QLabel" name="label_308">
-            <property name="text">
-             <string>Polven ojennus</string>
-            </property>
-           </widget>
-          </item>
-          <item row="14" column="6">
-           <widget class="QComboBox" name="dataSelLonkkaFleksioOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="17" column="1">
-           <widget class="QLabel" name="label_313">
-            <property name="text">
-             <string>Lonkan sisäkierto</string>
-            </property>
-           </widget>
-          </item>
-          <item row="16" column="6">
-           <widget class="QComboBox" name="dataSelLonkkaUlkokiertoOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="15" column="2">
-           <widget class="QComboBox" name="dataVoimaPolviEkstensioOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="17" column="2">
-           <widget class="QComboBox" name="dataVoimaLonkkaSisakiertoOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="17" column="4">
-           <widget class="QComboBox" name="dataVoimaLonkkaSisakiertoVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>3+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>4+</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5-</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="17" column="6">
-           <widget class="QComboBox" name="dataSelLonkkaSisakiertoOik">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="17" column="8">
-           <widget class="QComboBox" name="dataSelLonkkaSisakiertoVas">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <item>
-             <property name="text">
-              <string>Ei mitattu</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>0</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>1</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>2</string>
-             </property>
-            </item>
-           </widget>
-          </item>
-          <item row="7" column="9">
-           <spacer name="horizontalSpacer_45">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="0" column="2">
-           <spacer name="verticalSpacer_41">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
          </layout>
         </item>
@@ -10101,6 +10101,7 @@ lonkka fleksiossa</string>
         </item>
        </layout>
        <zorder>verticalSpacer_4</zorder>
+       <zorder></zorder>
       </widget>
       <widget class="QWidget" name="tabVoima2">
        <attribute name="title">
@@ -15651,45 +15652,15 @@ lonkka fleksiossa</string>
   <tabstop>dataVoimaLonkkaEkstensioPolvi0Vas</tabstop>
   <tabstop>dataVoimaLonkkaEkstensioPolvi90Oik</tabstop>
   <tabstop>dataVoimaLonkkaEkstensioPolvi90Vas</tabstop>
-  <tabstop>dataVoimaPolviFleksioOik</tabstop>
-  <tabstop>dataVoimaPolviFleksioVas</tabstop>
-  <tabstop>dataVoimaLonkkaAbduktioLonkka0Oik</tabstop>
-  <tabstop>dataVoimaLonkkaAbduktioLonkka0Vas</tabstop>
-  <tabstop>dataVoimaLonkkaAbduktioLonkkaFleksOik</tabstop>
-  <tabstop>dataVoimaLonkkaAbduktioLonkkaFleksVas</tabstop>
-  <tabstop>dataVoimaLonkkaAdduktioOik</tabstop>
-  <tabstop>dataVoimaLonkkaAdduktioVas</tabstop>
   <tabstop>dataVoimaSelka</tabstop>
   <tabstop>dataVoimaVatsaSuorat</tabstop>
   <tabstop>dataVoimaVatsaVinotOik</tabstop>
   <tabstop>dataVoimaVatsaVinotVas</tabstop>
-  <tabstop>dataVoimaLonkkaFleksioOik</tabstop>
-  <tabstop>dataVoimaLonkkaFleksioVas</tabstop>
-  <tabstop>dataVoimaPolviEkstensioOik</tabstop>
-  <tabstop>dataVoimaPolviEkstensioVas</tabstop>
-  <tabstop>dataVoimaLonkkaUlkokiertoOik</tabstop>
-  <tabstop>dataVoimaLonkkaUlkokiertoVas</tabstop>
-  <tabstop>dataVoimaLonkkaSisakiertoOik</tabstop>
-  <tabstop>dataVoimaLonkkaSisakiertoVas</tabstop>
   <tabstop>datacmtVoima1</tabstop>
   <tabstop>dataSelLonkkaEkstensioPolvi0Oik</tabstop>
   <tabstop>dataSelLonkkaEkstensioPolvi0Vas</tabstop>
   <tabstop>dataSelLonkkaEkstensioPolvi90Oik</tabstop>
   <tabstop>dataSelLonkkaEkstensioPolvi90Vas</tabstop>
-  <tabstop>dataSelPolviFleksioOik</tabstop>
-  <tabstop>dataSelPolviFleksioVas</tabstop>
-  <tabstop>dataSelLonkkaAbduktioLonkka0Oik</tabstop>
-  <tabstop>dataSelLonkkaAbduktioLonkka0Vas</tabstop>
-  <tabstop>dataSelLonkkaAdduktioOik</tabstop>
-  <tabstop>dataSelLonkkaAdduktioVas</tabstop>
-  <tabstop>dataSelLonkkaFleksioOik</tabstop>
-  <tabstop>dataSelLonkkaFleksioVas</tabstop>
-  <tabstop>dataSelPolviEkstensioOik</tabstop>
-  <tabstop>dataSelPolviEkstensioVas</tabstop>
-  <tabstop>dataSelLonkkaUlkokiertoOik</tabstop>
-  <tabstop>dataSelLonkkaUlkokiertoVas</tabstop>
-  <tabstop>dataSelLonkkaSisakiertoOik</tabstop>
-  <tabstop>dataSelLonkkaSisakiertoVas</tabstop>
   <tabstop>dataVoimaTibialisAnteriorOik</tabstop>
   <tabstop>dataVoimaTibialisAnteriorVas</tabstop>
   <tabstop>dataVoimaTibialisPosteriorOik</tabstop>
