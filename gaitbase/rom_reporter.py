@@ -63,7 +63,7 @@ def _process_blocks(blocks, data, fields_at_default):
             report_text = re.sub(r',\s*$', '', report_text)
             # add dot & linefeed (only at end of line)
             if report_text[-1] != '\n':
-                report_text += '.\n'
+                report_text += '\n'
         elif block_formatted := _conditional_format(block, data, fields_at_default):
             if report_text and report_text[-1] == '\n':
                 # if the block starts a new line, capitalize the first letter
