@@ -46,35 +46,38 @@ def make_text_report(template, data, fields_at_default):
     exec_namespace.update(data)
     exec(template_code, exec_namespace)
     blocks = exec_namespace['_text_blocks']
-    return _process_blocks(blocks, data, fields_at_default)
+    return _process_blocks(blocks, data, fields_at_default)[-1]
 
 
 def _process_blocks(blocks, data, fields_at_default):
-    """Process a list of text blocks.
+    """Recursively process a list of text blocks.
 
     For template formatting rules, see the example Python template under
     gaitbase/templates.
     """
-    block_formatted = ''
-    report_text = ''
-    for block in blocks:
-        block_formatted = _conditional_format(block, data, fields_at_default)
-        if block_formatted:
-            report_text += block_formatted
-    return report_text
+    if isinstance(blocks, list) or isinstance(blocks, tuple):
+        """ We have a list, process each entry recursively and concatenate the
+        results. If all the entries in the list are default, return an empy
+        string. """
 
-
-def _conditional_format(thestr, data, fields_at_default):
-    """Conditionally format string thestr.
-
-    Fields given as {field} are replaced with their values in the data dict. If
-    all the fields are in the fields_at_default list, an empty string is returned."""
-    flds = _get_format_fields(thestr)
-    if not flds or any(fld not in fields_at_default for fld in flds):
-        return thestr.format(**data)
+        is_defaults, report_texts = zip(*[_process_blocks(block, data, fields_at_default) for block in blocks])
+        if all(is_defaults):
+            return True, ''
+        else:
+            return False, ''.join(report_texts)
+        
     else:
-        return ''
+        assert isinstance(blocks, str)
 
+        """ Fields given as {field} are replaced with their values in the data dict. If
+        all the fields are in the fields_at_default list, an empty string is returned. """
+        flds = _get_format_fields(blocks)
+        is_default = all(fld in fields_at_default for fld in flds)
+        if flds and is_default:
+            return True, ''
+        else:
+            return is_default, blocks.format(**data)
+            
 
 def _get_format_fields(thestr):
     """Return a list of fields, given a format string.
