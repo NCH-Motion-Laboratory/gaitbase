@@ -27,8 +27,6 @@ class Constants:
     # the 'no' value should really be 'Ei' but is capitalized for historical
     # reasons; it's automatically uncapitalized for reports
     checkbox_notext: str = 'EI'
-    # smart linefeed (a sentinel that only compares equal with itself)
-    end_line = object()
 
 
 @dataclass
