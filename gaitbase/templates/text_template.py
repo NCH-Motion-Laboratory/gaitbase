@@ -120,13 +120,14 @@ Kengännumero: {AntropKenganNumeroOik} / {AntropKenganNumeroVas}
 ##-------------------------------------------------------------------------
 # EMG
 #
+[
 """
 Dyn EMG:
 """,
 str_emg_active,
 """
 Kommentit (EMG): {cmtEMG}
-""",
+"""],
 
 ##-------------------------------------------------------------------------
 # Fixed text block
@@ -142,6 +143,7 @@ NR = Normaalirajoissa
 ##-------------------------------------------------------------------------
 # Nilkka
 #
+[
 """
 Nilkka:
 """,
@@ -159,10 +161,12 @@ f"Nilkan koukistus polvi suorana: pass. (R2) {{NilkkaDorsifPolvi0PROMOik}}/{{Nil
 "Kommentit (PROM): {cmtNilkkaPROM}\n",
 "Kommentit (AROM): {cmtNilkkaAROM}\n",
 "Kommentit (spastisuus): {cmtNilkkaSpast}\n",
+],
 
 ##-------------------------------------------------------------------------
 # Polvi
 #
+[
 """
 Polvi:
 """,
@@ -178,10 +182,12 @@ Polvi:
 "MAS (rectus): {PolviRectusModAOik}/{PolviRectusModAVas}\n",
 "Kommentit (PROM): {cmtPolviPROM}\n",
 "Kommentit (spastisuus): {cmtPolviSpast}\n",
+],
 
 ##-------------------------------------------------------------------------
 # Lonkka
 #
+[
 """
 Lonkka:
 """,
@@ -205,10 +211,12 @@ Lonkka:
 "Kommentit (lonkka PROM): {cmtLonkkaPROM}\n",
 "Kommentit (lonkka, spatisuus): {cmtLonkkaSpast}\n",
 "Kommentit (lonkka, muut): {cmtLonkkaMuut}\n",
+],
 
 ##-------------------------------------------------------------------------
 # Luiset asennot
 #
+[
 """
 Luiset asennot:
 """,
@@ -223,10 +231,12 @@ Luiset asennot:
 "Alaraajojen pituus: {AntropAlaraajaOik}/{AntropAlaraajaVas}\n",
 "Jalkaterien pituus: {AntropJalkateraOik}/{AntropJalkateraVas}\n",
 "Kommentit (luiset asennot): {cmtVirheas}\n",
+],
 
 ##-------------------------------------------------------------------------
 # Jalkaterä kuormittamattomana
 #
+[
 """
 Jalkaterä kuormittamattomana (oikea/vasen; + = lievä, ++ = kohtalainen, +++ = voimakas):
 """,
@@ -244,10 +254,12 @@ Jalkaterä kuormittamattomana (oikea/vasen; + = lievä, ++ = kohtalainen, +++ = 
 "Kovettumat oikea: {JalkatKovettumatOik}\n",
 "Kovettumat vasen: {JalkatKovettumatVas}\n",
 "Kommentit (jalkaterä kuormittamattomana): {cmtJalkateraKuormittamattomana}\n",
+],
 
 ##-------------------------------------------------------------------------
 # Jalkaterä kuormitettuna
 #
+[
 """
 Jalkaterä kuormitettuna (oikea/vasen; + = lievä, ++ = kohtalainen, +++ = voimakas):
 """,
@@ -263,10 +275,12 @@ Jalkaterä kuormitettuna (oikea/vasen; + = lievä, ++ = kohtalainen, +++ = voima
 "Jackin testi: {JalkatJackTestiOik}/{JalkatJackTestiVas}\n",
 "Colemanin block -testi: {JalkatColemanOik}/{JalkatColemanVas}\n",
 "Kommentit (jalkaterä kuormitettuna): {cmtJalkateraKuormitettuna}\n",
+],
 
 ##-------------------------------------------------------------------------
 # Manuaalisesti mitattu lihasvoima
 #
+[
 """
 Manuaalisesti mitattu lihasvoima (asteikko 0-5, missä 5 on vahvin, ja 3 voittaa painovoiman koko potilaan liikelaajuudella):
 """,
@@ -293,10 +307,12 @@ Manuaalisesti mitattu lihasvoima (asteikko 0-5, missä 5 on vahvin, ja 3 voittaa
 "Vinot vatsalihakset: {VoimaVatsaVinotOik}/{VoimaVatsaVinotVas}\n",
 "Selkälihakset: {VoimaSelka}\n",
 "Kommentit (voima): {cmtVoima1} {cmtVoima2}\n",
+],
 
 ##-------------------------------------------------------------------------
 # Selektiivisyys
 #
+[
 """
 Selektiivisyys (asteikko 0-2, missä 0=kokonaisliikemalli, 1=osittain eriytynyt ja 2=eriytynyt koko liikelaajuudella):
 """,
@@ -318,4 +334,5 @@ Selektiivisyys (asteikko 0-2, missä 0=kokonaisliikemalli, 1=osittain eriytynyt 
 "Lonkan lähennys: {SelLonkkaAdduktioOik}/{SelLonkkaAdduktioVas}\n",
 "Lonkan sisäkierto: {SelLonkkaSisakiertoOik}/{SelLonkkaSisakiertoVas}\n",
 "Lonkan ulkokierto: {SelLonkkaUlkokiertoOik}/{SelLonkkaUlkokiertoVas}\n",
+],
 ]
