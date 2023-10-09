@@ -3,12 +3,19 @@
 
 Python template for the text report.
 
-The template must define a variable called _text_blocks, which must be an
-iterable of text blocks (strings). The report is built by concatenating the
-blocks. Each block may contain fields written as {field_name}. They will be
-replaced by the corresponding data values. If a block contains fields and ALL of
-the fields are at their default values, the block will be discarded. Any columns
-in the SQL 'roms' and 'patients' tables are valid field names.
+The template must define a variable called _text_blocks that specifies how the
+report is formatted. _text_blocks is a tree with leaves being strings and
+inner nodes - lists or tuples. Ther report is build by recursively translating
+each vertex to text; the text for the root vertex is the report.
+
+Each leaf may contain data fields written as {field_name}. They will be
+replaced by the corresponding data values. If a leaf contains fields and ALL of
+the fields are at their default values, the leaf will be discarded.
+
+If a node has children leaves that contain data fields, and ALL of the
+childrens' fields are at their default values, the whole node will be discarded.
+
+Any columns in the SQL 'roms' and 'patients' tables are valid field names.
 
 The code in this file is executed by exec(). In principle, any Python logic may
 be used to build the _text_blocks variable. However for readability, it may be a
