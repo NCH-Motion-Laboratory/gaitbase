@@ -79,6 +79,18 @@ def _process_blocks(blocks, data, fields_at_default):
             return is_default, blocks.format(**data)
             
 
+def _conditional_format(thestr, data, fields_at_default):
+    """Conditionally format string thestr.
+
+    Fields given as {field} are replaced with their values in the data dict. If
+    all the fields are in the fields_at_default list, an empty string is returned."""
+    flds = _get_format_fields(thestr)
+    if not flds or any(fld not in fields_at_default for fld in flds):
+        return thestr.format(**data)
+    else:
+        return ''
+
+
 def _get_format_fields(thestr):
     """Return a list of fields, given a format string.
 
