@@ -10,15 +10,17 @@ from copy import copy
 from dataclasses import dataclass, fields
 from pathlib import Path
 
+import sqlite3
 from pkg_resources import resource_filename
 from PyQt5 import QtCore, QtSql, QtWidgets, uic
 from ulstools.env import named_tempfile
 from ulstools.num import check_hetu
 
-from .config import cfg
-from .rom_entryapp import EntryApp
-from .utils import _startfile, validate_code
-from .widgets import qt_message_dialog, qt_confirm_dialog
+from config import cfg
+from rom_entryapp import EntryApp
+from utils import _startfile, validate_code
+from widgets import qt_message_dialog, qt_confirm_dialog
+from constants import Constants
 
 
 @dataclass
@@ -158,6 +160,33 @@ class PatientDialog(QtWidgets.QMainWindow):
             msg += 'Please set the correct location in the config.'
             qt_message_dialog(msg)
             sys.exit()
+
+        # Check the DB schema version
+        try:
+            conn = sqlite3.connect(cfg.database.database)
+            db_ver = list(conn.execute('PRAGMA user_version'))[0][0]
+            conn.close()
+        except:
+            msg = f'Error reading the schema version from the database ' + \
+                  f'{cfg.database.database}. Is that a valid gitbase DB file?'
+            qt_message_dialog(msg)
+            sys.exit()
+
+        if db_ver > Constants.db_version:
+            msg = f'The application is too old to read the database ' + \
+                  f'{cfg.database.database}. The database schema version is {db_ver}, ' + \
+                  f'but the application can only handle version {Constants.db_version}. ' + \
+                  f'You probably should update your application.'
+            qt_message_dialog(msg)
+            sys.exit()
+
+        if db_ver < Constants.db_version:
+            msg = f'The database {cfg.database.database} is too old. The database schema ' + \
+                  f'version is {db_ver}, but the application can only handle version ' + \
+                  f'{Constants.db_version}. Your probubly should update the database schema.'
+            qt_message_dialog(msg)
+            sys.exit()
+
         self.database.setDatabaseName(cfg.database.database)
         self.database.open()
 

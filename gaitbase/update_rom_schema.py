@@ -8,10 +8,11 @@ import argparse
 from pathlib import Path
 import sqlite3
 
-from .dump_varlist import get_vars_and_affinities
+from dump_varlist import get_vars_and_affinities
+from constants import Constants
 
 
-def check_ui_vs_sql(db_fname, create_sql_columns=False):
+def check_ui_vs_sql(db_fname, update=False):
     """Check UI variables vs. SQL columns"""
 
     db_fname = Path(db_fname)
@@ -19,6 +20,18 @@ def check_ui_vs_sql(db_fname, create_sql_columns=False):
         raise RuntimeError('DB file needs to exist!')
     conn = sqlite3.connect(db_fname)
     conn.execute('PRAGMA foreign_keys = ON;')
+
+    # Compare DB version vs the version the application expects
+    db_ver = list(conn.execute('PRAGMA user_version'))[0][0]
+    if db_ver != Constants.db_version:
+        print(f'*** NOTE: DB schema version mismatch: DB version is {db_ver}, ' + \
+              f'but the application expects version {Constants.db_version}')
+
+        if update:
+            print(f"*** Changing the DB schema version to '{Constants.db_version}'...")
+            conn.execute(f'PRAGMA user_version = {Constants.db_version}')
+        else:
+            print('Use -u to update the DB schema version.')
 
     # get database columns and affinities
     var_affs_sql = dict()
@@ -36,12 +49,12 @@ def check_ui_vs_sql(db_fname, create_sql_columns=False):
     for var in allvars:
         if var not in var_affs_sql:
             print(f"*** NOTE: '{var}' has a UI element but is missing from SQL schema!")
-            if create_sql_columns:
+            if update:
                 print(f"*** Creating column for '{var}'...")
                 aff = var_affs_ui[var]
                 conn.execute(f'ALTER TABLE roms ADD COLUMN {var} {aff}')
             else:
-                print('Use -a to add it automatically.')
+                print('Use -u to add it automatically.')
         if var not in var_affs_ui:
             print(f"NOTE: SQL column '{var}' does not have a corresponding UI element")
             print('This may be OK (e.g. database id column, or a deprecated variable)')
@@ -58,11 +71,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('db_fname', help='path to the database file')
     parser.add_argument(
-        '-a',
-        '--add-columns',
-        help='automatically add missing SQL columns',
+        '-u',
+        '--update',
+        help='automatically update the database (add missing columns and more)',
         action='store_true',
     )
     args = parser.parse_args()
 
-    check_ui_vs_sql(args.db_fname, args.add_columns)
+    check_ui_vs_sql(args.db_fname, args.update)

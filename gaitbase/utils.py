@@ -11,7 +11,7 @@ import datetime
 
 from ulstools.env import make_shortcut
 
-from .constants import Constants
+from constants import Constants
 
 
 def make_my_shortcut():

@@ -16,10 +16,10 @@ from PyQt5 import QtCore, QtWidgets, uic
 from PyQt5.QtSql import QSqlQuery
 
 
-from . import rom_reporter
-from .config import cfg
-from .constants import Constants, Finnish
-from .widgets import (
+import rom_reporter
+from config import cfg
+from constants import Constants, Finnish
+from widgets import (
     DegLineEdit,
     MyLineEdit,
     qt_message_dialog,
@@ -28,7 +28,7 @@ from .widgets import (
     get_widget_units,
     set_widget_value,
 )
-from .utils import _validate_date
+from utils import _validate_date
 
 logger = logging.getLogger(__name__)
 

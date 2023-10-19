@@ -5,12 +5,10 @@ Create reports for gaitbase.
 @author: Jussi (jnu@iki.fi)
 """
 import string
-import re
 from xlrd import open_workbook
 from xlutils.copy import copy
 
-from .constants import Constants
-from .config import cfg
+from config import cfg
 
 
 def make_text_report(template, data, fields_at_default):
