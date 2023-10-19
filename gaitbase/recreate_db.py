@@ -9,6 +9,7 @@ from pathlib import Path
 import sqlite3
 
 from gaitbase.dump_varlist import get_vars_and_affinities
+from constants import Constants
 
 DB_FILEPATH = Path('patients.db')
 
@@ -47,6 +48,10 @@ def main():
     query += ');'
 
     conn.execute(query)
+
+    # Write the DB version using PRAGMA
+    conn.execute(f'PRAGMA user_version = {Constants.db_version}')
+
     conn.commit()
 
     print(f'created an empty database at {DB_FILEPATH.resolve()}')

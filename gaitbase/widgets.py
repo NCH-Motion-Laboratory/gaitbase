@@ -4,8 +4,8 @@ Custom widgets, dialogs and related Qt code.
 """
 
 from PyQt5 import QtWidgets, QtCore
-from .constants import Constants, Finnish
-from .utils import isnumeric
+from constants import Constants, Finnish
+from utils import isnumeric
 
 
 def qt_message_dialog(msg):
