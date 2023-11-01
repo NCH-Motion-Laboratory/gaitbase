@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1637</width>
-    <height>847</height>
+    <width>1684</width>
+    <height>846</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
        <enum>QTabWidget::North</enum>
       </property>
       <property name="currentIndex">
-       <number>7</number>
+       <number>13</number>
       </property>
       <widget class="QWidget" name="tabTiedot">
        <attribute name="title">
@@ -373,7 +373,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1354</width>
+             <width>1630</width>
              <height>973</height>
             </rect>
            </property>
@@ -15398,6 +15398,2265 @@ lonkka fleksiossa</string>
          </layout>
         </item>
        </layout>
+      </widget>
+      <widget class="QWidget" name="tabSCALE">
+       <attribute name="title">
+        <string>SCALE</string>
+       </attribute>
+       <widget class="QWidget" name="gridLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>1642</width>
+          <height>751</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_10">
+         <item row="20" column="11">
+          <widget class="QComboBox" name="dataSCALESTJDescrKVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="14" column="5">
+          <widget class="QComboBox" name="dataSCALESTJDescrEOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="11">
+          <widget class="QLabel" name="label_61">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Subtalaari&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="18" column="5">
+          <widget class="QComboBox" name="dataSCALESTJDescrIOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="20" column="8">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrKVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="12" column="3">
+          <widget class="QComboBox" name="dataSCALEPolviDescrCOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="22" column="3">
+          <widget class="QComboBox" name="dataSCALEPolviDescrMOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="19" column="5">
+          <widget class="QComboBox" name="dataSCALESTJDescrJOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLabel" name="label_53">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Polvi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="22" column="0">
+          <widget class="QLabel" name="label_64">
+           <property name="text">
+            <string>Motion &lt;= 50% available ROM</string>
+           </property>
+          </widget>
+         </item>
+         <item row="16" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrGVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="13" column="3">
+          <widget class="QComboBox" name="dataSCALEPolviDescrDOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="21" column="5">
+          <widget class="QComboBox" name="dataSCALESTJDescrLOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="19" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrJOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="5" column="9">
+          <widget class="QComboBox" name="dataSCALEPolviResistSynAVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="9">
+          <widget class="QLabel" name="label_59">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Polvi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="17" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrHOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="13" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrDOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="21" column="8">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrLVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="18" column="8">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrIVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="20" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrKOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="22" column="6">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrMOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="21" column="0">
+          <widget class="QLabel" name="label_87">
+           <property name="text">
+            <string>Movement of other joints</string>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrCVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="6">
+          <widget class="QComboBox" name="dataSCALEVarpaatTotOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Normaali</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Alentunnut</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kykenemäton</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="15" column="11">
+          <widget class="QComboBox" name="dataSCALESTJDescrFVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="16" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrGOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="7">
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="20" column="3">
+          <widget class="QComboBox" name="dataSCALEPolviDescrKOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="19" column="0">
+          <widget class="QLabel" name="label_82">
+           <property name="text">
+            <string>Motion slower than 3 sec verbal count</string>
+           </property>
+          </widget>
+         </item>
+         <item row="22" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrMVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="5" column="6">
+          <widget class="QComboBox" name="dataSCALEVarpaatResistSynergyAOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="18" column="3">
+          <widget class="QComboBox" name="dataSCALEPolviDescrIOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="8">
+          <widget class="QLabel" name="label_58">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Lonkka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="5">
+          <widget class="QComboBox" name="dataSCALESTJDescrCOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="14" column="0">
+          <widget class="QLabel" name="label_74">
+           <property name="text">
+            <string>Plantar flexion contracture</string>
+           </property>
+          </widget>
+         </item>
+         <item row="20" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrKVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="12">
+          <widget class="QComboBox" name="dataSCALEVarpaatTotVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Normaali</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Alentunnut</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kykenemäton</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="11" column="8">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrBVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="18" column="0">
+          <widget class="QLabel" name="label_81">
+           <property name="text">
+            <string>Mirrors motion on opposite limb</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_66">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Vastustettu synergia&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="15" column="12">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrFVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_65">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Overall grade:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="17" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrHVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="8" colspan="5">
+          <widget class="QLabel" name="label_63">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Vasen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="18" column="2">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrIOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="10">
+          <widget class="QLabel" name="label_60">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Nilkka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="7">
+          <spacer name="verticalSpacer_17">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="2" column="2">
+          <widget class="QComboBox" name="dataSCALELonkkaTotOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Normaali</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Alentunnut</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kykenemäton</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="14" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrEVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="6" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaResistSynBVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="22" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrMOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="15" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrFOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="22" column="12">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrMVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="10" column="0">
+          <widget class="QLabel" name="label_70">
+           <property name="text">
+            <string>Hip flexion contracture</string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0">
+          <widget class="QLabel" name="label_68">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nilkan koukistus liike vast. lonkan kouk.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="18" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrIOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="12" column="12">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrCVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="21" column="11">
+          <widget class="QComboBox" name="dataSCALESTJDescrLVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="13" column="0">
+          <widget class="QLabel" name="label_73">
+           <property name="text">
+            <string>Hamstring tightness</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="12">
+          <widget class="QComboBox" name="dataSCALEVarpaatResistSynergyAVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="10" column="2">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrAOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="14" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrEOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="13" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrDVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="22" column="11">
+          <widget class="QComboBox" name="dataSCALESTJDescrMVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="19" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrJVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="8" column="7">
+          <spacer name="verticalSpacer_12">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="15" column="0">
+          <widget class="QLabel" name="label_78">
+           <property name="text">
+            <string>Plantar flexor spasticity</string>
+           </property>
+          </widget>
+         </item>
+         <item row="13" column="9">
+          <widget class="QComboBox" name="dataSCALEPolviDescrDVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLabel" name="label_54">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Nilkka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="22" column="8">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrMVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="9">
+          <widget class="QComboBox" name="dataSCALEPolviTotVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Normaali</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Alentunnut</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kykenemäton</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="21" column="2">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrLOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="19" column="2">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrJOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="22" column="2">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrMOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="20" column="12">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrKVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="12" column="11">
+          <widget class="QComboBox" name="dataSCALESTJDescrCVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="12" column="6">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrCOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="11" column="2">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrBOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="19" column="12">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrJVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="12" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrCOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="6" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaResistSynBOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="18" column="12">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrIVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="21" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrLOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="15" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrFVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="14" column="12">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrEVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="21" column="6">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrLOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="18" column="6">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrIOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="19" column="8">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrJVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="18" column="9">
+          <widget class="QComboBox" name="dataSCALEPolviDescrIVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="19" column="6">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrJOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="5">
+          <widget class="QLabel" name="label_56">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Subtalaari&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="20" column="9">
+          <widget class="QComboBox" name="dataSCALEPolviDescrKVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="21" column="9">
+          <widget class="QComboBox" name="dataSCALEPolviDescrLVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="10" column="8">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrAVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="19" column="3">
+          <widget class="QComboBox" name="dataSCALEPolviDescrJOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="22" column="5">
+          <widget class="QComboBox" name="dataSCALESTJDescrMOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="13" column="2">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrDOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="14" column="6">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrEOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="20" column="0">
+          <widget class="QLabel" name="label_84">
+           <property name="text">
+            <string>Moves one direction only</string>
+           </property>
+          </widget>
+         </item>
+         <item row="20" column="2">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrKOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="15" column="6">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrFOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="3">
+          <widget class="QComboBox" name="dataSCALEPolviTotOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Normaali</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Alentunnut</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kykenemäton</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="15" column="5">
+          <widget class="QComboBox" name="dataSCALESTJDescrFOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="4">
+          <widget class="QComboBox" name="dataSCALENilkkaTotOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Normaali</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Alentunnut</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kykenemäton</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="12">
+          <widget class="QLabel" name="label_62">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Varpaat&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="19" column="11">
+          <widget class="QComboBox" name="dataSCALESTJDescrJVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="0" column="2" colspan="5">
+          <widget class="QLabel" name="label_51">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oikea&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QLabel" name="label_52">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Lonkka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="24" column="4">
+          <widget class="QLabel" name="label_91">
+           <property name="text">
+            <string>Kommentit:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="13" column="8">
+          <widget class="QComboBox" name="dataSCALELonkkaDescrDVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLabel" name="label_69">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Descriptors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="21" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrLVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="14" column="11">
+          <widget class="QComboBox" name="dataSCALESTJDescrEVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="11" column="0">
+          <widget class="QLabel" name="label_71">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adductor contracture or spasticity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="9">
+          <widget class="QComboBox" name="dataSCALEPolviDescrCVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="16" column="0">
+          <widget class="QLabel" name="label_79">
+           <property name="text">
+            <string>Inverts or everts, not pure dorsiflexion</string>
+           </property>
+          </widget>
+         </item>
+         <item row="22" column="9">
+          <widget class="QComboBox" name="dataSCALEPolviDescrMVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="18" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaDescrIVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="17" column="0">
+          <widget class="QLabel" name="label_80">
+           <property name="text">
+            <string>Primarily moves toes</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="10">
+          <widget class="QComboBox" name="dataSCALENilkkaTotVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Normaali</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Alentunnut</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kykenemäton</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="18" column="11">
+          <widget class="QComboBox" name="dataSCALESTJDescrIVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="6">
+          <widget class="QLabel" name="label_57">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Varpaat&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="24" column="5" colspan="5">
+          <widget class="QTextEdit" name="datacmtSCALE">
+           <property name="maximumSize">
+            <size>
+             <width>400</width>
+             <height>70</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="3">
+          <widget class="QComboBox" name="dataSCALEPolviResistSynAOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="5">
+          <widget class="QComboBox" name="dataSCALESTJTotOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Normaali</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Alentunnut</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kykenemäton</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="21" column="12">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrLVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="12" column="0">
+          <widget class="QLabel" name="label_72">
+           <property name="text">
+            <string>Knee flexion contracture</string>
+           </property>
+          </widget>
+         </item>
+         <item row="20" column="5">
+          <widget class="QComboBox" name="dataSCALESTJDescrKOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_67">
+           <property name="text">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Polven ja nilkan vastustettu ojennus&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+          </widget>
+         </item>
+         <item row="19" column="9">
+          <widget class="QComboBox" name="dataSCALEPolviDescrJVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="8">
+          <widget class="QComboBox" name="dataSCALELonkkaTotVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Normaali</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Alentunnut</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kykenemäton</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="20" column="6">
+          <widget class="QComboBox" name="dataSCALEVarpaatDescrKOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="2" column="11">
+          <widget class="QComboBox" name="dataSCALESTJTotVas">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Normaali</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Alentunnut</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kykenemäton</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="21" column="3">
+          <widget class="QComboBox" name="dataSCALEPolviDescrLOik">
+           <item>
+            <property name="text">
+             <string>Ei mitattu</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Kyllä</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Ei</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="23" column="6">
+          <spacer name="verticalSpacer_19">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
       </widget>
      </widget>
     </item>
