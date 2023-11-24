@@ -373,7 +373,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1354</width>
+             <width>1630</width>
              <height>973</height>
             </rect>
            </property>
@@ -15403,1201 +15403,1195 @@ lonkka fleksiossa</string>
        <attribute name="title">
         <string>SCALE</string>
        </attribute>
-       <widget class="QWidget" name="gridLayoutWidget">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>1642</width>
-          <height>751</height>
-         </rect>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_10">
-         <item row="24" column="10">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrLVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="2">
-          <widget class="QComboBox" name="dataSCALELonkkaTotOik">
-           <item>
-            <property name="text">
-             <string>Ei mitattu</string>
+       <layout class="QVBoxLayout" name="verticalLayout_14">
+        <item>
+         <layout class="QGridLayout" name="gridLayout_10">
+          <item row="24" column="10">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrLVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Normaali</string>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QComboBox" name="dataSCALELonkkaTotOik">
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Normaali</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Alentunnut</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kykenemäton</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="21" column="6">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrIOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Alentunnut</string>
+           </widget>
+          </item>
+          <item row="16" column="11">
+           <widget class="QCheckBox" name="dataSCALESTJDescrFVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Kykenemäton</string>
+           </widget>
+          </item>
+          <item row="18" column="4">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrGOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-          </widget>
-         </item>
-         <item row="21" column="6">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrIOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="16" column="11">
-          <widget class="QCheckBox" name="dataSCALESTJDescrFVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="18" column="4">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrGOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="21" column="11">
-          <widget class="QCheckBox" name="dataSCALESTJDescrIVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="24" column="8">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrLVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="25" column="11">
-          <widget class="QCheckBox" name="dataSCALESTJDescrMVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="2">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrDOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="23" column="3">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrKOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="21" column="10">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrIVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="19" column="4">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrHOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="23" column="9">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrKVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="21" column="2">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrIOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="7">
-          <spacer name="verticalSpacer_12">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="24" column="4">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrLOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="23" column="4">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrKOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="10">
-          <widget class="QLabel" name="label_60">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Nilkka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="22" column="3">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrJOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="5">
-          <widget class="QComboBox" name="dataSCALESTJTotOik">
-           <item>
-            <property name="text">
-             <string>Ei mitattu</string>
+           </widget>
+          </item>
+          <item row="21" column="11">
+           <widget class="QCheckBox" name="dataSCALESTJDescrIVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Normaali</string>
+           </widget>
+          </item>
+          <item row="24" column="8">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrLVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Alentunnut</string>
+           </widget>
+          </item>
+          <item row="25" column="11">
+           <widget class="QCheckBox" name="dataSCALESTJDescrMVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Kykenemäton</string>
+           </widget>
+          </item>
+          <item row="14" column="2">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrDOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-          </widget>
-         </item>
-         <item row="11" column="2">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrBOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="0">
-          <widget class="QLabel" name="label_69">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Descriptors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="22" column="11">
-          <widget class="QCheckBox" name="dataSCALESTJDescrJVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="25" column="12">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrMVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="26" column="6">
-          <spacer name="verticalSpacer_19">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="2" column="4">
-          <widget class="QComboBox" name="dataSCALENilkkaTotOik">
-           <item>
-            <property name="text">
-             <string>Ei mitattu</string>
+           </widget>
+          </item>
+          <item row="23" column="3">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrKOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Normaali</string>
+           </widget>
+          </item>
+          <item row="21" column="10">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrIVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Alentunnut</string>
+           </widget>
+          </item>
+          <item row="19" column="4">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrHOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Kykenemäton</string>
+           </widget>
+          </item>
+          <item row="23" column="9">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrKVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-          </widget>
-         </item>
-         <item row="11" column="8">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrBVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_65">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Overall grade:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="18" column="0">
-          <widget class="QLabel" name="label_79">
-           <property name="text">
-            <string>Inverts or everts, not pure dorsiflexion</string>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="0">
-          <widget class="QLabel" name="label_74">
-           <property name="text">
-            <string>Plantar flexion contracture</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="11">
-          <widget class="QLabel" name="label_61">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Subtalaari&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="24" column="5">
-          <widget class="QCheckBox" name="dataSCALESTJDescrLOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="12">
-          <widget class="QComboBox" name="dataSCALEVarpaatTotVas">
-           <item>
-            <property name="text">
-             <string>Ei mitattu</string>
+           </widget>
+          </item>
+          <item row="21" column="2">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrIOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Normaali</string>
+           </widget>
+          </item>
+          <item row="8" column="7">
+           <spacer name="verticalSpacer_12">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Alentunnut</string>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
             </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Kykenemäton</string>
+           </spacer>
+          </item>
+          <item row="24" column="4">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrLOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-          </widget>
-         </item>
-         <item row="1" column="5">
-          <widget class="QLabel" name="label_56">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Subtalaari&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="22" column="9">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrJVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="25" column="10">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrMVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="0">
-          <widget class="QLabel" name="label_72">
-           <property name="text">
-            <string>Knee flexion contracture</string>
-           </property>
-          </widget>
-         </item>
-         <item row="25" column="2">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrMOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="8" colspan="5">
-          <widget class="QLabel" name="label_63">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Vasen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="21" column="3">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrIOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="21" column="8">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrIVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="21" column="4">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrIOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="label_67">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Knee extension with resisted limb extension&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="6">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrCOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="6">
-          <widget class="QLabel" name="label_57">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Varpaat&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="24" column="3">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrLOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="23" column="11">
-          <widget class="QCheckBox" name="dataSCALESTJDescrKVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="9">
-          <widget class="QComboBox" name="dataSCALEPolviTotVas">
-           <item>
-            <property name="text">
-             <string>Ei mitattu</string>
+           </widget>
+          </item>
+          <item row="23" column="4">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrKOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="1" column="10">
+           <widget class="QLabel" name="label_60">
             <property name="text">
-             <string>Normaali</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Nilkka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="22" column="3">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrJOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="5">
+           <widget class="QComboBox" name="dataSCALESTJTotOik">
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Normaali</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Alentunnut</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kykenemäton</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="11" column="2">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrBOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="9" column="0">
+           <widget class="QLabel" name="label_69">
             <property name="text">
-             <string>Alentunnut</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Descriptors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="22" column="11">
+           <widget class="QCheckBox" name="dataSCALESTJDescrJVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="25" column="12">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrMVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="26" column="6">
+           <spacer name="verticalSpacer_19">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="4">
+           <widget class="QComboBox" name="dataSCALENilkkaTotOik">
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Normaali</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Alentunnut</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kykenemäton</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="11" column="8">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrBVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_65">
             <property name="text">
-             <string>Kykenemäton</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Overall grade:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-          </widget>
-         </item>
-         <item row="14" column="9">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrDVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="9">
-          <widget class="QLabel" name="label_59">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Polvi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="27" column="5" colspan="5">
-          <widget class="QTextEdit" name="datacmtSCALE">
-           <property name="maximumSize">
-            <size>
-             <width>400</width>
-             <height>70</height>
-            </size>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="9">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrCVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="5">
-          <widget class="QCheckBox" name="dataSCALESTJDescrCOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="18" column="10">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrGVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="9">
-          <widget class="QCheckBox" name="dataSCALEPolviResistSynAVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="0">
-          <widget class="QLabel" name="label_73">
-           <property name="text">
-            <string>Hamstring tightness</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="3">
-          <widget class="QComboBox" name="dataSCALEPolviTotOik">
-           <item>
+           </widget>
+          </item>
+          <item row="18" column="0">
+           <widget class="QLabel" name="label_79">
             <property name="text">
-             <string>Ei mitattu</string>
+             <string>Inverts or everts, not pure dorsiflexion</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="15" column="0">
+           <widget class="QLabel" name="label_74">
             <property name="text">
-             <string>Normaali</string>
+             <string>Plantar flexion contracture</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="1" column="11">
+           <widget class="QLabel" name="label_61">
             <property name="text">
-             <string>Alentunnut</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Subtalaari&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="24" column="5">
+           <widget class="QCheckBox" name="dataSCALESTJDescrLOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="12">
+           <widget class="QComboBox" name="dataSCALEVarpaatTotVas">
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Normaali</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Alentunnut</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kykenemäton</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="1" column="5">
+           <widget class="QLabel" name="label_56">
             <property name="text">
-             <string>Kykenemäton</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Subtalaari&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-          </widget>
-         </item>
-         <item row="16" column="12">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrFVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="10">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrDVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="21" column="9">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrIVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="3">
-          <widget class="QCheckBox" name="dataSCALEPolviResistSynAOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="24" column="6">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrLOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="16" column="4">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrFOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="23" column="6">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrKOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="10">
-          <widget class="QCheckBox" name="dataSCALENilkkaResistSynBVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="3">
-          <widget class="QLabel" name="label_53">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Polvi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_68">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dorsiflexion with resisted limb extension&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="19" column="0">
-          <widget class="QLabel" name="label_80">
-           <property name="text">
-            <string>Primarily moves toes</string>
-           </property>
-          </widget>
-         </item>
-         <item row="25" column="5">
-          <widget class="QCheckBox" name="dataSCALESTJDescrMOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="25" column="9">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrMVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="23" column="0">
-          <widget class="QLabel" name="label_84">
-           <property name="text">
-            <string>Moves one direction only</string>
-           </property>
-          </widget>
-         </item>
-         <item row="23" column="10">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrKVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="2">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrAOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="7">
-          <spacer name="verticalSpacer_17">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>20</width>
-             <height>40</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="23" column="5">
-          <widget class="QCheckBox" name="dataSCALESTJDescrKOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="21" column="12">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrIVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="8">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrAVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="7">
-          <spacer name="horizontalSpacer">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="15" column="12">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrEVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="5">
-          <widget class="QCheckBox" name="dataSCALESTJDescrEOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="25" column="8">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrMVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_66">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Resisted synergy&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="24" column="0">
-          <widget class="QLabel" name="label_87">
-           <property name="text">
-            <string>Movement of other joints</string>
-           </property>
-          </widget>
-         </item>
-         <item row="22" column="4">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrJOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="4">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrEOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="11">
-          <widget class="QCheckBox" name="dataSCALESTJDescrEVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="27" column="4">
-          <widget class="QLabel" name="label_91">
-           <property name="text">
-            <string>Kommentit:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="4">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrCOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="6">
-          <widget class="QComboBox" name="dataSCALEVarpaatTotOik">
-           <item>
+           </widget>
+          </item>
+          <item row="22" column="9">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrJVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="25" column="10">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrMVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="0">
+           <widget class="QLabel" name="label_72">
             <property name="text">
-             <string>Ei mitattu</string>
+             <string>Knee flexion contracture</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="25" column="2">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrMOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="8" colspan="5">
+           <widget class="QLabel" name="label_63">
             <property name="text">
-             <string>Normaali</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Vasen&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="21" column="3">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrIOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="21" column="8">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrIVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="21" column="4">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrIOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="label_67">
             <property name="text">
-             <string>Alentunnut</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Knee extension with resisted limb extension&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="13" column="6">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrCOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="6">
+           <widget class="QLabel" name="label_57">
             <property name="text">
-             <string>Kykenemäton</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Varpaat&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-          </widget>
-         </item>
-         <item row="20" column="0" colspan="13">
-          <widget class="Line" name="line_3">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="3">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrCOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="12">
-          <widget class="QCheckBox" name="dataSCALEVarpaatResistSynergyAVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="12">
-          <widget class="QLabel" name="label_62">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Varpaat&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="10">
-          <widget class="QComboBox" name="dataSCALENilkkaTotVas">
-           <item>
+           </widget>
+          </item>
+          <item row="24" column="3">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrLOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="23" column="11">
+           <widget class="QCheckBox" name="dataSCALESTJDescrKVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="9">
+           <widget class="QComboBox" name="dataSCALEPolviTotVas">
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Normaali</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Alentunnut</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kykenemäton</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="14" column="9">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrDVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="9">
+           <widget class="QLabel" name="label_59">
             <property name="text">
-             <string>Ei mitattu</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Polvi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="27" column="5" colspan="5">
+           <widget class="QTextEdit" name="datacmtSCALE">
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>70</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="9">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrCVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="5">
+           <widget class="QCheckBox" name="dataSCALESTJDescrCOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="18" column="10">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrGVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="9">
+           <widget class="QCheckBox" name="dataSCALEPolviResistSynAVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="14" column="0">
+           <widget class="QLabel" name="label_73">
             <property name="text">
-             <string>Normaali</string>
+             <string>Hamstring tightness</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="2" column="3">
+           <widget class="QComboBox" name="dataSCALEPolviTotOik">
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Normaali</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Alentunnut</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kykenemäton</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="16" column="12">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrFVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="14" column="10">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrDVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="21" column="9">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrIVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="3">
+           <widget class="QCheckBox" name="dataSCALEPolviResistSynAOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="24" column="6">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrLOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="16" column="4">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrFOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="23" column="6">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrKOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="10">
+           <widget class="QCheckBox" name="dataSCALENilkkaResistSynBVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QLabel" name="label_53">
             <property name="text">
-             <string>Alentunnut</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Polvi&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="6" column="0">
+           <widget class="QLabel" name="label_68">
             <property name="text">
-             <string>Kykenemäton</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dorsiflexion with resisted limb extension&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-          </widget>
-         </item>
-         <item row="16" column="6">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrFOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="12" column="0" colspan="13">
-          <widget class="Line" name="line_4">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="4">
-          <widget class="QCheckBox" name="dataSCALENilkkaResistSynBOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="24" column="9">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrLVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="3">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrDOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="24" column="12">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrLVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="25" column="0">
-          <widget class="QLabel" name="label_64">
-           <property name="text">
-            <string>Motion &lt;= 50% available ROM</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="11">
-          <widget class="QCheckBox" name="dataSCALESTJDescrCVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="24" column="2">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrLOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="4">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrDOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <widget class="QLabel" name="label_52">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Lonkka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="25" column="6">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrMOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="4">
-          <widget class="QLabel" name="label_54">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Nilkka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="11">
-          <widget class="QComboBox" name="dataSCALESTJTotVas">
-           <item>
+           </widget>
+          </item>
+          <item row="19" column="0">
+           <widget class="QLabel" name="label_80">
             <property name="text">
-             <string>Ei mitattu</string>
+             <string>Primarily moves toes</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="25" column="5">
+           <widget class="QCheckBox" name="dataSCALESTJDescrMOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="25" column="9">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrMVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="23" column="0">
+           <widget class="QLabel" name="label_84">
             <property name="text">
-             <string>Normaali</string>
+             <string>Moves one direction only</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="23" column="10">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrKVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="2">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrAOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="7">
+           <spacer name="verticalSpacer_17">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="23" column="5">
+           <widget class="QCheckBox" name="dataSCALESTJDescrKOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="21" column="12">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrIVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="8">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrAVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="7">
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="15" column="12">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrEVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="15" column="5">
+           <widget class="QCheckBox" name="dataSCALESTJDescrEOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="25" column="8">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrMVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="label_66">
             <property name="text">
-             <string>Alentunnut</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Resisted synergy&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="24" column="0">
+           <widget class="QLabel" name="label_87">
             <property name="text">
-             <string>Kykenemäton</string>
+             <string>Movement of other joints</string>
             </property>
-           </item>
-          </widget>
-         </item>
-         <item row="22" column="10">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrJVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="24" column="11">
-          <widget class="QCheckBox" name="dataSCALESTJDescrLVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="22" column="5">
-          <widget class="QCheckBox" name="dataSCALESTJDescrJOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="22" column="2">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrJOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="11" column="0">
-          <widget class="QLabel" name="label_71">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adductor contracture or spasticity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="22" column="12">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrJVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="21" column="0">
-          <widget class="QLabel" name="label_81">
-           <property name="text">
-            <string>Mirrors motion on opposite limb</string>
-           </property>
-          </widget>
-         </item>
-         <item row="23" column="8">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrKVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="8">
-          <widget class="QLabel" name="label_58">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Lonkka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="19" column="10">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrHVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="2" colspan="5">
-          <widget class="QLabel" name="label_51">
-           <property name="text">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oikea&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="8">
-          <widget class="QComboBox" name="dataSCALELonkkaTotVas">
-           <item>
+           </widget>
+          </item>
+          <item row="22" column="4">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrJOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="15" column="4">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrEOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="15" column="11">
+           <widget class="QCheckBox" name="dataSCALESTJDescrEVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="27" column="4">
+           <widget class="QLabel" name="label_91">
             <property name="text">
-             <string>Ei mitattu</string>
+             <string>Kommentit:</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="13" column="4">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrCOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="6">
+           <widget class="QComboBox" name="dataSCALEVarpaatTotOik">
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Normaali</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Alentunnut</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kykenemäton</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="20" column="0" colspan="13">
+           <widget class="Line" name="line_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="3">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrCOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="12">
+           <widget class="QCheckBox" name="dataSCALEVarpaatResistSynergyAVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="12">
+           <widget class="QLabel" name="label_62">
             <property name="text">
-             <string>Normaali</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Varpaat&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="2" column="10">
+           <widget class="QComboBox" name="dataSCALENilkkaTotVas">
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Normaali</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Alentunnut</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kykenemäton</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="16" column="6">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrFOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="12" column="0" colspan="13">
+           <widget class="Line" name="line_4">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="4">
+           <widget class="QCheckBox" name="dataSCALENilkkaResistSynBOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="24" column="9">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrLVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="14" column="3">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrDOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="24" column="12">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrLVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="25" column="0">
+           <widget class="QLabel" name="label_64">
             <property name="text">
-             <string>Alentunnut</string>
+             <string>Motion &lt;= 50% available ROM</string>
             </property>
-           </item>
-           <item>
+           </widget>
+          </item>
+          <item row="13" column="11">
+           <widget class="QCheckBox" name="dataSCALESTJDescrCVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="24" column="2">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrLOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="14" column="4">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrDOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QLabel" name="label_52">
             <property name="text">
-             <string>Kykenemäton</string>
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Lonkka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
             </property>
-           </item>
-          </widget>
-         </item>
-         <item row="23" column="2">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrKOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="16" column="5">
-          <widget class="QCheckBox" name="dataSCALESTJDescrFOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="22" column="8">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrJVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="22" column="0">
-          <widget class="QLabel" name="label_82">
-           <property name="text">
-            <string>Motion slower than 3 sec verbal count</string>
-           </property>
-          </widget>
-         </item>
-         <item row="23" column="12">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrKVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="10">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrCVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="0">
-          <widget class="QLabel" name="label_70">
-           <property name="text">
-            <string>Hip flexion contracture</string>
-           </property>
-          </widget>
-         </item>
-         <item row="22" column="6">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrJOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="12">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrCVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="8">
-          <widget class="QCheckBox" name="dataSCALELonkkaDescrDVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <spacer name="horizontalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="15" column="10">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrEVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="15" column="6">
-          <widget class="QCheckBox" name="dataSCALEVarpaatDescrEOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="16" column="0">
-          <widget class="QLabel" name="label_78">
-           <property name="text">
-            <string>Plantar flexor spasticity</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="6">
-          <widget class="QCheckBox" name="dataSCALEVarpaatResistSynergyAOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="21" column="5">
-          <widget class="QCheckBox" name="dataSCALESTJDescrIOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="16" column="10">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrFVas">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="25" column="4">
-          <widget class="QCheckBox" name="dataSCALENilkkaDescrMOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="25" column="3">
-          <widget class="QCheckBox" name="dataSCALEPolviDescrMOik">
-           <property name="styleSheet">
-            <string notr="true">margin-left:50%; margin-right:50%;</string>
-           </property>
-          </widget>
-         </item>
-         <item row="17" column="0" colspan="13">
-          <widget class="Line" name="line_5">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
+           </widget>
+          </item>
+          <item row="25" column="6">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrMOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="4">
+           <widget class="QLabel" name="label_54">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Nilkka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="11">
+           <widget class="QComboBox" name="dataSCALESTJTotVas">
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Normaali</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Alentunnut</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kykenemäton</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="22" column="10">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrJVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="24" column="11">
+           <widget class="QCheckBox" name="dataSCALESTJDescrLVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="22" column="5">
+           <widget class="QCheckBox" name="dataSCALESTJDescrJOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="22" column="2">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrJOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="11" column="0">
+           <widget class="QLabel" name="label_71">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Adductor contracture or spasticity&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="22" column="12">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrJVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="21" column="0">
+           <widget class="QLabel" name="label_81">
+            <property name="text">
+             <string>Mirrors motion on opposite limb</string>
+            </property>
+           </widget>
+          </item>
+          <item row="23" column="8">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrKVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="8">
+           <widget class="QLabel" name="label_58">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;Lonkka&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="19" column="10">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrHVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2" colspan="5">
+           <widget class="QLabel" name="label_51">
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Oikea&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="8">
+           <widget class="QComboBox" name="dataSCALELonkkaTotVas">
+            <item>
+             <property name="text">
+              <string>Ei mitattu</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Normaali</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Alentunnut</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Kykenemäton</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="23" column="2">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrKOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="16" column="5">
+           <widget class="QCheckBox" name="dataSCALESTJDescrFOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="22" column="8">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrJVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="22" column="0">
+           <widget class="QLabel" name="label_82">
+            <property name="text">
+             <string>Motion slower than 3 sec verbal count</string>
+            </property>
+           </widget>
+          </item>
+          <item row="23" column="12">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrKVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="10">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrCVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0">
+           <widget class="QLabel" name="label_70">
+            <property name="text">
+             <string>Hip flexion contracture</string>
+            </property>
+           </widget>
+          </item>
+          <item row="22" column="6">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrJOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="13" column="12">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrCVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="14" column="8">
+           <widget class="QCheckBox" name="dataSCALELonkkaDescrDVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="15" column="10">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrEVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="15" column="6">
+           <widget class="QCheckBox" name="dataSCALEVarpaatDescrEOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="16" column="0">
+           <widget class="QLabel" name="label_78">
+            <property name="text">
+             <string>Plantar flexor spasticity</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="6">
+           <widget class="QCheckBox" name="dataSCALEVarpaatResistSynergyAOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="21" column="5">
+           <widget class="QCheckBox" name="dataSCALESTJDescrIOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="16" column="10">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrFVas">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="25" column="4">
+           <widget class="QCheckBox" name="dataSCALENilkkaDescrMOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="25" column="3">
+           <widget class="QCheckBox" name="dataSCALEPolviDescrMOik">
+            <property name="styleSheet">
+             <string notr="true">margin-left:50%; margin-right:50%;</string>
+            </property>
+           </widget>
+          </item>
+          <item row="17" column="0" colspan="13">
+           <widget class="Line" name="line_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
