@@ -183,7 +183,7 @@ class PatientDialog(QtWidgets.QMainWindow):
         if db_ver < Constants.db_version:
             msg = f'The database {cfg.database.database} is too old. The database schema ' + \
                   f'version is {db_ver}, but the application can only handle version ' + \
-                  f'{Constants.db_version}. Your probubly should update the database schema.'
+                  f'{Constants.db_version}. Your probably should update the database schema.'
             qt_message_dialog(msg)
             sys.exit()
 

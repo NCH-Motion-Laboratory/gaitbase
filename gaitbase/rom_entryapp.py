@@ -14,7 +14,7 @@ import sip
 from pkg_resources import resource_filename
 from PyQt5 import QtCore, QtWidgets, uic
 from PyQt5.QtSql import QSqlQuery
-
+from PyQt5.QtGui import QPalette, QColor
 
 import rom_reporter
 from config import cfg
@@ -206,15 +206,28 @@ class EntryApp(QtWidgets.QMainWindow):
             else:
                 set_widget_value(widget, val / weight)
 
+        def _SCALE_grade_to_pts(widget):
+            """Convert SCALE textual grade (Normaali/Alentunnut/Kykenemätön) to points"""
+            grade_txt_2_pts = {'Ei mitattu': -1, 'Normaali (2)': 2, 'Alentunnut (1)': 1, 'Kykenemätön (0)': 0}
+            tot = -1
+            for w in widget._autoinputs:
+                cur = grade_txt_2_pts[w.currentText()]
+                if cur != -1:
+                    if tot == -1:
+                        tot = cur
+                    else:
+                        tot += cur
+
+            widget.setValue(tot)
+
         # Autowidgets are special widgets with automatically computed values.
         # Their values cannot be directly modified by the user.
         # They must have an ._autocalculate() method which updates the widget,
         # and ._autoinputs list which lists the necessary input widgets.
         #
-        # Currently the mechanism is used to implement widgets for weight
-        # normalized data. In this case, each autowidget has two inputs: the
-        # weight and the unnormalized value.
-        #
+                
+        # Autowidgets for for weight normalized data. Each autowidget has two
+        # inputs: the weight and the unnormalized value.
         self.autowidgets = list()
         weight_widget = self.dataAntropPaino
         for widget in data_widgets:
@@ -228,8 +241,35 @@ class EntryApp(QtWidgets.QMainWindow):
                 widget._autoinputs = [w_unnorm, weight_widget]
                 widget._autocalculate = lambda w=widget: _weight_normalize(w)
 
+        # Autowidgets for SCALE points - totals
+        # Right
+        widget = self.findChildren(QtWidgets.QWidget, 'SCALEWholeLimbTotOikPts')[0]
+        self.autowidgets.append(widget)
+        widget._autoinputs = [self.findChildren(QtWidgets.QWidget, objName)[0] for objName in ['dataSCALELonkkaTotOik',
+                                                                                               'dataSCALEPolviTotOik',
+                                                                                               'dataSCALENilkkaTotOik',
+                                                                                               'dataSCALESTJTotOik',
+                                                                                               'dataSCALEVarpaatTotOik']]
+        widget._autocalculate = lambda w=widget: _SCALE_grade_to_pts(w)
+        
+        # Left
+        widget = self.findChildren(QtWidgets.QWidget, 'SCALEWholeLimbTotVasPts')[0]
+        self.autowidgets.append(widget)
+        widget._autoinputs = [self.findChildren(QtWidgets.QWidget, objName)[0] for objName in ['dataSCALELonkkaTotVas',
+                                                                                               'dataSCALEPolviTotVas',
+                                                                                               'dataSCALENilkkaTotVas',
+                                                                                               'dataSCALESTJTotVas',
+                                                                                               'dataSCALEVarpaatTotVas']]
+        widget._autocalculate = lambda w=widget: _SCALE_grade_to_pts(w)
+
         # autowidget values cannot be directly modified
         for widget in self.autowidgets:
+
+            # Change the text color in the disabled widgets to black
+            palette = widget.palette()
+            palette.setColor(QPalette.Disabled, QPalette.Text, QColor('black'))
+            widget.setPalette(palette)
+
             widget.setEnabled(False)
 
         # set various widget convenience methods/properties, collect input
