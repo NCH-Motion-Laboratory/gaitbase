@@ -27,7 +27,7 @@ class Constants:
     # the 'no' value should really be 'Ei' but is capitalized for historical
     # reasons; it's automatically uncapitalized for reports
     checkbox_notext: str = 'EI'
-    db_version: int = 2
+    db_version: int = 3
 
 
 @dataclass
