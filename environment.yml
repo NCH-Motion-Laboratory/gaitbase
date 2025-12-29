@@ -2,18 +2,13 @@ name: gaitbase
 channels:
   - conda-forge
 dependencies:
-  - python
-  - jupyter
-  - pyqt
-  - psutil
-  - textdistance
-  - xlrd
-  - xlsxwriter
-  - xlutils
-  - pip
-  - flake8
-  - pypdf2
-  - pytest
+  - python=3.11.4
+  - pyqt=5.15.7
+  - psutil=5.9.5
+  - xlrd=2.0.2
+  - xlutils=2.0.0
+  - pip=23.2
+  - pypdf2=2.11.1
   - pip:
     - https://github.com/NCH-Motion-Laboratory/configdot/archive/master.zip
     - https://github.com/NCH-Motion-Laboratory/ulstools/archive/master.zip

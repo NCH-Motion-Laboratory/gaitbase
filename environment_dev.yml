@@ -1,0 +1,15 @@
+name: gaitbase
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - pyqt
+  - psutil
+  - xlrd
+  - xlutils
+  - pip
+  - pypdf2
+  - pip:
+    - https://github.com/NCH-Motion-Laboratory/configdot/archive/master.zip
+    - https://github.com/NCH-Motion-Laboratory/ulstools/archive/master.zip
+    - https://github.com/NCH-Motion-Laboratory/gaitbase/archive/master.zip
